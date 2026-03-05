@@ -1,0 +1,235 @@
+{
+  "prompt": "light is the opposite of dark and up is the opposite of down",
+  "units": [
+    472,
+    468,
+    57,
+    156,
+    346
+  ],
+  "mode": "pc2",
+  "steps": 6,
+  "explained_var": [
+    0.26605549454689026,
+    0.2589724361896515
+  ],
+  "records": [
+    {
+      "step": 0,
+      "context": "light is the opposite of dark and up is the opposite of down",
+      "coords": [
+        -3.3988118171691895,
+        -0.5207201242446899
+      ],
+      "logit_entropy": 2.4156155586242676,
+      "top_tokens": [
+        [
+          ".",
+          -46.7693977355957
+        ],
+        [
+          ",",
+          -48.52451705932617
+        ],
+        [
+          "is",
+          -48.65801239013672
+        ],
+        [
+          "and",
+          -48.67576217651367
+        ],
+        [
+          "<space>",
+          -50.50779342651367
+        ]
+      ]
+    },
+    {
+      "step": 1,
+      "context": "light is the opposite of dark and up is the opposite of down.",
+      "coords": [
+        -4.95517635345459,
+        -2.642094612121582
+      ],
+      "logit_entropy": 4.880080223083496,
+      "top_tokens": [
+        [
+          "<space>",
+          -122.31962585449219
+        ],
+        [
+          "The",
+          -123.1268539428711
+        ],
+        [
+          "It",
+          -124.1478271484375
+        ],
+        [
+          "This",
+          -124.26011657714844
+        ],
+        [
+          "In",
+          -124.34138488769531
+        ]
+      ]
+    },
+    {
+      "step": 2,
+      "context": "light is the opposite of dark and up is the opposite of down.\n",
+      "coords": [
+        -5.257615089416504,
+        -2.4854576587677
+      ],
+      "logit_entropy": 0.3175882399082184,
+      "top_tokens": [
+        [
+          "<space>",
+          -25.225669860839844
+        ],
+        [
+          "The",
+          -31.35791778564453
+        ],
+        [
+          "I",
+          -32.04119110107422
+        ],
+        [
+          "So",
+          -32.32448196411133
+        ],
+        [
+          "This",
+          -32.45711135864258
+        ]
+      ]
+    },
+    {
+      "step": 3,
+      "context": "light is the opposite of dark and up is the opposite of down.\n\n",
+      "coords": [
+        -3.4470372200012207,
+        -2.036640167236328
+      ],
+      "logit_entropy": 0.006174965295940638,
+      "top_tokens": [
+        [
+          "<space>",
+          -251.33668518066406
+        ],
+        [
+          ".",
+          -260.5611572265625
+        ],
+        [
+          "(",
+          -261.2301940917969
+        ],
+        [
+          "<space>",
+          -261.4705505371094
+        ],
+        [
+          ",",
+          -261.64654541015625
+        ]
+      ]
+    },
+    {
+      "step": 4,
+      "context": "light is the opposite of dark and up is the opposite of down.\n\n\n",
+      "coords": [
+        -4.2616376876831055,
+        -1.3652514219284058
+      ],
+      "logit_entropy": 6.384759902954102,
+      "top_tokens": [
+        [
+          "The",
+          -100.45410919189453
+        ],
+        [
+          "This",
+          -101.65716552734375
+        ],
+        [
+          "I",
+          -101.81243133544922
+        ],
+        [
+          "In",
+          -101.84889221191406
+        ],
+        [
+          "So",
+          -101.9179458618164
+        ]
+      ]
+    },
+    {
+      "step": 5,
+      "context": "light is the opposite of dark and up is the opposite of down.\n\n\nThe",
+      "coords": [
+        -6.095577239990234,
+        -2.749711036682129
+      ],
+      "logit_entropy": 8.261808395385742,
+      "top_tokens": [
+        [
+          "two",
+          -82.47578430175781
+        ],
+        [
+          "first",
+          -82.58313751220703
+        ],
+        [
+          "difference",
+          -82.75772857666016
+        ],
+        [
+          "only",
+          -82.87773895263672
+        ],
+        [
+          "second",
+          -83.03343963623047
+        ]
+      ]
+    },
+    {
+      "step": 6,
+      "context": "light is the opposite of dark and up is the opposite of down.\n\n\nThe two",
+      "coords": [
+        -4.766587257385254,
+        -3.096193790435791
+      ],
+      "logit_entropy": 7.1356048583984375,
+      "top_tokens": [
+        [
+          "are",
+          -94.37991333007812
+        ],
+        [
+          "sides",
+          -95.20156860351562
+        ],
+        [
+          "colors",
+          -95.68607330322266
+        ],
+        [
+          "words",
+          -95.8977279663086
+        ],
+        [
+          "types",
+          -95.9374771118164
+        ]
+      ]
+    }
+  ]
+}

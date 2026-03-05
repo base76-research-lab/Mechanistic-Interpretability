@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Envs
+.venv/
+venv/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local runs / logs
+*.log
+
+# Experiment build artifacts (keep JSON + markdown, ignore tensors)
+**/activations.pt
+**/sae_weights.pt
+**/*.safetensors
+**/*.ckpt
+**/*.bin
+
+# Large model caches (HF)
+.cache/
+cache/
+hf_cache/
+

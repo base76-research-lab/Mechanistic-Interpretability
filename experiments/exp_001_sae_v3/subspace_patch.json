@@ -1,0 +1,91 @@
+{
+  "prompt": "the opposite of hot is",
+  "targets": [
+    "cold",
+    "dark"
+  ],
+  "units": [
+    472,
+    468,
+    57,
+    156,
+    346
+  ],
+  "mode": "pc1",
+  "scale": 10.0,
+  "layers": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "head_masks": {},
+  "results": [
+    {
+      "layer": 3,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.00019442163466010243,
+      "delta_cold": 5.443590634968132e-05,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 5.13586246597697e-06,
+      "delta_dark": 8.879360393621027e-07
+    },
+    {
+      "layer": 4,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.0001446320820832625,
+      "delta_cold": 4.646353772841394e-06,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 4.632867330656154e-06,
+      "delta_dark": 3.8494090404128656e-07
+    },
+    {
+      "layer": 5,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.00012090158270439133,
+      "delta_cold": -1.908414560602978e-05,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 3.998652118752943e-06,
+      "delta_dark": -2.4927430786192417e-07
+    },
+    {
+      "layer": 6,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.00013856346777174622,
+      "delta_cold": -1.422260538674891e-06,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 4.584823273034999e-06,
+      "delta_dark": 3.368968464201316e-07
+    },
+    {
+      "layer": 7,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.00012372223136480898,
+      "delta_cold": -1.6263496945612133e-05,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 4.032622655358864e-06,
+      "delta_dark": -2.1530377125600353e-07
+    },
+    {
+      "layer": 8,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.00014731724513694644,
+      "delta_cold": 7.3315168265253305e-06,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 5.449077889352338e-06,
+      "delta_dark": 1.2011514627374709e-06
+    },
+    {
+      "layer": 9,
+      "target_cold_base": 0.0001399857283104211,
+      "target_cold_patch": 0.0001478875637985766,
+      "delta_cold": 7.901835488155484e-06,
+      "target_dark_base": 4.2479264266148675e-06,
+      "target_dark_patch": 4.608386007021181e-06,
+      "delta_dark": 3.6045958040631376e-07
+    }
+  ]
+}

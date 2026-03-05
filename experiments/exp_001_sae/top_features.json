@@ -1,0 +1,312 @@
+[
+  {
+    "unit": 216,
+    "mean_activation": 38.59312438964844,
+    "top_tokens": [
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 355.8211975097656
+      },
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 354.6759033203125
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 354.1466369628906
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 349.65570068359375
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 347.602294921875
+      }
+    ]
+  },
+  {
+    "unit": 191,
+    "mean_activation": 36.442344665527344,
+    "top_tokens": [
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 338.90924072265625
+      },
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 338.7799072265625
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 338.10009765625
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 332.38519287109375
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 330.7638854980469
+      }
+    ]
+  },
+  {
+    "unit": 215,
+    "mean_activation": 35.62272644042969,
+    "top_tokens": [
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 330.5812072753906
+      },
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 330.5529479980469
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 329.8326416015625
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 324.244384765625
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 322.6125793457031
+      }
+    ]
+  },
+  {
+    "unit": 229,
+    "mean_activation": 35.56623077392578,
+    "top_tokens": [
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 340.4464416503906
+      },
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 339.7342834472656
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 339.4766540527344
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 333.8680419921875
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 330.9413146972656
+      }
+    ]
+  },
+  {
+    "unit": 27,
+    "mean_activation": 35.38956069946289,
+    "top_tokens": [
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 340.2841491699219
+      },
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 340.0958251953125
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 339.0050048828125
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 333.7724914550781
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 332.7214660644531
+      }
+    ]
+  },
+  {
+    "unit": 40,
+    "mean_activation": 35.2209587097168,
+    "top_tokens": [
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 356.049560546875
+      },
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 355.246337890625
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 354.9915771484375
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 349.05474853515625
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 347.4615478515625
+      }
+    ]
+  },
+  {
+    "unit": 170,
+    "mean_activation": 34.980857849121094,
+    "top_tokens": [
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 361.6692199707031
+      },
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 361.5656433105469
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 360.7630615234375
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 354.8841857910156
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 353.26239013671875
+      }
+    ]
+  },
+  {
+    "unit": 74,
+    "mean_activation": 34.7077751159668,
+    "top_tokens": [
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 361.818603515625
+      },
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 361.6193542480469
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 360.30145263671875
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 355.8023376464844
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 353.2380676269531
+      }
+    ]
+  },
+  {
+    "unit": 203,
+    "mean_activation": 34.58694839477539,
+    "top_tokens": [
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 322.23822021484375
+      },
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 321.84490966796875
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 321.0718688964844
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 317.6585998535156
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 315.5645446777344
+      }
+    ]
+  },
+  {
+    "unit": 138,
+    "mean_activation": 34.484764099121094,
+    "top_tokens": [
+      {
+        "token_id": 20988,
+        "token": "Complete",
+        "value": 339.36334228515625
+      },
+      {
+        "token_id": 40322,
+        "token": "Repeat",
+        "value": 339.3167419433594
+      },
+      {
+        "token_id": 16594,
+        "token": "Write",
+        "value": 338.8829650878906
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 333.918701171875
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 332.3288269042969
+      }
+    ]
+  }
+]
