@@ -2,7 +2,7 @@
 
 ## Versioner
 - v1: 7 prompts, 75 tokens, steps=200, l1=5e-3 → mse~0.234, mean|z|~12.7 (överaktiverad), sparsitetsmått saknades.
-- v2: 12 prompts, 128 tokens, LayerNorm på aktiveringar, steps=400, l1=1e-3 → mse~3.4e-4, mean|z|~0.73, ~62% near-zero.
+- v2: 12 prompts, 128 tokens, LayerNorm på aktiveringar, steps=400, l1=1e-3 → mse~3.4e-4, mean|z|~0.73, ~62% nära noll.
 
 ## Setup (v2)
 - Modell: gpt2-small
@@ -61,7 +61,7 @@ Effekt:
 - Evidens: state_rollout visar att vi kan följa koordinater i antonym‑subspacet över flera steg, och att logit‑entropi/valda tokens hänger ihop med den rörelsen. Subspace_patch ändrar sannolikheter olika per lager → det finns ett “future‑state” som modelleras i residualen.
 - Vad vi inte ser: vi ser inte var state “uppstår” – det finns redan som riktning i residualen, inte som explicit nod. Vi vet inte exakt vilka heads/MLP‑rader som bär det, eller varför just de koordinaterna stabiliseras.
 - Plan för lokalisering:
-  1) Lokalisering: cos‑sök mellan subspace och c_proj/W_O per lager + head‑mask/paching för att se var effekten dör.
+  1) Lokalisering: cos‑sök mellan subspace och c_proj/W_O per lager + head‑mask/patching för att se var effekten dör.
   2) Dynamik: fortsätt state_rollout för fler fenomen (analogi, syntax) och mät Δcoords, logit‑entropi per steg.
   3) Semantik: projicera state på tokens (W_U) och på andra subspaces (analogi/syntax) för att se överlapp och konflikt → epistemisk osäkerhet.
 

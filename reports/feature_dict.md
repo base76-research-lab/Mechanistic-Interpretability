@@ -13,9 +13,9 @@
 | 84 | sorting/factorial-ish | as, sorted, that, orial, ab | 0.857 | sort/factorial suffix cues |
 | 63 | math prompt preamble | France, the, Given, Given, numbers | 0.857 | “Given … numbers” scaffold |
 
-## v3 — nya features (layer 5, dict 512, LayerNorm, 800 steps)
+## v3 — nya features (lager 5, dict 512, LayerNorm, 800 steg)
 
-| Unit / kluster | Label | Top tokens (exempel) | Not | Kommentar |
+| Unit / kluster | Label | Top tokens (exempel) | Notering | Kommentar |
 |---|---|---|---|---|
 | 472 / 468 / 57 / 156 / 346 (subspace) | antonym/opposite | opposite, dark, cold, light, tall | decoder‑subspace snarare än en enda neuron | Använd som kluster vid patch; PCA visar gemensam riktning (antonym). |
 | 132 / 133 | analogy pivot | as, like, colon contexts | Del av analogi‑pivot (“as … as”) | Aktiverar på relationsord; användbar för analogy patch. |

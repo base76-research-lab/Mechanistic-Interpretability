@@ -3,6 +3,8 @@
 English TL;DR: We build reviewable mechanistic interpretability experiments (SAEs + subspace probes) and a
 geometry-based reliability signal ("Field View") that separates reasoning vs hallucination-like regimes.
 
+Language: English-first, with Swedish notes where it improves precision/speed.
+
 Mål: Kartlägga interna kretsar, representationer och *subspaces* i små/mellanstora språkmodeller.
 Fokus: polysemanticitet, superposition, circuit discovery och feature-dictionaries via Sparse Autoencoders (SAE).
 
@@ -22,7 +24,7 @@ innan kollaps (unembedding).
 
 ## Delmål
 
-1. SAE på residuala/MLP-latenter för att extrahera glesa, tolkbara features.
+1. SAE på residual-/MLP-latenter för att extrahera glesa, tolkbara features.
 2. Circuit discovery via patching/ablation på kända fenomen (t.ex. induction heads).
 3. Feature dictionaries: katalog över identifierade features med exempel, labels och patch-effekter.
 4. Subspace-baserad risk/triage: separera "reasoning" vs "hallucination" via state–candidate misalignment.

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-field_view.py — titt in i Field (möjliga future-states) innan kollaps
+field_view.py — titta in i Field (möjliga future-states) innan kollaps
 
 För en prompt och position (default sista token):
-- Beräkna residualen (layer 5) och projicera på valda SAE-subspace (default antonym-kluster PC2)
+- Beräkna residualen (lager 5) och projicera på valda SAE-subspace (default antonym-kluster PC2)
 - Beräkna logit-entropi H
 - Ta top-k logitkandidater, projicera deras W_U-vektorer i samma subspace → “moln” av möjliga kollapser
 - Spara allt i JSON + skriv en snabb textöversikt
