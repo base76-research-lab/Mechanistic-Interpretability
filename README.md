@@ -17,6 +17,7 @@ via unembedding.
 Start here:
 
 - Findings report: `reports/exp_001_sae.md`
+- Preliminary note (LinkedIn article draft): `reports/linkedin_article_preliminary_observation_2026-03-05.md`
 - Feature dictionary: `reports/feature_dict.md`
 - Run log: `reports/logs/2026-03-04.md`
 - Run artifacts (JSON): `experiments/exp_001_sae_v3/`
