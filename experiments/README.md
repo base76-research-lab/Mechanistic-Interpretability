@@ -1,18 +1,17 @@
 # Experiments
 
-Den här mappen innehåller körningsartefakter per experiment (JSON/MD) och *ibland* små outputs.
+This folder contains run artifacts per experiment (JSON/MD) and sometimes small outputs.
 
-## Konvention
+## Conventions
 
-- Varje experiment ligger i en egen mapp: `exp_###_*`
-- Spara alltid:
-  - `metrics.json` (om relevant)
-  - `top_features.json` / `field_view*.json` / `runs/*.json` (om relevant)
-  - `runs/*.md` (kort human-readable log per körning)
-- Stora tensorfiler (t.ex. `activations.pt`, `sae_weights.pt`) är build artifacts och ignoreras av git.
+ - Keep each experiment in its own folder: `exp_###_*`
+ - Always save:
+   - `metrics.json` (when relevant)
+   - `top_features.json` / `field_view*.json` / `runs/*.json` (when relevant)
+   - `runs/*.md` (short human-readable run note)
+ - Large tensors (e.g., `activations.pt`, `sae_weights.pt`) are build artifacts and ignored by git.
 
-## Nuvarande experimentmappar (high-level)
+## Current experiment folders (high-level)
 
 - `exp_001_sae/`, `exp_001_sae_v2/`, `exp_001_sae_v3/` — SAE + Field View signal (GPT-2)
-- `exp_002_persona/` — persona/traits-artefakter (se respektive README/log)
-
+- `exp_002_persona/` — persona/traits artifacts (see the folder outputs/logs)

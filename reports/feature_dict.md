@@ -13,15 +13,16 @@
 | 84 | sorting/factorial-ish | as, sorted, that, orial, ab | 0.857 | sort/factorial suffix cues |
 | 63 | math prompt preamble | France, the, Given, Given, numbers | 0.857 | “Given … numbers” scaffold |
 
-## v3 — nya features (lager 5, dict 512, LayerNorm, 800 steg)
+## v3 — new features (layer 5, dict 512, LayerNorm, 800 steps)
 
-| Unit / kluster | Label | Top tokens (exempel) | Notering | Kommentar |
+| Unit / cluster | Label | Top tokens (examples) | Note | Comment |
 |---|---|---|---|---|
-| 472 / 468 / 57 / 156 / 346 (subspace) | antonym/opposite | opposite, dark, cold, light, tall | decoder‑subspace snarare än en enda neuron | Använd som kluster vid patch; PCA visar gemensam riktning (antonym). |
-| 132 / 133 | analogy pivot | as, like, colon contexts | Del av analogi‑pivot (“as … as”) | Aktiverar på relationsord; användbar för analogy patch. |
-| 421 / 144 | polarity / temperature | hot, cold | Förändras med motsatspar | 421 ~ “hot”, 144 ~ “cold”; bra för kontrolltest av antonymklustret. |
-| 212 / 360 / 279 | parentheses / structural marker | parentheses, open, close | Strukturell syntax | Markerar paren‑öppning/stängning; dyker upp i kodliknande text. |
-| 396 / 478 / 217 | translation greeting | morning, good | Översättnings‑cue | Aktiveras på hälsningsfraser (“good morning”). |
-| 137 / 87 | role pairs (president/queen) | president, queen | roll/royal slot | Del av analogi “X to Y” med titlar. |
+| 472 / 468 / 57 / 156 / 346 (subspace) | antonym/opposite | opposite, dark, cold, light, tall | decoder subspace, not a single neuron | Use as a cluster for patching; PCA shows a shared direction (antonym). |
+| 132 / 133 | analogy pivot | as, like, colon contexts | part of the analogy pivot ("as ... as") | Activates on relation words; useful for analogy patching. |
+| 421 / 144 | polarity / temperature | hot, cold | moves with antonym pairs | 421 ~ "hot", 144 ~ "cold"; good control pair for the antonym cluster. |
+| 212 / 360 / 279 | parentheses / structural marker | parentheses, open, close | structural syntax | Marks parentheses open/close; shows up in code-like text. |
+| 396 / 478 / 217 | translation greeting | morning, good | translation cue | Activates on greeting phrases ("good morning"). |
+| 137 / 87 | role pairs (president/queen) | president, queen | role/royal slot | Part of "X to Y" analogies with titles. |
 
-*Tip*: När du jobbar med “opposite” ska du tänka feature‑space, inte enskild unit. Kombinera klustervektorerna (medel eller PCA‑komp) för patch/analys.
+*Tip*: for "opposite", think in feature-space, not single units. Combine cluster vectors (mean or PCA component)
+for patching/analysis.

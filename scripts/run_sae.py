@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-run_sae.py — exp_001_sae (generisk modell)
+run_sae.py — exp_001_sae (generic model runner)
 
-- Laddar valfri HF-modell (default gpt2)
-- Extraherar hidden_states[layer] på prompts i data/prompts.txt
-- Tränar en liten Sparse Autoencoder (SAE) på aktiveringarna
-- Sparar:
+- Loads an arbitrary HF model (default: gpt2)
+- Extracts hidden_states[layer] for prompts in data/prompts.txt
+- Trains a small Sparse Autoencoder (SAE) on the activations
+- Saves:
   * experiments/exp_001_sae*/activations.pt
   * .../sae_weights.pt
   * .../metrics.json
-- Skriver kort findings till stdout; rapport fylls i exp_001_sae.md
+- Prints a short summary to stdout; the write-up lives in reports/exp_001_sae.md
 
-Exempel:
+Example:
 python3 scripts/run_sae.py --model microsoft/phi-2 --layer 12 --dict-size 512 --steps 400 --lr 1e-3 --l1 1e-3 --suffix _phi2
 """
 import argparse
@@ -90,7 +90,7 @@ def main():
     ap.add_argument("--layernorm", action="store_true", help="Apply LayerNorm to activations before SAE")
     ap.add_argument("--suffix", type=str, default="", help="Optional suffix for output dir (e.g., _v2)")
     ap.add_argument("--device", type=str, default="cpu")
-    ap.add_argument("--prompts", type=str, default=str(DATA), help="Path till prompts.txt")
+    ap.add_argument("--prompts", type=str, default=str(DATA), help="Path to prompts.txt")
     args = ap.parse_args()
 
     out_dir = OUT_DIR if not args.suffix else OUT_DIR.with_name(OUT_DIR.name + args.suffix)

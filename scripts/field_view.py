@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-field_view.py — titta in i Field (möjliga future-states) innan kollaps
+field_view.py — inspect the Field (possible future-states) before collapse
 
-För en prompt och position (default sista token):
-- Beräkna residualen (lager 5) och projicera på valda SAE-subspace (default antonym-kluster PC2)
-- Beräkna logit-entropi H
-- Ta top-k logitkandidater, projicera deras W_U-vektorer i samma subspace → “moln” av möjliga kollapser
-- Spara allt i JSON + skriv en snabb textöversikt
+For a prompt and position (default: last token):
+- take the residual (layer 5 by default) and project into a chosen SAE subspace (default: antonym cluster PC2)
+- compute logit entropy H
+- take top-k logit candidates, project their W_U vectors into the same subspace -> a "cloud" of possible collapses
+- save everything to JSON and print a short summary
 
 Exempel:
 python3 scripts/field_view.py --prompt "the opposite of hot is" --units 472 468 57 156 346 --mode pc2 --topk 8
@@ -65,7 +65,7 @@ def main():
         "--sae_state",
         type=str,
         default=str(DEFAULT_SAE_STATE),
-        help="Path till SAE-vikter (decoder.weight)",
+        help="Path to SAE weights (expects decoder.weight)",
     )
     ap.add_argument("--device", type=str, default="cpu")
     args = ap.parse_args()
@@ -81,7 +81,7 @@ def main():
     data = tok(args.prompt, return_tensors="pt").to(args.device)
     with torch.no_grad():
         out = model(**data, output_hidden_states=True)
-        h = out.hidden_states[args.layer][0, -1, :]  # residual på sista token
+        h = out.hidden_states[args.layer][0, -1, :]  # residual at last token
         logits = out.logits[0, -1, :]
 
     coords = project(h, basis)  # (k,)

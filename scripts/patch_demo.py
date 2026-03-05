@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 patch_demo.py
-- Laddar GPT-2 small och SAE v3
-- Patcher en SAE-unit på valfritt lager (default layer5 unit132) på sista token i prompten
-- Rapporterar P(target) före/efter samt top-5 delta
+- Loads GPT-2 small and SAE v3
+- Patches a single SAE unit at a chosen layer (default: layer 5, unit 132) at the last token position
+- Reports P(target) before/after and top-5 deltas
 
 Usage:
 python3 scripts/patch_demo.py --unit 132 --scale 5.0 --prompt "king is to queen as man is to" --target " woman"

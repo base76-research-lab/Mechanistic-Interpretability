@@ -2,24 +2,24 @@
 """
 run_field_view_logged.py
 
-Wrapper som kör field_view.py och loggar allt som behövs för spårbarhet:
-- timestamp + scenario-namn
-- git head/status (om repo finns)
-- SHA256 för SAE-viktfil och output
+Wrapper that runs field_view.py and logs everything needed for traceability:
+- timestamp + scenario name
+- git head/status (if repo exists)
+- SHA256 for SAE weight file and output
 - Prompt, units, mode, topk, device
-- Extraherar metrik från field_view-output (risk, H, gap, coords, operator_strength)
+- Extract metrics from field_view output (risk, H, gap, coords, operator_strength)
 - Lagrar:
-    artifacts/<ts>/<name>.json    (rå-output från field_view)
-    runs/<ts>.json                (strukturerad logg)
-    runs/<ts>.md                  (snabb textöversikt)
+    artifacts/<ts>/<name>.json    (raw output from field_view)
+    runs/<ts>.json                (structured log record)
+    runs/<ts>.md                  (quick human-readable summary)
 
-Användning:
+Usage:
     python3 scripts/run_field_view_logged.py \\
         --scenario math_det \\
         --prompt "2 + 2 =" \\
         --mode pc2 --topk 10 --device cpu
 
-Default-units: antonym-klustret (472/468/57/156/346), mode=pc2, topk=8.
+Default units: antonym cluster (472/468/57/156/346), mode=pc2, topk=8.
 """
 
 import argparse
@@ -61,15 +61,15 @@ def git_info(cwd: Path) -> dict:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--prompt", required=True, help="Prompt att köra")
-    ap.add_argument("--scenario", required=True, help="Kort etikett, t.ex. math_det / analogy_reason / hallucination")
+    ap.add_argument("--prompt", required=True, help="Prompt to run")
+    ap.add_argument("--scenario", required=True, help="Short label, e.g. math_det / analogy_reason / hallucination")
     ap.add_argument("--units", nargs="+", type=int, default=[472, 468, 57, 156, 346])
     ap.add_argument("--mode", choices=["mean", "pc1", "pc2"], default="pc2")
     ap.add_argument("--topk", type=int, default=10)
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--model", default="gpt2", help="HF model-id eller provider-spec id")
     ap.add_argument("--layer", type=int, default=5, help="hidden_states-index att projicera")
-    ap.add_argument("--sae_state", default=str(DEFAULT_SAE_STATE), help="Path till SAE-viktfil")
+    ap.add_argument("--sae_state", default=str(DEFAULT_SAE_STATE), help="Path to SAE weight file")
     args = ap.parse_args()
 
     ts = dt.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
@@ -78,7 +78,7 @@ def main():
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Kör field_view
+    # Run field_view
     cmd = [
         "python3",
         str(FIELD_VIEW_SCRIPT),
@@ -101,7 +101,7 @@ def main():
         "--device",
         args.device,
     ]
-    print("Kör:", " ".join(cmd))
+    print("Running:", " ".join(cmd))
     subprocess.run(cmd, check=True, cwd=ROOT)
 
     # Flytta output till artifacts/<ts>/
@@ -111,7 +111,7 @@ def main():
     dest_json = dest_dir / f"{name}.json"
     shutil.move(src_json, dest_json)
 
-    # Läs metrik
+    # Read metrics
     data = json.loads(dest_json.read_text())
 
     sae_state_path = Path(args.sae_state)
@@ -150,7 +150,7 @@ def main():
     run_json_path = RUNS_DIR / f"{ts}.json"
     run_json_path.write_text(json.dumps(run_record, indent=2))
 
-    # Skriv kort MD
+    # Write a short markdown summary
     md_lines = [
         f"# Field View run — {ts}",
         "",

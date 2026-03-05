@@ -2,10 +2,10 @@
 """
 plot_layer_sweep.py
 
-Läser en uppsättning field_view-JSON-filer (från run_field_view_logged.py)
-och plottar H, gap, risk och operator-styrka vs. lager.
+Reads a set of field_view JSON files (from run_field_view_logged.py) and plots
+H, gap, risk, and operator strength vs. layer.
 
-Användning:
+Usage:
   python3 scripts/plot_layer_sweep.py \\
     --out experiments/exp_001_sae_phi2/layer_sweep.png \\
     math:8:artifacts/.../field_view_math_L8.json \\
@@ -13,11 +13,11 @@ Användning:
     math:24:artifacts/.../field_view_math_L24.json
 
 Format per argument:  <label>:<layer>:<path>
-  label  = scenario (t.ex. math, analogy, halluc)
-  layer  = heltal (lager-index)
-  path   = sökväg till field_view-JSON
+  label  = scenario (e.g. math, analogy, halluc)
+  layer  = integer (layer index)
+  path   = path to a field_view JSON file
 
-Plottar en panel per label och skriver även en sammanfattning till stdout.
+Plots one panel per label and also prints a summary to stdout.
 """
 
 from __future__ import annotations
@@ -48,10 +48,10 @@ def parse_arg(arg: str) -> tuple[str, int, Path]:
     Expect format label:layer:path. Fallback: try to extract layer from filename (L(\d+)).
     """
     if ":" not in arg:
-        raise ValueError(f"Ogiltigt argument '{arg}'. Använd label:layer:path")
+        raise ValueError(f"Invalid argument '{arg}'. Expected label:layer:path")
     parts = arg.split(":", 2)
     if len(parts) != 3:
-        raise ValueError(f"Ogiltigt argument '{arg}'. Använd label:layer:path")
+        raise ValueError(f"Invalid argument '{arg}'. Expected label:layer:path")
     label, layer_str, path_str = parts
     layer: int
     if layer_str.isdigit():
@@ -59,7 +59,7 @@ def parse_arg(arg: str) -> tuple[str, int, Path]:
     else:
         m = re.search(r"[Ll](\d+)", layer_str)
         if not m:
-            raise ValueError(f"Kunde inte tolka lager i '{layer_str}'")
+            raise ValueError(f"Could not parse layer from '{layer_str}'")
         layer = int(m.group(1))
     return label, layer, Path(path_str)
 
@@ -98,12 +98,12 @@ def plot(records: List[Record], out: Path):
     plt.tight_layout()
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=150)
-    print(f"Plot sparad: {out}")
+    print(f"Plot saved: {out}")
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("inputs", nargs="+", help="label:layer:path till JSON (minst 2 lager per label rekommenderas)")
+    parser.add_argument("inputs", nargs="+", help="label:layer:path to JSON (>=2 layers per label recommended)")
     parser.add_argument("--out", type=Path, default=Path("layer_sweep.png"))
     args = parser.parse_args()
 
@@ -114,7 +114,7 @@ def main():
             raise FileNotFoundError(path)
         recs.append(load_record(label, layer, path))
 
-    # Summera till stdout
+    # Summarize to stdout
     recs_sorted = sorted(recs, key=lambda r: (r.label, r.layer))
     print("label\tlayer\tH\tgap\trisk\t|coords|\tpath")
     for r in recs_sorted:

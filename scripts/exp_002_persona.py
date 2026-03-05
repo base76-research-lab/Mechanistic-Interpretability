@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 exp_002_persona.py — skeleton
-- Laddar aktiveringar (v3) + token ids
-- Placeholder för trait-prober (sycophancy/hallucination/other) — user to fill trait labels
+- Loads activations (v3) + token ids
+- Placeholder for trait probes (sycophancy/hallucination/other) — user to fill trait labels
 """
 from pathlib import Path
 import torch

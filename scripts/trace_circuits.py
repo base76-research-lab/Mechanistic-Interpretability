@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Placeholder: trace_circuits.py
-- Ska implementera activation patching / ablation för utvalda fenomen (t.ex. induction heads)
-- Läser in sparade aktiveringar och rapporterar logit-shift
+- TODO: implement activation patching / ablation for selected phenomena (e.g., induction heads)
+- Load saved activations and report logit shifts
 """
 
 def main():

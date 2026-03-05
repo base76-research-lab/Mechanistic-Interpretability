@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-state_rollout.py — rollout av latent feature-state med SAE-subspace
+state_rollout.py — rollout of latent feature state in an SAE subspace
 
-Idé: behandla modellen som en state-prediktor i feature-space.
-För en given prompt:
-  - Projektera sista token-residualen (lager 5) på ett valt SAE-kluster (mean/PC1/PC2)
-  - Stega fram N steg genom att greedily välja nästa token och logga det nya state
-  - Rapporterar coords per steg + logit-entropi + valt token; sparar JSON
+Idea: treat the model as a state predictor in feature space.
+For a given prompt:
+  - Project the last-token residual (layer 5) into a chosen SAE cluster (mean/PC1/PC2)
+  - Roll forward N steps by greedily selecting the next token and logging the new state
+  - Report coords per step + logit entropy + chosen token; save JSON
 
-Exempel:
+Example:
 python3 scripts/state_rollout.py --prompt "the opposite of hot is" \
   --units 472 468 57 156 346 --steps 4 --mode pc2
 """
@@ -27,11 +27,11 @@ OUT_JSON = ROOT / "experiments/exp_001_sae_v3/state_rollout.json"
 
 def load_basis(units: List[int], mode: str = "pc2") -> Tuple[torch.Tensor, List[float]]:
     """
-    Returnerar basis (d_model x k) och förklarad varians (om PCA).
+    Return basis (d_model x k) and explained variance (for PCA modes).
     mode:
-      mean  -> 1-vektor (medel)
-      pc1   -> 1-vektor (PC1)
-      pc2   -> 2-vektor (PC1, PC2)
+      mean  -> 1 vector (mean)
+      pc1   -> 1 vector (PC1)
+      pc2   -> 2 vectors (PC1, PC2)
     """
     state = torch.load(SAE_STATE, map_location="cpu")
     dec = state["decoder.weight"]  # (d_model, dict)
@@ -77,7 +77,7 @@ def rollout(prompt: str, units: List[int], mode: str, steps: int, device: str = 
         data = tok(inputs, return_tensors="pt").to(device)
         with torch.no_grad():
             out = model(**data, output_hidden_states=True)
-            h = out.hidden_states[5][0, -1, :]  # sista token, lager 5
+            h = out.hidden_states[5][0, -1, :]  # last token, layer 5
             logits = out.logits[0, -1, :]
         coords = project(h, basis)  # (k,)
         ent = entropy_from_logits(logits)
