@@ -71,7 +71,13 @@ def main():
     args = ap.parse_args()
 
     tok = AutoTokenizer.from_pretrained(args.model)
-    model = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float32).to(args.device)
+    if tok.pad_token_id is None:
+        tok.pad_token_id = tok.eos_token_id
+    from transformers import AutoConfig
+    cfg = AutoConfig.from_pretrained(args.model)
+    if not hasattr(cfg, 'pad_token_id') or cfg.pad_token_id is None:
+        cfg.pad_token_id = tok.eos_token_id
+    model = AutoModelForCausalLM.from_pretrained(args.model, config=cfg, dtype=torch.float32).to(args.device)
     model.eval()
 
     sae_state_path = Path(args.sae_state)
