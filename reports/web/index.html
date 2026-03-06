@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field View — Inference Observability · Base76 Research Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #030712;
+      --surface: #0f172a;
+      --surface2: #1e293b;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --muted: #64748b;
+      --accent: #38bdf8;
+      --state-a: #22c55e;
+      --state-b: #38bdf8;
+      --state-c: #f59e0b;
+      --state-d: #ef4444;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; }
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }
+    .glow-a { box-shadow: 0 0 20px rgba(34,197,94,0.15); }
+    .glow-b { box-shadow: 0 0 20px rgba(56,189,248,0.15); }
+    .glow-c { box-shadow: 0 0 20px rgba(245,158,11,0.15); }
+    .glow-d { box-shadow: 0 0 20px rgba(239,68,68,0.15); }
+    .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .transition-metric { transition: all 300ms ease; }
+    .prompt-btn { cursor: pointer; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; background: var(--surface); font-size: 13px; color: var(--muted); transition: all 150ms; }
+    .prompt-btn:hover { border-color: var(--accent); color: var(--text); }
+    .prompt-btn.active-a { border-color: var(--state-a); color: var(--state-a); background: rgba(34,197,94,0.05); }
+    .prompt-btn.active-b { border-color: var(--state-b); color: var(--state-b); background: rgba(56,189,248,0.05); }
+    .prompt-btn.active-d { border-color: var(--state-d); color: var(--state-d); background: rgba(239,68,68,0.05); }
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    @keyframes pulse-ring { 0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.04)} }
+    .pulse { animation: pulse-ring 2s ease-in-out infinite; }
+    @media print { .no-print { display: none !important; } }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- Header -->
+<header class="border-b border-slate-800 px-6 py-5">
+  <div class="max-w-6xl mx-auto flex items-start justify-between gap-4 flex-wrap">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-2 h-2 rounded-full bg-sky-400 pulse"></div>
+        <span class="section-label">Base76 Research Lab · Sjöbo, Sweden</span>
+      </div>
+      <h1 class="text-2xl font-bold tracking-tight text-white">Field View — Inference Observability</h1>
+      <p class="text-slate-400 text-sm mt-1">Pre-token hallucination risk detection via latent-state geometry · GPT-2 small, layer 5</p>
+    </div>
+    <div class="flex flex-col items-end gap-1">
+      <div class="badge" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.3)">Preliminary findings</div>
+      <span class="mono text-xs text-slate-500">2026-03-04 · reproducible</span>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 py-10 space-y-16">
+
+  <!-- 1. Key Finding -->
+  <section>
+    <div class="rounded-xl border border-slate-700 bg-slate-900 p-6 md:p-8">
+      <div class="section-label mb-3">Key Finding</div>
+      <blockquote class="text-xl md:text-2xl font-semibold text-white leading-relaxed border-l-4 border-sky-400 pl-5">
+        High entropy alone does not distinguish hallucination from legitimate reasoning.
+      </blockquote>
+      <p class="text-slate-400 mt-4 leading-relaxed">
+        The discriminating signal is the combination of <span class="text-sky-300 mono text-sm">gap_state_to_candidates</span> magnitude
+        and <span class="text-sky-300 mono text-sm">candidate_frontier_coherence</span>. Two high-entropy states can diverge sharply:
+        one represents active reasoning, the other a degenerate fallback regime heading toward hallucination.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Four-State Model -->
+  <section>
+    <div class="section-label mb-6">Inference State Taxonomy</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+
+      <!-- State A -->
+      <div class="rounded-xl border p-5 glow-a" style="border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.04)">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-3 h-3 rounded-full" style="background:var(--state-a)"></div>
+          <span class="font-bold text-white">State A</span>
+          <span class="badge ml-auto" style="background:rgba(34,197,94,0.15);color:#22c55e">Anchored</span>
+        </div>
+        <p class="text-slate-400 text-sm mb-4">Model is locked onto a deterministic answer. Low entropy, small gap. Candidate frontier is tight and coherent.</p>
+        <div class="space-y-2 mono text-xs">
+          <div class="flex justify-between"><span class="text-slate-500">Entropy H</span><span class="text-green-400">5.12</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Gap</span><span class="text-green-400">0.69</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Coherence</span><span class="text-green-400">high</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Risk</span><span class="text-green-400">0.549</span></div>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-700">
+          <span class="text-xs text-slate-500 mono">prompt: "2 + 2 ="</span>
+        </div>
+      </div>
+
+      <!-- State B -->
+      <div class="rounded-xl border p-5 glow-b" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.04)">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-3 h-3 rounded-full" style="background:var(--state-b)"></div>
+          <span class="font-bold text-white">State B</span>
+          <span class="badge ml-auto" style="background:rgba(56,189,248,0.15);color:#38bdf8">Reasoning</span>
+        </div>
+        <p class="text-slate-400 text-sm mb-4">Model is actively resolving an analogy or structured problem. High entropy, but candidate frontier remains semantically coherent.</p>
+        <div class="space-y-2 mono text-xs">
+          <div class="flex justify-between"><span class="text-slate-500">Entropy H</span><span class="text-sky-400">6.47</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Gap</span><span class="text-sky-400">3.95</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Coherence</span><span class="text-sky-400">high</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Risk</span><span class="text-sky-400">1.0</span></div>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-700">
+          <span class="text-xs text-slate-500 mono">prompt: "king : queen :: man : ?"</span>
+        </div>
+      </div>
+
+      <!-- State C -->
+      <div class="rounded-xl border p-5" style="border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.03)">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-3 h-3 rounded-full" style="background:var(--state-c)"></div>
+          <span class="font-bold text-white">State C</span>
+          <span class="badge ml-auto" style="background:rgba(245,158,11,0.15);color:#f59e0b">Transitional</span>
+        </div>
+        <p class="text-slate-400 text-sm mb-4">Intermediate regime. Elevated entropy with partial coherence loss. Early warning zone — increased monitoring recommended.</p>
+        <div class="space-y-2 mono text-xs">
+          <div class="flex justify-between"><span class="text-slate-500">Entropy H</span><span class="text-amber-400">mid-high</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Gap</span><span class="text-amber-400">elevated</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Coherence</span><span class="text-amber-400">partial</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Risk</span><span class="text-amber-400">0.6–0.8</span></div>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-700">
+          <span class="text-xs text-slate-500 mono">[not yet measured — exp_003]</span>
+        </div>
+      </div>
+
+      <!-- State D -->
+      <div class="rounded-xl border p-5 glow-d" style="border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.04)">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-3 h-3 rounded-full" style="background:var(--state-d)"></div>
+          <span class="font-bold text-white">State D</span>
+          <span class="badge ml-auto" style="background:rgba(239,68,68,0.15);color:#ef4444">Hallucination-prone</span>
+        </div>
+        <p class="text-slate-400 text-sm mb-4">High entropy with degenerate candidate frontier. Generic fallback tokens dominate. Model is fabricating structure rather than retrieving knowledge.</p>
+        <div class="space-y-2 mono text-xs">
+          <div class="flex justify-between"><span class="text-slate-500">Entropy H</span><span class="text-red-400">6.15</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Gap</span><span class="text-red-400">6.81</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Coherence</span><span class="text-red-400">low (generic)</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Risk</span><span class="text-red-400">1.0</span></div>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-700">
+          <span class="text-xs text-slate-500 mono">prompt: "president of France in 1200?"</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- State progression diagram -->
+    <div class="mt-6 rounded-xl border border-slate-800 bg-slate-900 p-5">
+      <div class="section-label mb-4">State Progression (Entropy × Gap space)</div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <div class="flex items-center gap-2 px-3 py-2 rounded-lg" style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2)">
+          <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+          <span class="text-sm text-green-400 font-medium">A — Anchored</span>
+          <span class="mono text-xs text-slate-500">H↓ gap↓</span>
+        </div>
+        <div class="text-slate-600 text-lg">→</div>
+        <div class="flex items-center gap-2 px-3 py-2 rounded-lg" style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2)">
+          <div class="w-2.5 h-2.5 rounded-full bg-sky-400"></div>
+          <span class="text-sm text-sky-400 font-medium">B — Reasoning</span>
+          <span class="mono text-xs text-slate-500">H↑ gap↑ coh↑</span>
+        </div>
+        <div class="text-slate-600 text-lg">→</div>
+        <div class="flex items-center gap-2 px-3 py-2 rounded-lg" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)">
+          <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+          <span class="text-sm text-amber-400 font-medium">C — Transition</span>
+          <span class="mono text-xs text-slate-500">H↑ gap↑ coh↓</span>
+        </div>
+        <div class="text-slate-600 text-lg">→</div>
+        <div class="flex items-center gap-2 px-3 py-2 rounded-lg" style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2)">
+          <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+          <span class="text-sm text-red-400 font-medium">D — Degenerate</span>
+          <span class="mono text-xs text-slate-500">H↑ gap↑↑ coh↓↓</span>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">States B and D share similar entropy values (6.47 vs 6.15). The gap and coherence combination is the only reliable discriminator.</p>
+    </div>
+  </section>
+
+  <!-- 3. Interactive Prompt Explorer -->
+  <section>
+    <div class="section-label mb-6">Interactive Prompt Explorer</div>
+    <div class="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+      <div class="border-b border-slate-800 px-5 py-4 flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+        <span class="text-sm font-medium text-slate-300">Live metrics — real experiment data (exp_001_sae_v3, 2026-03-04)</span>
+      </div>
+      <div class="p-5 md:p-6">
+        <div class="section-label mb-3">Select prompt</div>
+        <div class="flex gap-3 flex-wrap mb-6" id="prompt-buttons">
+          <button class="prompt-btn active-a" data-scenario="math" onclick="selectScenario('math', this)">
+            2 + 2 =
+          </button>
+          <button class="prompt-btn" data-scenario="analogy" onclick="selectScenario('analogy', this)">
+            king is to queen as man is to
+          </button>
+          <button class="prompt-btn" data-scenario="hallucination" onclick="selectScenario('hallucination', this)">
+            who was the president of France in 1200?
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Metrics panel -->
+          <div class="space-y-4">
+            <div class="section-label mb-3">Latent-state metrics</div>
+
+            <div class="rounded-lg border border-slate-700 p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-400">Inference State</span>
+                <div id="state-badge" class="badge" style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3)">A — Anchored</div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-400">Logit Entropy (H)</span>
+                <span id="metric-entropy" class="mono text-green-400 font-semibold transition-metric">5.12</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-400">State → Candidate Gap</span>
+                <span id="metric-gap" class="mono text-green-400 font-semibold transition-metric">0.691</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-400">Operator Strength |coords|</span>
+                <span id="metric-strength" class="mono text-green-400 font-semibold transition-metric">0.549</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-400">Candidate Coherence</span>
+                <span id="metric-coherence" class="mono text-green-400 font-semibold transition-metric">high</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-400">Risk Score</span>
+                <span id="metric-risk" class="mono text-green-400 font-semibold text-lg transition-metric">0.549</span>
+              </div>
+            </div>
+
+            <!-- Risk bar -->
+            <div>
+              <div class="flex justify-between text-xs text-slate-500 mb-1">
+                <span>Risk</span>
+                <span id="risk-pct">54.9%</span>
+              </div>
+              <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
+                <div id="risk-bar" class="h-full rounded-full transition-all duration-500" style="width:54.9%;background:var(--state-a)"></div>
+              </div>
+            </div>
+
+            <!-- Top candidates -->
+            <div>
+              <div class="section-label mb-2">Top-k candidate tokens</div>
+              <div id="candidate-tokens" class="flex flex-wrap gap-2">
+                <span class="badge mono" style="background:rgba(34,197,94,0.1);color:#86efac;border:1px solid rgba(34,197,94,0.2)">3</span>
+                <span class="badge mono" style="background:rgba(34,197,94,0.1);color:#86efac;border:1px solid rgba(34,197,94,0.2)">1</span>
+                <span class="badge mono" style="background:rgba(34,197,94,0.1);color:#86efac;border:1px solid rgba(34,197,94,0.2)">2</span>
+                <span class="badge mono" style="background:rgba(34,197,94,0.1);color:#86efac;border:1px solid rgba(34,197,94,0.2)">0</span>
+                <span class="badge mono" style="background:rgba(34,197,94,0.1);color:#86efac;border:1px solid rgba(34,197,94,0.2)">4</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Radar / visual -->
+          <div>
+            <div class="section-label mb-3">State geometry</div>
+            <canvas id="radarChart" height="220"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Scatter Plot — Gap vs Entropy -->
+  <section>
+    <div class="section-label mb-6">Figures — Degeneration vs Gap</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+        <div class="text-sm font-semibold text-white mb-1">State-Candidate Gap vs Entropy</div>
+        <p class="text-xs text-slate-500 mb-4">States B (reasoning) and D (hallucination-prone) share similar entropy but diverge sharply on gap.</p>
+        <canvas id="scatterGap" height="260"></canvas>
+      </div>
+      <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+        <div class="text-sm font-semibold text-white mb-1">Operator Strength vs Gap</div>
+        <p class="text-xs text-slate-500 mb-4">State D shows extreme gap despite moderate entropy — the key hallucination signal.</p>
+        <canvas id="scatterStrength" height="260"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Data table -->
+  <section>
+    <div class="section-label mb-4">Experiment Results — exp_001_sae_v3, GPT-2 small, layer 5</div>
+    <div class="rounded-xl border border-slate-800 overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-800 bg-slate-900">
+            <th class="text-left px-4 py-3 text-slate-400 font-medium">Scenario</th>
+            <th class="text-left px-4 py-3 text-slate-400 font-medium">Prompt</th>
+            <th class="text-right px-4 py-3 text-slate-400 font-medium mono text-xs">H</th>
+            <th class="text-right px-4 py-3 text-slate-400 font-medium mono text-xs">Gap</th>
+            <th class="text-right px-4 py-3 text-slate-400 font-medium mono text-xs">|coords|</th>
+            <th class="text-right px-4 py-3 text-slate-400 font-medium mono text-xs">Risk</th>
+            <th class="text-left px-4 py-3 text-slate-400 font-medium">State</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-slate-800/50">
+            <td class="px-4 py-3 text-green-400 font-medium">math_det</td>
+            <td class="px-4 py-3 text-slate-300 mono text-xs">2 + 2 =</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">5.123</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">0.691</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">0.549</td>
+            <td class="px-4 py-3 text-right mono text-green-400">0.549</td>
+            <td class="px-4 py-3"><span class="badge" style="background:rgba(34,197,94,0.15);color:#22c55e">A — Anchored</span></td>
+          </tr>
+          <tr class="border-b border-slate-800/50">
+            <td class="px-4 py-3 text-sky-400 font-medium">analogy_reason</td>
+            <td class="px-4 py-3 text-slate-300 mono text-xs">king is to queen as man is to</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">6.467</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">3.951</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">3.761</td>
+            <td class="px-4 py-3 text-right mono text-sky-400">1.000</td>
+            <td class="px-4 py-3"><span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8">B — Reasoning</span></td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 text-red-400 font-medium">hallucination</td>
+            <td class="px-4 py-3 text-slate-300 mono text-xs">who was the president of France in 1200?</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">6.150</td>
+            <td class="px-4 py-3 text-right mono text-red-400 font-semibold">6.814</td>
+            <td class="px-4 py-3 text-right mono text-slate-300">6.688</td>
+            <td class="px-4 py-3 text-right mono text-red-400">1.000</td>
+            <td class="px-4 py-3"><span class="badge" style="background:rgba(239,68,68,0.15);color:#ef4444">D — Hallucination-prone</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-600 mt-2 mono">SAE units: 472/468/57/156/346 · mode: pc2 · topk: 10 · SHA artifacts logged per run</p>
+  </section>
+
+  <!-- 6. Risk formula -->
+  <section>
+    <div class="section-label mb-4">Risk Signal Definition</div>
+    <div class="rounded-xl border border-slate-800 bg-slate-900 p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <div class="text-sm text-slate-400 mb-3">Formula</div>
+        <div class="rounded-lg bg-slate-800 p-4 mono text-sm space-y-1 text-sky-300">
+          <div>entropy_norm = H / 10.0</div>
+          <div>gap_norm     = gap / (1 + spread_mean)</div>
+          <div class="pt-1 border-t border-slate-700 text-white">risk_score   = min(1.0, 0.5·entropy_norm + 0.5·gap_norm)</div>
+        </div>
+      </div>
+      <div>
+        <div class="text-sm text-slate-400 mb-3">Metric definitions</div>
+        <div class="space-y-2 text-sm">
+          <div><span class="text-sky-300 mono text-xs">H</span><span class="text-slate-400 ml-2">— logit entropy on last token (natural log)</span></div>
+          <div><span class="text-sky-300 mono text-xs">gap_state_to_candidates</span><span class="text-slate-400 ml-2">— L2 distance: residual state vs mean(candidate coords)</span></div>
+          <div><span class="text-sky-300 mono text-xs">candidate_spread_mean</span><span class="text-slate-400 ml-2">— mean L2 of top-k W_U token projections</span></div>
+          <div><span class="text-sky-300 mono text-xs">operator_strength</span><span class="text-slate-400 ml-2">— ‖state_coords‖ (triage signal, not in risk formula)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Limitations & Next steps -->
+  <section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+        <div class="section-label mb-3">Threats to Validity</div>
+        <div class="space-y-3">
+          <div class="flex gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div>
+            <div><span class="text-slate-300 text-sm font-medium">SAE-basis dependence</span><p class="text-slate-500 text-xs mt-0.5">Different seeds may yield different bases. Mitigation: cluster-PCA over single neurons; seeds logged.</p></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div>
+            <div><span class="text-slate-300 text-sm font-medium">Model scale (GPT-2 small)</span><p class="text-slate-500 text-xs mt-0.5">May not capture phenomena at scale. Mitigation: Phi-2 parallel run (in progress), model version logged.</p></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div>
+            <div><span class="text-slate-300 text-sm font-medium">Small prompt set (3 scenarios)</span><p class="text-slate-500 text-xs mt-0.5">Preliminary. Mitigation: exp_003 batch (50–100 prompts, robust compression pipeline).</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+        <div class="section-label mb-3">Next Experiments</div>
+        <div class="space-y-3">
+          <div class="flex gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
+            <div><span class="text-slate-300 text-sm font-medium">Phi-2 cross-model replication</span><p class="text-slate-500 text-xs mt-0.5">Run exp_001 protocol on Phi-2 (layer 16, Colab GPU). Compare risk signal against GPT-2 baseline.</p></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
+            <div><span class="text-slate-300 text-sm font-medium">Compression pipeline (exp_003)</span><p class="text-slate-500 text-xs mt-0.5">Test: raw → compressed → vectorized. Does semantic channel alignment reduce candidate frontier degeneracy?</p></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
+            <div><span class="text-slate-300 text-sm font-medium">Edge-constraint benchmarking</span><p class="text-slate-500 text-xs mt-0.5">Run observability stack under latency/compute budgets relevant to autonomous systems.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 pt-6 pb-2 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
+    <div class="space-y-0.5">
+      <div>Björn André Wikström · Base76 Research Lab · Sjöbo, Sweden</div>
+      <div class="mono">bjorn@base76.se · ORCID 0009-0000-4015-2357 · github.com/base76-research-lab</div>
+    </div>
+    <div class="mono">GPT-2 small · layer 5 · exp_001_sae_v3 · 2026-03-04</div>
+  </footer>
+
+</main>
+
+<script>
+// ── Data ────────────────────────────────────────────────────────────────────
+const SCENARIOS = {
+  math: {
+    label: 'math_det',
+    state: 'A',
+    stateLabel: 'A — Anchored',
+    stateColor: '#22c55e',
+    stateBg: 'rgba(34,197,94,0.15)',
+    stateBorder: 'rgba(34,197,94,0.3)',
+    entropy: 5.123,
+    gap: 0.691,
+    strength: 0.549,
+    coherence: 'high',
+    risk: 0.549,
+    btnClass: 'active-a',
+    candidates: ['3', '1', '2', '0', '4'],
+    candidateColor: '#86efac',
+    candidateBg: 'rgba(34,197,94,0.1)',
+    candidateBorder: 'rgba(34,197,94,0.2)',
+  },
+  analogy: {
+    label: 'analogy_reason',
+    state: 'B',
+    stateLabel: 'B — Reasoning',
+    stateColor: '#38bdf8',
+    stateBg: 'rgba(56,189,248,0.15)',
+    stateBorder: 'rgba(56,189,248,0.3)',
+    entropy: 6.467,
+    gap: 3.951,
+    strength: 3.761,
+    coherence: 'high',
+    risk: 1.0,
+    btnClass: 'active-b',
+    candidates: ['man', 'queen', 'woman', 'king', 'wife'],
+    candidateColor: '#bae6fd',
+    candidateBg: 'rgba(56,189,248,0.1)',
+    candidateBorder: 'rgba(56,189,248,0.2)',
+  },
+  hallucination: {
+    label: 'hallucination',
+    state: 'D',
+    stateLabel: 'D — Hallucination-prone',
+    stateColor: '#ef4444',
+    stateBg: 'rgba(239,68,68,0.15)',
+    stateBorder: 'rgba(239,68,68,0.3)',
+    entropy: 6.150,
+    gap: 6.814,
+    strength: 6.688,
+    coherence: 'low (generic)',
+    risk: 1.0,
+    btnClass: 'active-d',
+    candidates: ['[space]', 'I', 'He', ')', 'And'],
+    candidateColor: '#fca5a5',
+    candidateBg: 'rgba(239,68,68,0.1)',
+    candidateBorder: 'rgba(239,68,68,0.2)',
+  }
+};
+
+let currentScenario = 'math';
+let radarChart;
+
+function selectScenario(key, btn) {
+  currentScenario = key;
+  const d = SCENARIOS[key];
+
+  // Update buttons
+  document.querySelectorAll('.prompt-btn').forEach(b => {
+    b.className = 'prompt-btn';
+  });
+  btn.className = 'prompt-btn ' + d.btnClass;
+
+  // Update metrics
+  document.getElementById('metric-entropy').textContent = d.entropy.toFixed(3);
+  document.getElementById('metric-entropy').style.color = d.stateColor;
+  document.getElementById('metric-gap').textContent = d.gap.toFixed(3);
+  document.getElementById('metric-gap').style.color = d.stateColor;
+  document.getElementById('metric-strength').textContent = d.strength.toFixed(3);
+  document.getElementById('metric-strength').style.color = d.stateColor;
+  document.getElementById('metric-coherence').textContent = d.coherence;
+  document.getElementById('metric-coherence').style.color = d.stateColor;
+  document.getElementById('metric-risk').textContent = d.risk.toFixed(3);
+  document.getElementById('metric-risk').style.color = d.stateColor;
+
+  const pct = (d.risk * 100).toFixed(1) + '%';
+  document.getElementById('risk-pct').textContent = pct;
+  document.getElementById('risk-bar').style.width = pct;
+  document.getElementById('risk-bar').style.background = d.stateColor;
+
+  // Badge
+  const badge = document.getElementById('state-badge');
+  badge.textContent = d.stateLabel;
+  badge.style.background = d.stateBg;
+  badge.style.color = d.stateColor;
+  badge.style.borderColor = d.stateBorder;
+
+  // Candidates
+  const c = document.getElementById('candidate-tokens');
+  c.innerHTML = d.candidates.map(t =>
+    `<span class="badge mono" style="background:${d.candidateBg};color:${d.candidateColor};border:1px solid ${d.candidateBorder}">${t}</span>`
+  ).join('');
+
+  updateRadar(d);
+}
+
+// ── Radar Chart ──────────────────────────────────────────────────────────────
+function normalise(val, max) { return Math.min(1, val / max); }
+
+function updateRadar(d) {
+  const norm = [
+    normalise(d.entropy, 8),
+    normalise(d.gap, 8),
+    normalise(d.strength, 8),
+    d.coherence.startsWith('high') ? 0.9 : d.coherence.startsWith('partial') ? 0.5 : 0.15,
+    normalise(d.risk, 1),
+  ];
+  if (radarChart) {
+    radarChart.data.datasets[0].data = norm;
+    radarChart.data.datasets[0].borderColor = d.stateColor;
+    radarChart.data.datasets[0].backgroundColor = d.stateColor + '22';
+    radarChart.data.datasets[0].pointBackgroundColor = d.stateColor;
+    radarChart.update();
+  }
+}
+
+function initRadar() {
+  const ctx = document.getElementById('radarChart').getContext('2d');
+  const d = SCENARIOS[currentScenario];
+  const norm = [
+    normalise(d.entropy, 8),
+    normalise(d.gap, 8),
+    normalise(d.strength, 8),
+    0.9,
+    normalise(d.risk, 1),
+  ];
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Entropy', 'Gap', 'Strength', 'Coherence', 'Risk'],
+      datasets: [{
+        label: d.label,
+        data: norm,
+        borderColor: d.stateColor,
+        backgroundColor: d.stateColor + '22',
+        pointBackgroundColor: d.stateColor,
+        pointBorderColor: 'transparent',
+        borderWidth: 2,
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 400 },
+      plugins: { legend: { display: false } },
+      scales: {
+        r: {
+          min: 0, max: 1,
+          ticks: { display: false },
+          grid: { color: '#1e293b' },
+          pointLabels: { color: '#94a3b8', font: { size: 11 } },
+          angleLines: { color: '#1e293b' },
+        }
+      }
+    }
+  });
+}
+
+// ── Scatter Charts ───────────────────────────────────────────────────────────
+function initScatters() {
+  const points = [
+    { x: 5.123, y: 0.691, label: 'math_det',    r: 8, color: '#22c55e' },
+    { x: 6.467, y: 3.951, label: 'analogy',      r: 8, color: '#38bdf8' },
+    { x: 6.150, y: 6.814, label: 'hallucination',r: 8, color: '#ef4444' },
+  ];
+
+  const scatterOpts = (xlabel, ylabel) => ({
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => `${ctx.dataset.label}: (${ctx.parsed.x.toFixed(2)}, ${ctx.parsed.y.toFixed(2)})`
+        },
+        backgroundColor: '#0f172a',
+        borderColor: '#334155',
+        borderWidth: 1,
+        titleColor: '#94a3b8',
+        bodyColor: '#f1f5f9',
+      }
+    },
+    scales: {
+      x: {
+        title: { display: true, text: xlabel, color: '#64748b', font: { size: 11 } },
+        grid: { color: '#1e293b' },
+        ticks: { color: '#475569', font: { size: 10 } },
+      },
+      y: {
+        title: { display: true, text: ylabel, color: '#64748b', font: { size: 11 } },
+        grid: { color: '#1e293b' },
+        ticks: { color: '#475569', font: { size: 10 } },
+      }
+    }
+  });
+
+  // Gap vs Entropy
+  new Chart(document.getElementById('scatterGap').getContext('2d'), {
+    type: 'scatter',
+    data: {
+      datasets: points.map(p => ({
+        label: p.label,
+        data: [{ x: p.x, y: p.y }],
+        backgroundColor: p.color + 'cc',
+        borderColor: p.color,
+        pointRadius: 10,
+        pointHoverRadius: 13,
+      }))
+    },
+    options: scatterOpts('Logit Entropy (H)', 'State-Candidate Gap')
+  });
+
+  // Strength vs Gap
+  const pts2 = [
+    { x: 0.549, y: 0.691, label: 'math_det',    color: '#22c55e' },
+    { x: 3.761, y: 3.951, label: 'analogy',      color: '#38bdf8' },
+    { x: 6.688, y: 6.814, label: 'hallucination',color: '#ef4444' },
+  ];
+  new Chart(document.getElementById('scatterStrength').getContext('2d'), {
+    type: 'scatter',
+    data: {
+      datasets: pts2.map(p => ({
+        label: p.label,
+        data: [{ x: p.x, y: p.y }],
+        backgroundColor: p.color + 'cc',
+        borderColor: p.color,
+        pointRadius: 10,
+        pointHoverRadius: 13,
+      }))
+    },
+    options: scatterOpts('Operator Strength |coords|', 'State-Candidate Gap')
+  });
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  initRadar();
+  initScatters();
+});
+</script>
+</body>
+</html>

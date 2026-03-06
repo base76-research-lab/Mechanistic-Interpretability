@@ -1,0 +1,2 @@
+ts,prompt_id,variant,compression_mode,compression_valid,logit_entropy,gap_state_to_candidates,operator_strength,risk_score,candidate_coherence,candidate_variance,degeneracy_ratio_topk,degenerate,delta_vs_raw_logit_entropy,delta_vs_raw_gap_state_to_candidates,delta_vs_raw_candidate_coherence,delta_vs_raw_degeneracy_ratio_topk
+20260305T140320Z,p01_the_opposite_of_hot_is,raw,none,True,5.8220343589782715,4.229667663574219,4.137886047363281,1.0,0.5615912489565896,0.009096294705014133,0.3,False,0.0,0.0,0.0,0.0

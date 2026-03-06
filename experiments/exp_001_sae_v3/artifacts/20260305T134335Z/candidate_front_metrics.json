@@ -1,0 +1,28 @@
+{
+  "file": "/media/bjorn/iic/workspace/Base76_Research_Lab/Mechanistic Interpretability/experiments/exp_001_sae_v3/artifacts/20260305T134335Z/field_view_exp003_p02_who_was_the_president_of_france_in_1_compressed_vectorized_proxy__20260305T134335Z.json",
+  "prompt": "semantic anchor packet: of | was | is | in | The | has | from",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.3184192180633545,
+  "gap_state_to_candidates": 5.945913791656494,
+  "operator_strength": 5.816993236541748,
+  "candidate_coherence": 0.6308531879924976,
+  "candidate_variance": 0.01030363820424939,
+  "candidate_centroid": [
+    0.18723374903202056,
+    0.02057936806231737
+  ],
+  "state_to_centroid_distance": 5.945913831151748,
+  "degeneracy_ratio_topk": 0.6,
+  "degenerate": false,
+  "generic_count": 6,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "the",
+    "a",
+    "this",
+    "|",
+    "`"
+  ]
+}

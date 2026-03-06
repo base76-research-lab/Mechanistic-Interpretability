@@ -31,3 +31,8 @@ Thumbs.db
 cache/
 hf_cache/
 
+# Private / local-only
+paper/
+reports/zai_reply_draft_email.txt
+reports/zai_startup_program_packet.md
+

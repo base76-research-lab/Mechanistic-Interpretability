@@ -1,0 +1,4 @@
+ts,prompt_id,variant,logit_entropy,gap_state_to_candidates,operator_strength,risk_score,candidate_coherence,candidate_variance,degeneracy_ratio_topk,degenerate
+20260305T134142Z,p01_who_was_the_president_of_france_in_1,raw,6.1503472328186035,6.814690589904785,6.687980651855469,1.0,0.5951588486974432,0.012644504928589158,1.0,True
+20260305T134142Z,p01_who_was_the_president_of_france_in_1,compressed,6.1503472328186035,6.814690589904785,6.687980651855469,1.0,0.5951588486974432,0.012644504928589158,1.0,True
+20260305T134142Z,p01_who_was_the_president_of_france_in_1,compressed_vectorized_proxy,7.720235347747803,7.590701580047607,7.547757148742676,1.0,-0.10259567106552381,0.017163112587168843,0.125,False

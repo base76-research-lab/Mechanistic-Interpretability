@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/workspace/Base76_Research_Lab/Mechanistic Interpretability/experiments/exp_001_sae_v3/artifacts/20260305T134145Z/field_view_exp003_p01_who_was_the_president_of_france_in_1_raw__20260305T134145Z.json",
+  "prompt": "who was the president of france in 1200?",
+  "topk": 8,
+  "risk_score": 1.0,
+  "logit_entropy": 6.1503472328186035,
+  "gap_state_to_candidates": 6.814690589904785,
+  "operator_strength": 6.687980651855469,
+  "candidate_coherence": 0.5951588486974432,
+  "candidate_variance": 0.012644504928589158,
+  "candidate_centroid": [
+    0.14209007006138563,
+    0.0013922248035669327
+  ],
+  "state_to_centroid_distance": 6.814690667295289,
+  "degeneracy_ratio_topk": 1.0,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 8,
+  "generic_tokens": [
+    "<space>",
+    "I",
+    "He",
+    ")",
+    "And",
+    "The",
+    "It",
+    "),"
+  ]
+}

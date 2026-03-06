@@ -2,8 +2,8 @@
 """
 make_figures.py
 
-Generates small, repo-friendly figures for README/reports from existing JSON artifacts.
-Run locally after exp_001_sae_v3 has been produced.
+Genererar små, repo-vänliga figurer för README/rapporter från befintliga JSON-artefakter.
+Kör lokalt efter att exp_001_sae_v3 körts.
 """
 
 from __future__ import annotations
@@ -77,3 +77,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

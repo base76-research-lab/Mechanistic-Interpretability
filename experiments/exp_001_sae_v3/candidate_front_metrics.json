@@ -1,0 +1,116 @@
+[
+  {
+    "file": "experiments/exp_001_sae_v3/field_view_hallucination.json",
+    "prompt": "who was the president of france in 1200?",
+    "topk": 10,
+    "risk_score": 1.0,
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.814836025238037,
+    "operator_strength": 6.687980651855469,
+    "candidate_coherence": 0.6727576434207994,
+    "candidate_variance": 0.01042330057608639,
+    "degeneracy_ratio_topk": 1.0,
+    "generic_count": 10,
+    "candidate_count": 10,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),",
+      "(",
+      "That"
+    ]
+  },
+  {
+    "file": "experiments/exp_001_sae_v3/field_view_antonym.json",
+    "prompt": "the opposite of hot is",
+    "topk": 8,
+    "risk_score": 1.0,
+    "logit_entropy": 5.8220343589782715,
+    "gap_state_to_candidates": 4.245513916015625,
+    "operator_strength": 4.137886047363281,
+    "candidate_coherence": 0.5023474359248261,
+    "candidate_variance": 0.009390672998080787,
+    "degeneracy_ratio_topk": 0.375,
+    "generic_count": 3,
+    "candidate_count": 8,
+    "generic_tokens": [
+      "the",
+      "a",
+      "that"
+    ]
+  },
+  {
+    "file": "experiments/exp_001_sae_v3/field_view_analogy.json",
+    "prompt": "king is to queen as man is to",
+    "topk": 8,
+    "risk_score": 1.0,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 5.645033836364746,
+    "operator_strength": 5.648545265197754,
+    "candidate_coherence": -0.07142857142857205,
+    "candidate_variance": 0.0036599770989271955,
+    "degeneracy_ratio_topk": 0.125,
+    "generic_count": 1,
+    "candidate_count": 8,
+    "generic_tokens": [
+      "be"
+    ]
+  },
+  {
+    "file": "experiments/exp_001_sae_v3/field_view_analogy_run2.json",
+    "prompt": "king is to queen as man is to",
+    "topk": 10,
+    "risk_score": 1.0,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511687755584717,
+    "operator_strength": 3.7612380981445312,
+    "candidate_coherence": 0.8950136454883234,
+    "candidate_variance": 0.010595117476847531,
+    "degeneracy_ratio_topk": 0.1,
+    "generic_count": 1,
+    "candidate_count": 10,
+    "generic_tokens": [
+      "be"
+    ]
+  },
+  {
+    "file": "experiments/exp_001_sae_v3/field_view_math.json",
+    "prompt": "2 + 2 =",
+    "topk": 10,
+    "risk_score": 0.5487922593057463,
+    "logit_entropy": 5.122995376586914,
+    "gap_state_to_candidates": 0.6914474964141846,
+    "operator_strength": 0.5492606163024902,
+    "candidate_coherence": 0.9101140670774309,
+    "candidate_variance": 0.006637285684897878,
+    "degeneracy_ratio_topk": 0.2,
+    "generic_count": 2,
+    "candidate_count": 10,
+    "generic_tokens": [
+      "-",
+      "+"
+    ]
+  },
+  {
+    "file": "experiments/exp_001_sae_v3/field_view.json",
+    "prompt": "king is to queen as man is to",
+    "topk": 8,
+    "risk_score": null,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": null,
+    "operator_strength": null,
+    "candidate_coherence": -0.07142857142857205,
+    "candidate_variance": 0.0036599770989271955,
+    "degeneracy_ratio_topk": 0.125,
+    "generic_count": 1,
+    "candidate_count": 8,
+    "generic_tokens": [
+      "be"
+    ]
+  }
+]

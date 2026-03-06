@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-opposite_probe.py — residual inspection for the "opposite" subspace
+opposite_probe.py — residual-inspektion för "opposite"-subspacet
 
-Does three things:
-1) PCA on decoder vectors for a chosen feature cluster (default: antonym cluster)
-2) Cosine top matches against embeddings (W_E) and output weights (W_U/c_proj) to show which words/channels the direction points to
-3) Per-token residual profile for a prompt: projection on PC1/PC2, residual norm, and logit entropy
+Gör tre saker:
+1) PCA på decoder-vektorer för ett valt feature-kluster (default antonym-kluster)
+2) Kosinus-toppar mot embeddings (W_E) och utmatningsvikter (W_U/c_proj) → visar vilka ord/kanaler riktningen pekar på
+3) Per-token residual-profil för en prompt: projektion på PC1/PC2, residualnorm och logitentropi
 
-Saves results to experiments/exp_001_sae_v3/opposite_probe.json and prints a short report to stdout.
+Sparar resultat till experiments/exp_001_sae_v3/opposite_probe.json och skriver kort rapport till stdout.
 
-Example:
+Exempel:
 python3 scripts/opposite_probe.py --prompt "the opposite of hot is" --units 472 468 57 156 346
 """
 import argparse
@@ -50,7 +50,7 @@ def residual_profile(model, tok, prompt, proj):
     inputs = tok(prompt, return_tensors="pt")
     with torch.no_grad():
         out = model(**inputs, output_hidden_states=True)
-        hs = out.hidden_states[5][0]  # (seq, d_model) after block 5
+        hs = out.hidden_states[5][0]  # (seq, d_model) efter block 5
         logits = out.logits[0]  # (seq, vocab)
 
     proj_vals = hs @ proj  # (seq, k)
@@ -74,7 +74,7 @@ def residual_profile(model, tok, prompt, proj):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--units", nargs="*", type=int, default=[472, 468, 57, 156, 346], help="SAE unit IDs for the cluster")
+    ap.add_argument("--units", nargs="*", type=int, default=[472, 468, 57, 156, 346], help="SAE-unit IDs för klustret")
     ap.add_argument("--prompt", type=str, default="the opposite of hot is")
     ap.add_argument("--topk", type=int, default=8)
     args = ap.parse_args()

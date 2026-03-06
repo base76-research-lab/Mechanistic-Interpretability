@@ -1,5 +1,7 @@
 # Preliminary observation: two different high-entropy states in LLM inference
 
+Senast uppdaterad: 2026-03-05
+
 Over the last few days, we have explored a simple but reproducible signal in mechanistic interpretability: the relationship between latent state geometry and the candidate token frontier immediately before next-token selection.
 
 If this distinction holds across models, it may provide a simple observability signal for detecting hallucination-prone states before token generation.

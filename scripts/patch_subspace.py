@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-patch_subspace.py — layer sweep for an SAE subspace (default: antonym)
+patch_subspace.py — layer-svep för antonym-subspace
 
-- Builds a subspace vector from the SAE decoder (mean or PC1) for a given cluster
-- Patches the vector at the last token position on selected layers
-- Optional: mask specified attention heads (per layer) to see where the effect is absorbed
-- Reports P(target) before/after + delta per layer and writes results to JSON
+- Bygger en subspace-vektor från SAE-decoder (medel eller PC1) för angivet kluster
+- Patcher vektorn på sista token i prompten på valda lager
+- Valfritt: maskera specificerade attention-heads (per lager) för att se var effekten tas upp
+- Rapporterar P(target) före/efter + delta per lager och skriver resultat till JSON
 
-Example:
+Exempel:
 python3 scripts/patch_subspace.py --prompt "the opposite of hot is" --targets cold dark \
     --units 472 468 57 156 346 --layers 3 4 5 6 7 8 9 --mode pc1 --scale 10
 
 Head-mask syntax:
-  --mask-heads "5:0,1;6:2,3"   # mask head 0,1 in layer 5 and head 2,3 in layer 6
+  --mask-heads "5:0,1;6:2,3"   # mask head 0,1 i lager 5 och head 2,3 i lager 6
 """
 import argparse
 import json
@@ -136,12 +136,12 @@ def run_layer_baseline(model, tok, prompt, target_ids, head_masks, device="cpu")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prompt", type=str, required=True)
-    ap.add_argument("--targets", nargs="+", required=True, help="target tokens to measure logit shift for")
+    ap.add_argument("--targets", nargs="+", required=True, help="målord (tokens) att mäta logit-shift för")
     ap.add_argument("--units", nargs="+", type=int, default=[472, 468, 57, 156, 346])
     ap.add_argument("--layers", nargs="+", type=int, default=[3, 4, 5, 6, 7, 8, 9])
     ap.add_argument("--mode", choices=["mean", "pc1"], default="pc1")
     ap.add_argument("--scale", type=float, default=10.0)
-    ap.add_argument("--mask-heads", type=str, default="", help='e.g. "5:0,1;6:2,3"')
+    ap.add_argument("--mask-heads", type=str, default="", help='t.ex. "5:0,1;6:2,3"')
     ap.add_argument("--device", type=str, default="cpu")
     args = ap.parse_args()
 

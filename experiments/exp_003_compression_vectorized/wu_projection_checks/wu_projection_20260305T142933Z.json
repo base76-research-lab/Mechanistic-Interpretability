@@ -1,0 +1,98 @@
+{
+  "timestamp_utc": "20260305T142933Z",
+  "prompt": "who was the president of france in 1200?",
+  "model": "gpt2",
+  "layer": 5,
+  "topk": 8,
+  "state_norm": 70.38831329345703,
+  "cosine_topk": [
+    {
+      "token": "<space>",
+      "token_id": 198,
+      "cosine": 0.115221306681633
+    },
+    {
+      "token": "I",
+      "token_id": 314,
+      "cosine": 0.1023123487830162
+    },
+    {
+      "token": "A",
+      "token_id": 317,
+      "cosine": 0.08826042711734772
+    },
+    {
+      "token": "Or",
+      "token_id": 1471,
+      "cosine": 0.07874183356761932
+    },
+    {
+      "token": "\"",
+      "token_id": 366,
+      "cosine": 0.07835516333580017
+    },
+    {
+      "token": "a",
+      "token_id": 257,
+      "cosine": 0.07600384205579758
+    },
+    {
+      "token": "(",
+      "token_id": 357,
+      "cosine": 0.07474231719970703
+    },
+    {
+      "token": "It",
+      "token_id": 632,
+      "cosine": 0.07426819950342178
+    }
+  ],
+  "logits_topk": [
+    {
+      "token": "<space>",
+      "token_id": 198,
+      "logit": -105.22686004638672
+    },
+    {
+      "token": "I",
+      "token_id": 314,
+      "logit": -105.52989196777344
+    },
+    {
+      "token": "He",
+      "token_id": 679,
+      "logit": -105.89884185791016
+    },
+    {
+      "token": ")",
+      "token_id": 8,
+      "logit": -105.93049621582031
+    },
+    {
+      "token": "And",
+      "token_id": 843,
+      "logit": -105.93860626220703
+    },
+    {
+      "token": "The",
+      "token_id": 383,
+      "logit": -106.07891845703125
+    },
+    {
+      "token": "It",
+      "token_id": 632,
+      "logit": -106.29107666015625
+    },
+    {
+      "token": "),",
+      "token_id": 828,
+      "logit": -106.41725158691406
+    }
+  ],
+  "overlap_token_ids": [
+    198,
+    314,
+    632
+  ],
+  "overlap_count": 3
+}

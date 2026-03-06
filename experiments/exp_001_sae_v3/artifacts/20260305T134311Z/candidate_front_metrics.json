@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/workspace/Base76_Research_Lab/Mechanistic Interpretability/experiments/exp_001_sae_v3/artifacts/20260305T134311Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed_vectorized_proxy__20260305T134311Z.json",
+  "prompt": "semantic anchor packet: is | to | as | has | was | in | for | with",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 1.4401602745056152,
+  "gap_state_to_candidates": 5.464645862579346,
+  "operator_strength": 5.347316265106201,
+  "candidate_coherence": 0.500297312594823,
+  "candidate_variance": 0.012335695165981883,
+  "candidate_centroid": [
+    0.1539221242070198,
+    0.007721526920795441
+  ],
+  "state_to_centroid_distance": 5.464645978652002,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "<space>",
+    "the",
+    "a",
+    "|",
+    "`",
+    ".",
+    "(",
+    "="
+  ]
+}

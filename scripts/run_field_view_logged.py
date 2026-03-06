@@ -2,34 +2,35 @@
 """
 run_field_view_logged.py
 
-Wrapper that runs field_view.py and logs everything needed for traceability:
-- timestamp + scenario name
-- git head/status (if repo exists)
-- SHA256 for SAE weight file and output
+Wrapper som kör field_view.py och loggar allt som behövs för spårbarhet:
+- timestamp + scenario-namn
+- git head/status (om repo finns)
+- SHA256 för SAE-viktfil och output
 - Prompt, units, mode, topk, device
-- Extract metrics from field_view output (risk, H, gap, coords, operator_strength)
+- Extraherar metrik från field_view-output (risk, H, gap, coords, operator_strength)
 - Lagrar:
-    artifacts/<ts>/<name>.json    (raw output from field_view)
-    runs/<ts>.json                (structured log record)
-    runs/<ts>.md                  (quick human-readable summary)
+    artifacts/<ts>/<name>.json    (rå-output från field_view)
+    runs/<ts>.json                (strukturerad logg)
+    runs/<ts>.md                  (snabb textöversikt)
 
-Usage:
+Användning:
     python3 scripts/run_field_view_logged.py \\
         --scenario math_det \\
         --prompt "2 + 2 =" \\
         --mode pc2 --topk 10 --device cpu
 
-Default units: antonym cluster (472/468/57/156/346), mode=pc2, topk=8.
+Default-units: antonym-klustret (472/468/57/156/346), mode=pc2, topk=8.
 """
 
 import argparse
 import datetime as dt
 import hashlib
 import json
-import os
 import shutil
 import subprocess
 from pathlib import Path
+
+from candidate_front_metrics import compute_metrics as compute_candidate_front_metrics
 
 ROOT = Path(__file__).resolve().parent.parent
 EXP_DIR = ROOT / "experiments" / "exp_001_sae_v3"
@@ -61,24 +62,25 @@ def git_info(cwd: Path) -> dict:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--prompt", required=True, help="Prompt to run")
-    ap.add_argument("--scenario", required=True, help="Short label, e.g. math_det / analogy_reason / hallucination")
+    ap.add_argument("--prompt", required=True, help="Prompt att köra")
+    ap.add_argument("--scenario", required=True, help="Kort etikett, t.ex. math_det / analogy_reason / hallucination")
     ap.add_argument("--units", nargs="+", type=int, default=[472, 468, 57, 156, 346])
     ap.add_argument("--mode", choices=["mean", "pc1", "pc2"], default="pc2")
     ap.add_argument("--topk", type=int, default=10)
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--model", default="gpt2", help="HF model-id eller provider-spec id")
     ap.add_argument("--layer", type=int, default=5, help="hidden_states-index att projicera")
-    ap.add_argument("--sae_state", default=str(DEFAULT_SAE_STATE), help="Path to SAE weight file")
+    ap.add_argument("--sae_state", default=str(DEFAULT_SAE_STATE), help="Path till SAE-viktfil")
+    ap.add_argument("--degenerate-threshold", type=float, default=0.7, help="Threshold for candidate_front.degenerate")
     args = ap.parse_args()
 
-    ts = dt.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     name = f"field_view_{args.scenario}__{ts}"
 
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Run field_view
+    # Kör field_view
     cmd = [
         "python3",
         str(FIELD_VIEW_SCRIPT),
@@ -101,7 +103,7 @@ def main():
         "--device",
         args.device,
     ]
-    print("Running:", " ".join(cmd))
+    print("Kör:", " ".join(cmd))
     subprocess.run(cmd, check=True, cwd=ROOT)
 
     # Flytta output till artifacts/<ts>/
@@ -111,10 +113,15 @@ def main():
     dest_json = dest_dir / f"{name}.json"
     shutil.move(src_json, dest_json)
 
-    # Read metrics
+    # Läs metrik
     data = json.loads(dest_json.read_text())
+    candidate_front = compute_candidate_front_metrics(data, dest_json)
+    candidate_front["degenerate"] = candidate_front["degeneracy_ratio_topk"] > args.degenerate_threshold
+    candidate_metrics_path = dest_dir / "candidate_front_metrics.json"
+    candidate_metrics_path.write_text(json.dumps(candidate_front, indent=2))
 
     sae_state_path = Path(args.sae_state)
+    operator_strength = data.get("operator_strength", data.get("state_norm"))
     run_record = {
         "timestamp_utc": ts,
         "scenario": args.scenario,
@@ -133,16 +140,29 @@ def main():
         "metrics": {
             "logit_entropy": data.get("logit_entropy"),
             "gap_state_to_candidates": data.get("gap_state_to_candidates"),
-            "operator_strength": data.get("operator_strength"),
+            "operator_strength": operator_strength,
             "risk_score": data.get("risk_score"),
             "field_coords": data.get("field_coords"),
             "candidate_spread_mean": data.get("candidate_spread_mean"),
         },
+        "candidate_front": {
+            "coherence": candidate_front.get("candidate_coherence"),
+            "variance": candidate_front.get("candidate_variance"),
+            "centroid": candidate_front.get("candidate_centroid"),
+            "state_to_centroid_distance": candidate_front.get("state_to_centroid_distance"),
+            "degeneracy_ratio_topk": candidate_front.get("degeneracy_ratio_topk"),
+            "degenerate": candidate_front.get("degenerate"),
+            "generic_tokens": candidate_front.get("generic_tokens"),
+            "generic_count": candidate_front.get("generic_count"),
+            "candidate_count": candidate_front.get("candidate_count"),
+        },
         "artifact_paths": {
             "field_view_json": str(dest_json.relative_to(ROOT)),
+            "candidate_front_metrics_json": str(candidate_metrics_path.relative_to(ROOT)),
         },
         "checksums": {
             "field_view_json_sha256": sha256(dest_json),
+            "candidate_front_metrics_json_sha256": sha256(candidate_metrics_path),
         },
     }
 
@@ -150,7 +170,15 @@ def main():
     run_json_path = RUNS_DIR / f"{ts}.json"
     run_json_path.write_text(json.dumps(run_record, indent=2))
 
-    # Write a short markdown summary
+    # Skriv kort MD
+    def fmt(value):
+        if value is None:
+            return "nan"
+        try:
+            return f"{float(value):.3f}"
+        except (TypeError, ValueError):
+            return "nan"
+
     md_lines = [
         f"# Field View run — {ts}",
         "",
@@ -158,11 +186,16 @@ def main():
         f"- Prompt: {args.prompt}",
         f"- Model: {args.model}, layer={args.layer}",
         f"- Units: {args.units}, mode={args.mode}, topk={args.topk}, device={args.device}",
-        f"- Risk: {data.get('risk_score'):.3f}, H={data.get('logit_entropy'):.3f}, "
-        f"|coords|={data.get('operator_strength'):.3f}, gap={data.get('gap_state_to_candidates'):.3f}",
+        f"- Risk: {fmt(data.get('risk_score'))}, H={fmt(data.get('logit_entropy'))}, "
+        f"|coords|={fmt(operator_strength)}, gap={fmt(data.get('gap_state_to_candidates'))}",
+        f"- Candidate front: coherence={fmt(candidate_front.get('candidate_coherence'))}, "
+        f"variance={fmt(candidate_front.get('candidate_variance'))}, "
+        f"degeneracy={fmt(candidate_front.get('degeneracy_ratio_topk'))}, "
+        f"degenerate={str(bool(candidate_front.get('degenerate'))).lower()}",
         "",
         "Artifacts:",
         f"- JSON: {dest_json.relative_to(ROOT)}",
+        f"- Candidate metrics JSON: {candidate_metrics_path.relative_to(ROOT)}",
     ]
     run_md_path = RUNS_DIR / f"{ts}.md"
     run_md_path.write_text("\n".join(md_lines))
@@ -171,6 +204,7 @@ def main():
     print("Run JSON:", run_json_path.relative_to(ROOT))
     print("Run MD:  ", run_md_path.relative_to(ROOT))
     print("Artifact:", dest_json.relative_to(ROOT))
+    print("Candidate metrics:", candidate_metrics_path.relative_to(ROOT))
 
 
 if __name__ == "__main__":
