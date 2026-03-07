@@ -27,6 +27,7 @@ It also follows the Base76 `#research` operating model at the repository layer:
 The repository's GitHub operations standard is defined in:
 
 - `GITHUB_PROJECT_LAB_SPEC.md`
+- `https://github.com/users/base76-research-lab/projects/1/views/1`
 
 Use the issue templates in:
 

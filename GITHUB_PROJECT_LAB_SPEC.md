@@ -3,6 +3,7 @@
 Last updated: 2026-03-07
 Repository: `base76-research-lab/mechanistic-interpretability-`
 Project: `MECHANISTIC_INTERPRETABILITY_PROJECT`
+Project URL: `https://github.com/users/base76-research-lab/projects/1/views/1`
 
 ## Purpose
 
