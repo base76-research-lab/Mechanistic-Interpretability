@@ -12,6 +12,8 @@ innan kollaps (unembedding).
 
 ## Läs detta först (rapporter/findings)
 
+- Research index: `research_index.md`
+- Spårplan: `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
 - Experimentrapport: `reports/exp_001_sae.md`
 - Feature dictionary: `reports/feature_dict.md`
 - Logg: `reports/logs/2026-03-04.md`
@@ -55,6 +57,7 @@ python3 scripts/make_figures.py
 
 - Stora tensorfiler (t.ex. `activations.pt`, `sae_weights.pt`) behandlas som *build artifacts* och ignoreras i git.
 - Rapportering och JSON-artefakter (metriker, top_features, field_view runs) ligger kvar för att göra findings reviewbara.
+- `research_index.md` fungerar som kontrollpanel för state, senaste runs, claim boundary och nästa transition.
 
 Mer detaljer: `experiments/README.md` och `reports/README.md`.
 

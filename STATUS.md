@@ -46,6 +46,11 @@ Robust batch (50–100 prompts, `--require-compressor`) är nästa prioriterade 
 3. Cross-model: Phi-2 notebook (testar H2)
 4. A/B med/utan token compressor — testar H1
 
+## Aktiv spårplan
+
+- Övergripande microscopy-plan: `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
+- Operativ veckoplan: `reports/ESA_WEEK_PLAN_2026-03-09.md`
+
 ## ESA-dialog
 
 - **Skickat:** Outreach + research package (2026-03-05)

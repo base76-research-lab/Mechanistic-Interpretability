@@ -1,0 +1,56 @@
+{"id":"rel_01","stratum":"relation_analogy","prompt":"king is to queen as man is to"}
+{"id":"rel_02","stratum":"relation_analogy","prompt":"bird is to nest as bee is to"}
+{"id":"rel_03","stratum":"relation_analogy","prompt":"doctor is to hospital as teacher is to"}
+{"id":"rel_04","stratum":"relation_analogy","prompt":"winter is to cold as summer is to"}
+{"id":"rel_05","stratum":"relation_analogy","prompt":"book is to reading as fork is to"}
+{"id":"rel_06","stratum":"relation_analogy","prompt":"seed is to tree as egg is to"}
+{"id":"rel_07","stratum":"relation_analogy","prompt":"triangle is to three as square is to"}
+{"id":"rel_08","stratum":"relation_analogy","prompt":"left is to right as north is to"}
+{"id":"rel_09","stratum":"relation_analogy","prompt":"question is to answer as problem is to"}
+{"id":"rel_10","stratum":"relation_analogy","prompt":"river is to water as road is to"}
+{"id":"rel_11","stratum":"relation_analogy","prompt":"hand is to glove as foot is to"}
+{"id":"rel_12","stratum":"relation_analogy","prompt":"sunrise is to east as sunset is to"}
+{"id":"rel_13","stratum":"relation_analogy","prompt":"author is to novel as composer is to"}
+{"id":"rel_14","stratum":"relation_analogy","prompt":"microscope is to cells as telescope is to"}
+{"id":"fact_01","stratum":"factual","prompt":"what is the capital of France?"}
+{"id":"fact_02","stratum":"factual","prompt":"what planet is known as the red planet?"}
+{"id":"fact_03","stratum":"factual","prompt":"what gas do humans need to breathe to survive?"}
+{"id":"fact_04","stratum":"factual","prompt":"what is the chemical symbol for water?"}
+{"id":"fact_05","stratum":"factual","prompt":"who wrote Pride and Prejudice?"}
+{"id":"fact_06","stratum":"factual","prompt":"in what year did World War II end?"}
+{"id":"fact_07","stratum":"factual","prompt":"how many continents are there on Earth?"}
+{"id":"fact_08","stratum":"factual","prompt":"what is the largest mammal on Earth?"}
+{"id":"fact_09","stratum":"factual","prompt":"what is the capital of Japan?"}
+{"id":"fact_10","stratum":"factual","prompt":"which organ pumps blood through the human body?"}
+{"id":"fact_11","stratum":"factual","prompt":"who painted the Mona Lisa?"}
+{"id":"fact_12","stratum":"factual","prompt":"what is 12 multiplied by 8?"}
+{"id":"fact_13","stratum":"factual","prompt":"which ocean lies between Africa and Australia?"}
+{"id":"fact_14","stratum":"factual","prompt":"what is the boiling point of water in degrees Celsius?"}
+{"id":"inst_01","stratum":"instruction_planning","prompt":"write three steps for preparing tea"}
+{"id":"inst_02","stratum":"instruction_planning","prompt":"give a short plan for cleaning a cluttered desk"}
+{"id":"inst_03","stratum":"instruction_planning","prompt":"outline four steps for validating an experiment result"}
+{"id":"inst_04","stratum":"instruction_planning","prompt":"write a concise checklist for sending a research update email"}
+{"id":"inst_05","stratum":"instruction_planning","prompt":"give a one paragraph plan for comparing two machine learning models"}
+{"id":"inst_06","stratum":"instruction_planning","prompt":"explain how to sort a list in Python in two short steps"}
+{"id":"inst_07","stratum":"instruction_planning","prompt":"draft a simple plan for a Friday demo rehearsal"}
+{"id":"inst_08","stratum":"instruction_planning","prompt":"give a short procedure for checking whether a data file is corrupted"}
+{"id":"inst_09","stratum":"instruction_planning","prompt":"outline the steps needed to summarize a scientific paper"}
+{"id":"inst_10","stratum":"instruction_planning","prompt":"make a four step plan for preparing a weekly research brief"}
+{"id":"inst_11","stratum":"instruction_planning","prompt":"list the steps for testing a prompt compression pipeline"}
+{"id":"inst_12","stratum":"instruction_planning","prompt":"write a short plan for comparing raw and compressed model prompts"}
+{"id":"inst_13","stratum":"instruction_planning","prompt":"give a practical checklist for documenting threats to validity"}
+{"id":"inst_14","stratum":"instruction_planning","prompt":"write a simple plan for turning experimental findings into one LinkedIn post"}
+{"id":"noise_01","stratum":"verbose_noise","prompt":"the capital of france is paris and the capital of germany is berlin and the capital of spain is madrid so what is the capital of france?"}
+{"id":"noise_02","stratum":"verbose_noise","prompt":"ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?"}
+{"id":"noise_03","stratum":"verbose_noise","prompt":"within this messy statement about weather, colors, and bicycles, identify only the opposite of hot"}
+{"id":"noise_04","stratum":"verbose_noise","prompt":"amid this long prompt with irrelevant fluff about clouds, apples, and train stations, tell me which animal says meow"}
+{"id":"noise_05","stratum":"verbose_noise","prompt":"this sentence contains many unnecessary clauses and detours but the real task is to reverse the string abcd"}
+{"id":"noise_06","stratum":"verbose_noise","prompt":"read through this noisy setup and answer plainly: what comes after 2, 4, 8, 16?"}
+{"id":"noise_07","stratum":"verbose_noise","prompt":"despite the distracting references to stars, coffee, and doors, just translate good morning to German"}
+{"id":"noise_08","stratum":"verbose_noise","prompt":"there are many irrelevant phrases here, but the key question is who wrote Hamlet?"}
+{"id":"noise_09","stratum":"verbose_noise","prompt":"through this verbose and repetitive wording, identify the main color of a ripe banana"}
+{"id":"noise_10","stratum":"verbose_noise","prompt":"this padded prompt says too much, but the actual task is to complete the analogy: doctor is to hospital as teacher is to"}
+{"id":"noise_11","stratum":"verbose_noise","prompt":"even though this prompt rambles about gardens and machines, simply answer what gas humans breathe to survive"}
+{"id":"noise_12","stratum":"verbose_noise","prompt":"buried inside this overlong instruction is the actual request: summarize the phrase the quick brown fox jumps over the lazy dog in five words"}
+{"id":"noise_13","stratum":"verbose_noise","prompt":"filter out the chatter and say whether all roses are flowers implies all flowers are roses"}
+{"id":"noise_14","stratum":"verbose_noise","prompt":"lots of irrelevant framing follows, but the answer needed is the capital of Japan"}

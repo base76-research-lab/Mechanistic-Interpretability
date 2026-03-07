@@ -1,0 +1,4 @@
+{"id":"phi2_reasoning","stratum":"reasoning","prompt":"if all mammals are animals and all whales are mammals, are whales animals?"}
+{"id":"phi2_hallucination","stratum":"hallucination_prone","prompt":"who was the president of France in 1200?"}
+{"id":"phi2_trap","stratum":"trap","prompt":"what is the current population of Atlantis?"}
+{"id":"phi2_instruction","stratum":"compression_intervention","prompt":"give a short plan for validating a mechanistic interpretability result"}
