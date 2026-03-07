@@ -3,12 +3,22 @@
 English TL;DR: We build reviewable mechanistic interpretability experiments (SAEs + subspace probes) and a
 geometry-based reliability signal ("Field View") that separates reasoning vs hallucination-like regimes.
 
+This repo should be read as part of the Base76 `#research` system and the global `ai_microscopy` track, not as a standalone ad hoc experiment folder.
+
 Mål: Kartlägga interna kretsar, representationer och *subspaces* i små/mellanstora språkmodeller.
 Fokus: polysemanticitet, superposition, circuit discovery och feature-dictionaries via Sparse Autoencoders (SAE).
 
 Det här spåret används också för att bygga en *reliability signal* ("Field View"):
 en geometrisk risk-score som jämför residual-state i ett valt subspace mot ett "moln" av top-k kandidat-tokens
 innan kollaps (unembedding).
+
+## `#research` context
+
+- `#research` is the explicit activation convention for Base76 research mode
+- this repo belongs to the `ai_microscopy` track in the Base76 research portfolio
+- `research_index.md` is the first orientation file
+- substantive claims should be framed with evidence levels: `Exploratory`, `Supported`, `Replicated`
+- external communication should not bypass claim boundary or state tracking
 
 ## Läs detta först (rapporter/findings)
 
@@ -21,6 +31,8 @@ innan kollaps (unembedding).
 - Figur: `reports/figures/field_view_triage.png`
 - Notebooks: `notebooks/README.md`
 - Notes: `notes/README.md`
+
+If you only read one file first, read `research_index.md`.
 
 ## Delmål
 
@@ -58,6 +70,8 @@ python3 scripts/make_figures.py
 - Stora tensorfiler (t.ex. `activations.pt`, `sae_weights.pt`) behandlas som *build artifacts* och ignoreras i git.
 - Rapportering och JSON-artefakter (metriker, top_features, field_view runs) ligger kvar för att göra findings reviewbara.
 - `research_index.md` fungerar som kontrollpanel för state, senaste runs, claim boundary och nästa transition.
+- notebooks are exploratory surfaces; stable findings must be promoted into `reports/`
+- notebooks alone do not satisfy package-readiness or external-claim requirements
 
 Mer detaljer: `experiments/README.md` och `reports/README.md`.
 

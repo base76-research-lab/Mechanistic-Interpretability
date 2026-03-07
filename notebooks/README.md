@@ -7,6 +7,13 @@ Notebooks are used for exploration and GPU-backed runs (Colab/local CUDA). The r
 - Keep outputs minimal; strip heavy outputs before committing.
 - Treat large tensors/weights as build artifacts (ignored by `.gitignore`).
 
+## `#research` role
+
+- notebooks are exploratory and support the `ai_microscopy` track
+- notebooks do not satisfy package-readiness or external-claim requirements on their own
+- claims should be promoted into `reports/` with explicit evidence level and claim boundary
+- use `../research_index.md` as the first orientation file for current state
+
 ## Index
 
 - `phi2_sae_fieldview.ipynb` — Phi-2 SAE training + Field View runs (GPU recommended)

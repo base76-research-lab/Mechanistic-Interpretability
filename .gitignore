@@ -11,6 +11,8 @@ venv/
 
 # Jupyter / notebooks
 .ipynb_checkpoints/
+notebooks/**/.git/
+notebooks/Mechanistic-Interpretability/
 
 # OS
 .DS_Store
@@ -35,4 +37,8 @@ hf_cache/
 paper/
 reports/zai_reply_draft_email.txt
 reports/zai_startup_program_packet.md
+reports/ESA_*_TEMPLATE*.md
+reports/ESA_WEEK_PLAN_*.md
 
+# Generated figure variants (keep canonical figure names only)
+reports/figures/vector_mode_degeneracy_vs_coherence_[0-9]*.png
