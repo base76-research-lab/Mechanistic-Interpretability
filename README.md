@@ -1,88 +1,94 @@
-# Mechanistic Interpretability (Base76)
+# Mechanistic Interpretability
 
-English TL;DR: We build reviewable mechanistic interpretability experiments (SAEs + subspace probes) and a
-geometry-based reliability signal ("Field View") that separates reasoning vs hallucination-like regimes.
+This repository contains Base76 Research Lab's mechanistic interpretability work on sparse autoencoders, residual-state analysis, subspace probing, and intervention-based runtime observability.
 
-This repo should be read as part of the Base76 `#research` system and the global `ai_microscopy` track, not as a standalone ad hoc experiment folder.
+Its current scientific focus is twofold:
 
-Mål: Kartlägga interna kretsar, representationer och *subspaces* i små/mellanstora språkmodeller.
-Fokus: polysemanticitet, superposition, circuit discovery och feature-dictionaries via Sparse Autoencoders (SAE).
+1. to study internal representations and control-relevant structure in small and medium-sized language models
+2. to develop a geometry-based reliability signal, `Field View`, for distinguishing reasoning-like and hallucination-prone regimes before output collapse
 
-Det här spåret används också för att bygga en *reliability signal* ("Field View"):
-en geometrisk risk-score som jämför residual-state i ett valt subspace mot ett "moln" av top-k kandidat-tokens
-innan kollaps (unembedding).
+This repository should be read as part of the Base76 `#research` system and, more specifically, as a working repository within the global `ai_microscopy` track.
 
-## `#research` context
+## Research context
 
-- `#research` is the explicit activation convention for Base76 research mode
-- this repo belongs to the `ai_microscopy` track in the Base76 research portfolio
-- `research_index.md` is the first orientation file
-- substantive claims should be framed with evidence levels: `Exploratory`, `Supported`, `Replicated`
-- external communication should not bypass claim boundary or state tracking
+Within the Base76 research portfolio:
 
-## Läs detta först (rapporter/findings)
+- `#research` is the explicit activation convention for research mode
+- this repository belongs to the `ai_microscopy` track
+- `research_index.md` is the primary orientation file
+- substantive claims should be labeled with explicit evidence levels: `Exploratory`, `Supported`, or `Replicated`
+- external communication should not bypass state tracking or claim boundaries
 
-- Research index: `research_index.md`
-- Spårplan: `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
-- Experimentrapport: `reports/exp_001_sae.md`
-- Feature dictionary: `reports/feature_dict.md`
-- Logg: `reports/logs/2026-03-04.md`
-- Körningsartefakter (JSON): `experiments/exp_001_sae_v3/`
-- Figur: `reports/figures/field_view_triage.png`
-- Notebooks: `notebooks/README.md`
-- Notes: `notes/README.md`
+## What this repository studies
 
-If you only read one file first, read `research_index.md`.
+The main research objectives are:
 
-## Delmål
+1. extracting sparse, interpretable features from residual and MLP activations
+2. identifying circuits and control-relevant subspaces through patching and ablation
+3. building feature dictionaries with interpretable labels and example behaviors
+4. measuring state-candidate misalignment as a precursor to reliability failures
 
-1. SAE på residuala/MLP-latenter för att extrahera glesa, tolkbara features.
-2. Circuit discovery via patching/ablation på kända fenomen (t.ex. induction heads).
-3. Feature dictionaries: katalog över identifierade features med exempel, labels och patch-effekter.
-4. Subspace-baserad risk/triage: separera "reasoning" vs "hallucination" via state–candidate misalignment.
+## Start here
+
+If you read only one file first, read `research_index.md`.
+
+Recommended reading order:
+
+- `research_index.md`
+- `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
+- `reports/summary_findings_2026-03-06.md`
+- `reports/exp_001_sae.md`
+- `reports/feature_dict.md`
+- `reports/figures/field_view_triage.png`
+- `experiments/exp_001_sae_v3/`
+- `notebooks/README.md`
 
 ## Quickstart
 
-Install:
+Set up the environment:
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Kör SAE (exempel):
+Run a representative SAE experiment:
+
 ```bash
 python3 scripts/run_sae.py --model gpt2 --layer 5 --prompts data/prompts.txt --out experiments/exp_001_sae_local
 ```
 
-Kör Field View (risk-signal):
+Run a representative Field View probe:
+
 ```bash
 python3 scripts/field_view.py --prompt "the opposite of hot is" --model gpt2 --layer 5 --units 472 468 57 156 346 --mode pc2 --topk 8
 ```
 
-Generera figurer till rapporter:
+Generate report figures:
+
 ```bash
 python3 scripts/make_figures.py
 ```
 
-## Artefakter och reproducibilitet
+## Reproducibility and claims
 
-- Stora tensorfiler (t.ex. `activations.pt`, `sae_weights.pt`) behandlas som *build artifacts* och ignoreras i git.
-- Rapportering och JSON-artefakter (metriker, top_features, field_view runs) ligger kvar för att göra findings reviewbara.
-- `research_index.md` fungerar som kontrollpanel för state, senaste runs, claim boundary och nästa transition.
-- notebooks are exploratory surfaces; stable findings must be promoted into `reports/`
-- notebooks alone do not satisfy package-readiness or external-claim requirements
+- Large tensors such as `activations.pt` and `sae_weights.pt` are treated as build artifacts and are ignored by git.
+- Reviewable outputs such as metrics, JSON artifacts, figures, and findings notes are retained.
+- `research_index.md` tracks current state, latest runs, evidence level, claim boundary, and next transition.
+- Notebooks are exploratory surfaces; stable conclusions should be promoted into `reports/`.
+- Notebooks alone do not satisfy package-readiness or external-claim requirements.
 
-Mer detaljer: `experiments/README.md` och `reports/README.md`.
+For more detail, see `experiments/README.md`, `reports/README.md`, and `notebooks/README.md`.
 
-## Struktur
+## Repository structure
 
-```
-Mechanistic Interpretability/
-├── data/                 # prompts, små datasets
-├── experiments/          # exp-runs + JSON-artefakter
-├── notebooks/            # explorations (Colab/GPU när relevant)
-├── paper/                # skrivyta (intern)
-├── reports/              # findings, loggar, feature dict
-└── scripts/              # körbara verktyg (SAE, field_view, patching)
+```text
+Mechanistic-Interpretability/
+├── data/         # prompt sets and small datasets
+├── experiments/  # experiment artifacts, JSON outputs, and run summaries
+├── notebooks/    # exploratory GPU-backed work (Colab/local)
+├── paper/        # internal writing area
+├── reports/      # findings, plans, logs, and figures
+└── scripts/      # executable tools for SAE, Field View, patching, and analysis
 ```

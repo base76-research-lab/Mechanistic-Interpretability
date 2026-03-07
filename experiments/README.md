@@ -1,17 +1,17 @@
 # Experiments
 
-Den här mappen innehåller körningsartefakter per experiment (JSON/MD) och *ibland* små outputs.
+This directory contains experiment-specific run artifacts, primarily JSON and Markdown outputs, and occasionally small derived files.
 
-I Base76 `#research`-systemet är detta experimentlagret. `research_index.md` visar vilket state spåret är i och vilka runs som just nu är viktigast.
+Within the Base76 `#research` system, this is the experimental evidence layer. `research_index.md` indicates the current state of the track and which runs matter most at the moment.
 
-## Konvention
+## Conventions
 
-- Varje experiment ligger i en egen mapp: `exp_###_*`
-- Spara alltid:
-  - `metrics.json` (om relevant)
-  - `top_features.json` / `field_view*.json` / `runs/*.json` (om relevant)
-  - `runs/*.md` (kort human-readable log per körning)
-- Stora tensorfiler (t.ex. `activations.pt`, `sae_weights.pt`) är build artifacts och ignoreras av git.
+- Each experiment should live in its own directory: `exp_###_*`
+- Always preserve:
+  - `metrics.json` where relevant
+  - `top_features.json`, `field_view*.json`, or `runs/*.json` where relevant
+  - `runs/*.md` as a short human-readable run log
+- Large tensors such as `activations.pt` and `sae_weights.pt` are treated as build artifacts and ignored by git.
 
 ## State and routing
 
@@ -19,15 +19,15 @@ I Base76 `#research`-systemet är detta experimentlagret. `research_index.md` vi
 - experiment artifacts support state transitions such as `PROTOCOL -> RUN -> ANALYSIS`
 - findings and external claims should not originate here directly; they should be promoted to `reports/`
 
-## Nuvarande experimentmappar (high-level)
+## Current experiment groups
 
-- `exp_001_sae/`, `exp_001_sae_v2/`, `exp_001_sae_v3/` — SAE + Field View signal (GPT-2 layer 5)
-- `exp_002_persona/` — persona/traits-artefakter (se respektive README/log)
-- `exp_003_compression_vectorized/` — jämförelse raw vs compressed vs vectorized proxy (mean/attn_weighted/pca1); delta-metrics mot raw; robusthet via `--require-compressor`/`--exclude-invalid-compression`
+- `exp_001_sae/`, `exp_001_sae_v2/`, `exp_001_sae_v3/` — SAE + Field View on GPT-2 layer 5
+- `exp_002_persona/` — persona and traits artifacts
+- `exp_003_compression_vectorized/` — comparison of raw, compressed, and vectorized proxy variants (`mean`, `attn_weighted`, `pca1`), including delta metrics against raw and robustness guards such as `--require-compressor` and `--exclude-invalid-compression`
 
 ## Orientation
 
-Börja i `../research_index.md` för att se:
+Start with `../research_index.md` to see:
 
 - current state
 - latest runs
