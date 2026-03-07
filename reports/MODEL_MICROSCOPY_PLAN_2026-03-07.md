@@ -133,6 +133,26 @@ Not allowed without stronger replication:
 4. cross-model light control
 5. synthesis note separating microscopy claims from hallucination claims
 
+## Next phase after current priority block
+
+Once the current priority block is closed, the next microscopy phase should be:
+
+## 6. Larger-model scaling
+
+Goal:
+- test whether the current microscopy picture survives in larger and more capable models
+
+Questions:
+- which current signals remain stable as model size increases?
+- does the candidate bifurcation picture remain concentrated around the same layers?
+- do steering and compression interventions remain informative in larger models?
+- which findings are truly microscopy-level and which are small-model artifacts?
+
+Expected outputs:
+- one scaling protocol
+- one model-comparison note
+- one updated claim-boundary section separating supported small-model results from larger-model replication status
+
 ## Success condition for this track
 
 The microscopy track is succeeding when it can state, with evidence:
