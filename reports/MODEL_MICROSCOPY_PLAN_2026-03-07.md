@@ -109,6 +109,23 @@ Deliverables:
 - one cross-model note
 - one explicit claims boundary section
 
+## 6. Decision-relevant feature learning (`L-SAE+R`)
+
+Goal:
+- test whether sparse features can become more decision-relevant without losing microscope value
+
+Tasks:
+- treat the unified observability stack as the baseline instrumentation layer
+- compare `Plain SAE`, `Lens-only`, and `L-SAE+R` on the same canonical panel
+- keep logit-lens supervision as the first supervision target
+- evaluate whether `L-SAE+R` improves regime separation, recorder interpretability, or feature-to-frontier stability
+- document whether any apparent gain is real or just task-shaped noise
+
+Deliverables:
+- one `L-SAE+R` research question note
+- one `L-SAE+R` protocol note
+- one comparison report against plain SAE
+
 ## Claims policy
 
 Allowed if evidence holds:
@@ -137,7 +154,7 @@ Not allowed without stronger replication:
 
 Once the current priority block is closed, the next microscopy phase should be:
 
-## 6. Larger-model scaling
+## 7. Larger-model scaling
 
 Goal:
 - test whether the current microscopy picture survives in larger and more capable models
