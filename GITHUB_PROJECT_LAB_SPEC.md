@@ -172,6 +172,50 @@ Recommended views:
 7. `Follow-ups`
    Filter: label `follow-up`
 
+8. `High Priority`
+   Filter: label `priority:high`
+
+9. `Blocked`
+   Filter: label `blocked`
+
+10. `Cross-model`
+    Filter: labels `model:gpt2`, `model:phi2`
+
+11. `Hallucinations`
+    Filter: label `track:hallucinations`
+
+12. `External Readiness`
+    Filter: labels `artifact:package`, `artifact:external`
+
+## Suggested view configuration
+
+Use these layouts:
+
+- `Research State` -> board, grouped by `State`, sorted by priority
+- `Track` -> board, grouped by `Track`
+- `Evidence` -> table, grouped by `Evidence`
+- `Packaging` -> table, filtered to package/external work
+- `Replication` -> table, filtered to `replication`
+- `Insights` -> table, filtered to `insight`
+- `Follow-ups` -> table, filtered to `follow-up`
+- `High Priority` -> board or table, filtered to `priority:high`
+- `Blocked` -> board or table, filtered to `blocked`
+- `Cross-model` -> table, filtered to cross-model work
+- `Hallucinations` -> board or table, filtered to the hallucinations sub-track
+- `External Readiness` -> table, focused on package and outbound communication status
+
+## Field behavior
+
+Recommended usage:
+
+- `State` is the main workflow field and should be visible in every view
+- `Track` should separate `ai_microscopy` from `hallucinations`
+- `Evidence` should be mandatory for analysis, report, package, and external items
+- `Artifact Type` should distinguish protocol, run, analysis, package, and external work
+- `Model` and `Layer` should stay visible in run-oriented views
+- `Claim Boundary` should be visible in `Evidence`, `Packaging`, and `External Readiness`
+- `Linked Canonical Artifact` should be filled for every issue that materially contributes to the scientific record
+
 ## Initial seeded backlog
 
 The first operational backlog should include:
@@ -182,6 +226,15 @@ The first operational backlog should include:
 - light Phi-2 cross-model control
 - microscopy vs hallucination claim-boundary split note
 - next microscopy package refresh for external sharing
+
+Those seed items now exist as repository issues:
+
+- `#1` robust `exp_003` compression batch
+- `#2` Layer 6 replication
+- `#3` steering validation
+- `#4` light Phi-2 control
+- `#5` microscopy vs hallucination claim split
+- `#6` next microscopy package refresh
 
 ## Relationship to the hallucinations sub-track
 
@@ -195,3 +248,19 @@ Hallucination work may have:
 - its own package-preparation items
 
 But it should remain attached to the same repository until the repo boundary criteria in the Base76 research operations system are met.
+
+## Automation status
+
+The repository-side GitHub lab layer is already in place:
+
+- issue templates are available in `.github/ISSUE_TEMPLATE/`
+- research labels exist in the repository
+- the initial backlog is seeded as issues
+
+The remaining Project-specific configuration requires GitHub project scope for `gh`:
+
+- `gh auth refresh -s project`
+
+Once that scope is available, the setup script below can be used:
+
+- `scripts/setup_github_project_lab.sh`
