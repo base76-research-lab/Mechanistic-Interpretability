@@ -18,6 +18,13 @@ Within the Base76 research portfolio:
 - `research_index.md` is the primary orientation file
 - substantive claims should be labeled with explicit evidence levels: `Exploratory`, `Supported`, or `Replicated`
 - external communication should not bypass state tracking or claim boundaries
+- `hallucinations` currently remains a sub-track within this research line, not a separate repository
+
+At the repository layer:
+
+- GitHub Issues and the GitHub Project act as the operational lab surface
+- `GITHUB_PROJECT_LAB_SPEC.md` defines the repository's GitHub operating model
+- `.github/ISSUE_TEMPLATE/` contains the standard forms for research questions, runs, analyses, and package work
 
 ## What this repository studies
 

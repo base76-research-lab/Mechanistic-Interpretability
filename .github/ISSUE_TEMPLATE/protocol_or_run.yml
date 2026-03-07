@@ -1,0 +1,68 @@
+name: Protocol / Run
+description: Open protocol design, execution, or replication work.
+title: "[RUN] "
+labels:
+  - research
+  - artifact:protocol
+body:
+  - type: input
+    id: track
+    attributes:
+      label: Track
+      placeholder: ai_microscopy or hallucinations
+    validations:
+      required: true
+  - type: dropdown
+    id: state
+    attributes:
+      label: Research state
+      options:
+        - PROTOCOL
+        - RUN
+    validations:
+      required: true
+  - type: dropdown
+    id: artifact_type
+    attributes:
+      label: Artifact type
+      options:
+        - protocol
+        - run
+        - replication
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: GPT-2 Small, Phi-2, or similar
+  - type: input
+    id: layer
+    attributes:
+      label: Layer or intervention point
+      placeholder: 5, 6, 16, or multi-layer sweep
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup
+      description: Commands, prompt panel, dataset, and run guardrails.
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Success criteria
+    validations:
+      required: true
+  - type: textarea
+    id: outputs
+    attributes:
+      label: Expected artifacts
+      description: JSON, CSV, figures, markdown, or package outputs.
+    validations:
+      required: true
+  - type: input
+    id: canonical_artifact
+    attributes:
+      label: Linked canonical artifact
+      placeholder: https://github.com/...
