@@ -27,6 +27,17 @@ If that is possible, the microscopy track gains a stronger bridge between:
 - output-readiness by layer
 - regime divergence across reasoning and hallucination-prone traces
 
+The protocol also now supports a smaller contrast slice for:
+
+- `math_reasoning`
+- `factual_recall`
+- `degeneracy_probe`
+- `random_prompt_baseline`
+
+This makes it possible to ask whether the stack separates structured reasoning, stable recall, and trajectory instability rather than only broader regime classes.
+
+It also makes it possible to ask whether any observed separation survives comparison against matched random controls rather than being explained by prompt length, token distribution, or shallow syntax patterns alone.
+
 ## Primary hypothesis
 
 An `L-SAE` that combines residual reconstruction with logit-lens supervision will preserve useful sparse structure while improving alignment with:
@@ -47,6 +58,8 @@ Lens supervision will mostly task-shape the representation, reducing microscope 
 - feature-to-frontier stability across layers
 - feature drift vs logit drift ordering quality
 - divergence quality between reasoning and hallucination-prone traces
+- decision trajectory smoothness (`DTS`) across contrast-panel prompt classes
+- separation quality relative to `random_prompt_baseline`
 
 ## Falsification criteria
 
@@ -66,6 +79,8 @@ The protocol should be treated as unsuccessful if one or more of the following h
 - stability of feature-to-frontier relationships
 - prediction of lens or frontier drift
 - earlier detection of divergence between reasoning and hallucination-prone traces
+- cleaner separation in trajectory volatility between reasoning, recall, and degeneracy probes
+- separation that remains visible after comparison against matched random controls
 
 ## Claim boundary
 

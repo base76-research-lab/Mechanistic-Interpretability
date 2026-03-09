@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T124759Z/field_view_exp003_p04_if_all_roses_are_flowers_and_some_fl_compressed_vectorized_proxy_pca1__20260308T124759Z.json",
+  "prompt": "semantic anchor packet: roses | flowers | flower | floral | strawberries | rose | butterflies | candles",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 1.3754441738128662,
+  "gap_state_to_candidates": 3.6236884593963623,
+  "operator_strength": 3.4974417686462402,
+  "candidate_coherence": 0.5100105092100427,
+  "candidate_variance": 0.00784292227122476,
+  "candidate_centroid": [
+    0.1254296511411667,
+    0.04785900358110666
+  ],
+  "state_to_centroid_distance": 3.623688643078702,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "<space>",
+    "<space>",
+    ".",
+    ",",
+    "|",
+    "-",
+    ";",
+    "("
+  ]
+}

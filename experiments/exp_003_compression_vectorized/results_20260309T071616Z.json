@@ -1,0 +1,2045 @@
+[
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "raw_token_count": 8,
+    "effective_token_count": 8,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511680603027344,
+    "operator_strength": 3.761237382888794,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.89501325235953,
+    "candidate_variance": 0.010595126959253437,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071618Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_raw__20260309T071618Z.json",
+    "field_view_candidates": [
+      {
+        "token": "man",
+        "logit": -80.8475112915039,
+        "coords": [
+          0.2680182456970215,
+          -0.10444749891757965
+        ]
+      },
+      {
+        "token": "queen",
+        "logit": -80.9719009399414,
+        "coords": [
+          0.05651181936264038,
+          -0.05726718530058861
+        ]
+      },
+      {
+        "token": "woman",
+        "logit": -81.00384521484375,
+        "coords": [
+          0.2289612889289856,
+          -0.1054767370223999
+        ]
+      },
+      {
+        "token": "king",
+        "logit": -81.55841827392578,
+        "coords": [
+          0.1535022258758545,
+          0.002735644578933716
+        ]
+      },
+      {
+        "token": "wife",
+        "logit": -82.06409454345703,
+        "coords": [
+          0.17559462785720825,
+          -0.003163117915391922
+        ]
+      },
+      {
+        "token": "beast",
+        "logit": -82.49939727783203,
+        "coords": [
+          0.32182377576828003,
+          -0.0773143321275711
+        ]
+      },
+      {
+        "token": "god",
+        "logit": -82.52043151855469,
+        "coords": [
+          0.2757377326488495,
+          -0.08666916936635971
+        ]
+      },
+      {
+        "token": "be",
+        "logit": -82.55994415283203,
+        "coords": [
+          0.14096876978874207,
+          0.027018534019589424
+        ]
+      },
+      {
+        "token": "mother",
+        "logit": -82.59207153320312,
+        "coords": [
+          0.11992945522069931,
+          -0.13549217581748962
+        ]
+      },
+      {
+        "token": "slave",
+        "logit": -82.92059326171875,
+        "coords": [
+          0.2994317412376404,
+          -0.09071598947048187
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "raw_token_count": 8,
+    "effective_token_count": 8,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511680603027344,
+    "operator_strength": 3.761237382888794,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.89501325235953,
+    "candidate_variance": 0.010595126959253437,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071624Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed__20260309T071624Z.json",
+    "field_view_candidates": [
+      {
+        "token": "man",
+        "logit": -80.8475112915039,
+        "coords": [
+          0.2680182456970215,
+          -0.10444749891757965
+        ]
+      },
+      {
+        "token": "queen",
+        "logit": -80.9719009399414,
+        "coords": [
+          0.05651181936264038,
+          -0.05726718530058861
+        ]
+      },
+      {
+        "token": "woman",
+        "logit": -81.00384521484375,
+        "coords": [
+          0.2289612889289856,
+          -0.1054767370223999
+        ]
+      },
+      {
+        "token": "king",
+        "logit": -81.55841827392578,
+        "coords": [
+          0.1535022258758545,
+          0.002735644578933716
+        ]
+      },
+      {
+        "token": "wife",
+        "logit": -82.06409454345703,
+        "coords": [
+          0.17559462785720825,
+          -0.003163117915391922
+        ]
+      },
+      {
+        "token": "beast",
+        "logit": -82.49939727783203,
+        "coords": [
+          0.32182377576828003,
+          -0.0773143321275711
+        ]
+      },
+      {
+        "token": "god",
+        "logit": -82.52043151855469,
+        "coords": [
+          0.2757377326488495,
+          -0.08666916936635971
+        ]
+      },
+      {
+        "token": "be",
+        "logit": -82.55994415283203,
+        "coords": [
+          0.14096876978874207,
+          0.027018534019589424
+        ]
+      },
+      {
+        "token": "mother",
+        "logit": -82.59207153320312,
+        "coords": [
+          0.11992945522069931,
+          -0.13549217581748962
+        ]
+      },
+      {
+        "token": "slave",
+        "logit": -82.92059326171875,
+        "coords": [
+          0.2994317412376404,
+          -0.09071598947048187
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 1.0,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 7,
+        "attempted_tokens_saved": 0,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 7,
+    "attempted_tokens_saved": 0,
+    "attempted_token_delta": 0.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p02_the_opposite_of_hot_is",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "the opposite of hot is",
+    "effective_prompt": "the opposite of hot is",
+    "raw_token_count": 5,
+    "effective_token_count": 5,
+    "logit_entropy": 5.8220343589782715,
+    "gap_state_to_candidates": 4.229660511016846,
+    "operator_strength": 4.137878894805908,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5615887198581907,
+    "candidate_variance": 0.009096306200814364,
+    "degeneracy_ratio_topk": 0.3,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a",
+      "that"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071630Z/field_view_exp003_p02_the_opposite_of_hot_is_raw__20260309T071630Z.json",
+    "field_view_candidates": [
+      {
+        "token": "the",
+        "logit": -76.62928771972656,
+        "coords": [
+          0.1785900890827179,
+          0.028819285333156586
+        ]
+      },
+      {
+        "token": "hot",
+        "logit": -76.9226303100586,
+        "coords": [
+          -0.002636978402733803,
+          -0.002106696367263794
+        ]
+      },
+      {
+        "token": "a",
+        "logit": -77.17436218261719,
+        "coords": [
+          0.2407582551240921,
+          -0.05147922411561012
+        ]
+      },
+      {
+        "token": "cold",
+        "logit": -77.29154205322266,
+        "coords": [
+          0.14025425910949707,
+          -0.11668232828378677
+        ]
+      },
+      {
+        "token": "not",
+        "logit": -77.62859344482422,
+        "coords": [
+          0.18677660822868347,
+          -0.02940950356423855
+        ]
+      },
+      {
+        "token": "when",
+        "logit": -78.02316284179688,
+        "coords": [
+          0.1849341094493866,
+          0.029304521158337593
+        ]
+      },
+      {
+        "token": "actually",
+        "logit": -78.1944580078125,
+        "coords": [
+          0.1567564308643341,
+          -0.08171756565570831
+        ]
+      },
+      {
+        "token": "that",
+        "logit": -78.31419372558594,
+        "coords": [
+          0.2450629025697708,
+          0.04652104154229164
+        ]
+      },
+      {
+        "token": "always",
+        "logit": -78.42268371582031,
+        "coords": [
+          0.05993194133043289,
+          -0.08466606587171555
+        ]
+      },
+      {
+        "token": "also",
+        "logit": -78.55140686035156,
+        "coords": [
+          0.10465177893638611,
+          -0.009135575965046883
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p03_who_was_the_president_of_france_in_1",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.8148322105407715,
+    "operator_strength": 6.687977313995361,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6727573052910333,
+    "candidate_variance": 0.010423309198169561,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),",
+      "(",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071640Z/field_view_exp003_p03_who_was_the_president_of_france_in_1_raw__20260309T071640Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -105.22686004638672,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -105.52989196777344,
+        "coords": [
+          0.22494956851005554,
+          -0.008279647678136826
+        ]
+      },
+      {
+        "token": "He",
+        "logit": -105.89884185791016,
+        "coords": [
+          0.1399724930524826,
+          -0.09371745586395264
+        ]
+      },
+      {
+        "token": ")",
+        "logit": -105.93049621582031,
+        "coords": [
+          0.17283320426940918,
+          -0.02367454394698143
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -105.93860626220703,
+        "coords": [
+          -0.04996103048324585,
+          0.13310055434703827
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -106.07891845703125,
+        "coords": [
+          0.1822184920310974,
+          0.016287028789520264
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -106.29107666015625,
+        "coords": [
+          0.10131730139255524,
+          0.02571185678243637
+        ]
+      },
+      {
+        "token": "),",
+        "logit": -106.41725158691406,
+        "coords": [
+          0.24188682436943054,
+          -0.04619508609175682
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -106.46946716308594,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -106.57748413085938,
+        "coords": [
+          0.09023131430149078,
+          0.017416661605238914
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p03_who_was_the_president_of_france_in_1",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.8148322105407715,
+    "operator_strength": 6.687977313995361,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6727573052910333,
+    "candidate_variance": 0.010423309198169561,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),",
+      "(",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071646Z/field_view_exp003_p03_who_was_the_president_of_france_in_1_compressed__20260309T071646Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -105.22686004638672,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -105.52989196777344,
+        "coords": [
+          0.22494956851005554,
+          -0.008279647678136826
+        ]
+      },
+      {
+        "token": "He",
+        "logit": -105.89884185791016,
+        "coords": [
+          0.1399724930524826,
+          -0.09371745586395264
+        ]
+      },
+      {
+        "token": ")",
+        "logit": -105.93049621582031,
+        "coords": [
+          0.17283320426940918,
+          -0.02367454394698143
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -105.93860626220703,
+        "coords": [
+          -0.04996103048324585,
+          0.13310055434703827
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -106.07891845703125,
+        "coords": [
+          0.1822184920310974,
+          0.016287028789520264
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -106.29107666015625,
+        "coords": [
+          0.10131730139255524,
+          0.02571185678243637
+        ]
+      },
+      {
+        "token": "),",
+        "logit": -106.41725158691406,
+        "coords": [
+          0.24188682436943054,
+          -0.04619508609175682
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -106.46946716308594,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -106.57748413085938,
+        "coords": [
+          0.09023131430149078,
+          0.017416661605238914
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 1.0,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 9,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": "non_compressive_short_prompt"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_short_prompt",
+    "compression_valid": true,
+    "attempted_token_count": 9,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p04_if_all_roses_are_flowers_and_some_fl",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "if all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?",
+    "effective_prompt": "if all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 4.916565895080566,
+    "gap_state_to_candidates": 8.636598587036133,
+    "operator_strength": 8.530166625976562,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.4327612542719988,
+    "candidate_variance": 0.013001641147351762,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "I",
+      "If",
+      "<space>",
+      "It",
+      "And",
+      "We",
+      "Or"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071651Z/field_view_exp003_p04_if_all_roses_are_flowers_and_some_fl_raw__20260309T071651Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -132.2004852294922,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -133.93472290039062,
+        "coords": [
+          0.1822184920310974,
+          0.016287028789520264
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -134.00625610351562,
+        "coords": [
+          0.22494956851005554,
+          -0.008279647678136826
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -134.11282348632812,
+        "coords": [
+          0.12112559378147125,
+          0.03417015075683594
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -134.32107543945312,
+        "coords": [
+          0.1790120005607605,
+          0.06340114772319794
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -134.4576873779297,
+        "coords": [
+          0.10131730139255524,
+          0.02571185678243637
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -134.63497924804688,
+        "coords": [
+          -0.04996103048324585,
+          0.13310055434703827
+        ]
+      },
+      {
+        "token": "We",
+        "logit": -134.707275390625,
+        "coords": [
+          0.12086470425128937,
+          -0.08441177010536194
+        ]
+      },
+      {
+        "token": "Well",
+        "logit": -134.710693359375,
+        "coords": [
+          0.0003262180835008621,
+          0.11730746924877167
+        ]
+      },
+      {
+        "token": "Or",
+        "logit": -134.76080322265625,
+        "coords": [
+          -0.02036328986287117,
+          0.11268295347690582
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p04_if_all_roses_are_flowers_and_some_fl",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "if all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?",
+    "effective_prompt": "if all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 4.916565895080566,
+    "gap_state_to_candidates": 8.636598587036133,
+    "operator_strength": 8.530166625976562,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.4327612542719988,
+    "candidate_variance": 0.013001641147351762,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "I",
+      "If",
+      "<space>",
+      "It",
+      "And",
+      "We",
+      "Or"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071657Z/field_view_exp003_p04_if_all_roses_are_flowers_and_some_fl_compressed__20260309T071657Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -132.2004852294922,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -133.93472290039062,
+        "coords": [
+          0.1822184920310974,
+          0.016287028789520264
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -134.00625610351562,
+        "coords": [
+          0.22494956851005554,
+          -0.008279647678136826
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -134.11282348632812,
+        "coords": [
+          0.12112559378147125,
+          0.03417015075683594
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -134.32107543945312,
+        "coords": [
+          0.1790120005607605,
+          0.06340114772319794
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -134.4576873779297,
+        "coords": [
+          0.10131730139255524,
+          0.02571185678243637
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -134.63497924804688,
+        "coords": [
+          -0.04996103048324585,
+          0.13310055434703827
+        ]
+      },
+      {
+        "token": "We",
+        "logit": -134.707275390625,
+        "coords": [
+          0.12086470425128937,
+          -0.08441177010536194
+        ]
+      },
+      {
+        "token": "Well",
+        "logit": -134.710693359375,
+        "coords": [
+          0.0003262180835008621,
+          0.11730746924877167
+        ]
+      },
+      {
+        "token": "Or",
+        "logit": -134.76080322265625,
+        "coords": [
+          -0.02036328986287117,
+          0.11268295347690582
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 1.0,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 21,
+        "attempted_tokens_saved": 2,
+        "rejection_reason": "non_compressive_short_prompt"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_short_prompt",
+    "compression_valid": true,
+    "attempted_token_count": 21,
+    "attempted_tokens_saved": 2,
+    "attempted_token_delta": 2.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p05_summarize_the_sentence_the_quick_bro",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "summarize the sentence \"the quick brown fox jumps over the lazy dog\" in five words",
+    "effective_prompt": "summarize the sentence \"the quick brown fox jumps over the lazy dog\" in five words",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 2.8439908027648926,
+    "gap_state_to_candidates": 3.054476022720337,
+    "operator_strength": 2.926752805709839,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.4378596255446559,
+    "candidate_variance": 0.010422927645369735,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "and",
+      ":",
+      "(",
+      "to",
+      "in",
+      ".\"",
+      ";",
+      "that"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071703Z/field_view_exp003_p05_summarize_the_sentence_the_quick_bro_raw__20260309T071703Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -93.10086059570312,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -94.10462951660156,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -94.81549835205078,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -95.74354553222656,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -96.09493255615234,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "to",
+        "logit": -96.2168960571289,
+        "coords": [
+          0.19380861520767212,
+          0.010849598795175552
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -96.546875,
+        "coords": [
+          0.21816053986549377,
+          0.07628168165683746
+        ]
+      },
+      {
+        "token": ".\"",
+        "logit": -96.78400421142578,
+        "coords": [
+          0.09028638899326324,
+          0.004489384591579437
+        ]
+      },
+      {
+        "token": ";",
+        "logit": -96.96273040771484,
+        "coords": [
+          -0.020205482840538025,
+          -0.017877578735351562
+        ]
+      },
+      {
+        "token": "that",
+        "logit": -96.97923278808594,
+        "coords": [
+          0.2450629025697708,
+          0.04652104154229164
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p05_summarize_the_sentence_the_quick_bro",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "summarize the sentence \"the quick brown fox jumps over the lazy dog\" in five words",
+    "effective_prompt": "summarize: \"the quick brown fox jumps over the lazy dog\" in five words",
+    "raw_token_count": 19,
+    "effective_token_count": 18,
+    "logit_entropy": 3.4373650550842285,
+    "gap_state_to_candidates": 3.7498106956481934,
+    "operator_strength": 3.6380116939544678,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.3845898925419658,
+    "candidate_variance": 0.011201643972572034,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "<space>",
+      ":",
+      "(",
+      "and",
+      ";",
+      "that",
+      "!",
+      "<space>"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071708Z/field_view_exp003_p05_summarize_the_sentence_the_quick_bro_compressed__20260309T071708Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -80.32188415527344,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -81.28242492675781,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -81.68714904785156,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -81.95417785644531,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -82.53817749023438,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -82.73725891113281,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": ";",
+        "logit": -83.14904022216797,
+        "coords": [
+          -0.020205482840538025,
+          -0.017877578735351562
+        ]
+      },
+      {
+        "token": "that",
+        "logit": -83.69640350341797,
+        "coords": [
+          0.2450629025697708,
+          0.04652104154229164
+        ]
+      },
+      {
+        "token": "!",
+        "logit": -83.75333404541016,
+        "coords": [
+          -0.006263889372348785,
+          0.16132217645645142
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -83.77127838134766,
+        "coords": [
+          0.1790120005607605,
+          0.06340114772319794
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 1.0,
+        "tokens_saved": 3,
+        "attempted_tokens_out": 17,
+        "attempted_tokens_saved": 3,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 17,
+    "attempted_tokens_saved": 3,
+    "attempted_token_delta": 3.0,
+    "token_delta": 1.0,
+    "tokens_saved": 1.0,
+    "compression_ratio": 0.9473684210526315,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": -0.05326973300269011,
+    "delta_vs_raw_gap_state_to_candidates": 0.6953346729278564,
+    "delta_vs_raw_logit_entropy": 0.5933742523193359,
+    "topk_overlap_vs_raw": 0.7,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 0.6964285714285714
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p06_translate_good_night_to_spanish",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "translate \"good night\" to spanish",
+    "effective_prompt": "translate \"good night\" to spanish",
+    "raw_token_count": 9,
+    "effective_token_count": 9,
+    "logit_entropy": 3.9336750507354736,
+    "gap_state_to_candidates": 2.079533100128174,
+    "operator_strength": 2.013092279434204,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7892958010132853,
+    "candidate_variance": 0.006835888003503812,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "\"",
+      ".",
+      ",",
+      "<space>",
+      ":",
+      "(",
+      ".\"",
+      "and",
+      "or",
+      "\""
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071713Z/field_view_exp003_p06_translate_good_night_to_spanish_raw__20260309T071713Z.json",
+    "field_view_candidates": [
+      {
+        "token": "\"",
+        "logit": -78.97022247314453,
+        "coords": [
+          0.17810331284999847,
+          0.06432020664215088
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -80.18627166748047,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -80.50479888916016,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -81.98359680175781,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -82.26764678955078,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -82.43877410888672,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": ".\"",
+        "logit": -82.46670532226562,
+        "coords": [
+          0.09028638899326324,
+          0.004489384591579437
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -82.55177307128906,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -82.68605041503906,
+        "coords": [
+          0.15560030937194824,
+          0.09558813273906708
+        ]
+      },
+      {
+        "token": "\"",
+        "logit": -82.73039245605469,
+        "coords": [
+          0.2542106807231903,
+          0.04470149427652359
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p06_translate_good_night_to_spanish",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "translate \"good night\" to spanish",
+    "effective_prompt": "Spanish for \"good night\"?",
+    "raw_token_count": 9,
+    "effective_token_count": 6,
+    "logit_entropy": 4.8666911125183105,
+    "gap_state_to_candidates": 6.436237812042236,
+    "operator_strength": 6.311686038970947,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6140474661294613,
+    "candidate_variance": 0.010513319324047492,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "I",
+      "It",
+      "That",
+      "(",
+      "And",
+      "\""
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071720Z/field_view_exp003_p06_translate_good_night_to_spanish_compressed__20260309T071720Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -120.17610168457031,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -122.08956146240234,
+        "coords": [
+          0.1822184920310974,
+          0.016287028789520264
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -122.17829132080078,
+        "coords": [
+          0.22494956851005554,
+          -0.008279647678136826
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -122.36337280273438,
+        "coords": [
+          0.10131730139255524,
+          0.02571185678243637
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -122.65636444091797,
+        "coords": [
+          0.09023131430149078,
+          0.017416661605238914
+        ]
+      },
+      {
+        "token": "Well",
+        "logit": -122.65874481201172,
+        "coords": [
+          0.0003262180835008621,
+          0.11730746924877167
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -122.77729797363281,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -122.78648376464844,
+        "coords": [
+          -0.04996103048324585,
+          0.13310055434703827
+        ]
+      },
+      {
+        "token": "\"",
+        "logit": -122.7926025390625,
+        "coords": [
+          0.17810331284999847,
+          0.06432020664215088
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -123.0031967163086,
+        "coords": [
+          0.20224067568778992,
+          -0.018598433583974838
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 1.0,
+        "tokens_saved": 2,
+        "attempted_tokens_out": 6,
+        "attempted_tokens_saved": 2,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 6,
+    "attempted_tokens_saved": 2,
+    "attempted_token_delta": 2.0,
+    "token_delta": 3.0,
+    "tokens_saved": 3.0,
+    "compression_ratio": 0.6666666666666666,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": -0.19999999999999996,
+    "delta_vs_raw_candidate_coherence": -0.17524833488382408,
+    "delta_vs_raw_gap_state_to_candidates": 4.3567047119140625,
+    "delta_vs_raw_logit_entropy": 0.9330160617828369,
+    "topk_overlap_vs_raw": 0.3333333333333333,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": -1.75
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p07_write_a_short_python_function_that_r",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "write a short python function that returns the sorted unique values from a list",
+    "effective_prompt": "write a short python function that returns the sorted unique values from a list",
+    "raw_token_count": 14,
+    "effective_token_count": 14,
+    "logit_entropy": 2.691221237182617,
+    "gap_state_to_candidates": 8.742572784423828,
+    "operator_strength": 8.584917068481445,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8277930914887095,
+    "candidate_variance": 0.007741198869705099,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      "of",
+      ".",
+      ",",
+      "and",
+      "(",
+      ":",
+      "in",
+      "that",
+      "with"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071725Z/field_view_exp003_p07_write_a_short_python_function_that_r_raw__20260309T071725Z.json",
+    "field_view_candidates": [
+      {
+        "token": "of",
+        "logit": -98.69071960449219,
+        "coords": [
+          0.19121581315994263,
+          0.08046013861894608
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -99.06485748291016,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -100.62858581542969,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -101.31509399414062,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -101.59790802001953,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -101.7172622680664,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -101.99989318847656,
+        "coords": [
+          0.21816053986549377,
+          0.07628168165683746
+        ]
+      },
+      {
+        "token": "that",
+        "logit": -102.10208892822266,
+        "coords": [
+          0.2450629025697708,
+          0.04652104154229164
+        ]
+      },
+      {
+        "token": "with",
+        "logit": -102.11051940917969,
+        "coords": [
+          0.20825371146202087,
+          0.09200777113437653
+        ]
+      },
+      {
+        "token": "using",
+        "logit": -102.14263916015625,
+        "coords": [
+          0.06887969374656677,
+          0.02351054549217224
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p07_write_a_short_python_function_that_r",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "write a short python function that returns the sorted unique values from a list",
+    "effective_prompt": "write python function that returns sorted unique values from a list",
+    "raw_token_count": 14,
+    "effective_token_count": 11,
+    "logit_entropy": 2.8503284454345703,
+    "gap_state_to_candidates": 8.707987785339355,
+    "operator_strength": 8.567846298217773,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8223929464489901,
+    "candidate_variance": 0.0059835608503000706,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      "of",
+      ".",
+      ",",
+      "<space>",
+      "and",
+      "(",
+      ":",
+      "or",
+      "with"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071732Z/field_view_exp003_p07_write_a_short_python_function_that_r_compressed__20260309T071732Z.json",
+    "field_view_candidates": [
+      {
+        "token": "of",
+        "logit": -100.0295639038086,
+        "coords": [
+          0.19121581315994263,
+          0.08046013861894608
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -100.04940795898438,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -101.88874816894531,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -102.12381744384766,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -102.5251235961914,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -102.52938079833984,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -102.62236022949219,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "using",
+        "logit": -102.8792724609375,
+        "coords": [
+          0.06887969374656677,
+          0.02351054549217224
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -102.94928741455078,
+        "coords": [
+          0.15560030937194824,
+          0.09558813273906708
+        ]
+      },
+      {
+        "token": "with",
+        "logit": -103.02824401855469,
+        "coords": [
+          0.20825371146202087,
+          0.09200777113437653
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 1.0,
+        "tokens_saved": 3,
+        "attempted_tokens_out": 16,
+        "attempted_tokens_saved": 3,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 16,
+    "attempted_tokens_saved": 3,
+    "attempted_token_delta": 3.0,
+    "token_delta": 3.0,
+    "tokens_saved": 3.0,
+    "compression_ratio": 0.7857142857142857,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": -0.005400145039719417,
+    "delta_vs_raw_gap_state_to_candidates": -0.034584999084472656,
+    "delta_vs_raw_logit_entropy": 0.15910720825195312,
+    "topk_overlap_vs_raw": 0.8,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 0.9047619047619048
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p08_explain_why_the_statement_all_swans_",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "explain why the statement \"all swans are white\" can fail in one sentence",
+    "effective_prompt": "explain why the statement \"all swans are white\" can fail in one sentence",
+    "raw_token_count": 17,
+    "effective_token_count": 17,
+    "logit_entropy": 2.655712366104126,
+    "gap_state_to_candidates": 4.120473384857178,
+    "operator_strength": 4.034493923187256,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7972605562284198,
+    "candidate_variance": 0.00815751078883606,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "is",
+      "and",
+      ":",
+      "(",
+      "or",
+      "in",
+      "—"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071737Z/field_view_exp003_p08_explain_why_the_statement_all_swans__raw__20260309T071737Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -86.51548767089844,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -87.9927978515625,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -88.9612045288086,
+        "coords": [
+          0.22776484489440918,
+          0.030034352093935013
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -88.99744415283203,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -89.13084411621094,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "because",
+        "logit": -89.91693115234375,
+        "coords": [
+          0.2042446732521057,
+          -0.006185627542436123
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -90.07011413574219,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -90.2079849243164,
+        "coords": [
+          0.15560030937194824,
+          0.09558813273906708
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -90.54022216796875,
+        "coords": [
+          0.21816053986549377,
+          0.07628168165683746
+        ]
+      },
+      {
+        "token": "—",
+        "logit": -90.71483612060547,
+        "coords": [
+          0.24348151683807373,
+          0.10375818610191345
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T071616Z",
+    "prompt_id": "p08_explain_why_the_statement_all_swans_",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "explain why the statement \"all swans are white\" can fail in one sentence",
+    "effective_prompt": "explain why \"all swans are white\" can fail in one sentence",
+    "raw_token_count": 17,
+    "effective_token_count": 15,
+    "logit_entropy": 2.641754627227783,
+    "gap_state_to_candidates": 4.129948616027832,
+    "operator_strength": 4.0613837242126465,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7859594195582497,
+    "candidate_variance": 0.006896580534870309,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      ":",
+      "and",
+      "(",
+      "<space>",
+      "or",
+      ".\"",
+      "is",
+      "in"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071743Z/field_view_exp003_p08_explain_why_the_statement_all_swans__compressed__20260309T071743Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -87.43716430664062,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -88.76736450195312,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -89.69612884521484,
+        "coords": [
+          0.015917465090751648,
+          0.0949951559305191
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -89.9660415649414,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -90.49208068847656,
+        "coords": [
+          0.1615137904882431,
+          0.05157516896724701
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -90.87451171875,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -91.01241302490234,
+        "coords": [
+          0.15560030937194824,
+          0.09558813273906708
+        ]
+      },
+      {
+        "token": ".\"",
+        "logit": -91.26222229003906,
+        "coords": [
+          0.09028638899326324,
+          0.004489384591579437
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -91.32279968261719,
+        "coords": [
+          0.22776484489440918,
+          0.030034352093935013
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -91.4468765258789,
+        "coords": [
+          0.21816053986549377,
+          0.07628168165683746
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 1.0,
+        "tokens_saved": 4,
+        "attempted_tokens_out": 14,
+        "attempted_tokens_saved": 4,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 14,
+    "attempted_tokens_saved": 4,
+    "attempted_token_delta": 4.0,
+    "token_delta": 2.0,
+    "tokens_saved": 2.0,
+    "compression_ratio": 0.8823529411764706,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.09999999999999998,
+    "delta_vs_raw_candidate_coherence": -0.011301136670170187,
+    "delta_vs_raw_gap_state_to_candidates": 0.009475231170654297,
+    "delta_vs_raw_logit_entropy": -0.013957738876342773,
+    "topk_overlap_vs_raw": 0.8,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 0.45238095238095233
+  }
+]

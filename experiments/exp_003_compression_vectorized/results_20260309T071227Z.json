@@ -1,0 +1,90 @@
+[
+  {
+    "ts": "20260309T071227Z",
+    "prompt_id": "p01_the_opposite_of_hot_is",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "the opposite of hot is",
+    "effective_prompt": "the opposite of hot is",
+    "raw_token_count": 5,
+    "effective_token_count": 5,
+    "logit_entropy": 5.8220343589782715,
+    "gap_state_to_candidates": 4.224357604980469,
+    "operator_strength": 4.137878894805908,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.2902080262405124,
+    "candidate_variance": 0.011479607267211357,
+    "degeneracy_ratio_topk": 0.4,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T071230Z/field_view_exp003_p01_the_opposite_of_hot_is_raw__20260309T071230Z.json",
+    "field_view_candidates": [
+      {
+        "token": "the",
+        "logit": -76.62928771972656,
+        "coords": [
+          0.1785900890827179,
+          0.028819285333156586
+        ]
+      },
+      {
+        "token": "hot",
+        "logit": -76.9226303100586,
+        "coords": [
+          -0.002636978402733803,
+          -0.002106696367263794
+        ]
+      },
+      {
+        "token": "a",
+        "logit": -77.17436218261719,
+        "coords": [
+          0.2407582551240921,
+          -0.05147922411561012
+        ]
+      },
+      {
+        "token": "cold",
+        "logit": -77.29154205322266,
+        "coords": [
+          0.14025425910949707,
+          -0.11668232828378677
+        ]
+      },
+      {
+        "token": "not",
+        "logit": -77.62859344482422,
+        "coords": [
+          0.18677660822868347,
+          -0.02940950356423855
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  }
+]

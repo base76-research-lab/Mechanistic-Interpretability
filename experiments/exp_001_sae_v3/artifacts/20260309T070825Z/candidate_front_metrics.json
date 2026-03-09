@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260309T070825Z/field_view_exp003_p01_hello_world_compressed__20260309T070825Z.json",
+  "prompt": "hello world",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 5.001066207885742,
+  "gap_state_to_candidates": 2.6115918159484863,
+  "operator_strength": 2.5113420486450195,
+  "candidate_coherence": 0.8358112332483156,
+  "candidate_variance": 0.00876708529515997,
+  "candidate_centroid": [
+    0.16739523857831956,
+    0.04315935131162405
+  ],
+  "state_to_centroid_distance": 2.6115918439474375,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    ".",
+    "\"",
+    ",",
+    ".\"",
+    "of",
+    ",\"",
+    "and",
+    "<space>",
+    "is"
+  ]
+}

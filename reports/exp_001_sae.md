@@ -1,5 +1,7 @@
 # exp_001_sae — GPT2-small, layer 5, SAE
 
+Trace ID: `T-MIC-001`
+
 Senast uppdaterad: 2026-03-05
 
 ## Versioner

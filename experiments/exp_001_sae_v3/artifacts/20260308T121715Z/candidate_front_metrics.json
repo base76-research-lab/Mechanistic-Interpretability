@@ -1,0 +1,25 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T121715Z/field_view_exp003_anchored_03_compressed__20260308T121715Z.json",
+  "prompt": "the opposite of cold is",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 6.335186004638672,
+  "gap_state_to_candidates": 4.5175981521606445,
+  "operator_strength": 4.418461322784424,
+  "candidate_coherence": 0.5637600530133643,
+  "candidate_variance": 0.009292866432483301,
+  "candidate_centroid": [
+    0.147601898573339,
+    -0.014761416241526604
+  ],
+  "state_to_centroid_distance": 4.517598230674413,
+  "degeneracy_ratio_topk": 0.3,
+  "degenerate": false,
+  "generic_count": 3,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "the",
+    "a",
+    "in"
+  ]
+}

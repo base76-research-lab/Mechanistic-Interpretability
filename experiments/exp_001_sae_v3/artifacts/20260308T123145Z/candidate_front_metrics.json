@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T123145Z/field_view_exp003_p08_explain_why_the_statement_all_swans__compressed__20260308T123145Z.json",
+  "prompt": "The statement \"all swans are white\" can fail if there is at least one swan that is not white.",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.341147422790527,
+  "gap_state_to_candidates": 5.1531805992126465,
+  "operator_strength": 5.011634349822998,
+  "candidate_coherence": 0.9710716800887869,
+  "candidate_variance": 0.0029061067101486316,
+  "candidate_centroid": [
+    0.14862433299422265,
+    0.03591811377555132
+  ],
+  "state_to_centroid_distance": 5.153180537461017,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "The",
+    "This",
+    "It",
+    "In",
+    "If",
+    "A",
+    "<space>"
+  ]
+}

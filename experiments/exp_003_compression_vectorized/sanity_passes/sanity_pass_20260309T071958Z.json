@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "20260309T071958Z",
+  "status": "blocked_structure_degradation",
+  "reasons": [
+    "structural degradation dominates failing variants: compressed"
+  ],
+  "next_step": "Stop and inspect structure degradation before any batch run",
+  "command_executed": "cd \"/media/bjorn/iic/ESA/research/mechanistic-interpretability\"\npython3 scripts/compare_compression_vectorized.py --prompts-file data/prompts_sanity_2026-03-09.txt --prompts-jsonl '' --require-compressor --exclude-invalid-compression --device cpu",
+  "summary_json_path": "experiments/exp_003_compression_vectorized/summary_20260309T071823Z.json",
+  "results_json_path": "experiments/exp_003_compression_vectorized/results_20260309T071823Z.json",
+  "run_error": null,
+  "internal_only": true,
+  "artifact_status": "agent-drafted",
+  "principle_ref": "RCP-2026-01"
+}

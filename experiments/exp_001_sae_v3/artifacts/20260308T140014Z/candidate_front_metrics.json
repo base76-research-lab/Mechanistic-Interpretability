@@ -1,0 +1,32 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T140014Z/field_view_tmp_p06_translate_good_night_to_spanish__20260308T140014Z.json",
+  "prompt": "Spanish: \"good night\"",
+  "topk": 10,
+  "risk_score": 0.43073432869843065,
+  "logit_entropy": 4.702997207641602,
+  "gap_state_to_candidates": 0.47178101539611816,
+  "operator_strength": 0.34376323223114014,
+  "candidate_coherence": 0.9122444694808491,
+  "candidate_variance": 0.006421581012490899,
+  "candidate_centroid": [
+    0.1918725162744522,
+    0.04055407680571079
+  ],
+  "state_to_centroid_distance": 0.47178099341924923,
+  "degeneracy_ratio_topk": 1.0,
+  "degenerate": true,
+  "generic_count": 10,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "(",
+    "and",
+    "-",
+    "or",
+    "<space>",
+    "[",
+    "in",
+    "to",
+    "is"
+  ]
+}

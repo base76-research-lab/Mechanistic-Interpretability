@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T124633Z/field_view_exp003_p02_the_opposite_of_hot_is_compressed_vectorized_proxy_pca1__20260308T124633Z.json",
+  "prompt": "semantic anchor packet: opposite | contrary | opposing | oppos | inverse | antit | adjacent | osite",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.359835386276245,
+  "gap_state_to_candidates": 4.47718620300293,
+  "operator_strength": 4.33705997467041,
+  "candidate_coherence": 0.734780376530964,
+  "candidate_variance": 0.010335660633835158,
+  "candidate_centroid": [
+    0.13998279497027397,
+    0.045921771228313445
+  ],
+  "state_to_centroid_distance": 4.477186219721283,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "-",
+    ":",
+    "<space>",
+    "|",
+    "-",
+    "(",
+    ".",
+    ","
+  ]
+}

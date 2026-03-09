@@ -80,6 +80,28 @@ Generate report figures:
 python3 scripts/make_figures.py
 ```
 
+Run unified observability stack (baseline):
+
+```bash
+python3 scripts/run_unified_observability_stack.py \
+  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
+  --sae-state experiments/exp_001_sae_v3/sae_weights.pt \
+  --run-name baseline_stack_2026-03-09 \
+  --device cpu
+```
+
+Run L-SAE+R style stack (reconstruction engaged):
+
+```bash
+python3 scripts/run_unified_observability_stack.py \
+  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
+  --sae-state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
+  --intervention-state lsae_r \
+  --use-sae-reconstruction \
+  --run-name lsae_r_stack_default_lw2e2_2026-03-09 \
+  --device cpu
+```
+
 ## Reproducibility and claims
 
 - Large tensors such as `activations.pt` and `sae_weights.pt` are treated as build artifacts and are ignored by git.

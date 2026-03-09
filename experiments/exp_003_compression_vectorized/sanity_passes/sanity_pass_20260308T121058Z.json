@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "20260308T121058Z",
+  "status": "blocked_compressor_no_op",
+  "reasons": [
+    "compressor unavailable under `--require-compressor`"
+  ],
+  "next_step": "Stop and debug compressor availability",
+  "command_executed": "cd \"/media/bjorn/iic/ESA/research/mechanistic-interpretability\"\npython3 scripts/compare_compression_vectorized.py --prompts-file /media/bjorn/iic/ESA/research/mechanistic-interpretability/data/prompts_sanity_2026-03-09.txt --vector-methods mean attn_weighted pca1 --require-compressor --exclude-invalid-compression --device cpu",
+  "summary_json_path": null,
+  "results_json_path": null,
+  "run_error": "Token compressor unavailable. Start Ollama/models or remove --require-compressor.",
+  "internal_only": true,
+  "artifact_status": "agent-drafted",
+  "principle_ref": "RCP-2026-01"
+}

@@ -16,6 +16,13 @@ Define the first explicit `L-SAE+R` protocol as the next microscopy item after t
 
 This protocol should test whether decision-relevant supervision improves sparse-feature utility without destroying microscope value.
 
+The protocol also includes a secondary contrast panel for testing whether the stack separates:
+
+- `math_reasoning`
+- `factual_recall`
+- `degeneracy_probe`
+- `random_prompt_baseline`
+
 ## Shared evaluation substrate
 
 This protocol must reuse the same material as the unified stack:
@@ -26,6 +33,10 @@ This protocol must reuse the same material as the unified stack:
 - same recorder schema and drift fields
 
 This is required so that plain SAE, lens-only, and `L-SAE+R` can be compared honestly.
+
+Within the canonical panel, the contrast panel should be treated as an orthogonal evaluation slice rather than a replacement for the current regime split.
+
+`random_prompt_baseline` should be treated as a matched methodological control, not as a new regime class. Its purpose is to test whether apparent separation is driven by real cognitive structure rather than prompt length, token-shape effects, or shallow syntax patterns.
 
 ## Model variants
 
@@ -67,12 +78,29 @@ The shared trace schema should gain only the minimum extra fields needed for the
 
 Any further fields should be justified by direct comparison needs.
 
+The protocol should also use the existing trace data to derive:
+
+- `decision_trajectory_smoothness`
+
+where:
+
+- `DTS = Σ |lens_entropy(layer_i+1) − lens_entropy(layer_i)|`
+
+Lower DTS indicates a smoother or flatter decision trajectory. Higher DTS indicates a jumpier or more unstable trajectory. DTS measures trajectory volatility, not correctness by itself.
+
+The contrast panel should also use matched random baselines to test:
+
+- whether `math_reasoning` still separates from a length- and shape-matched control
+- whether `factual_recall` still separates from a fact-shaped but semantically degraded control
+- whether `degeneracy_probe` differs from random incoherence, or whether both are mostly capturing shallow disorder
+
 ## Outputs
 
 This protocol should produce:
 
 - one comparison report: `plain SAE vs lens vs L-SAE+R`
 - one figure set for feature drift, lens drift, and frontier behavior by model variant
+- one class-level comparison slice for `math_reasoning`, `factual_recall`, `degeneracy_probe`, and `random_prompt_baseline`
 - one updated claim-boundary note
 
 ## Success criteria
@@ -83,6 +111,15 @@ The protocol is successful if:
 - at least one decision-relevant metric improves over plain SAE
 - the result remains interpretable through the current recorder stack
 - the protocol yields a clean null result if no gain appears
+- the stack can test whether DTS helps separate `math_reasoning`, `factual_recall`, and `degeneracy_probe`
+- the stack can test whether observed separation survives comparison against `random_prompt_baseline`
+
+Expected exploratory pattern for the contrast panel:
+
+- `math_reasoning`: gradual multi-layer change and moderate DTS
+- `factual_recall`: flatter or early-stable trajectory and lower DTS
+- `degeneracy_probe`: larger jumps or irregular changes and higher DTS
+- `random_prompt_baseline`: degraded semantic structure that helps test whether apparent separation is merely surface-driven
 
 ## Claim boundary
 

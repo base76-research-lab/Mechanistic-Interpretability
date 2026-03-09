@@ -74,6 +74,16 @@ Derived drift fields:
 - `frontier_gap_delta_vs_prev_layer`
 - `operator_strength_delta_vs_prev_layer`
 
+Trace-level derived metrics:
+
+- `decision_trajectory_smoothness`
+
+`Decision Trajectory Smoothness (DTS)` is defined as:
+
+- `Σ |lens_entropy(layer_i+1) − lens_entropy(layer_i)|`
+
+It should be interpreted as a trajectory-volatility measure, not a correctness metric by itself.
+
 ## Reference scripts
 
 - stack runner: `scripts/run_unified_observability_stack.py`
@@ -108,6 +118,7 @@ The stack is useful when it enables questions such as:
 - does logit drift precede frontier collapse?
 - which layers diverge earliest between reasoning and hallucination-prone traces?
 - which top SAE features remain stable in reasoning and destabilize in hallucination-prone traces?
+- which prompt classes show smoother versus jumpier decision trajectories across layers?
 
 ## Claim boundary
 

@@ -11,12 +11,19 @@ ANALYSIS
 - `reports/L_SAE_R_PROTOCOL_2026-03-07.md`
 - `reports/L_SAE_R_RESEARCH_QUESTION_2026-03-07.md`
 - `reports/COMPRESSION_VALIDATION_STANDARD_2026-03-07.md`
+- `reports/COMPRESSION_REPAIR_PROTOCOL_2026-03-08.md`
+- `reports/VECTOR_PROXY_LEGITIMACY_PROTOCOL_2026-03-08.md`
 
 ## Latest runs
 
 - `experiments/layer_sweep_top_risk_2026-03-06.csv`
 - `experiments/compression_results_2026-03-06.csv`
 - `experiments/steering_vector_results_2026-03-06.csv`
+- `experiments/exp_003_compression_vectorized/summary_20260308T140345Z.json`
+- `experiments/exp_003_compression_vectorized/summary_20260308T140825Z.json`
+- `experiments/exp_003_compression_vectorized/summary_20260308T142252Z.json`
+- `experiments/exp_003_compression_vectorized/summary_20260308T143516Z.json`
+- `experiments/exp_003_compression_vectorized/summary_20260308T144644Z.json`
 
 ## Latest findings
 
@@ -28,12 +35,17 @@ ANALYSIS
 
 - `L-SAE+R` is now the next explicit microscopy protocol built on top of the unified observability stack baseline
 - current claim level for `L-SAE+R`: `Exploratory`
+- compression repair is now separated from vector proxy legitimacy
+- vector proxy should be treated as an experimental representation, not a legitimate prompt substitute by default
+- text compression is now a functioning research intervention in the current GPT-2 Small setup, but it is not yet the defensible best current method on the full robust panel
+- the remaining compression blocker is narrow: `anchored_03` drift and recall-anchor loss on `hallucination_02` / `hallucination_03`
 
 ## Active instrumentation additions
 
 - unified stack runner: `scripts/run_unified_observability_stack.py`
 - trace plotter: `scripts/plot_unified_stack_traces.py`
 - canonical evaluation panel: `data/prompts_observability_panel_2026-03-07.jsonl`
+- Monday sanity runner: `scripts/run_monday_sanity_pass.py`
 
 ## Operational layer
 
@@ -55,6 +67,15 @@ Current results support a structured residual-state interpretation in the curren
 - does vectorized conditioning outperform text-only compression in a stable way?
 - which signals survive batch validation and cross-model controls?
 - does lens supervision improve sparse-feature utility without collapsing microscope value?
+- can type-aware, structure-protected text compression become the best current structure-preserving method on the full robust panel, rather than only a usable intervention?
+- is the current vector proxy a prompt replacement, a diagnostic representation, or neither?
+
+## Immediate execution order
+
+1. patch `anchored_03` and recall-anchor handling for `hallucination_02` / `hallucination_03`
+2. rerun robust text-only compression batch on the observability panel
+3. if `compressed` becomes defensible, freeze the text-compression path as the current intervention baseline
+4. only then resume `VECTOR_PROXY_LEGITIMACY_PROTOCOL_2026-03-08.md`
 
 ## Next required transition
 

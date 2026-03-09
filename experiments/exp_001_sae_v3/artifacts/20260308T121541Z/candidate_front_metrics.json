@@ -1,0 +1,24 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T121541Z/field_view_exp003_anchored_01_raw__20260308T121541Z.json",
+  "prompt": "2 + 2 =",
+  "topk": 10,
+  "risk_score": 0.5487922593057463,
+  "logit_entropy": 5.122995376586914,
+  "gap_state_to_candidates": 0.6914474964141846,
+  "operator_strength": 0.5492606163024902,
+  "candidate_coherence": 0.9101140670774309,
+  "candidate_variance": 0.006637285684897878,
+  "candidate_centroid": [
+    0.1652087889611721,
+    0.057043313048779964
+  ],
+  "state_to_centroid_distance": 0.691447500932348,
+  "degeneracy_ratio_topk": 0.2,
+  "degenerate": false,
+  "generic_count": 2,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "-",
+    "+"
+  ]
+}

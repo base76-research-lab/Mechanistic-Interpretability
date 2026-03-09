@@ -1,0 +1,26 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T122456Z/field_view_exp003_hallucination_02_compressed_vectorized_proxy_mean__20260308T122456Z.json",
+  "prompt": "semantic anchor packet: first | founded | There | Empire | If | We | You | Roman",
+  "topk": 10,
+  "risk_score": 0.22545398516966542,
+  "logit_entropy": 3.069453001022339,
+  "gap_state_to_candidates": 0.1719871312379837,
+  "operator_strength": 0.17347745597362518,
+  "candidate_coherence": 0.4831536308073753,
+  "candidate_variance": 0.02334887206407156,
+  "candidate_centroid": [
+    0.15068566501140596,
+    0.0070874873548746106
+  ],
+  "state_to_centroid_distance": 0.1719871299328218,
+  "degeneracy_ratio_topk": 0.4,
+  "degenerate": false,
+  "generic_count": 4,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "<space>",
+    ".",
+    "|"
+  ]
+}

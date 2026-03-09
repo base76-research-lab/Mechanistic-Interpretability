@@ -1,0 +1,25 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T125014Z/field_view_exp003_p07_write_a_short_python_function_that_r_compressed_vectorized_proxy_pca1__20260308T125014Z.json",
+  "prompt": "semantic anchor packet: all | one | not | more | some | his | their | B",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 6.488296031951904,
+  "gap_state_to_candidates": 4.788979530334473,
+  "operator_strength": 4.684803485870361,
+  "candidate_coherence": 0.34894170973026056,
+  "candidate_variance": 0.018216556207525582,
+  "candidate_centroid": [
+    0.08098801933228969,
+    0.06691459007561207
+  ],
+  "state_to_centroid_distance": 4.7889798211683905,
+  "degeneracy_ratio_topk": 0.3,
+  "degenerate": false,
+  "generic_count": 3,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "-",
+    ":"
+  ]
+}

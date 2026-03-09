@@ -1,0 +1,4322 @@
+[
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "anchored_01",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "raw",
+    "raw_prompt": "2 + 2 =",
+    "effective_prompt": "2 + 2 =",
+    "raw_token_count": 4,
+    "effective_token_count": 4,
+    "logit_entropy": 5.122995376586914,
+    "gap_state_to_candidates": 0.6914474964141846,
+    "operator_strength": 0.5492606163024902,
+    "risk_score": 0.5487922593057463,
+    "candidate_coherence": 0.9101140670774309,
+    "candidate_variance": 0.006637285684897878,
+    "degeneracy_ratio_topk": 0.2,
+    "degenerate": false,
+    "generic_tokens": [
+      "-",
+      "+"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140837Z/field_view_exp003_anchored_01_raw__20260308T140837Z.json",
+    "field_view_candidates": [
+      {
+        "token": "3",
+        "logit": -90.95779418945312,
+        "coords": [
+          0.06795810163021088,
+          0.05272820591926575
+        ]
+      },
+      {
+        "token": "1",
+        "logit": -91.06432342529297,
+        "coords": [
+          0.14536654949188232,
+          0.027547767385840416
+        ]
+      },
+      {
+        "token": "2",
+        "logit": -91.14958953857422,
+        "coords": [
+          0.13101911544799805,
+          -0.01036723144352436
+        ]
+      },
+      {
+        "token": "0",
+        "logit": -91.26148986816406,
+        "coords": [
+          0.19678930938243866,
+          0.03463852405548096
+        ]
+      },
+      {
+        "token": "4",
+        "logit": -91.57514953613281,
+        "coords": [
+          0.14733748137950897,
+          0.00296933576464653
+        ]
+      },
+      {
+        "token": "5",
+        "logit": -92.10575866699219,
+        "coords": [
+          0.16581052541732788,
+          0.057888489216566086
+        ]
+      },
+      {
+        "token": "-",
+        "logit": -92.18193054199219,
+        "coords": [
+          0.22736448049545288,
+          0.11440856754779816
+        ]
+      },
+      {
+        "token": "6",
+        "logit": -92.56061553955078,
+        "coords": [
+          0.2125081866979599,
+          0.01028481312096119
+        ]
+      },
+      {
+        "token": "+",
+        "logit": -92.67372131347656,
+        "coords": [
+          0.25498849153518677,
+          0.16471002995967865
+        ]
+      },
+      {
+        "token": "10",
+        "logit": -92.84005737304688,
+        "coords": [
+          0.10294564813375473,
+          0.11562462896108627
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "anchored_01",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed",
+    "raw_prompt": "2 + 2 =",
+    "effective_prompt": "2 + 2 =",
+    "raw_token_count": 4,
+    "effective_token_count": 4,
+    "logit_entropy": 5.122995376586914,
+    "gap_state_to_candidates": 0.6914474964141846,
+    "operator_strength": 0.5492606163024902,
+    "risk_score": 0.5487922593057463,
+    "candidate_coherence": 0.9101140670774309,
+    "candidate_variance": 0.006637285684897878,
+    "degeneracy_ratio_topk": 0.2,
+    "degenerate": false,
+    "generic_tokens": [
+      "-",
+      "+"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140854Z/field_view_exp003_anchored_01_compressed__20260308T140854Z.json",
+    "field_view_candidates": [
+      {
+        "token": "3",
+        "logit": -90.95779418945312,
+        "coords": [
+          0.06795810163021088,
+          0.05272820591926575
+        ]
+      },
+      {
+        "token": "1",
+        "logit": -91.06432342529297,
+        "coords": [
+          0.14536654949188232,
+          0.027547767385840416
+        ]
+      },
+      {
+        "token": "2",
+        "logit": -91.14958953857422,
+        "coords": [
+          0.13101911544799805,
+          -0.01036723144352436
+        ]
+      },
+      {
+        "token": "0",
+        "logit": -91.26148986816406,
+        "coords": [
+          0.19678930938243866,
+          0.03463852405548096
+        ]
+      },
+      {
+        "token": "4",
+        "logit": -91.57514953613281,
+        "coords": [
+          0.14733748137950897,
+          0.00296933576464653
+        ]
+      },
+      {
+        "token": "5",
+        "logit": -92.10575866699219,
+        "coords": [
+          0.16581052541732788,
+          0.057888489216566086
+        ]
+      },
+      {
+        "token": "-",
+        "logit": -92.18193054199219,
+        "coords": [
+          0.22736448049545288,
+          0.11440856754779816
+        ]
+      },
+      {
+        "token": "6",
+        "logit": -92.56061553955078,
+        "coords": [
+          0.2125081866979599,
+          0.01028481312096119
+        ]
+      },
+      {
+        "token": "+",
+        "logit": -92.67372131347656,
+        "coords": [
+          0.25498849153518677,
+          0.16471002995967865
+        ]
+      },
+      {
+        "token": "10",
+        "logit": -92.84005737304688,
+        "coords": [
+          0.10294564813375473,
+          0.11562462896108627
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.5745216334171249,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 49,
+        "attempted_tokens_saved": -48,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 49,
+    "attempted_tokens_saved": -48,
+    "attempted_token_delta": -48.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "anchored_02",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "raw",
+    "raw_prompt": "what is the capital of Japan?",
+    "effective_prompt": "what is the capital of Japan?",
+    "raw_token_count": 7,
+    "effective_token_count": 7,
+    "logit_entropy": 5.1633124351501465,
+    "gap_state_to_candidates": 8.245718002319336,
+    "operator_strength": 8.110383033752441,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6638556566966416,
+    "candidate_variance": 0.010885276849163836,
+    "degeneracy_ratio_topk": 0.7,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "It",
+      "Is",
+      "I",
+      "And",
+      "A"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140908Z/field_view_exp003_anchored_02_raw__20260308T140908Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -118.41129302978516,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -119.71737670898438,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -119.83821105957031,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -119.91885375976562,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -120.22239685058594,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -120.31729888916016,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -120.37367248535156,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "How",
+        "logit": -120.48147583007812,
+        "coords": [
+          0.22870445251464844,
+          0.11588335782289505
+        ]
+      },
+      {
+        "token": "Why",
+        "logit": -120.78040313720703,
+        "coords": [
+          0.08031652867794037,
+          -0.05617824196815491
+        ]
+      },
+      {
+        "token": "A",
+        "logit": -120.96257781982422,
+        "coords": [
+          0.18680235743522644,
+          0.02860967628657818
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "anchored_02",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed",
+    "raw_prompt": "what is the capital of Japan?",
+    "effective_prompt": "what is the capital of Japan?",
+    "raw_token_count": 7,
+    "effective_token_count": 7,
+    "logit_entropy": 5.1633124351501465,
+    "gap_state_to_candidates": 8.245718002319336,
+    "operator_strength": 8.110383033752441,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6638556566966416,
+    "candidate_variance": 0.010885276849163836,
+    "degeneracy_ratio_topk": 0.7,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "It",
+      "Is",
+      "I",
+      "And",
+      "A"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140924Z/field_view_exp003_anchored_02_compressed__20260308T140924Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -118.41129302978516,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -119.71737670898438,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -119.83821105957031,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -119.91885375976562,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -120.22239685058594,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -120.31729888916016,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -120.37367248535156,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "How",
+        "logit": -120.48147583007812,
+        "coords": [
+          0.22870445251464844,
+          0.11588335782289505
+        ]
+      },
+      {
+        "token": "Why",
+        "logit": -120.78040313720703,
+        "coords": [
+          0.08031652867794037,
+          -0.05617824196815491
+        ]
+      },
+      {
+        "token": "A",
+        "logit": -120.96257781982422,
+        "coords": [
+          0.18680235743522644,
+          0.02860967628657818
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.9839788055866976,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 7,
+        "attempted_tokens_saved": 0,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 7,
+    "attempted_tokens_saved": 0,
+    "attempted_token_delta": 0.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "anchored_03",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "raw",
+    "raw_prompt": "the opposite of cold is",
+    "effective_prompt": "the opposite of cold is",
+    "raw_token_count": 5,
+    "effective_token_count": 5,
+    "logit_entropy": 6.335186004638672,
+    "gap_state_to_candidates": 4.5175981521606445,
+    "operator_strength": 4.418461322784424,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5637600530133643,
+    "candidate_variance": 0.009292866432483301,
+    "degeneracy_ratio_topk": 0.3,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a",
+      "in"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140932Z/field_view_exp003_anchored_03_raw__20260308T140932Z.json",
+    "field_view_candidates": [
+      {
+        "token": "the",
+        "logit": -78.85032653808594,
+        "coords": [
+          0.17859017848968506,
+          0.028818558901548386
+        ]
+      },
+      {
+        "token": "a",
+        "logit": -79.34383392333984,
+        "coords": [
+          0.24075818061828613,
+          -0.05147986859083176
+        ]
+      },
+      {
+        "token": "cold",
+        "logit": -79.40374755859375,
+        "coords": [
+          0.1402541995048523,
+          -0.11668260395526886
+        ]
+      },
+      {
+        "token": "hot",
+        "logit": -79.92723846435547,
+        "coords": [
+          -0.002636997029185295,
+          -0.002106759697198868
+        ]
+      },
+      {
+        "token": "not",
+        "logit": -80.04513549804688,
+        "coords": [
+          0.18677666783332825,
+          -0.02941022999584675
+        ]
+      },
+      {
+        "token": "warm",
+        "logit": -80.53883361816406,
+        "coords": [
+          0.13959170877933502,
+          0.02209128811955452
+        ]
+      },
+      {
+        "token": "when",
+        "logit": -80.63932800292969,
+        "coords": [
+          0.18493416905403137,
+          0.029304012656211853
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -80.64143371582031,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "actually",
+        "logit": -80.8951644897461,
+        "coords": [
+          0.1567562073469162,
+          -0.08171788603067398
+        ]
+      },
+      {
+        "token": "warmer",
+        "logit": -81.00016021728516,
+        "coords": [
+          0.03283381834626198,
+          -0.02271175943315029
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "anchored_03",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed",
+    "raw_prompt": "the opposite of cold is",
+    "effective_prompt": "the opposite of cold is",
+    "raw_token_count": 5,
+    "effective_token_count": 5,
+    "logit_entropy": 6.335186004638672,
+    "gap_state_to_candidates": 4.5175981521606445,
+    "operator_strength": 4.418461322784424,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5637600530133643,
+    "candidate_variance": 0.009292866432483301,
+    "degeneracy_ratio_topk": 0.3,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a",
+      "in"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140939Z/field_view_exp003_anchored_03_compressed__20260308T140939Z.json",
+    "field_view_candidates": [
+      {
+        "token": "the",
+        "logit": -78.85032653808594,
+        "coords": [
+          0.17859017848968506,
+          0.028818558901548386
+        ]
+      },
+      {
+        "token": "a",
+        "logit": -79.34383392333984,
+        "coords": [
+          0.24075818061828613,
+          -0.05147986859083176
+        ]
+      },
+      {
+        "token": "cold",
+        "logit": -79.40374755859375,
+        "coords": [
+          0.1402541995048523,
+          -0.11668260395526886
+        ]
+      },
+      {
+        "token": "hot",
+        "logit": -79.92723846435547,
+        "coords": [
+          -0.002636997029185295,
+          -0.002106759697198868
+        ]
+      },
+      {
+        "token": "not",
+        "logit": -80.04513549804688,
+        "coords": [
+          0.18677666783332825,
+          -0.02941022999584675
+        ]
+      },
+      {
+        "token": "warm",
+        "logit": -80.53883361816406,
+        "coords": [
+          0.13959170877933502,
+          0.02209128811955452
+        ]
+      },
+      {
+        "token": "when",
+        "logit": -80.63932800292969,
+        "coords": [
+          0.18493416905403137,
+          0.029304012656211853
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -80.64143371582031,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "actually",
+        "logit": -80.8951644897461,
+        "coords": [
+          0.1567562073469162,
+          -0.08171788603067398
+        ]
+      },
+      {
+        "token": "warmer",
+        "logit": -81.00016021728516,
+        "coords": [
+          0.03283381834626198,
+          -0.02271175943315029
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.7888134816494766,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 4,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": "coverage_below_threshold"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "coverage_below_threshold",
+    "compression_valid": true,
+    "attempted_token_count": 4,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "reasoning_01",
+    "regime": "reasoning",
+    "stratum": "reasoning",
+    "variant": "raw",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "raw_token_count": 8,
+    "effective_token_count": 8,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511687755584717,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8950136454883234,
+    "candidate_variance": 0.010595117476847531,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140945Z/field_view_exp003_reasoning_01_raw__20260308T140945Z.json",
+    "field_view_candidates": [
+      {
+        "token": "man",
+        "logit": -80.8475112915039,
+        "coords": [
+          0.2680179476737976,
+          -0.1044478565454483
+        ]
+      },
+      {
+        "token": "queen",
+        "logit": -80.9719009399414,
+        "coords": [
+          0.05651172623038292,
+          -0.05726670101284981
+        ]
+      },
+      {
+        "token": "woman",
+        "logit": -81.00384521484375,
+        "coords": [
+          0.22896112501621246,
+          -0.10547646135091782
+        ]
+      },
+      {
+        "token": "king",
+        "logit": -81.55841827392578,
+        "coords": [
+          0.1535022109746933,
+          0.002735607326030731
+        ]
+      },
+      {
+        "token": "wife",
+        "logit": -82.06409454345703,
+        "coords": [
+          0.175594761967659,
+          -0.0031634196639060974
+        ]
+      },
+      {
+        "token": "beast",
+        "logit": -82.49939727783203,
+        "coords": [
+          0.3218235373497009,
+          -0.07731497287750244
+        ]
+      },
+      {
+        "token": "god",
+        "logit": -82.52043151855469,
+        "coords": [
+          0.27573758363723755,
+          -0.08666957914829254
+        ]
+      },
+      {
+        "token": "be",
+        "logit": -82.55994415283203,
+        "coords": [
+          0.1409689038991928,
+          0.02701839804649353
+        ]
+      },
+      {
+        "token": "mother",
+        "logit": -82.59207153320312,
+        "coords": [
+          0.11992920190095901,
+          -0.13549239933490753
+        ]
+      },
+      {
+        "token": "slave",
+        "logit": -82.92059326171875,
+        "coords": [
+          0.29943162202835083,
+          -0.09071595221757889
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "reasoning_01",
+    "regime": "reasoning",
+    "stratum": "reasoning",
+    "variant": "compressed",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "raw_token_count": 8,
+    "effective_token_count": 8,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511687755584717,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8950136454883234,
+    "candidate_variance": 0.010595117476847531,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140951Z/field_view_exp003_reasoning_01_compressed__20260308T140951Z.json",
+    "field_view_candidates": [
+      {
+        "token": "man",
+        "logit": -80.8475112915039,
+        "coords": [
+          0.2680179476737976,
+          -0.1044478565454483
+        ]
+      },
+      {
+        "token": "queen",
+        "logit": -80.9719009399414,
+        "coords": [
+          0.05651172623038292,
+          -0.05726670101284981
+        ]
+      },
+      {
+        "token": "woman",
+        "logit": -81.00384521484375,
+        "coords": [
+          0.22896112501621246,
+          -0.10547646135091782
+        ]
+      },
+      {
+        "token": "king",
+        "logit": -81.55841827392578,
+        "coords": [
+          0.1535022109746933,
+          0.002735607326030731
+        ]
+      },
+      {
+        "token": "wife",
+        "logit": -82.06409454345703,
+        "coords": [
+          0.175594761967659,
+          -0.0031634196639060974
+        ]
+      },
+      {
+        "token": "beast",
+        "logit": -82.49939727783203,
+        "coords": [
+          0.3218235373497009,
+          -0.07731497287750244
+        ]
+      },
+      {
+        "token": "god",
+        "logit": -82.52043151855469,
+        "coords": [
+          0.27573758363723755,
+          -0.08666957914829254
+        ]
+      },
+      {
+        "token": "be",
+        "logit": -82.55994415283203,
+        "coords": [
+          0.1409689038991928,
+          0.02701839804649353
+        ]
+      },
+      {
+        "token": "mother",
+        "logit": -82.59207153320312,
+        "coords": [
+          0.11992920190095901,
+          -0.13549239933490753
+        ]
+      },
+      {
+        "token": "slave",
+        "logit": -82.92059326171875,
+        "coords": [
+          0.29943162202835083,
+          -0.09071595221757889
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.9999999999979946,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 7,
+        "attempted_tokens_saved": 0,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 7,
+    "attempted_tokens_saved": 0,
+    "attempted_token_delta": 0.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "reasoning_02",
+    "regime": "reasoning",
+    "stratum": "reasoning",
+    "variant": "raw",
+    "raw_prompt": "doctor is to hospital as teacher is to",
+    "effective_prompt": "doctor is to hospital as teacher is to",
+    "raw_token_count": 8,
+    "effective_token_count": 8,
+    "logit_entropy": 5.923001766204834,
+    "gap_state_to_candidates": 3.962442636489868,
+    "operator_strength": 3.8189280033111572,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7745643316831143,
+    "candidate_variance": 0.013519265367174464,
+    "degeneracy_ratio_topk": 0.0,
+    "degenerate": false,
+    "generic_tokens": [],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T140959Z/field_view_exp003_reasoning_02_raw__20260308T140959Z.json",
+    "field_view_candidates": [
+      {
+        "token": "hospital",
+        "logit": -93.9266357421875,
+        "coords": [
+          0.16134656965732574,
+          -0.018979523330926895
+        ]
+      },
+      {
+        "token": "doctor",
+        "logit": -93.99014282226562,
+        "coords": [
+          0.23313026130199432,
+          0.017464719712734222
+        ]
+      },
+      {
+        "token": "nurse",
+        "logit": -94.50910186767578,
+        "coords": [
+          0.03239712119102478,
+          -0.052564527839422226
+        ]
+      },
+      {
+        "token": "school",
+        "logit": -94.8759765625,
+        "coords": [
+          0.06443552672863007,
+          -0.07674428075551987
+        ]
+      },
+      {
+        "token": "teacher",
+        "logit": -95.168701171875,
+        "coords": [
+          0.05555027723312378,
+          -0.014028608798980713
+        ]
+      },
+      {
+        "token": "patient",
+        "logit": -95.5889663696289,
+        "coords": [
+          0.11806695908308029,
+          -0.050292450934648514
+        ]
+      },
+      {
+        "token": "physician",
+        "logit": -95.59475708007812,
+        "coords": [
+          0.3414466381072998,
+          0.05030044540762901
+        ]
+      },
+      {
+        "token": "home",
+        "logit": -95.68605041503906,
+        "coords": [
+          0.16380774974822998,
+          0.12184426188468933
+        ]
+      },
+      {
+        "token": "student",
+        "logit": -95.80072021484375,
+        "coords": [
+          0.10372241586446762,
+          -0.08075317740440369
+        ]
+      },
+      {
+        "token": "medical",
+        "logit": -96.15388488769531,
+        "coords": [
+          0.22360393404960632,
+          -0.08141355216503143
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "reasoning_02",
+    "regime": "reasoning",
+    "stratum": "reasoning",
+    "variant": "compressed",
+    "raw_prompt": "doctor is to hospital as teacher is to",
+    "effective_prompt": "doctor is to hospital as teacher is to",
+    "raw_token_count": 8,
+    "effective_token_count": 8,
+    "logit_entropy": 5.923001766204834,
+    "gap_state_to_candidates": 3.962442636489868,
+    "operator_strength": 3.8189280033111572,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7745643316831143,
+    "candidate_variance": 0.013519265367174464,
+    "degeneracy_ratio_topk": 0.0,
+    "degenerate": false,
+    "generic_tokens": [],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141006Z/field_view_exp003_reasoning_02_compressed__20260308T141006Z.json",
+    "field_view_candidates": [
+      {
+        "token": "hospital",
+        "logit": -93.9266357421875,
+        "coords": [
+          0.16134656965732574,
+          -0.018979523330926895
+        ]
+      },
+      {
+        "token": "doctor",
+        "logit": -93.99014282226562,
+        "coords": [
+          0.23313026130199432,
+          0.017464719712734222
+        ]
+      },
+      {
+        "token": "nurse",
+        "logit": -94.50910186767578,
+        "coords": [
+          0.03239712119102478,
+          -0.052564527839422226
+        ]
+      },
+      {
+        "token": "school",
+        "logit": -94.8759765625,
+        "coords": [
+          0.06443552672863007,
+          -0.07674428075551987
+        ]
+      },
+      {
+        "token": "teacher",
+        "logit": -95.168701171875,
+        "coords": [
+          0.05555027723312378,
+          -0.014028608798980713
+        ]
+      },
+      {
+        "token": "patient",
+        "logit": -95.5889663696289,
+        "coords": [
+          0.11806695908308029,
+          -0.050292450934648514
+        ]
+      },
+      {
+        "token": "physician",
+        "logit": -95.59475708007812,
+        "coords": [
+          0.3414466381072998,
+          0.05030044540762901
+        ]
+      },
+      {
+        "token": "home",
+        "logit": -95.68605041503906,
+        "coords": [
+          0.16380774974822998,
+          0.12184426188468933
+        ]
+      },
+      {
+        "token": "student",
+        "logit": -95.80072021484375,
+        "coords": [
+          0.10372241586446762,
+          -0.08075317740440369
+        ]
+      },
+      {
+        "token": "medical",
+        "logit": -96.15388488769531,
+        "coords": [
+          0.22360393404960632,
+          -0.08141355216503143
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.9999999999979275,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 9,
+        "attempted_tokens_saved": 0,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 9,
+    "attempted_tokens_saved": 0,
+    "attempted_token_delta": 0.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "reasoning_03",
+    "regime": "reasoning",
+    "stratum": "reasoning",
+    "variant": "raw",
+    "raw_prompt": "outline four steps for validating an experiment result",
+    "effective_prompt": "outline four steps for validating an experiment result",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 2.7446203231811523,
+    "gap_state_to_candidates": 6.544732570648193,
+    "operator_strength": 6.411713123321533,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8047164566252751,
+    "candidate_variance": 0.007285975721852879,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "and",
+      "<space>",
+      "(",
+      ":",
+      "in",
+      "with",
+      "is",
+      "by"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141021Z/field_view_exp003_reasoning_03_raw__20260308T141021Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -101.1301498413086,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -102.63712310791016,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -103.58922576904297,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -103.63695526123047,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -103.85210418701172,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -104.04206848144531,
+        "coords": [
+          0.015917770564556122,
+          0.09499507397413254
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -104.33577728271484,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "with",
+        "logit": -104.45409393310547,
+        "coords": [
+          0.20825406908988953,
+          0.09200746566057205
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -104.55713653564453,
+        "coords": [
+          0.22776496410369873,
+          0.030034136027097702
+        ]
+      },
+      {
+        "token": "by",
+        "logit": -104.67939758300781,
+        "coords": [
+          0.15497297048568726,
+          0.13231757283210754
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "reasoning_03",
+    "regime": "reasoning",
+    "stratum": "reasoning",
+    "variant": "compressed",
+    "raw_prompt": "outline four steps for validating an experiment result",
+    "effective_prompt": "Four steps to validate an experiment result.",
+    "raw_token_count": 10,
+    "effective_token_count": 8,
+    "logit_entropy": 3.841054677963257,
+    "gap_state_to_candidates": 5.6464385986328125,
+    "operator_strength": 5.483851909637451,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.9895604956068603,
+    "candidate_variance": 0.001976838352433508,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "(",
+      "A",
+      "If",
+      "This",
+      "You",
+      "<space>"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141039Z/field_view_exp003_reasoning_03_compressed__20260308T141039Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -91.52581787109375,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -94.0781478881836,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "First",
+        "logit": -94.58869934082031,
+        "coords": [
+          0.2273017019033432,
+          0.056787729263305664
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -94.64439392089844,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "1",
+        "logit": -95.03005981445312,
+        "coords": [
+          0.14536654949188232,
+          0.027547767385840416
+        ]
+      },
+      {
+        "token": "A",
+        "logit": -95.0958480834961,
+        "coords": [
+          0.18680235743522644,
+          0.02860967628657818
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -95.17765808105469,
+        "coords": [
+          0.12112569808959961,
+          0.03417009115219116
+        ]
+      },
+      {
+        "token": "This",
+        "logit": -95.1939697265625,
+        "coords": [
+          0.08568056672811508,
+          0.03172948956489563
+        ]
+      },
+      {
+        "token": "You",
+        "logit": -95.23538208007812,
+        "coords": [
+          0.17329713702201843,
+          0.05030665919184685
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -95.36980438232422,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 0.9101256546569432,
+        "tokens_saved": 2,
+        "attempted_tokens_out": 11,
+        "attempted_tokens_saved": 2,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 11,
+    "attempted_tokens_saved": 2,
+    "attempted_token_delta": 2.0,
+    "token_delta": 2.0,
+    "tokens_saved": 2.0,
+    "compression_ratio": 0.8,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": -0.19999999999999996,
+    "delta_vs_raw_candidate_coherence": 0.1848440389815852,
+    "delta_vs_raw_gap_state_to_candidates": -0.8982939720153809,
+    "delta_vs_raw_logit_entropy": 1.0964343547821045,
+    "topk_overlap_vs_raw": 0.2,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": -17.25
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "transition_01",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "raw",
+    "raw_prompt": "within this messy statement about weather, colors, and bicycles, identify only the opposite of hot",
+    "effective_prompt": "within this messy statement about weather, colors, and bicycles, identify only the opposite of hot",
+    "raw_token_count": 18,
+    "effective_token_count": 18,
+    "logit_entropy": 3.7858633995056152,
+    "gap_state_to_candidates": 4.697227954864502,
+    "operator_strength": 4.585573673248291,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.46275537571450986,
+    "candidate_variance": 0.012906004322731245,
+    "degeneracy_ratio_topk": 0.6,
+    "degenerate": false,
+    "generic_tokens": [
+      "and",
+      ",",
+      ".",
+      "or",
+      "-",
+      ":"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141053Z/field_view_exp003_transition_01_raw__20260308T141053Z.json",
+    "field_view_candidates": [
+      {
+        "token": "and",
+        "logit": -80.4448013305664,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -81.10499572753906,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -81.21249389648438,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": "weather",
+        "logit": -81.28089904785156,
+        "coords": [
+          0.3057166337966919,
+          0.08808058500289917
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -82.51258850097656,
+        "coords": [
+          0.1556006520986557,
+          0.09558787941932678
+        ]
+      },
+      {
+        "token": "air",
+        "logit": -82.85424041748047,
+        "coords": [
+          0.06861478835344315,
+          -0.06267928332090378
+        ]
+      },
+      {
+        "token": "spots",
+        "logit": -82.86296081542969,
+        "coords": [
+          0.046016573905944824,
+          -0.04611869528889656
+        ]
+      },
+      {
+        "token": "-",
+        "logit": -83.15594482421875,
+        "coords": [
+          0.15503093600273132,
+          0.04826401174068451
+        ]
+      },
+      {
+        "token": "water",
+        "logit": -83.50935363769531,
+        "coords": [
+          -0.007802434265613556,
+          0.0519222617149353
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -83.60726165771484,
+        "coords": [
+          0.015917770564556122,
+          0.09499507397413254
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "transition_01",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "compressed",
+    "raw_prompt": "within this messy statement about weather, colors, and bicycles, identify only the opposite of hot",
+    "effective_prompt": "Identify the opposite of hot within a statement about weather, colors, and bicycles.",
+    "raw_token_count": 18,
+    "effective_token_count": 17,
+    "logit_entropy": 4.882457256317139,
+    "gap_state_to_candidates": 5.546525955200195,
+    "operator_strength": 5.420965671539307,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.90214986462492,
+    "candidate_variance": 0.0038902478385422932,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "This",
+      "For",
+      "The",
+      "If",
+      "It",
+      "You",
+      "(",
+      "<space>"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141108Z/field_view_exp003_transition_01_compressed__20260308T141108Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -120.972412109375,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "This",
+        "logit": -122.87128448486328,
+        "coords": [
+          0.08568056672811508,
+          0.03172948956489563
+        ]
+      },
+      {
+        "token": "For",
+        "logit": -123.15380096435547,
+        "coords": [
+          0.2257983684539795,
+          0.05402068793773651
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -123.21990203857422,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -123.26705169677734,
+        "coords": [
+          0.12112569808959961,
+          0.03417009115219116
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -123.7201919555664,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Use",
+        "logit": -123.79019927978516,
+        "coords": [
+          0.08796289563179016,
+          -0.07990296930074692
+        ]
+      },
+      {
+        "token": "You",
+        "logit": -123.80490112304688,
+        "coords": [
+          0.17329713702201843,
+          0.05030665919184685
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -123.9239501953125,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -123.98609161376953,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 0.9247338955580111,
+        "tokens_saved": 3,
+        "attempted_tokens_out": 21,
+        "attempted_tokens_saved": 3,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 21,
+    "attempted_tokens_saved": 3,
+    "attempted_token_delta": 3.0,
+    "token_delta": 1.0,
+    "tokens_saved": 1.0,
+    "compression_ratio": 0.9444444444444444,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.30000000000000004,
+    "delta_vs_raw_candidate_coherence": 0.4393944889104101,
+    "delta_vs_raw_gap_state_to_candidates": 0.8492980003356934,
+    "delta_vs_raw_logit_entropy": 1.0965938568115234,
+    "topk_overlap_vs_raw": 0.0,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": null
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "transition_02",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "raw",
+    "raw_prompt": "ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?",
+    "effective_prompt": "ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?",
+    "raw_token_count": 30,
+    "effective_token_count": 30,
+    "logit_entropy": 4.563712120056152,
+    "gap_state_to_candidates": 7.146081924438477,
+    "operator_strength": 7.0198798179626465,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7647583681956778,
+    "candidate_variance": 0.0065332367428746025,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "If",
+      "This",
+      "<space>",
+      "And",
+      "(",
+      "In",
+      "It",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141121Z/field_view_exp003_transition_02_raw__20260308T141121Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -146.7519073486328,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -148.2358856201172,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -148.32574462890625,
+        "coords": [
+          0.12112569808959961,
+          0.03417009115219116
+        ]
+      },
+      {
+        "token": "This",
+        "logit": -148.63047790527344,
+        "coords": [
+          0.08568056672811508,
+          0.03172948956489563
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -148.81182861328125,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -148.98475646972656,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -149.13107299804688,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "In",
+        "logit": -149.19386291503906,
+        "coords": [
+          0.17414434254169464,
+          0.10791470855474472
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -149.26393127441406,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -149.29090881347656,
+        "coords": [
+          0.09023138135671616,
+          0.017416581511497498
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "transition_02",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "compressed",
+    "raw_prompt": "ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?",
+    "effective_prompt": "ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?",
+    "raw_token_count": 30,
+    "effective_token_count": 30,
+    "logit_entropy": 4.563712120056152,
+    "gap_state_to_candidates": 7.146081924438477,
+    "operator_strength": 7.0198798179626465,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7647583681956778,
+    "candidate_variance": 0.0065332367428746025,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "If",
+      "This",
+      "<space>",
+      "And",
+      "(",
+      "In",
+      "It",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141132Z/field_view_exp003_transition_02_compressed__20260308T141132Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -146.7519073486328,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -148.2358856201172,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -148.32574462890625,
+        "coords": [
+          0.12112569808959961,
+          0.03417009115219116
+        ]
+      },
+      {
+        "token": "This",
+        "logit": -148.63047790527344,
+        "coords": [
+          0.08568056672811508,
+          0.03172948956489563
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -148.81182861328125,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -148.98475646972656,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -149.13107299804688,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "In",
+        "logit": -149.19386291503906,
+        "coords": [
+          0.17414434254169464,
+          0.10791470855474472
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -149.26393127441406,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -149.29090881347656,
+        "coords": [
+          0.09023138135671616,
+          0.017416581511497498
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.0,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 11,
+        "attempted_tokens_saved": 21,
+        "rejection_reason": "numeric_anchor_lost"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "numeric_anchor_lost",
+    "compression_valid": true,
+    "attempted_token_count": 11,
+    "attempted_tokens_saved": 21,
+    "attempted_token_delta": 21.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "transition_03",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "raw",
+    "raw_prompt": "write a short plan for comparing raw and compressed model prompts",
+    "effective_prompt": "write a short plan for comparing raw and compressed model prompts",
+    "raw_token_count": 11,
+    "effective_token_count": 11,
+    "logit_entropy": 3.0825541019439697,
+    "gap_state_to_candidates": 4.256125450134277,
+    "operator_strength": 4.073827743530273,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8464804272488818,
+    "candidate_variance": 0.008036728679607488,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      "to",
+      ",",
+      "with",
+      "and",
+      "for",
+      "in",
+      "on",
+      "("
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141144Z/field_view_exp003_transition_03_raw__20260308T141144Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -117.43550109863281,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": "to",
+        "logit": -118.20209503173828,
+        "coords": [
+          0.19380871951580048,
+          0.01084921509027481
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -118.4780044555664,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": "with",
+        "logit": -119.04407501220703,
+        "coords": [
+          0.20825406908988953,
+          0.09200746566057205
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -119.07683563232422,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": "for",
+        "logit": -119.69190216064453,
+        "coords": [
+          0.2684778571128845,
+          -0.03540090098977089
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -119.96498107910156,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "on",
+        "logit": -120.07598876953125,
+        "coords": [
+          0.13870051503181458,
+          0.06335988640785217
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -120.16661071777344,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "from",
+        "logit": -120.2738037109375,
+        "coords": [
+          0.27151164412498474,
+          -0.005519315600395203
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "transition_03",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "compressed",
+    "raw_prompt": "write a short plan for comparing raw and compressed model prompts",
+    "effective_prompt": "Write a short plan to compare raw and compressed model prompts.",
+    "raw_token_count": 11,
+    "effective_token_count": 12,
+    "logit_entropy": 4.9437689781188965,
+    "gap_state_to_candidates": 6.778391361236572,
+    "operator_strength": 6.657871246337891,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5331134790341732,
+    "candidate_variance": 0.005757518296165507,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "If",
+      "This",
+      "You",
+      "(",
+      "For",
+      "It"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141155Z/field_view_exp003_transition_03_compressed__20260308T141155Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -123.82077026367188,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -125.70580291748047,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "If",
+        "logit": -125.89781951904297,
+        "coords": [
+          0.12112569808959961,
+          0.03417009115219116
+        ]
+      },
+      {
+        "token": "This",
+        "logit": -125.98812866210938,
+        "coords": [
+          0.08568056672811508,
+          0.03172948956489563
+        ]
+      },
+      {
+        "token": "You",
+        "logit": -126.09336853027344,
+        "coords": [
+          0.17329713702201843,
+          0.05030665919184685
+        ]
+      },
+      {
+        "token": "Use",
+        "logit": -126.45860290527344,
+        "coords": [
+          0.08796289563179016,
+          -0.07990296930074692
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -126.47894287109375,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "For",
+        "logit": -126.594482421875,
+        "coords": [
+          0.2257983684539795,
+          0.05402068793773651
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -126.7217788696289,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Then",
+        "logit": -126.805908203125,
+        "coords": [
+          -0.006469910964369774,
+          0.0009872429072856903
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 0.9433761395546312,
+        "tokens_saved": 1,
+        "attempted_tokens_out": 15,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 15,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": -1.0,
+    "tokens_saved": -1.0,
+    "compression_ratio": 1.0909090909090908,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": -0.09999999999999998,
+    "delta_vs_raw_candidate_coherence": -0.3133669482147087,
+    "delta_vs_raw_gap_state_to_candidates": 2.522265911102295,
+    "delta_vs_raw_logit_entropy": 1.8612148761749268,
+    "topk_overlap_vs_raw": 0.1,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": null
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "contrast_degeneracy_01",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "raw",
+    "raw_prompt": "within this statement of clocks, bicycles, and paper, answer only which triangle sleeps faster than silence",
+    "effective_prompt": "within this statement of clocks, bicycles, and paper, answer only which triangle sleeps faster than silence",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 3.261909008026123,
+    "gap_state_to_candidates": 7.2399067878723145,
+    "operator_strength": 7.1588006019592285,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.45033352066692883,
+    "candidate_variance": 0.009510594552332384,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "and",
+      "(",
+      "or",
+      ";",
+      "in",
+      "is",
+      ":",
+      ".\""
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141213Z/field_view_exp003_contrast_degeneracy_01_raw__20260308T141213Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -83.07568359375,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -83.90060424804688,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -84.86258697509766,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -85.51469421386719,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -85.54389953613281,
+        "coords": [
+          0.1556006520986557,
+          0.09558787941932678
+        ]
+      },
+      {
+        "token": ";",
+        "logit": -85.854736328125,
+        "coords": [
+          -0.02020549774169922,
+          -0.01787734031677246
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -85.9051284790039,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -86.09464263916016,
+        "coords": [
+          0.22776496410369873,
+          0.030034136027097702
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -86.10884857177734,
+        "coords": [
+          0.015917770564556122,
+          0.09499507397413254
+        ]
+      },
+      {
+        "token": ".\"",
+        "logit": -86.19828796386719,
+        "coords": [
+          0.09028646349906921,
+          0.004489481449127197
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "contrast_degeneracy_01",
+    "regime": "transition",
+    "stratum": "transition",
+    "variant": "compressed",
+    "raw_prompt": "within this statement of clocks, bicycles, and paper, answer only which triangle sleeps faster than silence",
+    "effective_prompt": "within this statement of clocks, bicycles, and paper, answer only which triangle sleeps faster than silence",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 3.261909008026123,
+    "gap_state_to_candidates": 7.2399067878723145,
+    "operator_strength": 7.1588006019592285,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.45033352066692883,
+    "candidate_variance": 0.009510594552332384,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "and",
+      "(",
+      "or",
+      ";",
+      "in",
+      "is",
+      ":",
+      ".\""
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141232Z/field_view_exp003_contrast_degeneracy_01_compressed__20260308T141232Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -83.07568359375,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -83.90060424804688,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -84.86258697509766,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -85.51469421386719,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "or",
+        "logit": -85.54389953613281,
+        "coords": [
+          0.1556006520986557,
+          0.09558787941932678
+        ]
+      },
+      {
+        "token": ";",
+        "logit": -85.854736328125,
+        "coords": [
+          -0.02020549774169922,
+          -0.01787734031677246
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -85.9051284790039,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -86.09464263916016,
+        "coords": [
+          0.22776496410369873,
+          0.030034136027097702
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -86.10884857177734,
+        "coords": [
+          0.015917770564556122,
+          0.09499507397413254
+        ]
+      },
+      {
+        "token": ".\"",
+        "logit": -86.19828796386719,
+        "coords": [
+          0.09028646349906921,
+          0.004489481449127197
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.8691569684547757,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 48,
+        "attempted_tokens_saved": -22,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 48,
+    "attempted_tokens_saved": -22,
+    "attempted_token_delta": -22.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "hallucination_01",
+    "regime": "hallucination_prone",
+    "stratum": "hallucination_prone",
+    "variant": "raw",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.814836025238037,
+    "operator_strength": 6.687980651855469,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6727576434207994,
+    "candidate_variance": 0.01042330057608639,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),",
+      "(",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141240Z/field_view_exp003_hallucination_01_raw__20260308T141240Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -105.22686004638672,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -105.52989196777344,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "He",
+        "logit": -105.89884185791016,
+        "coords": [
+          0.13997235894203186,
+          -0.09371720254421234
+        ]
+      },
+      {
+        "token": ")",
+        "logit": -105.93049621582031,
+        "coords": [
+          0.1728331744670868,
+          -0.023674974218010902
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -105.93860626220703,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -106.07891845703125,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -106.29107666015625,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "),",
+        "logit": -106.41725158691406,
+        "coords": [
+          0.24188676476478577,
+          -0.04619566351175308
+        ]
+      },
+      {
+        "token": "(",
+        "logit": -106.46946716308594,
+        "coords": [
+          0.16151399910449982,
+          0.051575079560279846
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -106.57748413085938,
+        "coords": [
+          0.09023138135671616,
+          0.017416581511497498
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "hallucination_01",
+    "regime": "hallucination_prone",
+    "stratum": "hallucination_prone",
+    "variant": "compressed",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "Who was president of France in 1200?",
+    "raw_token_count": 10,
+    "effective_token_count": 8,
+    "logit_entropy": 5.3089094161987305,
+    "gap_state_to_candidates": 7.348896503448486,
+    "operator_strength": 7.227702617645264,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6694959562220225,
+    "candidate_variance": 0.009989450311075277,
+    "degeneracy_ratio_topk": 0.6,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      "And",
+      "That",
+      "The"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141248Z/field_view_exp003_hallucination_01_compressed__20260308T141248Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -123.57589721679688,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -125.46671295166016,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -125.55572509765625,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "Did",
+        "logit": -125.5558853149414,
+        "coords": [
+          0.11872391402721405,
+          -0.01297607459127903
+        ]
+      },
+      {
+        "token": "He",
+        "logit": -125.65409088134766,
+        "coords": [
+          0.13997235894203186,
+          -0.09371720254421234
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -125.69359588623047,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "Who",
+        "logit": -125.8255386352539,
+        "coords": [
+          0.22246712446212769,
+          0.02397315949201584
+        ]
+      },
+      {
+        "token": "That",
+        "logit": -125.82771301269531,
+        "coords": [
+          0.09023138135671616,
+          0.017416581511497498
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -125.90717315673828,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "No",
+        "logit": -125.96993255615234,
+        "coords": [
+          0.1415363997220993,
+          -0.05171643942594528
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "compressed",
+        "coverage": 0.8201901814915072,
+        "tokens_saved": 1,
+        "attempted_tokens_out": 9,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": null
+      }
+    },
+    "compression_mode": "compressed",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": 9,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": 2.0,
+    "tokens_saved": 2.0,
+    "compression_ratio": 0.8,
+    "compression_outcome": "compressed_shorter",
+    "delta_vs_raw_degeneracy_ratio_topk": -0.4,
+    "delta_vs_raw_candidate_coherence": -0.0032616871987768414,
+    "delta_vs_raw_gap_state_to_candidates": 0.5340604782104492,
+    "delta_vs_raw_logit_entropy": -0.841437816619873,
+    "topk_overlap_vs_raw": 0.6,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 0.48571428571428577
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "hallucination_02",
+    "regime": "hallucination_prone",
+    "stratum": "hallucination_prone",
+    "variant": "raw",
+    "raw_prompt": "which moon base was founded by the Roman Empire?",
+    "effective_prompt": "which moon base was founded by the Roman Empire?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 4.849016189575195,
+    "gap_state_to_candidates": 7.889267921447754,
+    "operator_strength": 7.765988826751709,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5430250185086309,
+    "candidate_variance": 0.01166645578141057,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "Or",
+      "The",
+      "And",
+      "<space>",
+      "It",
+      "Is",
+      "I"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141300Z/field_view_exp003_hallucination_02_raw__20260308T141300Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -119.10316467285156,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "Or",
+        "logit": -120.8298110961914,
+        "coords": [
+          -0.020363017916679382,
+          0.1126827821135521
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -120.84203338623047,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -121.04425048828125,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -121.34693145751953,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -121.4049072265625,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -121.51909637451172,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -121.5467529296875,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -121.57928466796875,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "Did",
+        "logit": -121.63433837890625,
+        "coords": [
+          0.11872391402721405,
+          -0.01297607459127903
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "hallucination_02",
+    "regime": "hallucination_prone",
+    "stratum": "hallucination_prone",
+    "variant": "compressed",
+    "raw_prompt": "which moon base was founded by the Roman Empire?",
+    "effective_prompt": "which moon base was founded by the Roman Empire?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 4.849016189575195,
+    "gap_state_to_candidates": 7.889267921447754,
+    "operator_strength": 7.765988826751709,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5430250185086309,
+    "candidate_variance": 0.01166645578141057,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "Or",
+      "The",
+      "And",
+      "<space>",
+      "It",
+      "Is",
+      "I"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141316Z/field_view_exp003_hallucination_02_compressed__20260308T141316Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -119.10316467285156,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "Or",
+        "logit": -120.8298110961914,
+        "coords": [
+          -0.020363017916679382,
+          0.1126827821135521
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -120.84203338623047,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -121.04425048828125,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -121.34693145751953,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -121.4049072265625,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -121.51909637451172,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -121.5467529296875,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -121.57928466796875,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "Did",
+        "logit": -121.63433837890625,
+        "coords": [
+          0.11872391402721405,
+          -0.01297607459127903
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.0,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 11,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": "recall_anchor_lost"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "recall_anchor_lost",
+    "compression_valid": true,
+    "attempted_token_count": 11,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "hallucination_03",
+    "regime": "hallucination_prone",
+    "stratum": "hallucination_prone",
+    "variant": "raw",
+    "raw_prompt": "what treaty ended the war between Atlantis and Prussia in 1891?",
+    "effective_prompt": "what treaty ended the war between Atlantis and Prussia in 1891?",
+    "raw_token_count": 14,
+    "effective_token_count": 14,
+    "logit_entropy": 4.648830413818359,
+    "gap_state_to_candidates": 7.34814977645874,
+    "operator_strength": 7.227925777435303,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5059359406219052,
+    "candidate_variance": 0.012632479610336124,
+    "degeneracy_ratio_topk": 0.6,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "And",
+      "<space>",
+      "Or",
+      "It"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141329Z/field_view_exp003_hallucination_03_raw__20260308T141329Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -127.14945220947266,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -129.01165771484375,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -129.2394561767578,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -129.25216674804688,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -129.37277221679688,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "Or",
+        "logit": -129.5464324951172,
+        "coords": [
+          -0.020363017916679382,
+          0.1126827821135521
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -129.56210327148438,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Why",
+        "logit": -129.7205047607422,
+        "coords": [
+          0.08031652867794037,
+          -0.05617824196815491
+        ]
+      },
+      {
+        "token": "How",
+        "logit": -129.80111694335938,
+        "coords": [
+          0.22870445251464844,
+          0.11588335782289505
+        ]
+      },
+      {
+        "token": "Did",
+        "logit": -129.8197784423828,
+        "coords": [
+          0.11872391402721405,
+          -0.01297607459127903
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "hallucination_03",
+    "regime": "hallucination_prone",
+    "stratum": "hallucination_prone",
+    "variant": "compressed",
+    "raw_prompt": "what treaty ended the war between Atlantis and Prussia in 1891?",
+    "effective_prompt": "what treaty ended the war between Atlantis and Prussia in 1891?",
+    "raw_token_count": 14,
+    "effective_token_count": 14,
+    "logit_entropy": 4.648830413818359,
+    "gap_state_to_candidates": 7.34814977645874,
+    "operator_strength": 7.227925777435303,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5059359406219052,
+    "candidate_variance": 0.012632479610336124,
+    "degeneracy_ratio_topk": 0.6,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "And",
+      "<space>",
+      "Or",
+      "It"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141339Z/field_view_exp003_hallucination_03_compressed__20260308T141339Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -127.14945220947266,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -129.01165771484375,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -129.2394561767578,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -129.25216674804688,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -129.37277221679688,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "Or",
+        "logit": -129.5464324951172,
+        "coords": [
+          -0.020363017916679382,
+          0.1126827821135521
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -129.56210327148438,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Why",
+        "logit": -129.7205047607422,
+        "coords": [
+          0.08031652867794037,
+          -0.05617824196815491
+        ]
+      },
+      {
+        "token": "How",
+        "logit": -129.80111694335938,
+        "coords": [
+          0.22870445251464844,
+          0.11588335782289505
+        ]
+      },
+      {
+        "token": "Did",
+        "logit": -129.8197784423828,
+        "coords": [
+          0.11872391402721405,
+          -0.01297607459127903
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.9815909662091497,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 15,
+        "attempted_tokens_saved": 0,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 15,
+    "attempted_tokens_saved": 0,
+    "attempted_token_delta": 0.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "random_baseline_math_01",
+    "regime": "control",
+    "stratum": "random_prompt_baseline",
+    "variant": "raw",
+    "raw_prompt": "ignore decorative answer only the actual wording: if plus 2 is four and 3 then is six what is 5 only",
+    "effective_prompt": "ignore decorative answer only the actual wording: if plus 2 is four and 3 then is six what is 5 only",
+    "raw_token_count": 22,
+    "effective_token_count": 22,
+    "logit_entropy": 5.439230918884277,
+    "gap_state_to_candidates": 4.340381145477295,
+    "operator_strength": 4.204257965087891,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8272994570951631,
+    "candidate_variance": 0.007741502684313563,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "if",
+      "the",
+      "is",
+      ",",
+      ".",
+      "?",
+      "for",
+      "in"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141403Z/field_view_exp003_random_baseline_math_01_raw__20260308T141403Z.json",
+    "field_view_candidates": [
+      {
+        "token": "if",
+        "logit": -114.53887939453125,
+        "coords": [
+          0.1582604944705963,
+          0.020335957407951355
+        ]
+      },
+      {
+        "token": "the",
+        "logit": -114.95128631591797,
+        "coords": [
+          0.17859017848968506,
+          0.028818558901548386
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -115.73966979980469,
+        "coords": [
+          0.22776496410369873,
+          0.030034136027097702
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -115.82732391357422,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -115.83528900146484,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": "?",
+        "logit": -116.27408599853516,
+        "coords": [
+          0.07279112190008163,
+          0.0042234864085912704
+        ]
+      },
+      {
+        "token": "one",
+        "logit": -116.35716247558594,
+        "coords": [
+          0.15897236764431,
+          0.031024269759655
+        ]
+      },
+      {
+        "token": "for",
+        "logit": -116.3907470703125,
+        "coords": [
+          0.2684778571128845,
+          -0.03540090098977089
+        ]
+      },
+      {
+        "token": "two",
+        "logit": -116.41375732421875,
+        "coords": [
+          0.09743964672088623,
+          -0.018929576501250267
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -116.71754455566406,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "random_baseline_math_01",
+    "regime": "control",
+    "stratum": "random_prompt_baseline",
+    "variant": "compressed",
+    "raw_prompt": "ignore decorative answer only the actual wording: if plus 2 is four and 3 then is six what is 5 only",
+    "effective_prompt": "ignore decorative answer only the actual wording: if plus 2 is four and 3 then is six what is 5 only",
+    "raw_token_count": 22,
+    "effective_token_count": 22,
+    "logit_entropy": 5.439230918884277,
+    "gap_state_to_candidates": 4.340381145477295,
+    "operator_strength": 4.204257965087891,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8272994570951631,
+    "candidate_variance": 0.007741502684313563,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "if",
+      "the",
+      "is",
+      ",",
+      ".",
+      "?",
+      "for",
+      "in"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141414Z/field_view_exp003_random_baseline_math_01_compressed__20260308T141414Z.json",
+    "field_view_candidates": [
+      {
+        "token": "if",
+        "logit": -114.53887939453125,
+        "coords": [
+          0.1582604944705963,
+          0.020335957407951355
+        ]
+      },
+      {
+        "token": "the",
+        "logit": -114.95128631591797,
+        "coords": [
+          0.17859017848968506,
+          0.028818558901548386
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -115.73966979980469,
+        "coords": [
+          0.22776496410369873,
+          0.030034136027097702
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -115.82732391357422,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -115.83528900146484,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": "?",
+        "logit": -116.27408599853516,
+        "coords": [
+          0.07279112190008163,
+          0.0042234864085912704
+        ]
+      },
+      {
+        "token": "one",
+        "logit": -116.35716247558594,
+        "coords": [
+          0.15897236764431,
+          0.031024269759655
+        ]
+      },
+      {
+        "token": "for",
+        "logit": -116.3907470703125,
+        "coords": [
+          0.2684778571128845,
+          -0.03540090098977089
+        ]
+      },
+      {
+        "token": "two",
+        "logit": -116.41375732421875,
+        "coords": [
+          0.09743964672088623,
+          -0.018929576501250267
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -116.71754455566406,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.7522931596247839,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 27,
+        "attempted_tokens_saved": -2,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 27,
+    "attempted_tokens_saved": -2,
+    "attempted_token_delta": -2.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "random_baseline_recall_01",
+    "regime": "control",
+    "stratum": "random_prompt_baseline",
+    "variant": "raw",
+    "raw_prompt": "what is the capital of window and Japan station?",
+    "effective_prompt": "what is the capital of window and Japan station?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 4.965365409851074,
+    "gap_state_to_candidates": 7.982873439788818,
+    "operator_strength": 7.843663692474365,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6600122104723701,
+    "candidate_variance": 0.01099731711955449,
+    "degeneracy_ratio_topk": 0.7,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "I",
+      "It",
+      "Is",
+      "<space>",
+      "And"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141426Z/field_view_exp003_random_baseline_recall_01_raw__20260308T141426Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -114.3810806274414,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -116.39352416992188,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -116.54954528808594,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -116.60113525390625,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -116.61781311035156,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -116.70442962646484,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -116.85535430908203,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -116.90477752685547,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "How",
+        "logit": -117.06546020507812,
+        "coords": [
+          0.22870445251464844,
+          0.11588335782289505
+        ]
+      },
+      {
+        "token": "Why",
+        "logit": -117.33036041259766,
+        "coords": [
+          0.08031652867794037,
+          -0.05617824196815491
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "random_baseline_recall_01",
+    "regime": "control",
+    "stratum": "random_prompt_baseline",
+    "variant": "compressed",
+    "raw_prompt": "what is the capital of window and Japan station?",
+    "effective_prompt": "what is the capital of window and Japan station?",
+    "raw_token_count": 10,
+    "effective_token_count": 10,
+    "logit_entropy": 4.965365409851074,
+    "gap_state_to_candidates": 7.982873439788818,
+    "operator_strength": 7.843663692474365,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6600122104723701,
+    "candidate_variance": 0.01099731711955449,
+    "degeneracy_ratio_topk": 0.7,
+    "degenerate": false,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "I",
+      "It",
+      "Is",
+      "<space>",
+      "And"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141443Z/field_view_exp003_random_baseline_recall_01_compressed__20260308T141443Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -114.3810806274414,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -116.39352416992188,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "I",
+        "logit": -116.54954528808594,
+        "coords": [
+          0.22494962811470032,
+          -0.008279753848910332
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -116.60113525390625,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -116.61781311035156,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -116.70442962646484,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -116.85535430908203,
+        "coords": [
+          0.1790122240781784,
+          0.06340095400810242
+        ]
+      },
+      {
+        "token": "And",
+        "logit": -116.90477752685547,
+        "coords": [
+          -0.04996071010828018,
+          0.13310064375400543
+        ]
+      },
+      {
+        "token": "How",
+        "logit": -117.06546020507812,
+        "coords": [
+          0.22870445251464844,
+          0.11588335782289505
+        ]
+      },
+      {
+        "token": "Why",
+        "logit": -117.33036041259766,
+        "coords": [
+          0.08031652867794037,
+          -0.05617824196815491
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.7666051048698438,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 11,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": "coverage_below_threshold"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "coverage_below_threshold",
+    "compression_valid": true,
+    "attempted_token_count": 11,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "random_baseline_degeneracy_01",
+    "regime": "control",
+    "stratum": "random_prompt_baseline",
+    "variant": "raw",
+    "raw_prompt": "within this statement of clocks, paper, and silence, answer only which bicycle triangle faster than sleeps",
+    "effective_prompt": "within this statement of clocks, paper, and silence, answer only which bicycle triangle faster than sleeps",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 4.770285606384277,
+    "gap_state_to_candidates": 1.4712872505187988,
+    "operator_strength": 1.373818039894104,
+    "risk_score": 0.8649126636477281,
+    "candidate_coherence": 0.881947985273281,
+    "candidate_variance": 0.007223608571504362,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "in",
+      "?",
+      "on",
+      "and",
+      "you",
+      "the",
+      "at",
+      "of"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141458Z/field_view_exp003_random_baseline_degeneracy_01_raw__20260308T141458Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -106.71588897705078,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -107.28353118896484,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -107.98477172851562,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "?",
+        "logit": -108.15036010742188,
+        "coords": [
+          0.07279112190008163,
+          0.0042234864085912704
+        ]
+      },
+      {
+        "token": "on",
+        "logit": -108.2514877319336,
+        "coords": [
+          0.13870051503181458,
+          0.06335988640785217
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -108.34412384033203,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": "you",
+        "logit": -108.40154266357422,
+        "coords": [
+          0.3014128506183624,
+          0.06897744536399841
+        ]
+      },
+      {
+        "token": "the",
+        "logit": -108.46524810791016,
+        "coords": [
+          0.17859017848968506,
+          0.028818558901548386
+        ]
+      },
+      {
+        "token": "at",
+        "logit": -108.52903747558594,
+        "coords": [
+          0.16940435767173767,
+          0.04348403587937355
+        ]
+      },
+      {
+        "token": "of",
+        "logit": -108.59517669677734,
+        "coords": [
+          0.1912161260843277,
+          0.08045932650566101
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260308T140825Z",
+    "prompt_id": "random_baseline_degeneracy_01",
+    "regime": "control",
+    "stratum": "random_prompt_baseline",
+    "variant": "compressed",
+    "raw_prompt": "within this statement of clocks, paper, and silence, answer only which bicycle triangle faster than sleeps",
+    "effective_prompt": "within this statement of clocks, paper, and silence, answer only which bicycle triangle faster than sleeps",
+    "raw_token_count": 19,
+    "effective_token_count": 19,
+    "logit_entropy": 4.770285606384277,
+    "gap_state_to_candidates": 1.4712872505187988,
+    "operator_strength": 1.373818039894104,
+    "risk_score": 0.8649126636477281,
+    "candidate_coherence": 0.881947985273281,
+    "candidate_variance": 0.007223608571504362,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "in",
+      "?",
+      "on",
+      "and",
+      "you",
+      "the",
+      "at",
+      "of"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260308T141514Z/field_view_exp003_random_baseline_degeneracy_01_compressed__20260308T141514Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -106.71588897705078,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -107.28353118896484,
+        "coords": [
+          0.08670803904533386,
+          0.06046106293797493
+        ]
+      },
+      {
+        "token": "in",
+        "logit": -107.98477172851562,
+        "coords": [
+          0.21816085278987885,
+          0.07628108561038971
+        ]
+      },
+      {
+        "token": "?",
+        "logit": -108.15036010742188,
+        "coords": [
+          0.07279112190008163,
+          0.0042234864085912704
+        ]
+      },
+      {
+        "token": "on",
+        "logit": -108.2514877319336,
+        "coords": [
+          0.13870051503181458,
+          0.06335988640785217
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -108.34412384033203,
+        "coords": [
+          0.18834719061851501,
+          0.0882706493139267
+        ]
+      },
+      {
+        "token": "you",
+        "logit": -108.40154266357422,
+        "coords": [
+          0.3014128506183624,
+          0.06897744536399841
+        ]
+      },
+      {
+        "token": "the",
+        "logit": -108.46524810791016,
+        "coords": [
+          0.17859017848968506,
+          0.028818558901548386
+        ]
+      },
+      {
+        "token": "at",
+        "logit": -108.52903747558594,
+        "coords": [
+          0.16940435767173767,
+          0.04348403587937355
+        ]
+      },
+      {
+        "token": "of",
+        "logit": -108.59517669677734,
+        "coords": [
+          0.1912161260843277,
+          0.08045932650566101
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.8168706273055701,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 25,
+        "attempted_tokens_saved": 1,
+        "rejection_reason": "coverage_below_threshold"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "coverage_below_threshold",
+    "compression_valid": true,
+    "attempted_token_count": 25,
+    "attempted_tokens_saved": 1,
+    "attempted_token_delta": 1.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "raw_fallback",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  }
+]

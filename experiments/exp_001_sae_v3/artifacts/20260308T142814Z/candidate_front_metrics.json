@@ -1,0 +1,28 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T142814Z/field_view_exp003_hallucination_03_compressed__20260308T142814Z.json",
+  "prompt": "what treaty ended the war between Atlantis and Prussia in 1891?",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.648830413818359,
+  "gap_state_to_candidates": 7.34814977645874,
+  "operator_strength": 7.227925777435303,
+  "candidate_coherence": 0.5059359406219052,
+  "candidate_variance": 0.012632479610336124,
+  "candidate_centroid": [
+    0.11457134112715721,
+    0.03872192930430174
+  ],
+  "state_to_centroid_distance": 7.348149361440647,
+  "degeneracy_ratio_topk": 0.6,
+  "degenerate": false,
+  "generic_count": 6,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "The",
+    "And",
+    "<space>",
+    "Or",
+    "It"
+  ]
+}

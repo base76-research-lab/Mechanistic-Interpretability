@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T140316Z/field_view_tmp_p07_write_a_short_python_function_that_r__20260308T140316Z.json",
+  "prompt": "write python function returning sorted unique values from a list",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.7724111080169678,
+  "gap_state_to_candidates": 8.651535987854004,
+  "operator_strength": 8.511238098144531,
+  "candidate_coherence": 0.8223931482191373,
+  "candidate_variance": 0.005983565225397333,
+  "candidate_centroid": [
+    0.12232597023248673,
+    0.06933948881924153
+  ],
+  "state_to_centroid_distance": 8.651535502414202,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "of",
+    ".",
+    "<space>",
+    ",",
+    ":",
+    "(",
+    "with",
+    "and",
+    "or"
+  ]
+}

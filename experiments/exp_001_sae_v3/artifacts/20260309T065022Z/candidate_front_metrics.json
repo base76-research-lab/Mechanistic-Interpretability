@@ -1,0 +1,28 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260309T065022Z/field_view_exp003_transition_02_compressed__20260309T065022Z.json",
+  "prompt": "If 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.712009906768799,
+  "gap_state_to_candidates": 7.409693241119385,
+  "operator_strength": 7.309173107147217,
+  "candidate_coherence": 0.40225914793144657,
+  "candidate_variance": 0.008447646700323507,
+  "candidate_centroid": [
+    0.09584200214594603,
+    0.03445859923958779
+  ],
+  "state_to_centroid_distance": 7.409693138587932,
+  "degeneracy_ratio_topk": 0.6,
+  "degenerate": false,
+  "generic_count": 6,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "And",
+    "If",
+    "The",
+    "That",
+    "This"
+  ]
+}

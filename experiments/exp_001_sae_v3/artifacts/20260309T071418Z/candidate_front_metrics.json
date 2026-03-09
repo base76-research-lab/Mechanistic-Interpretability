@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260309T071418Z/field_view_exp003_p08_explain_why_the_statement_all_swans__raw__20260309T071418Z.json",
+  "prompt": "explain why the statement \"all swans are white\" can fail in one sentence",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 2.655712366104126,
+  "gap_state_to_candidates": 4.120473384857178,
+  "operator_strength": 4.034493923187256,
+  "candidate_coherence": 0.7972605562284198,
+  "candidate_variance": 0.00815751078883606,
+  "candidate_centroid": [
+    0.1525056205689907,
+    0.06934008682146668
+  ],
+  "state_to_centroid_distance": 4.120473148927822,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    ".",
+    ",",
+    "is",
+    "and",
+    ":",
+    "(",
+    "or",
+    "in",
+    "\u2014"
+  ]
+}

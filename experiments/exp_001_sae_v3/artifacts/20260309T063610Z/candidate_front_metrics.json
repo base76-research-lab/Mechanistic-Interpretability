@@ -1,0 +1,23 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260309T063610Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed__20260309T063610Z.json",
+  "prompt": "king is to queen as man is to",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 6.467029094696045,
+  "gap_state_to_candidates": 3.9511687755584717,
+  "operator_strength": 3.7612380981445312,
+  "candidate_coherence": 0.8950136454883234,
+  "candidate_variance": 0.010595117476847531,
+  "candidate_centroid": [
+    0.20404786206781864,
+    -0.06307933367788791
+  ],
+  "state_to_centroid_distance": 3.9511688068159128,
+  "degeneracy_ratio_topk": 0.1,
+  "degenerate": false,
+  "generic_count": 1,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "be"
+  ]
+}

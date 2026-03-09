@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T135936Z/field_view_tmp_p02_the_opposite_of_hot_is__20260308T135936Z.json",
+  "prompt": "opposite of hot?",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 5.317923069000244,
+  "gap_state_to_candidates": 7.714720249176025,
+  "operator_strength": 7.601085186004639,
+  "candidate_coherence": 0.5570624341330792,
+  "candidate_variance": 0.010391113602753068,
+  "candidate_centroid": [
+    0.10878558605909347,
+    0.03375853132456541
+  ],
+  "state_to_centroid_distance": 7.714720362197084,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "I",
+    "The",
+    "It",
+    "And",
+    "That",
+    "Or",
+    "You",
+    "If"
+  ]
+}

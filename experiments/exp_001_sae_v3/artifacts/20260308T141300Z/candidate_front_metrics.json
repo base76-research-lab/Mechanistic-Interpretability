@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T141300Z/field_view_exp003_hallucination_02_raw__20260308T141300Z.json",
+  "prompt": "which moon base was founded by the Roman Empire?",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.849016189575195,
+  "gap_state_to_candidates": 7.889267921447754,
+  "operator_strength": 7.765988826751709,
+  "candidate_coherence": 0.5430250185086309,
+  "candidate_variance": 0.01166645578141057,
+  "candidate_centroid": [
+    0.12265117987990379,
+    0.028565578162670135
+  ],
+  "state_to_centroid_distance": 7.889268099155095,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "Or",
+    "The",
+    "And",
+    "<space>",
+    "It",
+    "Is",
+    "I"
+  ]
+}

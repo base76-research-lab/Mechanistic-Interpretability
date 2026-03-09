@@ -1,0 +1,29 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T125505Z/field_view_exp003_p05_summarize_the_sentence_the_quick_bro_compressed_vectorized_proxy_mean__20260308T125505Z.json",
+  "prompt": "semantic anchor packet: There | five | four | You | While | six | three | If",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.1595816612243652,
+  "gap_state_to_candidates": 6.098185062408447,
+  "operator_strength": 5.907309055328369,
+  "candidate_coherence": 0.9310616230093853,
+  "candidate_variance": 0.005622813892436542,
+  "candidate_centroid": [
+    0.20906869024038316,
+    0.022598962299525738
+  ],
+  "state_to_centroid_distance": 6.098184972121645,
+  "degeneracy_ratio_topk": 0.7,
+  "degenerate": false,
+  "generic_count": 7,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "you",
+    "the",
+    "a",
+    "it",
+    "this",
+    "("
+  ]
+}

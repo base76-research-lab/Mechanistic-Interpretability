@@ -2,6 +2,20 @@
 
 Goal: produce ESA-ready evidence, not broad exploration.
 
+## Status entering Monday
+
+As of 2026-03-08, the compression workstream has already cleared the old integration blockers:
+
+- the token-compressor loader is correctly wired
+- the `ollama` Python dependency is installed and the compressor runs
+- the Monday sanity path has passed once for text-only compression
+
+The current blocker is now narrow and methodological rather than infrastructural:
+
+- robust full-panel text compression still fails as a defensible best-current method
+- remaining weak cases are centered on `anchored_03` drift and recall-anchor loss in `hallucination_02` / `hallucination_03`
+- vector proxy remains deferred until text compression is stable enough to freeze as the baseline intervention
+
 ## Locked assumptions
 
 - Primary model: GPT-2 Small
@@ -9,14 +23,17 @@ Goal: produce ESA-ready evidence, not broad exploration.
 - Priority: robust batch + targeted stress-tests + narrow cross-model check
 - Non-goal: full cross-model generalization or new flagship metric
 
-## Monday: sanity reset
+## Monday: compression stabilization reset
 
-- Verify token compressor availability with strict guards
-- Run 5-10 sanity prompts from `data/prompts_sanity_2026-03-09.txt`
-- Compare `mean`, `attn_weighted`, `pca1`
-- Stop immediately if any non-raw row still behaves as compression no-op
+- Patch the remaining weak text-compression cases:
+  - `anchored_03`
+  - `hallucination_02`
+  - `hallucination_03`
+- Rerun the robust text-only panel, not the older mixed text/vector sanity path
+- Internal-only agent runner available for bounded Monday execution and stop/go recommendation
+- Keep `VECTOR_PROXY_LEGITIMACY_PROTOCOL_2026-03-08.md` deferred until text compression becomes the stable baseline
 
-Command:
+Historical sanity command:
 
 ```bash
 cd "/media/bjorn/iic/workspace/Base76_Research_Lab/Mechanistic Interpretability"
@@ -28,7 +45,18 @@ python3 scripts/compare_compression_vectorized.py \
   --device cpu
 ```
 
+Internal runner:
+
+```bash
+python3 scripts/run_monday_sanity_pass.py
+```
+
 ## Tuesday: robust batch
+
+Gate:
+
+- only proceed if Monday yields a defensible text-only `compressed` method on the full observability panel
+- if Monday still fails, Tuesday remains a narrow repair pass rather than vector or cross-model work
 
 - Use `data/prompts_robust_2026-03-09.jsonl`
 - Run stratified batch across:
@@ -70,6 +98,10 @@ python3 scripts/plot_vector_mode_scatter.py \
   2. higher coherence median
   3. lower degeneracy median
   4. lower entropy median
+
+Interpretation rule:
+
+- text compression must become the defensible baseline intervention before vector proxy work is resumed
 
 Command:
 

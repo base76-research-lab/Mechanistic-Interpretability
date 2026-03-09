@@ -1,0 +1,69 @@
+{
+  "timestamp_utc": "20260308T122314Z",
+  "scenario": "exp003_contrast_degeneracy_01_compressed",
+  "prompt": "within this statement of clocks, bicycles, and paper, answer only which triangle sleeps faster than silence",
+  "model": "gpt2",
+  "layer": 5,
+  "units": [
+    472,
+    468,
+    57,
+    156,
+    346
+  ],
+  "mode": "pc2",
+  "topk": 10,
+  "device": "cpu",
+  "script": "scripts/field_view.py",
+  "script_sha256": "d44b9953b18b0ed8d348237b831f4e5229914010d502998613a76df5cada2569",
+  "sae_weights": "experiments/exp_001_sae_v3/sae_weights.pt",
+  "sae_weights_sha256": "b28bfad2ebf102bd5461e719aed8d7027097ac6bf1dfb66ae9ba97967ab2f584",
+  "git": {
+    "head": "ed37977d6537e83e5a09a4076ee060f87106a65b",
+    "status": "M data/prompts_observability_panel_2026-03-07.jsonl\n M experiments/exp_003_compression_vectorized/summary_20260307T174503Z.md\n M reports/ESA_WEEK_PLAN_2026-03-09.md\n M reports/L_SAE_R_PROTOCOL_2026-03-07.md\n M reports/L_SAE_R_RESEARCH_QUESTION_2026-03-07.md\n M reports/UNIFIED_OBSERVABILITY_STACK_PROTOCOL_2026-03-07.md\n M reports/compression_analysis_2026-03-06.md\n M reports/exp_001_sae.md\n M reports/steering_vector_analysis_2026-03-06.md\n M reports/summary_findings_2026-03-06.md\n M research_index.md\n M scripts/compare_compression_vectorized.py\n M scripts/plot_unified_stack_traces.py\n M scripts/run_unified_observability_stack.py\n?? experiments/exp_001_sae_v3/artifacts/20260307T174242Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174255Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174302Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174309Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174316Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174325Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174505Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174511Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174517Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174525Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174532Z/\n?? experiments/exp_001_sae_v3/artifacts/20260307T174539Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121541Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121552Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121557Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121603Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121610Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121622Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121632Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121638Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121643Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121651Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121707Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121715Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121721Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121727Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121733Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121746Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121757Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121804Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121813Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121819Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121832Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121839Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121846Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121851Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121857Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121912Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121927Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121935Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121941Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T121947Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122001Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122013Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122020Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122039Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122048Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122107Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122123Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122134Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122147Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122155Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122215Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122226Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122233Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122238Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122244Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122303Z/\n?? experiments/exp_001_sae_v3/artifacts/20260308T122314Z/\n?? experiments/exp_001_sae_v3/runs/20260307T174242Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174242Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174255Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174255Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174302Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174302Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174309Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174309Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174316Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174316Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174325Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174325Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174505Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174505Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174511Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174511Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174517Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174517Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174525Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174525Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174532Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174532Z.md\n?? experiments/exp_001_sae_v3/runs/20260307T174539Z.json\n?? experiments/exp_001_sae_v3/runs/20260307T174539Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121541Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121541Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121552Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121552Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121557Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121557Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121603Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121603Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121610Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121610Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121622Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121622Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121632Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121632Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121638Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121638Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121643Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121643Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121651Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121651Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121707Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121707Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121715Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121715Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121721Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121721Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121727Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121727Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121733Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121733Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121746Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121746Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121757Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121757Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121804Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121804Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121813Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121813Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121819Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121819Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121832Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121832Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121839Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121839Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121846Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121846Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121851Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121851Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121857Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121857Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121912Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121912Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121927Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121927Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121935Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121935Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121941Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121941Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T121947Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T121947Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122001Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122001Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122013Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122013Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122020Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122020Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122039Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122039Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122048Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122048Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122107Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122107Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122123Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122123Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122134Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122134Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122147Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122147Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122155Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122155Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122215Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122215Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122226Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122226Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122233Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122233Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122238Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122238Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122244Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122244Z.md\n?? experiments/exp_001_sae_v3/runs/20260308T122303Z.json\n?? experiments/exp_001_sae_v3/runs/20260308T122303Z.md\n?? experiments/exp_003_compression_vectorized/results_20260307T174240Z.csv\n?? experiments/exp_003_compression_vectorized/results_20260307T174240Z.json\n?? experiments/exp_003_compression_vectorized/sanity_passes/\n?? experiments/exp_003_compression_vectorized/summary_20260307T174240Z.json\n?? experiments/exp_003_compression_vectorized/summary_20260307T174240Z.md\n?? experiments/exp_004_unified_observability_stack/smoke_test_dts/\n?? scripts/run_monday_sanity_pass.py"
+  },
+  "metrics": {
+    "logit_entropy": 3.261909008026123,
+    "gap_state_to_candidates": 7.2399067878723145,
+    "operator_strength": 7.1588006019592285,
+    "risk_score": 1.0,
+    "field_coords": [
+      -6.518730163574219,
+      2.9588141441345215
+    ],
+    "candidate_spread_mean": 0.14417631924152374
+  },
+  "candidate_front": {
+    "coherence": 0.45033352066692883,
+    "variance": 0.009510594552332384,
+    "centroid": [
+      0.11474131718277931,
+      0.05824386700987816
+    ],
+    "state_to_centroid_distance": 7.239906892947959,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      ",",
+      "and",
+      "(",
+      "or",
+      ";",
+      "in",
+      "is",
+      ":",
+      ".\""
+    ],
+    "generic_count": 10,
+    "candidate_count": 10
+  },
+  "artifact_paths": {
+    "field_view_json": "experiments/exp_001_sae_v3/artifacts/20260308T122314Z/field_view_exp003_contrast_degeneracy_01_compressed__20260308T122314Z.json",
+    "candidate_front_metrics_json": "experiments/exp_001_sae_v3/artifacts/20260308T122314Z/candidate_front_metrics.json"
+  },
+  "checksums": {
+    "field_view_json_sha256": "27f428aa61c289bdf46b0e1012215525f109de0c979acb35c524a76921594b83",
+    "candidate_front_metrics_json_sha256": "226277b17d647ecf5a0316ce3f62cde42d566831a5da571a05586323abc4978c"
+  }
+}

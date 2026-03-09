@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T140042Z/field_view_tmp_p08_explain_why_the_statement_all_swans___20260308T140042Z.json",
+  "prompt": "explain why \"all swans are white\" can fail",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.1205062866210938,
+  "gap_state_to_candidates": 5.778969764709473,
+  "operator_strength": 5.6048502922058105,
+  "candidate_coherence": 0.8616303788079351,
+  "candidate_variance": 0.005145889009817996,
+  "candidate_centroid": [
+    0.16662101894617082,
+    0.05059022232890129
+  ],
+  "state_to_centroid_distance": 5.778969593581692,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "to",
+    ".",
+    ",",
+    "in",
+    "and",
+    "at",
+    "the",
+    "as"
+  ]
+}

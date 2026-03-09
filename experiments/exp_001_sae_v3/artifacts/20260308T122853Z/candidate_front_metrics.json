@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T122853Z/field_view_exp003_p04_if_all_roses_are_flowers_and_some_fl_compressed__20260308T122853Z.json",
+  "prompt": "if all roses are flowers and some fade quickly then all roses fade quickly.",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 5.1717376708984375,
+  "gap_state_to_candidates": 5.995408058166504,
+  "operator_strength": 5.8513689041137695,
+  "candidate_coherence": 0.9223868281485608,
+  "candidate_variance": 0.0041247742973707195,
+  "candidate_centroid": [
+    0.14092887677252292,
+    0.03928461577743292
+  ],
+  "state_to_centroid_distance": 5.995408042073308,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "The",
+    "If",
+    "This",
+    "<space>",
+    "It",
+    "I",
+    "You",
+    "In"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T144919Z/field_view_exp003_transition_03_raw__20260308T144919Z.json",
+  "prompt": "write a short plan for comparing raw and compressed model prompts",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.0825541019439697,
+  "gap_state_to_candidates": 4.256125450134277,
+  "operator_strength": 4.073827743530273,
+  "candidate_coherence": 0.8464804272488818,
+  "candidate_variance": 0.008036728679607488,
+  "candidate_centroid": [
+    0.17588016241788865,
+    0.05005057901144028
+  ],
+  "state_to_centroid_distance": 4.256125669979447,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    ".",
+    "to",
+    ",",
+    "with",
+    "and",
+    "for",
+    "in",
+    "on",
+    "("
+  ]
+}

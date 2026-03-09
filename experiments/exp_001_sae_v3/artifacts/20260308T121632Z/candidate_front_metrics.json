@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T121632Z/field_view_exp003_anchored_02_compressed__20260308T121632Z.json",
+  "prompt": "Japan's capital is Tokyo.",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.288376808166504,
+  "gap_state_to_candidates": 7.107702255249023,
+  "operator_strength": 7.000564098358154,
+  "candidate_coherence": 0.5814428957347381,
+  "candidate_variance": 0.01167019549026016,
+  "candidate_centroid": [
+    0.11122410371899605,
+    0.020804547518491746
+  ],
+  "state_to_centroid_distance": 7.107701942226179,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "The",
+    "It",
+    "In",
+    "But",
+    "And",
+    "This",
+    "A"
+  ]
+}

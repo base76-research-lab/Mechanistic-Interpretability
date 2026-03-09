@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "20260308T135624Z",
+  "status": "blocked_compressor_no_op",
+  "reasons": [
+    "compression pipeline shows no meaningful engagement in: compressed"
+  ],
+  "next_step": "Stop and debug compressor availability",
+  "command_executed": "cd \"/media/bjorn/iic/ESA/research/mechanistic-interpretability\"\npython3 scripts/compare_compression_vectorized.py --prompts-file /media/bjorn/iic/ESA/research/mechanistic-interpretability/data/prompts_sanity_2026-03-09.txt --prompts-jsonl '' --require-compressor --exclude-invalid-compression --device cpu",
+  "summary_json_path": "experiments/exp_003_compression_vectorized/summary_20260308T135415Z.json",
+  "results_json_path": "experiments/exp_003_compression_vectorized/results_20260308T135415Z.json",
+  "run_error": null,
+  "internal_only": true,
+  "artifact_status": "agent-drafted",
+  "principle_ref": "RCP-2026-01"
+}

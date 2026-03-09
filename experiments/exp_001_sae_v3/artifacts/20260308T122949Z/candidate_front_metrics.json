@@ -1,0 +1,23 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T122949Z/field_view_exp003_p05_summarize_the_sentence_the_quick_bro_compressed_vectorized_proxy_pca1__20260308T122949Z.json",
+  "prompt": "semantic anchor packet: all | one | not | some | more | its | their | I",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.817047119140625,
+  "gap_state_to_candidates": 5.935574054718018,
+  "operator_strength": 5.8233184814453125,
+  "candidate_coherence": 0.9016741918473037,
+  "candidate_variance": 0.0043391456377123916,
+  "candidate_centroid": [
+    0.18618181049823762,
+    0.029424072615802287
+  ],
+  "state_to_centroid_distance": 5.9355739068773,
+  "degeneracy_ratio_topk": 0.1,
+  "degenerate": false,
+  "generic_count": 1,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|"
+  ]
+}

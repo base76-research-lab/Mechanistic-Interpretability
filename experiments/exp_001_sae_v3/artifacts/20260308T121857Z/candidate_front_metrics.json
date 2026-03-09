@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T121857Z/field_view_exp003_reasoning_02_compressed_vectorized_proxy_pca1__20260308T121857Z.json",
+  "prompt": "semantic anchor packet: doctor | raised | may | well | came | fat | here | doctors",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 2.9480042457580566,
+  "gap_state_to_candidates": 2.763503313064575,
+  "operator_strength": 2.743499517440796,
+  "candidate_coherence": 0.7804604530995912,
+  "candidate_variance": 0.011819683031553983,
+  "candidate_centroid": [
+    0.17442733198404312,
+    0.022388697788119315
+  ],
+  "state_to_centroid_distance": 2.7635033965561115,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "<space>",
+    ".",
+    "|",
+    "are",
+    "'",
+    ",",
+    "and"
+  ]
+}

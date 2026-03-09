@@ -1,0 +1,32 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T140226Z/field_view_tmp_p05_summarize_the_sentence_the_quick_bro__20260308T140226Z.json",
+  "prompt": "summarize \"the quick brown fox jumps over the lazy dog\" in 5 words",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.907477617263794,
+  "gap_state_to_candidates": 3.3462212085723877,
+  "operator_strength": 3.2360992431640625,
+  "candidate_coherence": 0.6809576268962636,
+  "candidate_variance": 0.00918103188661141,
+  "candidate_centroid": [
+    0.1163051825016737,
+    0.06791596878319979
+  ],
+  "state_to_centroid_distance": 3.346221224141652,
+  "degeneracy_ratio_topk": 1.0,
+  "degenerate": true,
+  "generic_count": 10,
+  "candidate_count": 10,
+  "generic_tokens": [
+    ".",
+    ",",
+    "<space>",
+    "and",
+    "(",
+    ":",
+    "in",
+    "<space>",
+    "!",
+    ")"
+  ]
+}

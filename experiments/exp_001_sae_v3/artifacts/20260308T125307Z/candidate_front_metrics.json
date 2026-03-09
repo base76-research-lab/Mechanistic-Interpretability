@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T125307Z/field_view_exp003_p02_the_opposite_of_hot_is_compressed_vectorized_proxy_attn_weighted__20260308T125307Z.json",
+  "prompt": "semantic anchor packet: hot | opposite | does | they | makes | did | will | would",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 0.6060308218002319,
+  "gap_state_to_candidates": 6.501902103424072,
+  "operator_strength": 6.420859336853027,
+  "candidate_coherence": 0.7204362774602541,
+  "candidate_variance": 0.010726352077359646,
+  "candidate_centroid": [
+    0.1617690682411194,
+    -0.0017383310943841935
+  ],
+  "state_to_centroid_distance": 6.501902357061137,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "|",
+    "be",
+    "<space>",
+    "----------------------------------------------------------------",
+    "(",
+    "=",
+    "."
+  ]
+}

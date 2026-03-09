@@ -1,0 +1,312 @@
+[
+  {
+    "unit": 467,
+    "mean_activation": 36.03855895996094,
+    "top_tokens": [
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 307.6347351074219
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 307.6347351074219
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 307.24945068359375
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 307.24945068359375
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 306.163818359375
+      }
+    ]
+  },
+  {
+    "unit": 233,
+    "mean_activation": 34.50200653076172,
+    "top_tokens": [
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 317.47296142578125
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 317.47296142578125
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 316.90106201171875
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 316.90106201171875
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 316.5161437988281
+      }
+    ]
+  },
+  {
+    "unit": 460,
+    "mean_activation": 33.27273941040039,
+    "top_tokens": [
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 285.47314453125
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 285.47314453125
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 284.9090881347656
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 284.9090881347656
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 284.5012512207031
+      }
+    ]
+  },
+  {
+    "unit": 92,
+    "mean_activation": 32.879150390625,
+    "top_tokens": [
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 299.58953857421875
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 299.58953857421875
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 299.5567626953125
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 299.5567626953125
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 299.060302734375
+      }
+    ]
+  },
+  {
+    "unit": 508,
+    "mean_activation": 32.39797592163086,
+    "top_tokens": [
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 286.447509765625
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 286.38629150390625
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 286.38629150390625
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 286.1539306640625
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 286.1539306640625
+      }
+    ]
+  },
+  {
+    "unit": 456,
+    "mean_activation": 32.24396514892578,
+    "top_tokens": [
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 320.4804382324219
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 320.4804382324219
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 319.6761779785156
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 319.6761779785156
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 318.69140625
+      }
+    ]
+  },
+  {
+    "unit": 248,
+    "mean_activation": 31.332176208496094,
+    "top_tokens": [
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 305.3700866699219
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 305.3700866699219
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 304.7301025390625
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 304.7301025390625
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 303.8680419921875
+      }
+    ]
+  },
+  {
+    "unit": 12,
+    "mean_activation": 31.207290649414062,
+    "top_tokens": [
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 287.6112976074219
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 287.6112976074219
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 287.4256286621094
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 287.4256286621094
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 286.6264343261719
+      }
+    ]
+  },
+  {
+    "unit": 126,
+    "mean_activation": 31.113563537597656,
+    "top_tokens": [
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 290.12261962890625
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 290.12261962890625
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 289.3319091796875
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 289.3319091796875
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 288.61163330078125
+      }
+    ]
+  },
+  {
+    "unit": 271,
+    "mean_activation": 30.738988876342773,
+    "top_tokens": [
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 287.5849609375
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 287.5849609375
+      },
+      {
+        "token_id": 327,
+        "token": "C",
+        "value": 287.44537353515625
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 287.44537353515625
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 286.63238525390625
+      }
+    ]
+  }
+]

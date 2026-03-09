@@ -253,6 +253,26 @@ def add_drift(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return out
 
 
+def add_trace_aggregates(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for row in records:
+        key = f"{row['prompt_id']}::{row['intervention_state']}"
+        grouped.setdefault(key, []).append(row)
+    out = []
+    for _, rows in grouped.items():
+        rows = sorted(rows, key=lambda r: r["layer"])
+        dts = 0.0
+        for row in rows:
+            delta = row.get("lens_entropy_delta_vs_prev_layer")
+            if delta is not None:
+                dts += abs(float(delta))
+        for row in rows:
+            current = dict(row)
+            current["decision_trajectory_smoothness"] = float(dts)
+            out.append(current)
+    return out
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--prompt-jsonl", type=str, default=str(DEFAULT_PANEL))
@@ -265,6 +285,11 @@ def main() -> None:
     parser.add_argument("--top-features", type=int, default=8)
     parser.add_argument("--token-position", choices=["last"], default="last")
     parser.add_argument("--intervention-state", type=str, default="baseline")
+    parser.add_argument(
+        "--use-sae-reconstruction",
+        action="store_true",
+        help="If set, replace hidden_vec with SAE reconstruction before metrics (enables L-SAE+R style intervention).",
+    )
     parser.add_argument("--run-name", type=str, default="")
     parser.add_argument("--device", type=str, default="cpu")
     args = parser.parse_args()
@@ -298,7 +323,16 @@ def main() -> None:
             seq_len = int(tokens["input_ids"].shape[1])
             token_index = seq_len - 1
             for layer in args.layers:
-                hidden_vec = get_layer_vector(out.hidden_states, layer, token_index)
+                hidden_vec_raw = get_layer_vector(out.hidden_states, layer, token_index)
+
+                # Optionally route through SAE reconstruction to activate L-SAE+R behavior
+                if args.use_sae_reconstruction:
+                    with torch.no_grad():
+                        recon_vec, z_vec = sae(hidden_vec_raw.unsqueeze(0))
+                        hidden_vec = recon_vec.squeeze(0)
+                else:
+                    hidden_vec = hidden_vec_raw
+
                 field_coords = project(hidden_vec, basis)
                 lens_logits = apply_logit_lens(model, hidden_vec)
                 lens_topk = decode_topk(tokenizer, lens_logits, args.topk)
@@ -321,6 +355,7 @@ def main() -> None:
                 records.append(record)
 
     records = add_drift(records)
+    records = add_trace_aggregates(records)
     with open(trace_jsonl, "w") as f:
         for row in records:
             f.write(json.dumps(row) + "\n")
@@ -339,6 +374,7 @@ def main() -> None:
         "topk": args.topk,
         "top_features": args.top_features,
         "intervention_state": args.intervention_state,
+        "use_sae_reconstruction": args.use_sae_reconstruction,
         "record_count": len(records),
         "schema": {
             "grain": "one record per prompt_id, layer, token_index, intervention_state",

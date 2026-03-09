@@ -1,0 +1,269 @@
+[
+  {
+    "ts": "20260309T070725Z",
+    "prompt_id": "p01_hello_world",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "raw",
+    "raw_prompt": "hello world",
+    "effective_prompt": "hello world",
+    "raw_token_count": 2,
+    "effective_token_count": 2,
+    "logit_entropy": 5.001066207885742,
+    "gap_state_to_candidates": 2.6115918159484863,
+    "operator_strength": 2.5113420486450195,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8358112332483156,
+    "candidate_variance": 0.00876708529515997,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      ".",
+      "\"",
+      ",",
+      ".\"",
+      "of",
+      ",\"",
+      "and",
+      "<space>",
+      "is"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T070740Z/field_view_exp003_p01_hello_world_raw__20260309T070740Z.json",
+    "field_view_candidates": [
+      {
+        "token": ".",
+        "logit": -65.15608215332031,
+        "coords": [
+          0.023318462073802948,
+          0.09862159192562103
+        ]
+      },
+      {
+        "token": "\"",
+        "logit": -65.2475814819336,
+        "coords": [
+          0.2542106807231903,
+          0.04470149427652359
+        ]
+      },
+      {
+        "token": ",",
+        "logit": -65.79704284667969,
+        "coords": [
+          0.08670783042907715,
+          0.06046111509203911
+        ]
+      },
+      {
+        "token": ".\"",
+        "logit": -66.44918060302734,
+        "coords": [
+          0.09028638899326324,
+          0.004489384591579437
+        ]
+      },
+      {
+        "token": "of",
+        "logit": -66.91365051269531,
+        "coords": [
+          0.19121581315994263,
+          0.08046013861894608
+        ]
+      },
+      {
+        "token": "'s",
+        "logit": -66.9322280883789,
+        "coords": [
+          0.257570743560791,
+          0.06854341179132462
+        ]
+      },
+      {
+        "token": ",\"",
+        "logit": -67.02281188964844,
+        "coords": [
+          0.23102757334709167,
+          -0.05189578980207443
+        ]
+      },
+      {
+        "token": "and",
+        "logit": -67.10295867919922,
+        "coords": [
+          0.1883467733860016,
+          0.0882711112499237
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -67.35619354248047,
+        "coords": [
+          0.12350327521562576,
+          0.007906703278422356
+        ]
+      },
+      {
+        "token": "is",
+        "logit": -67.38208770751953,
+        "coords": [
+          0.22776484489440918,
+          0.030034352093935013
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_rejection_reason": null,
+    "compression_valid": true,
+    "attempted_token_count": null,
+    "attempted_tokens_saved": null,
+    "attempted_token_delta": null,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "none",
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260309T070725Z",
+    "prompt_id": "p01_hello_world",
+    "regime": "unknown",
+    "stratum": "ad_hoc",
+    "variant": "compressed",
+    "raw_prompt": "hello world",
+    "effective_prompt": "hello world",
+    "raw_token_count": 2,
+    "effective_token_count": 2,
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511680603027344,
+    "operator_strength": 3.761237382888794,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.89501325235953,
+    "candidate_variance": 0.010595126959253437,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260309T070854Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_raw__20260309T070854Z.json",
+    "field_view_candidates": [
+      {
+        "token": "man",
+        "logit": -80.8475112915039,
+        "coords": [
+          0.2680182456970215,
+          -0.10444749891757965
+        ]
+      },
+      {
+        "token": "queen",
+        "logit": -80.9719009399414,
+        "coords": [
+          0.05651181936264038,
+          -0.05726718530058861
+        ]
+      },
+      {
+        "token": "woman",
+        "logit": -81.00384521484375,
+        "coords": [
+          0.2289612889289856,
+          -0.1054767370223999
+        ]
+      },
+      {
+        "token": "king",
+        "logit": -81.55841827392578,
+        "coords": [
+          0.1535022258758545,
+          0.002735644578933716
+        ]
+      },
+      {
+        "token": "wife",
+        "logit": -82.06409454345703,
+        "coords": [
+          0.17559462785720825,
+          -0.003163117915391922
+        ]
+      },
+      {
+        "token": "beast",
+        "logit": -82.49939727783203,
+        "coords": [
+          0.32182377576828003,
+          -0.0773143321275711
+        ]
+      },
+      {
+        "token": "god",
+        "logit": -82.52043151855469,
+        "coords": [
+          0.2757377326488495,
+          -0.08666916936635971
+        ]
+      },
+      {
+        "token": "be",
+        "logit": -82.55994415283203,
+        "coords": [
+          0.14096876978874207,
+          0.027018534019589424
+        ]
+      },
+      {
+        "token": "mother",
+        "logit": -82.59207153320312,
+        "coords": [
+          0.11992945522069931,
+          -0.13549217581748962
+        ]
+      },
+      {
+        "token": "slave",
+        "logit": -82.92059326171875,
+        "coords": [
+          0.2994317412376404,
+          -0.09071598947048187
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "raw_fallback",
+        "coverage": 0.38247868821241987,
+        "tokens_saved": 0,
+        "attempted_tokens_out": 66,
+        "attempted_tokens_saved": -64,
+        "rejection_reason": "non_compressive_or_expansive"
+      }
+    },
+    "compression_mode": "raw_fallback",
+    "compression_rejection_reason": "non_compressive_or_expansive",
+    "compression_valid": true,
+    "attempted_token_count": 66,
+    "attempted_tokens_saved": -64,
+    "attempted_token_delta": -64.0,
+    "token_delta": 0.0,
+    "tokens_saved": 0.0,
+    "compression_ratio": 1.0,
+    "compression_outcome": "compressed_longer_rejected",
+    "delta_vs_raw_degeneracy_ratio_topk": -0.8,
+    "delta_vs_raw_candidate_coherence": 0.059202019111214366,
+    "delta_vs_raw_gap_state_to_candidates": 1.339576244354248,
+    "delta_vs_raw_logit_entropy": 1.4659628868103027,
+    "topk_overlap_vs_raw": 0.0,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": null
+  }
+]

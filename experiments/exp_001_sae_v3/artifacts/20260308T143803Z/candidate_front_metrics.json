@@ -1,0 +1,31 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T143803Z/field_view_exp003_contrast_degeneracy_01_compressed__20260308T143803Z.json",
+  "prompt": "Answer only: which triangle sleeps faster than silence",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.5680084228515625,
+  "gap_state_to_candidates": 7.418992519378662,
+  "operator_strength": 7.318076133728027,
+  "candidate_coherence": 0.8725174110340057,
+  "candidate_variance": 0.004757124572397336,
+  "candidate_centroid": [
+    0.1353578619658947,
+    0.05755912158638239
+  ],
+  "state_to_centroid_distance": 7.418992372079971,
+  "degeneracy_ratio_topk": 0.9,
+  "degenerate": true,
+  "generic_count": 9,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "?",
+    ".",
+    ",",
+    "and",
+    "(",
+    "<space>",
+    "or",
+    "in",
+    "on"
+  ]
+}

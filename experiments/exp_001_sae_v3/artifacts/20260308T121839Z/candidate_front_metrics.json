@@ -1,0 +1,26 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T121839Z/field_view_exp003_reasoning_02_compressed__20260308T121839Z.json",
+  "prompt": "teacher is to doctor",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 5.588047981262207,
+  "gap_state_to_candidates": 5.562669277191162,
+  "operator_strength": 5.436031818389893,
+  "candidate_coherence": 0.8932192448707007,
+  "candidate_variance": 0.007669049272350648,
+  "candidate_centroid": [
+    0.17891981676220894,
+    0.002708846889436245
+  ],
+  "state_to_centroid_distance": 5.562669309263383,
+  "degeneracy_ratio_topk": 0.4,
+  "degenerate": false,
+  "generic_count": 4,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "the",
+    "a",
+    "and",
+    ","
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260307T174302Z/field_view_exp003_anchored_01_compressed_vectorized_proxy_mean__20260307T174302Z.json",
+  "prompt": "semantic anchor packet: 2 | 1 | 3 | 4 | 5 | 6 | 0 | 7",
+  "topk": 5,
+  "risk_score": 1.0,
+  "logit_entropy": 2.0649938583374023,
+  "gap_state_to_candidates": 3.9471895694732666,
+  "operator_strength": 3.8649098873138428,
+  "candidate_coherence": 0.4639324224554698,
+  "candidate_variance": 0.00916591793253207,
+  "candidate_centroid": [
+    0.08863435834646224,
+    0.03901601433753967
+  ],
+  "state_to_centroid_distance": 3.9471896038225176,
+  "degeneracy_ratio_topk": 1.0,
+  "degenerate": true,
+  "generic_count": 5,
+  "candidate_count": 5,
+  "generic_tokens": [
+    "|",
+    "<space>",
+    ".",
+    ":",
+    "||"
+  ]
+}

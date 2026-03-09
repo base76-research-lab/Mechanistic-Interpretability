@@ -1,0 +1,29 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260309T064222Z/field_view_exp003_p02_the_opposite_of_hot_is_compressed__20260309T064222Z.json",
+  "prompt": "Opposite of hot?",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 5.731133460998535,
+  "gap_state_to_candidates": 7.362117290496826,
+  "operator_strength": 7.219860553741455,
+  "candidate_coherence": 0.9602213722064917,
+  "candidate_variance": 0.003001311613188125,
+  "candidate_centroid": [
+    0.14408967643976212,
+    0.00939728058874607
+  ],
+  "state_to_centroid_distance": 7.362117345963012,
+  "degeneracy_ratio_topk": 0.7,
+  "degenerate": false,
+  "generic_count": 7,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "The",
+    "I",
+    "It",
+    "You",
+    "That",
+    "A"
+  ]
+}

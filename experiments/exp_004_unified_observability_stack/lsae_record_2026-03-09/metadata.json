@@ -1,0 +1,32 @@
+{
+  "run_name": "lsae_record_2026-03-09",
+  "timestamp_utc": "20260309T100511Z",
+  "model": "gpt2",
+  "layers": [
+    3,
+    5,
+    6,
+    9,
+    12
+  ],
+  "panel": "data/prompts_observability_panel_2026-03-07.jsonl",
+  "panel_sha256": "cbca7851b76ed55e899a7ae5d3e59c3b503abea6342406eac40325f7a990094c",
+  "sae_state": "experiments/exp_001_sae_v3/sae_weights.pt",
+  "sae_state_sha256": "b28bfad2ebf102bd5461e719aed8d7027097ac6bf1dfb66ae9ba97967ab2f584",
+  "basis_mode": "pc2",
+  "units": [
+    472,
+    468,
+    57,
+    156,
+    346
+  ],
+  "topk": 10,
+  "top_features": 8,
+  "intervention_state": "baseline",
+  "record_count": 80,
+  "schema": {
+    "grain": "one record per prompt_id, layer, token_index, intervention_state",
+    "trace_file": "experiments/exp_004_unified_observability_stack/lsae_record_2026-03-09/trace.jsonl"
+  }
+}

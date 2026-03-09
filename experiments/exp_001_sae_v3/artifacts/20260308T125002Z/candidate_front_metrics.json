@@ -1,0 +1,30 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T125002Z/field_view_exp003_p07_write_a_short_python_function_that_r_compressed_vectorized_proxy_mean__20260308T125002Z.json",
+  "prompt": "semantic anchor packet: some | you | these | they | make | their | any | if",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.546402931213379,
+  "gap_state_to_candidates": 6.342060089111328,
+  "operator_strength": 6.163906097412109,
+  "candidate_coherence": 0.9553132432098342,
+  "candidate_variance": 0.0049450466300549455,
+  "candidate_centroid": [
+    0.2092621222138405,
+    0.02525190860033035
+  ],
+  "state_to_centroid_distance": 6.3420599018540385,
+  "degeneracy_ratio_topk": 0.8,
+  "degenerate": true,
+  "generic_count": 8,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|",
+    "you",
+    "they",
+    "(",
+    "|",
+    "the",
+    "it",
+    "this"
+  ]
+}

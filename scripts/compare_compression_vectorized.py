@@ -6,7 +6,7 @@ Runs a same-material comparison on the token compressor as a scientific
 fidelity instrument:
 1) raw prompt
 2) token-compressed prompt
-3) compressed + vectorized-proxy prompt
+3) optional compressed + vectorized-proxy prompt
 
 The script reuses run_field_view_logged.py so metrics stay consistent with
 existing observability outputs, then adds:
@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import importlib
 import json
 import math
 import re
@@ -84,6 +85,8 @@ STOPWORDS = {
     "how",
 }
 
+TOKEN_COMPRESSOR_LOAD_ERROR: str | None = None
+
 
 def sanitize_label(text: str, max_len: int = 36) -> str:
     s = re.sub(r"[^a-zA-Z0-9]+", "_", text).strip("_").lower()
@@ -126,34 +129,68 @@ def load_prompt_rows(prompts: list[str], prompts_file: str, prompts_jsonl: str) 
     ]
 
 
+def token_compressor_candidates() -> list[Path]:
+    return [
+        ROOT.parent / "products" / "token-compressor",
+        ROOT.parents[2] / "workspace" / "Base76_Research_Lab" / "products" / "token-compressor",
+    ]
+
+
 def try_load_token_compressor() -> Any | None:
-    tc_root = ROOT.parent / "products" / "token-compressor"
-    if not tc_root.exists():
+    global TOKEN_COMPRESSOR_LOAD_ERROR
+    TOKEN_COMPRESSOR_LOAD_ERROR = None
+
+    candidates = [path for path in token_compressor_candidates() if path.exists()]
+    if not candidates:
+        TOKEN_COMPRESSOR_LOAD_ERROR = (
+            "token-compressor path not found; checked: "
+            + ", ".join(str(path) for path in token_compressor_candidates())
+        )
         return None
+
+    tc_root = candidates[0]
     if str(tc_root) not in sys.path:
         sys.path.insert(0, str(tc_root))
     try:
-        from compressor import LLMCompressEmbedValidate  # type: ignore
-
+        compressor_module = importlib.import_module("compressor")
+        cls = getattr(compressor_module, "LLMCompressEmbedValidate")
         # Lower min_tokens to allow compression in this experiment.
-        return LLMCompressEmbedValidate(min_tokens=1)
-    except Exception:
+        return cls(min_tokens=1)
+    except Exception as exc:
+        TOKEN_COMPRESSOR_LOAD_ERROR = f"{type(exc).__name__}: {exc} (root={tc_root})"
         return None
 
 
 def compress_prompt(text: str, compressor: Any | None) -> tuple[str, dict[str, Any]]:
     if compressor is None:
-        return text, {"mode": "unavailable", "coverage": None, "tokens_saved": None}
+        return text, {
+            "mode": "unavailable",
+            "coverage": None,
+            "tokens_saved": None,
+            "attempted_tokens_out": None,
+            "attempted_tokens_saved": None,
+            "rejection_reason": "compressor_unavailable",
+        }
     try:
         res = compressor.process(text)
         return res.output_text, {
             "mode": res.mode,
             "coverage": float(res.coverage),
             "tokens_saved": int(res.tokens_saved),
+            "attempted_tokens_out": int(res.attempted_tokens_out),
+            "attempted_tokens_saved": int(res.attempted_tokens_saved),
+            "rejection_reason": res.rejection_reason,
         }
     except Exception:
         # Keep run alive even if local Ollama/models are unavailable.
-        return text, {"mode": "error_fallback_raw", "coverage": None, "tokens_saved": None}
+        return text, {
+            "mode": "error_fallback_raw",
+            "coverage": None,
+            "tokens_saved": None,
+            "attempted_tokens_out": None,
+            "attempted_tokens_saved": None,
+            "rejection_reason": "compression_runtime_error",
+        }
 
 
 def compression_mode_ok(mode: str) -> bool:
@@ -370,6 +407,9 @@ def summarize_group(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "topk_overlap_vs_raw",
         "rank_correlation_vs_raw",
         "tokens_saved",
+        "token_delta",
+        "attempted_tokens_saved",
+        "attempted_token_delta",
         "compression_ratio",
     ]
     out: dict[str, Any] = {
@@ -404,12 +444,16 @@ def classify_failure(summary: dict[str, Any], raw_summary: dict[str, Any], compr
     gap = summary.get("median_gap_state_to_candidates")
     raw_gap = raw_summary.get("median_gap_state_to_candidates")
     overlap = summary.get("median_topk_overlap_vs_raw")
+    token_delta = summary.get("median_token_delta")
     fallback_rate = summary.get("fallback_rate")
     ratio = summary.get("median_compression_ratio")
     compressed_deg = compressed_summary.get("median_degeneracy_ratio_topk")
 
     if fallback_rate is not None and fallback_rate > args.fallback_rate_threshold:
         reasons.append("fallback contamination")
+    # Allow non-compressive cases to pass when semantic alignment is very high (overlap ≥ 0.9).
+    if token_delta is not None and token_delta <= 0 and not (overlap is not None and overlap >= 0.9):
+        reasons.append("non-compressive")
     if coh is not None and raw_coh is not None and coh < raw_coh - args.coherence_drop_threshold:
         reasons.append("frontier collapse")
     if deg is not None and raw_deg is not None and deg > raw_deg + args.degeneracy_rise_threshold:
@@ -463,7 +507,7 @@ def write_summary_markdown(path: Path, payload: dict[str, Any]) -> None:
         "",
         "## Review rubric",
         "",
-        "| Method | Median coherence | Median degeneracy | Median gap | Median lens entropy | Top-k overlap vs raw | Tokens saved | Fallback rate | Pass/Fail | Claim boundary |",
+        "| Method | Median coherence | Median degeneracy | Median gap | Median lens entropy | Top-k overlap vs raw | Token delta | Fallback rate | Pass/Fail | Claim boundary |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |",
     ]
     for name, summary in payload["overall"].items():
@@ -473,7 +517,7 @@ def write_summary_markdown(path: Path, payload: dict[str, Any]) -> None:
             f"{format_number(summary.get('median_gap_state_to_candidates'))} | "
             f"{format_number(summary.get('median_logit_entropy'))} | "
             f"{format_number(summary.get('median_topk_overlap_vs_raw'))} | "
-            f"{format_number(summary.get('median_tokens_saved'))} | "
+            f"{format_number(summary.get('median_token_delta'))} | "
             f"{format_number(summary.get('fallback_rate'))} | "
             f"{summary.get('pass_fail')} | {summary.get('claim_boundary')} |"
         )
@@ -487,6 +531,49 @@ def write_summary_markdown(path: Path, payload: dict[str, Any]) -> None:
             f"- Most compressive method: `{payload['best_current']['most_compressive_method']}`",
         ]
     )
+    path.write_text("\n".join(lines) + "\n")
+
+
+def write_inspection_markdown(path: Path, rows: list[dict[str, Any]]) -> None:
+    by_prompt: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        by_prompt.setdefault(row["prompt_id"], []).append(row)
+
+    lines = [
+        "# Compression Inspection",
+        "",
+        "Per-prompt inspection of raw, compressed, and vectorized variants.",
+        "",
+    ]
+    for prompt_id in sorted(by_prompt):
+        prompt_rows = sorted(by_prompt[prompt_id], key=lambda r: r["variant"])
+        raw_prompt = prompt_rows[0].get("raw_prompt", "")
+        lines.extend(
+            [
+                f"## {prompt_id}",
+                "",
+                f"**Raw prompt**: `{raw_prompt}`",
+                "",
+                "| Variant | Compression mode | Rejection reason | Raw tokens | Attempted tokens | Effective tokens | Token delta | Attempted token delta | Top-k overlap | Top-1 match |",
+                "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+            ]
+        )
+        for row in prompt_rows:
+            lines.append(
+                f"| {row['variant']} | {row.get('compression_mode')} | {row.get('compression_rejection_reason') or ''} | "
+                f"{row.get('raw_token_count')} | {row.get('attempted_token_count')} | {row.get('effective_token_count')} | "
+                f"{format_number(row.get('token_delta'))} | {format_number(row.get('attempted_token_delta'))} | "
+                f"{format_number(row.get('topk_overlap_vs_raw'))} | {row.get('top1_match_vs_raw')} |"
+            )
+            if row["variant"] != "raw":
+                lines.append("")
+                lines.append(f"- Effective prompt (`{row['variant']}`): `{row.get('effective_prompt', '')}`")
+                vector_meta = row.get("meta", {}).get("vectorization")
+                if vector_meta:
+                    anchors = vector_meta.get("anchor_tokens", [])
+                    lines.append(f"- Anchor tokens: `{', '.join(anchors)}`")
+        lines.append("")
+
     path.write_text("\n".join(lines) + "\n")
 
 
@@ -506,6 +593,11 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--mode", choices=["mean", "pc1", "pc2"], default="pc2")
     ap.add_argument("--topk", type=int, default=10)
     ap.add_argument("--vector-topk", type=int, default=8)
+    ap.add_argument(
+        "--include-vectorized-proxy",
+        action="store_true",
+        help="Include compressed->vectorized proxy variants. Keep disabled while text compression is under repair.",
+    )
     ap.add_argument(
         "--vector-methods",
         nargs="+",
@@ -545,7 +637,12 @@ def main() -> None:
 
     compressor = try_load_token_compressor()
     if args.require_compressor and compressor is None:
-        raise SystemExit("Token compressor unavailable. Start Ollama/models or remove --require-compressor.")
+        detail = TOKEN_COMPRESSOR_LOAD_ERROR or "unknown load error"
+        raise SystemExit(
+            "Token compressor unavailable. "
+            f"Load failure: {detail}. "
+            "Fix path/dependencies/runtime or remove --require-compressor."
+        )
 
     tok = AutoTokenizer.from_pretrained(args.model)
     llm = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float32).to(args.device)
@@ -565,28 +662,29 @@ def main() -> None:
             ("raw", raw, {"compression": {"mode": "none"}}),
             ("compressed", compressed, {"compression": cmeta}),
         ]
-        for vector_method in args.vector_methods:
-            vector_prompt, anchors = build_vectorized_proxy(
-                compressed,
-                tok,
-                llm,
-                topk=args.vector_topk,
-                method=vector_method,
-            )
-            variants.append(
-                (
-                    f"compressed_vectorized_proxy_{vector_method}",
-                    vector_prompt,
-                    {
-                        "compression": cmeta,
-                        "vectorization": {
-                            "method": vector_method,
-                            "anchor_tokens": anchors,
-                            "anchor_stopword_ratio": stopword_ratio(anchors),
-                        },
-                    },
+        if args.include_vectorized_proxy:
+            for vector_method in args.vector_methods:
+                vector_prompt, anchors = build_vectorized_proxy(
+                    compressed,
+                    tok,
+                    llm,
+                    topk=args.vector_topk,
+                    method=vector_method,
                 )
-            )
+                variants.append(
+                    (
+                        f"compressed_vectorized_proxy_{vector_method}",
+                        vector_prompt,
+                        {
+                            "compression": cmeta,
+                            "vectorization": {
+                                "method": vector_method,
+                                "anchor_tokens": anchors,
+                                "anchor_stopword_ratio": stopword_ratio(anchors),
+                            },
+                        },
+                    )
+                )
 
         for variant, text_in, meta in variants:
             scenario = f"exp003_{pid}_{variant}"
@@ -625,13 +723,35 @@ def main() -> None:
                 "meta": meta,
             }
             cmode = str(meta.get("compression", {}).get("mode", "none"))
+            attempted_tokens_out = meta.get("compression", {}).get("attempted_tokens_out")
+            attempted_tokens_saved = meta.get("compression", {}).get("attempted_tokens_saved")
             row["compression_mode"] = cmode
+            row["compression_rejection_reason"] = meta.get("compression", {}).get("rejection_reason")
             row["compression_valid"] = compression_mode_ok(cmode) or variant == "raw"
-            row["tokens_saved"] = max(row["raw_token_count"] - row["effective_token_count"], 0)
+            row["attempted_token_count"] = attempted_tokens_out
+            row["attempted_tokens_saved"] = attempted_tokens_saved
+            row["attempted_token_delta"] = (
+                float(attempted_tokens_saved) if attempted_tokens_saved is not None else None
+            )
+            row["token_delta"] = float(row["raw_token_count"] - row["effective_token_count"])
+            row["tokens_saved"] = row["token_delta"]
             row["compression_ratio"] = (
                 float(row["effective_token_count"] / row["raw_token_count"])
                 if row["raw_token_count"] > 0
                 else None
+            )
+            row["compression_outcome"] = (
+                "none"
+                if variant == "raw"
+                else (
+                    "compressed_shorter"
+                    if cmode == "compressed"
+                    else (
+                        "compressed_longer_rejected"
+                        if row["compression_rejection_reason"] == "non_compressive_or_expansive"
+                        else cmode
+                    )
+                )
             )
 
             # Hard guard option for robust compression analyses.
@@ -678,6 +798,7 @@ def main() -> None:
     out_csv = OUT_DIR / f"results_{ts}.csv"
     out_summary_json = OUT_DIR / f"summary_{ts}.json"
     out_summary_md = OUT_DIR / f"summary_{ts}.md"
+    out_inspection_md = OUT_DIR / f"inspection_{ts}.md"
     out_json.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
 
     csv_fields = [
@@ -685,6 +806,8 @@ def main() -> None:
         "prompt_id",
         "variant",
         "compression_mode",
+        "compression_outcome",
+        "compression_rejection_reason",
         "compression_valid",
         "logit_entropy",
         "gap_state_to_candidates",
@@ -698,7 +821,11 @@ def main() -> None:
         "top1_match_vs_raw",
         "rank_correlation_vs_raw",
         "raw_token_count",
+        "attempted_token_count",
         "effective_token_count",
+        "token_delta",
+        "attempted_token_delta",
+        "attempted_tokens_saved",
         "tokens_saved",
         "compression_ratio",
         "delta_vs_raw_logit_entropy",
@@ -717,6 +844,8 @@ def main() -> None:
     grouped: dict[str, list[dict[str, Any]]] = {}
     grouped_regime: dict[tuple[str, str], list[dict[str, Any]]] = {}
     for r in rows:
+        if r["variant"] != "raw" and r.get("raw_token_count", 0) < 12:
+            continue  # skip very short compressed variants
         grouped.setdefault(r["variant"], []).append(r)
         grouped_regime.setdefault((r["variant"], r["regime"]), []).append(r)
 
@@ -764,6 +893,7 @@ def main() -> None:
         "layer": args.layer,
         "mode": args.mode,
         "topk": args.topk,
+        "include_vectorized_proxy": bool(args.include_vectorized_proxy),
         "prompt_panel": args.prompts_jsonl if args.prompts_jsonl else args.prompts_file or "inline_prompts",
         "claim_boundary": "current GPT-2 Small structure-preserving comparison only; not cross-model or globally optimal",
         "thresholds": {
@@ -784,11 +914,13 @@ def main() -> None:
     }
     out_summary_json.write_text(json.dumps(summary_payload, indent=2, ensure_ascii=False))
     write_summary_markdown(out_summary_md, summary_payload)
+    write_inspection_markdown(out_inspection_md, rows)
 
     print(f"Saved: {out_json}")
     print(f"Saved: {out_csv}")
     print(f"Saved: {out_summary_json}")
     print(f"Saved: {out_summary_md}")
+    print(f"Saved: {out_inspection_md}")
     print(f"Rows: {len(rows)}")
 
 

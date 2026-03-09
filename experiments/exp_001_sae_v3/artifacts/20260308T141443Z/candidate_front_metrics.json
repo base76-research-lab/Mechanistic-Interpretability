@@ -1,0 +1,29 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T141443Z/field_view_exp003_random_baseline_recall_01_compressed__20260308T141443Z.json",
+  "prompt": "what is the capital of window and Japan station?",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 4.965365409851074,
+  "gap_state_to_candidates": 7.982873439788818,
+  "operator_strength": 7.843663692474365,
+  "candidate_coherence": 0.6600122104723701,
+  "candidate_variance": 0.01099731711955449,
+  "candidate_centroid": [
+    0.1437171883881092,
+    0.024565418995916844
+  ],
+  "state_to_centroid_distance": 7.9828729077271126,
+  "degeneracy_ratio_topk": 0.7,
+  "degenerate": false,
+  "generic_count": 7,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "<space>",
+    "The",
+    "I",
+    "It",
+    "Is",
+    "<space>",
+    "And"
+  ]
+}

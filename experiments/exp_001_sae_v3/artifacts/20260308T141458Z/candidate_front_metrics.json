@@ -1,0 +1,32 @@
+{
+  "file": "/media/bjorn/iic/ESA/research/mechanistic-interpretability/experiments/exp_001_sae_v3/artifacts/20260308T141458Z/field_view_exp003_random_baseline_degeneracy_01_raw__20260308T141458Z.json",
+  "prompt": "within this statement of clocks, paper, and silence, answer only which bicycle triangle faster than sleeps",
+  "topk": 10,
+  "risk_score": 0.8649126636477281,
+  "logit_entropy": 4.770285606384277,
+  "gap_state_to_candidates": 1.4712872505187988,
+  "operator_strength": 1.373818039894104,
+  "candidate_coherence": 0.881947985273281,
+  "candidate_variance": 0.007223608571504362,
+  "candidate_centroid": [
+    0.15686499699950218,
+    0.06129570994526148
+  ],
+  "state_to_centroid_distance": 1.471287215013732,
+  "degeneracy_ratio_topk": 1.0,
+  "degenerate": true,
+  "generic_count": 10,
+  "candidate_count": 10,
+  "generic_tokens": [
+    ".",
+    ",",
+    "in",
+    "?",
+    "on",
+    "and",
+    "you",
+    "the",
+    "at",
+    "of"
+  ]
+}
