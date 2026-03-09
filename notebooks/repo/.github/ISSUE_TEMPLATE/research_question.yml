@@ -1,0 +1,66 @@
+name: Research Question
+description: Open a new research question in the Base76 #research workflow.
+title: "[QUESTION] "
+labels:
+  - research
+  - artifact:question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a new research question. Do not open strong claims directly from intuition.
+  - type: input
+    id: track
+    attributes:
+      label: Track
+      description: Main track for this research item.
+      placeholder: ai_microscopy or hallucinations
+    validations:
+      required: true
+  - type: dropdown
+    id: state
+    attributes:
+      label: Research state
+      options:
+        - IDEA
+        - QUESTION
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State the question as clearly as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+    validations:
+      required: true
+  - type: textarea
+    id: counter_hypothesis
+    attributes:
+      label: Counter-hypothesis
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics to track
+      description: Example: logit_entropy, candidate_coherence, degeneracy_ratio, gap_state_to_candidates, state_norm.
+    validations:
+      required: true
+  - type: textarea
+    id: falsification
+    attributes:
+      label: Falsification criteria
+    validations:
+      required: true
+  - type: input
+    id: canonical_artifact
+    attributes:
+      label: Linked canonical artifact
+      description: Link to `research_index.md`, a protocol, or a report if one already exists.
+      placeholder: https://github.com/...

@@ -1,0 +1,533 @@
+[
+  {
+    "ts": "20260307T174503Z",
+    "prompt_id": "anchored_01",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "raw",
+    "raw_prompt": "2 + 2 =",
+    "effective_prompt": "2 + 2 =",
+    "raw_token_count": 4,
+    "effective_token_count": 4,
+    "logit_entropy": 5.122995376586914,
+    "gap_state_to_candidates": 0.6465338468551636,
+    "operator_strength": 0.5492606163024902,
+    "risk_score": 0.5390928180213279,
+    "candidate_coherence": 0.9218402737011887,
+    "candidate_variance": 0.002773768249097898,
+    "degeneracy_ratio_topk": 0.0,
+    "degenerate": false,
+    "generic_tokens": [],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260307T174505Z/field_view_exp003_anchored_01_raw__20260307T174505Z.json",
+    "field_view_candidates": [
+      {
+        "token": "3",
+        "logit": -90.95779418945312,
+        "coords": [
+          0.06795810163021088,
+          0.05272820591926575
+        ]
+      },
+      {
+        "token": "1",
+        "logit": -91.06432342529297,
+        "coords": [
+          0.14536654949188232,
+          0.027547767385840416
+        ]
+      },
+      {
+        "token": "2",
+        "logit": -91.14958953857422,
+        "coords": [
+          0.13101911544799805,
+          -0.01036723144352436
+        ]
+      },
+      {
+        "token": "0",
+        "logit": -91.26148986816406,
+        "coords": [
+          0.19678930938243866,
+          0.03463852405548096
+        ]
+      },
+      {
+        "token": "4",
+        "logit": -91.57514953613281,
+        "coords": [
+          0.14733748137950897,
+          0.00296933576464653
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_valid": true,
+    "tokens_saved": 0,
+    "compression_ratio": 1.0,
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260307T174503Z",
+    "prompt_id": "anchored_01",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed",
+    "raw_prompt": "2 + 2 =",
+    "effective_prompt": "2 + 2 =",
+    "raw_token_count": 4,
+    "effective_token_count": 4,
+    "logit_entropy": 5.122995376586914,
+    "gap_state_to_candidates": 0.6465338468551636,
+    "operator_strength": 0.5492606163024902,
+    "risk_score": 0.5390928180213279,
+    "candidate_coherence": 0.9218402737011887,
+    "candidate_variance": 0.002773768249097898,
+    "degeneracy_ratio_topk": 0.0,
+    "degenerate": false,
+    "generic_tokens": [],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260307T174511Z/field_view_exp003_anchored_01_compressed__20260307T174511Z.json",
+    "field_view_candidates": [
+      {
+        "token": "3",
+        "logit": -90.95779418945312,
+        "coords": [
+          0.06795810163021088,
+          0.05272820591926575
+        ]
+      },
+      {
+        "token": "1",
+        "logit": -91.06432342529297,
+        "coords": [
+          0.14536654949188232,
+          0.027547767385840416
+        ]
+      },
+      {
+        "token": "2",
+        "logit": -91.14958953857422,
+        "coords": [
+          0.13101911544799805,
+          -0.01036723144352436
+        ]
+      },
+      {
+        "token": "0",
+        "logit": -91.26148986816406,
+        "coords": [
+          0.19678930938243866,
+          0.03463852405548096
+        ]
+      },
+      {
+        "token": "4",
+        "logit": -91.57514953613281,
+        "coords": [
+          0.14733748137950897,
+          0.00296933576464653
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    },
+    "compression_mode": "unavailable",
+    "compression_valid": false,
+    "tokens_saved": 0,
+    "compression_ratio": 1.0,
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260307T174503Z",
+    "prompt_id": "anchored_01",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed_vectorized_proxy_mean",
+    "raw_prompt": "2 + 2 =",
+    "effective_prompt": "semantic anchor packet: 2 | 1 | 3 | 4 | 5 | 6 | 0 | 7",
+    "raw_token_count": 4,
+    "effective_token_count": 20,
+    "logit_entropy": 2.0649938583374023,
+    "gap_state_to_candidates": 3.9471895694732666,
+    "operator_strength": 3.8649098873138428,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.4639324224554698,
+    "candidate_variance": 0.00916591793253207,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "|",
+      "<space>",
+      ".",
+      ":",
+      "||"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260307T174517Z/field_view_exp003_anchored_01_compressed_vectorized_proxy_mean__20260307T174517Z.json",
+    "field_view_candidates": [
+      {
+        "token": "|",
+        "logit": -23.87796401977539,
+        "coords": [
+          0.13392357528209686,
+          0.06486362963914871
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -27.2027645111084,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": ".",
+        "logit": -27.919462203979492,
+        "coords": [
+          0.023318737745285034,
+          0.09862156212329865
+        ]
+      },
+      {
+        "token": ":",
+        "logit": -28.457653045654297,
+        "coords": [
+          0.015917770564556122,
+          0.09499507397413254
+        ]
+      },
+      {
+        "token": "||",
+        "logit": -28.69523048400879,
+        "coords": [
+          0.1465083658695221,
+          -0.07130670547485352
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "mean",
+        "anchor_tokens": [
+          "2",
+          "1",
+          "3",
+          "4",
+          "5",
+          "6",
+          "0",
+          "7"
+        ],
+        "anchor_stopword_ratio": 0.0
+      }
+    },
+    "compression_mode": "unavailable",
+    "compression_valid": false,
+    "tokens_saved": 0,
+    "compression_ratio": 5.0,
+    "delta_vs_raw_degeneracy_ratio_topk": 1.0,
+    "delta_vs_raw_candidate_coherence": -0.4579078512457189,
+    "delta_vs_raw_gap_state_to_candidates": 3.300655722618103,
+    "delta_vs_raw_logit_entropy": -3.0580015182495117,
+    "topk_overlap_vs_raw": 0.0,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": null
+  },
+  {
+    "ts": "20260307T174503Z",
+    "prompt_id": "anchored_02",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "raw",
+    "raw_prompt": "what is the capital of Japan?",
+    "effective_prompt": "what is the capital of Japan?",
+    "raw_token_count": 7,
+    "effective_token_count": 7,
+    "logit_entropy": 5.1633124351501465,
+    "gap_state_to_candidates": 8.243860244750977,
+    "operator_strength": 8.110383033752441,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.9702386371750722,
+    "candidate_variance": 0.00235123286343647,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "It",
+      "Is"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260307T174525Z/field_view_exp003_anchored_02_raw__20260307T174525Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -118.41129302978516,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -119.71737670898438,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -119.83821105957031,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -119.91885375976562,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -120.22239685058594,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_valid": true,
+    "tokens_saved": 0,
+    "compression_ratio": 1.0,
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260307T174503Z",
+    "prompt_id": "anchored_02",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed",
+    "raw_prompt": "what is the capital of Japan?",
+    "effective_prompt": "what is the capital of Japan?",
+    "raw_token_count": 7,
+    "effective_token_count": 7,
+    "logit_entropy": 5.1633124351501465,
+    "gap_state_to_candidates": 8.243860244750977,
+    "operator_strength": 8.110383033752441,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.9702386371750722,
+    "candidate_variance": 0.00235123286343647,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "The",
+      "It",
+      "Is"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260307T174532Z/field_view_exp003_anchored_02_compressed__20260307T174532Z.json",
+    "field_view_candidates": [
+      {
+        "token": "<space>",
+        "logit": -118.41129302978516,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      },
+      {
+        "token": "The",
+        "logit": -119.71737670898438,
+        "coords": [
+          0.18221862614154816,
+          0.016286559402942657
+        ]
+      },
+      {
+        "token": "It",
+        "logit": -119.83821105957031,
+        "coords": [
+          0.1013173758983612,
+          0.025711677968502045
+        ]
+      },
+      {
+        "token": "What",
+        "logit": -119.91885375976562,
+        "coords": [
+          0.20224067568778992,
+          -0.018598876893520355
+        ]
+      },
+      {
+        "token": "Is",
+        "logit": -120.22239685058594,
+        "coords": [
+          0.1648697406053543,
+          -0.03357864171266556
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    },
+    "compression_mode": "unavailable",
+    "compression_valid": false,
+    "tokens_saved": 0,
+    "compression_ratio": 1.0,
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0,
+    "topk_overlap_vs_raw": 1.0,
+    "top1_match_vs_raw": true,
+    "rank_correlation_vs_raw": 1.0
+  },
+  {
+    "ts": "20260307T174503Z",
+    "prompt_id": "anchored_02",
+    "regime": "anchored",
+    "stratum": "anchored",
+    "variant": "compressed_vectorized_proxy_mean",
+    "raw_prompt": "what is the capital of Japan?",
+    "effective_prompt": "semantic anchor packet: does | 's | makes | they | you | can | would | will",
+    "raw_token_count": 7,
+    "effective_token_count": 21,
+    "logit_entropy": 1.1652330160140991,
+    "gap_state_to_candidates": 4.625372409820557,
+    "operator_strength": 4.537432670593262,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.9514601415847712,
+    "candidate_variance": 0.0025797778259826374,
+    "degeneracy_ratio_topk": 0.8,
+    "degenerate": true,
+    "generic_tokens": [
+      "|",
+      "be",
+      "|",
+      "<space>"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260307T174539Z/field_view_exp003_anchored_02_compressed_vectorized_proxy_mean__20260307T174539Z.json",
+    "field_view_candidates": [
+      {
+        "token": "|",
+        "logit": -48.75202560424805,
+        "coords": [
+          0.13392357528209686,
+          0.06486362963914871
+        ]
+      },
+      {
+        "token": "be",
+        "logit": -52.702945709228516,
+        "coords": [
+          0.1409689038991928,
+          0.02701839804649353
+        ]
+      },
+      {
+        "token": "|",
+        "logit": -53.18505096435547,
+        "coords": [
+          0.21082361042499542,
+          0.012393925338983536
+        ]
+      },
+      {
+        "token": "not",
+        "logit": -53.861534118652344,
+        "coords": [
+          0.18677666783332825,
+          -0.02941022999584675
+        ]
+      },
+      {
+        "token": "<space>",
+        "logit": -54.5166130065918,
+        "coords": [
+          0.12350334227085114,
+          0.007906511425971985
+        ]
+      }
+    ],
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "mean",
+        "anchor_tokens": [
+          "does",
+          "'s",
+          "makes",
+          "they",
+          "you",
+          "can",
+          "would",
+          "will"
+        ],
+        "anchor_stopword_ratio": 0.0
+      }
+    },
+    "compression_mode": "unavailable",
+    "compression_valid": false,
+    "tokens_saved": 0,
+    "compression_ratio": 3.0,
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": -0.01877849559030098,
+    "delta_vs_raw_gap_state_to_candidates": -3.61848783493042,
+    "delta_vs_raw_logit_entropy": -3.9980794191360474,
+    "topk_overlap_vs_raw": 0.2,
+    "top1_match_vs_raw": false,
+    "rank_correlation_vs_raw": null
+  }
+]

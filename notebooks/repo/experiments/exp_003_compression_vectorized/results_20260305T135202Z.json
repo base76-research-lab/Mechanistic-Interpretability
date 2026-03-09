@@ -1,0 +1,140 @@
+[
+  {
+    "ts": "20260305T135202Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "raw",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.951824903488159,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.9087713041282276,
+    "candidate_variance": 0.01027250095062038,
+    "degeneracy_ratio_topk": 0.125,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T135205Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_raw__20260305T135205Z.json",
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    }
+  },
+  {
+    "ts": "20260305T135202Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "compressed",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.951824903488159,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.9087713041282276,
+    "candidate_variance": 0.01027250095062038,
+    "degeneracy_ratio_topk": 0.125,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T135214Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed__20260305T135214Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    }
+  },
+  {
+    "ts": "20260305T135202Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "compressed_vectorized_proxy_attn_weighted",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "semantic anchor packet: does | can | will | 's | makes | man | would | may",
+    "logit_entropy": 1.4485219717025757,
+    "gap_state_to_candidates": 1.2447718381881714,
+    "operator_strength": 1.110484004020691,
+    "risk_score": 0.6088059973639286,
+    "candidate_coherence": 0.5505715496481856,
+    "candidate_variance": 0.00950919203877831,
+    "degeneracy_ratio_topk": 0.75,
+    "degenerate": true,
+    "generic_tokens": [
+      "|",
+      "'",
+      "be",
+      "`",
+      "|",
+      "<space>"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T135220Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed_vectorized_proxy_attn_weighted__20260305T135220Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "attn_weighted",
+        "anchor_tokens": [
+          "does",
+          "can",
+          "will",
+          "'s",
+          "makes",
+          "man",
+          "would",
+          "may"
+        ]
+      }
+    }
+  },
+  {
+    "ts": "20260305T135202Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "compressed_vectorized_proxy_pca1",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "semantic anchor packet: queen | queens | woman | doc | mat | princess | female | girl",
+    "logit_entropy": 1.5526256561279297,
+    "gap_state_to_candidates": 4.597285747528076,
+    "operator_strength": 4.473029613494873,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.7787271155699244,
+    "candidate_variance": 0.00891710543126152,
+    "degeneracy_ratio_topk": 0.75,
+    "degenerate": true,
+    "generic_tokens": [
+      "|",
+      "<space>",
+      ".",
+      "<space>",
+      "|",
+      ","
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T135226Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed_vectorized_proxy_pca1__20260305T135226Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "pca1",
+        "anchor_tokens": [
+          "queen",
+          "queens",
+          "woman",
+          "doc",
+          "mat",
+          "princess",
+          "female",
+          "girl"
+        ]
+      }
+    }
+  }
+]

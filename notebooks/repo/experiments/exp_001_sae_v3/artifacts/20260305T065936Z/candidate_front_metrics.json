@@ -1,0 +1,23 @@
+{
+  "file": "/media/bjorn/iic/workspace/Base76_Research_Lab/Mechanistic Interpretability/experiments/exp_001_sae_v3/artifacts/20260305T065936Z/field_view_sanity_candidate_front__20260305T065936Z.json",
+  "prompt": "2 + 2 =",
+  "topk": 8,
+  "risk_score": 0.5440552867068497,
+  "logit_entropy": 5.122995376586914,
+  "gap_state_to_candidates": 0.6733741760253906,
+  "operator_strength": 0.5492606163024902,
+  "candidate_coherence": 0.9400992775442233,
+  "candidate_variance": 0.004175019823032295,
+  "candidate_centroid": [
+    0.16176921874284744,
+    0.03626230894587934
+  ],
+  "state_to_centroid_distance": 0.6733741834912169,
+  "degeneracy_ratio_topk": 0.125,
+  "degenerate": false,
+  "generic_count": 1,
+  "candidate_count": 8,
+  "generic_tokens": [
+    "-"
+  ]
+}

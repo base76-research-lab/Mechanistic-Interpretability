@@ -1,0 +1,29 @@
+{
+  "run_name": "smoke_test",
+  "timestamp_utc": "20260307T172434Z",
+  "model": "gpt2",
+  "layers": [
+    5,
+    6
+  ],
+  "panel": "/tmp/prompts_observability_smoke.jsonl",
+  "panel_sha256": "0b011e344e2d3f529b04fe546eb01a816d6dc9413d5afd58d1083da856519753",
+  "sae_state": "experiments/exp_001_sae_v3/sae_weights.pt",
+  "sae_state_sha256": "b28bfad2ebf102bd5461e719aed8d7027097ac6bf1dfb66ae9ba97967ab2f584",
+  "basis_mode": "pc2",
+  "units": [
+    472,
+    468,
+    57,
+    156,
+    346
+  ],
+  "topk": 10,
+  "top_features": 8,
+  "intervention_state": "baseline",
+  "record_count": 4,
+  "schema": {
+    "grain": "one record per prompt_id, layer, token_index, intervention_state",
+    "trace_file": "experiments/exp_004_unified_observability_stack/smoke_test/trace.jsonl"
+  }
+}

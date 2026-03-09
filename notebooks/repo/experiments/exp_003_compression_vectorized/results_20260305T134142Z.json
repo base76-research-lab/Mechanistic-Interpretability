@@ -1,0 +1,102 @@
+[
+  {
+    "ts": "20260305T134142Z",
+    "prompt_id": "p01_who_was_the_president_of_france_in_1",
+    "variant": "raw",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.814690589904785,
+    "operator_strength": 6.687980651855469,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5951588486974432,
+    "candidate_variance": 0.012644504928589158,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134145Z/field_view_exp003_p01_who_was_the_president_of_france_in_1_raw__20260305T134145Z.json",
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    }
+  },
+  {
+    "ts": "20260305T134142Z",
+    "prompt_id": "p01_who_was_the_president_of_france_in_1",
+    "variant": "compressed",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.814690589904785,
+    "operator_strength": 6.687980651855469,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5951588486974432,
+    "candidate_variance": 0.012644504928589158,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134157Z/field_view_exp003_p01_who_was_the_president_of_france_in_1_compressed__20260305T134157Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    }
+  },
+  {
+    "ts": "20260305T134142Z",
+    "prompt_id": "p01_who_was_the_president_of_france_in_1",
+    "variant": "compressed_vectorized_proxy",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "semantic anchor packet: of | was | is | in | The",
+    "logit_entropy": 7.720235347747803,
+    "gap_state_to_candidates": 7.590701580047607,
+    "operator_strength": 7.547757148742676,
+    "risk_score": 1.0,
+    "candidate_coherence": -0.10259567106552381,
+    "candidate_variance": 0.017163112587168843,
+    "degeneracy_ratio_topk": 0.125,
+    "degenerate": false,
+    "generic_tokens": [
+      "|"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134207Z/field_view_exp003_p01_who_was_the_president_of_france_in_1_compressed_vectorized_proxy__20260305T134207Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "mean_input_embedding_topk_anchor_tokens",
+        "anchor_tokens": [
+          "of",
+          "was",
+          "is",
+          "in",
+          "The"
+        ]
+      }
+    }
+  }
+]

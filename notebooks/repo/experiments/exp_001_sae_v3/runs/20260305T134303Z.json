@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "20260305T134303Z",
+  "scenario": "exp003_p01_king_is_to_queen_as_man_is_to_compressed",
+  "prompt": "king is to queen as man is to",
+  "model": "gpt2",
+  "layer": 5,
+  "units": [
+    472,
+    468,
+    57,
+    156,
+    346
+  ],
+  "mode": "pc2",
+  "topk": 10,
+  "device": "cpu",
+  "script": "scripts/field_view.py",
+  "script_sha256": "e21554d872d315ee228e82dfc06416e43de6df8f5e6b6b788c252100fa6f6497",
+  "sae_weights": "experiments/exp_001_sae_v3/sae_weights.pt",
+  "sae_weights_sha256": "b28bfad2ebf102bd5461e719aed8d7027097ac6bf1dfb66ae9ba97967ab2f584",
+  "git": {
+    "head": "7cdce17146de075ba78a3687daf6e2b329311640",
+    "status": "M ../../../.vscode/tasks.json\n M ../../../CLAUDE.md\n D ../../../FORSKNING/08_SYSTEM/AUTOMATION_SETUP.md\n D ../../../FORSKNING/08_SYSTEM/DIRECTIVES_ARCHITECTURE.md\n D ../../../FORSKNING/08_SYSTEM/JASPER_NODEGRAPH.md\n D ../../../FORSKNING/08_SYSTEM/JASPER_QUICKSTART.md\n D ../../../FORSKNING/08_SYSTEM/PHASE_E_COMPLETION.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/creative-synthesizer.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/energy-predictor.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/git-watcher.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/inbox-cleaner.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/knowledge-updater.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/linkedin-generator.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/moc-curator.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/paper-reviewer.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/scope-detector.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/vision-monitor.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/voice-reporter.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/wake-word-listener.skill.md\n D ../../../FORSKNING/08_SYSTEM/SKILLS/web-researcher.skill.md\n D ../../../FORSKNING/08_SYSTEM/SMART_MEMORY_SETUP.md\n D ../../../FORSKNING/08_SYSTEM/SYSTEM_PROMPT.md\n D ../../../FORSKNING/08_SYSTEM/hooks/command-logger/HOOK.md\n D ../../../FORSKNING/08_SYSTEM/hooks/command-logger/handler.ts\n D ../../../FORSKNING/08_SYSTEM/hooks/memory-update/HOOK.md\n D ../../../FORSKNING/08_SYSTEM/hooks/memory-update/handler.ts\n D ../../../FORSKNING/08_SYSTEM/hooks/research-snapshot/HOOK.md\n D ../../../FORSKNING/08_SYSTEM/hooks/research-snapshot/handler.ts\n D ../../../FORSKNING/08_SYSTEM/hooks/session-memory/HOOK.md\n D ../../../FORSKNING/08_SYSTEM/hooks/session-memory/handler.ts\n D ../../../FORSKNING/08_SYSTEM/jarvis_core/requirements.txt\n D ../../../FORSKNING/08_SYSTEM/jarvis_core/server.py\n D ../../../FORSKNING/08_SYSTEM/jarvis_core/static/index.html\n D ../../../FORSKNING/08_SYSTEM/jarvis_core/system_monitor.py\n D ../../../FORSKNING/08_SYSTEM/jasper.service\n D ../../../FORSKNING/08_SYSTEM/jasper_access.py\n D ../../../FORSKNING/08_SYSTEM/jasper_action_engine.py\n D ../../../FORSKNING/08_SYSTEM/jasper_agent_autonomy.py\n D ../../../FORSKNING/08_SYSTEM/jasper_agent_autonomy_v2.py\n D ../../../FORSKNING/08_SYSTEM/jasper_agent_loop.py\n D ../../../FORSKNING/08_SYSTEM/jasper_agent_loop_runtime.py\n D ../../../FORSKNING/08_SYSTEM/jasper_assistant_core.py\n D ../../../FORSKNING/08_SYSTEM/jasper_autonomy_core.py\n D ../../../FORSKNING/08_SYSTEM/jasper_background_worker.py\n D ../../../FORSKNING/08_SYSTEM/jasper_brain.py\n D ../../../FORSKNING/08_SYSTEM/jasper_browser_manager.py\n D ../../../FORSKNING/08_SYSTEM/jasper_browser_tools.py\n D ../../../FORSKNING/08_SYSTEM/jasper_cli.py\n D ../../../FORSKNING/08_SYSTEM/jasper_compaction.py\n D ../../../FORSKNING/08_SYSTEM/jasper_content_safety.py\n D ../../../FORSKNING/08_SYSTEM/jasper_creative_operator.py\n D ../../../FORSKNING/08_SYSTEM/jasper_daemon.py\n D ../../../FORSKNING/08_SYSTEM/jasper_directives.py\n D ../../../FORSKNING/08_SYSTEM/jasper_engagement_dashboard.py\n D ../../../FORSKNING/08_SYSTEM/jasper_eval_loop.py\n D ../../../FORSKNING/08_SYSTEM/jasper_eval_weekly_runner.py\n D ../../../FORSKNING/08_SYSTEM/jasper_governance.py\n D ../../../FORSKNING/08_SYSTEM/jasper_governance_cli.py\n D ../../../FORSKNING/08_SYSTEM/jasper_heartbeat.py\n D ../../../FORSKNING/08_SYSTEM/jasper_install.py\n D ../../../FORSKNING/08_SYSTEM/jasper_install_cron.sh\n D ../../../FORSKNING/08_SYSTEM/jasper_interaction.py\n D ../../../FORSKNING/08_SYSTEM/jasper_knowledge_updater.py\n D ../../../FORSKNING/08_SYSTEM/jasper_launcher.py\n D ../../../FORSKNING/08_SYSTEM/jasper_learning_memory.py\n D ../../../FORSKNING/08_SYSTEM/jasper_lobster_executor.py\n D ../../../FORSKNING/08_SYSTEM/jasper_local_llm.py\n D ../../../FORSKNING/08_SYSTEM/jasper_log_session.py\n D ../../../FORSKNING/08_SYSTEM/jasper_memory.py\n D ../../../FORSKNING/08_SYSTEM/jasper_moltbook_client.py\n D ../../../FORSKNING/08_SYSTEM/jasper_moltbook_curator.py\n D ../../../FORSKNING/08_SYSTEM/jasper_moltbook_discovery.py\n D ../../../FORSKNING/08_SYSTEM/jasper_moltbook_engagement.py\n D ../../../FORSKNING/08_SYSTEM/jasper_moltbook_outreach.py\n D ../../../FORSKNING/08_SYSTEM/jasper_moltbook_threads.py\n D ../../../FORSKNING/08_SYSTEM/jasper_outcome_engine.py\n D ../../../FORSKNING/08_SYSTEM/jasper_planning_engine.py\n D ../../../FORSKNING/08_SYSTEM/jasper_reflect.py\n D ../../../FORSKNING/08_SYSTEM/jasper_safety_dashboard.py\n D ../../../FORSKNING/08_SYSTEM/jasper_self_improvement_loop.py\n D ../../../FORSKNING/08_SYSTEM/jasper_self_optimizer.py\n D ../../../FORSKNING/08_SYSTEM/jasper_session.py\n D ../../../FORSKNING/08_SYSTEM/jasper_sessions.py\n D ../../../FORSKNING/08_SYSTEM/jasper_sessions/session_manager.py\n D ../../../FORSKNING/08_SYSTEM/jasper_setup_multimodal.sh\n D ../../../FORSKNING/08_SYSTEM/jasper_skill_discovery.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skill_linkedin_generator.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skill_loader.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skill_manager.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skill_moc_curator.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skill_sync.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/README.md\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/__init__.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/access_control.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/calculator_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/cleanup_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/datetimeskill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/echo_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/fileskill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/llm_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/markdown2pdf_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/pyanalyze_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/self_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/shell_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/sysinfoskill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/system_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/textanalys_skill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/todoskill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_skills/webskill.py\n D ../../../FORSKNING/08_SYSTEM/jasper_slash_commands.py\n D ../../../FORSKNING/08_SYSTEM/jasper_startup.sh\n D ../../../FORSKNING/08_SYSTEM/jasper_terminal.py\n D ../../../FORSKNING/08_SYSTEM/jasper_terminal_ui.py\n D ../../../FORSKNING/08_SYSTEM/jasper_uninstall.py\n D ../../../FORSKNING/08_SYSTEM/jasper_vector_memory.py\n D ../../../FORSKNING/08_SYSTEM/jasper_voice_test.py\n D ../../../FORSKNING/08_SYSTEM/jasper_wake_word_daemon.py\n D ../../../FORSKNING/08_SYSTEM/jasper_wake_word_test.py\n D ../../../FORSKNING/08_SYSTEM/jasper_web_ui.py\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.directives/sessions/test_session.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.directives/sessions/trace-20260220-012853.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.directives/sessions/trace-20260220-023127.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.directives/sessions/trace-20260220-023726.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.directives/sessions/trace-20260220-024026.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.lobster/resume/subEarIerq_HLapFa2x2Pg.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.sessions/agent_jasper_subagent_69d002ecc539.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.sessions/agent_jasper_subagent_ba1b3b8ba7f6.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.sessions/agent_jasper_subagent_c8052afa39e5.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.sessions/agent_planner.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.sessions/terminal-ui.json\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/.sessions/transcripts/terminal-ui.jsonl\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/AGENTS.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/BOOTSTRAP.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/HEARTBEAT.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/IDENTITY.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/MEMORY.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/SOUL.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/TOOLS.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/USER.md\n D ../../../FORSKNING/08_SYSTEM/jasper_workspace/memory/2026-02-19.md\n D ../../../FORSKNING/08_SYSTEM/knowhow_engine.py\n D ../../../FORSKNING/08_SYSTEM/openclaw.json\n D ../../../FORSKNING/08_SYSTEM/scripts/capture.py\n D ../../../FORSKNING/08_SYSTEM/scripts/jasper_init.py\n D ../../../FORSKNING/08_SYSTEM/setup_vosk.sh\n D ../../../FORSKNING/08_SYSTEM/templates/daily_template.md\n D ../../../FORSKNING/08_SYSTEM/test_directives_integration.py\n D ../../../FORSKNING/08_SYSTEM/test_jasper_complete.py\n D ../../../FORSKNING/08_SYSTEM/test_jasper_fixes.py\n D ../../../FORSKNING/08_SYSTEM/test_jasper_runtime_trace.py\n?? ../../../.vscode/extensions.json\n?? ../../../.vscode/settings.json"
+  },
+  "metrics": {
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511687755584717,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "field_coords": [
+      -3.694957733154297,
+      -0.702993631362915
+    ],
+    "candidate_spread_mean": 0.2206713855266571
+  },
+  "candidate_front": {
+    "coherence": 0.8950136454883234,
+    "variance": 0.010595117476847531,
+    "centroid": [
+      0.20404786206781864,
+      -0.06307933367788791
+    ],
+    "state_to_centroid_distance": 3.9511688068159128,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "generic_count": 1,
+    "candidate_count": 10
+  },
+  "artifact_paths": {
+    "field_view_json": "experiments/exp_001_sae_v3/artifacts/20260305T134303Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed__20260305T134303Z.json",
+    "candidate_front_metrics_json": "experiments/exp_001_sae_v3/artifacts/20260305T134303Z/candidate_front_metrics.json"
+  },
+  "checksums": {
+    "field_view_json_sha256": "31f824a25b04dc02bfbda94031bef21cf764ef22de9115aa6c44248c5fe65a87",
+    "candidate_front_metrics_json_sha256": "373a3e60074c9ae1025eeb96af368767ae42772702410e077afdcd6b6e4076f6"
+  }
+}

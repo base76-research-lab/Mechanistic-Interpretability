@@ -1,0 +1,312 @@
+[
+  {
+    "unit": 48,
+    "mean_activation": 0.9331667423248291,
+    "top_tokens": [
+      {
+        "token_id": 17660,
+        "token": "late",
+        "value": 5.6305694580078125
+      },
+      {
+        "token_id": 17660,
+        "token": "late",
+        "value": 5.6305694580078125
+      },
+      {
+        "token_id": 3568,
+        "token": "appears",
+        "value": 5.363088130950928
+      },
+      {
+        "token_id": 6827,
+        "token": "sentence",
+        "value": 5.28279972076416
+      },
+      {
+        "token_id": 1441,
+        "token": "return",
+        "value": 5.048283576965332
+      }
+    ]
+  },
+  {
+    "unit": 253,
+    "mean_activation": 0.9302929639816284,
+    "top_tokens": [
+      {
+        "token_id": 5403,
+        "token": "twice",
+        "value": 7.065138816833496
+      },
+      {
+        "token_id": 4141,
+        "token": "French",
+        "value": 6.389040470123291
+      },
+      {
+        "token_id": 7897,
+        "token": "Spanish",
+        "value": 4.543700695037842
+      },
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 4.422241687774658
+      },
+      {
+        "token_id": 17687,
+        "token": "reversed",
+        "value": 4.36639928817749
+      }
+    ]
+  },
+  {
+    "unit": 198,
+    "mean_activation": 0.9197152256965637,
+    "top_tokens": [
+      {
+        "token_id": 5822,
+        "token": "king",
+        "value": 5.719804286956787
+      },
+      {
+        "token_id": 818,
+        "token": "In",
+        "value": 3.9650089740753174
+      },
+      {
+        "token_id": 352,
+        "token": "1",
+        "value": 3.670971393585205
+      },
+      {
+        "token_id": 2061,
+        "token": "What",
+        "value": 3.634974479675293
+      },
+      {
+        "token_id": 464,
+        "token": "The",
+        "value": 3.4308066368103027
+      }
+    ]
+  },
+  {
+    "unit": 69,
+    "mean_activation": 0.9126737713813782,
+    "top_tokens": [
+      {
+        "token_id": 4141,
+        "token": "French",
+        "value": 6.621721267700195
+      },
+      {
+        "token_id": 3256,
+        "token": "',",
+        "value": 5.056679725646973
+      },
+      {
+        "token_id": 352,
+        "token": "1",
+        "value": 4.483683109283447
+      },
+      {
+        "token_id": 352,
+        "token": "1",
+        "value": 4.430917263031006
+      },
+      {
+        "token_id": 1351,
+        "token": "list",
+        "value": 4.158625602722168
+      }
+    ]
+  },
+  {
+    "unit": 131,
+    "mean_activation": 0.9042942523956299,
+    "top_tokens": [
+      {
+        "token_id": 3568,
+        "token": "appears",
+        "value": 5.845947265625
+      },
+      {
+        "token_id": 11,
+        "token": ",",
+        "value": 5.791312217712402
+      },
+      {
+        "token_id": 24061,
+        "token": "compute",
+        "value": 5.440401077270508
+      },
+      {
+        "token_id": 17687,
+        "token": "reversed",
+        "value": 4.365845203399658
+      },
+      {
+        "token_id": 1573,
+        "token": "word",
+        "value": 4.0824408531188965
+      }
+    ]
+  },
+  {
+    "unit": 111,
+    "mean_activation": 0.9024268388748169,
+    "top_tokens": [
+      {
+        "token_id": 1441,
+        "token": "return",
+        "value": 4.468396186828613
+      },
+      {
+        "token_id": 8291,
+        "token": "Trans",
+        "value": 4.421225547790527
+      },
+      {
+        "token_id": 8291,
+        "token": "Trans",
+        "value": 4.421225547790527
+      },
+      {
+        "token_id": 3139,
+        "token": "capital",
+        "value": 4.173058032989502
+      },
+      {
+        "token_id": 3139,
+        "token": "capital",
+        "value": 4.052700996398926
+      }
+    ]
+  },
+  {
+    "unit": 83,
+    "mean_activation": 0.8711506128311157,
+    "top_tokens": [
+      {
+        "token_id": 4486,
+        "token": "Germany",
+        "value": 6.758648872375488
+      },
+      {
+        "token_id": 4881,
+        "token": "France",
+        "value": 6.531702041625977
+      },
+      {
+        "token_id": 11593,
+        "token": "__",
+        "value": 6.318276405334473
+      },
+      {
+        "token_id": 428,
+        "token": "this",
+        "value": 4.73028039932251
+      },
+      {
+        "token_id": 286,
+        "token": "of",
+        "value": 3.9380621910095215
+      }
+    ]
+  },
+  {
+    "unit": 187,
+    "mean_activation": 0.8683683276176453,
+    "top_tokens": [
+      {
+        "token_id": 25,
+        "token": ":",
+        "value": 5.153573513031006
+      },
+      {
+        "token_id": 262,
+        "token": "the",
+        "value": 4.910788536071777
+      },
+      {
+        "token_id": 25,
+        "token": ":",
+        "value": 4.191688537597656
+      },
+      {
+        "token_id": 23970,
+        "token": "analogy",
+        "value": 3.900299072265625
+      },
+      {
+        "token_id": 25,
+        "token": ":",
+        "value": 3.7939815521240234
+      }
+    ]
+  },
+  {
+    "unit": 84,
+    "mean_activation": 0.8568458557128906,
+    "top_tokens": [
+      {
+        "token_id": 355,
+        "token": "as",
+        "value": 5.800000190734863
+      },
+      {
+        "token_id": 23243,
+        "token": "sorted",
+        "value": 4.734330654144287
+      },
+      {
+        "token_id": 326,
+        "token": "that",
+        "value": 4.155284881591797
+      },
+      {
+        "token_id": 5132,
+        "token": "orial",
+        "value": 4.137581825256348
+      },
+      {
+        "token_id": 397,
+        "token": "ab",
+        "value": 4.116806507110596
+      }
+    ]
+  },
+  {
+    "unit": 63,
+    "mean_activation": 0.856587290763855,
+    "top_tokens": [
+      {
+        "token_id": 4881,
+        "token": "France",
+        "value": 4.910782814025879
+      },
+      {
+        "token_id": 262,
+        "token": "the",
+        "value": 4.3232879638671875
+      },
+      {
+        "token_id": 15056,
+        "token": "Given",
+        "value": 4.296401023864746
+      },
+      {
+        "token_id": 15056,
+        "token": "Given",
+        "value": 4.296401023864746
+      },
+      {
+        "token_id": 3146,
+        "token": "numbers",
+        "value": 4.005849838256836
+      }
+    ]
+  }
+]

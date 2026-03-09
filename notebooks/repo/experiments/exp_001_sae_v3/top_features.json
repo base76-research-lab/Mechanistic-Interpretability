@@ -1,0 +1,312 @@
+[
+  {
+    "unit": 430,
+    "mean_activation": 0.7071959376335144,
+    "top_tokens": [
+      {
+        "token_id": 6697,
+        "token": "opposite",
+        "value": 6.011015892028809
+      },
+      {
+        "token_id": 3876,
+        "token": "mar",
+        "value": 5.147406578063965
+      },
+      {
+        "token_id": 8379,
+        "token": "sequence",
+        "value": 3.788538932800293
+      },
+      {
+        "token_id": 3329,
+        "token": "morning",
+        "value": 3.718562126159668
+      },
+      {
+        "token_id": 23970,
+        "token": "analogy",
+        "value": 3.711787700653076
+      }
+    ]
+  },
+  {
+    "unit": 427,
+    "mean_activation": 0.6958267688751221,
+    "top_tokens": [
+      {
+        "token_id": 11593,
+        "token": "__",
+        "value": 5.097461223602295
+      },
+      {
+        "token_id": 4731,
+        "token": "string",
+        "value": 4.249667167663574
+      },
+      {
+        "token_id": 705,
+        "token": "'",
+        "value": 3.5728371143341064
+      },
+      {
+        "token_id": 1351,
+        "token": "list",
+        "value": 3.4553914070129395
+      },
+      {
+        "token_id": 262,
+        "token": "the",
+        "value": 3.353355884552002
+      }
+    ]
+  },
+  {
+    "unit": 273,
+    "mean_activation": 0.6931564807891846,
+    "top_tokens": [
+      {
+        "token_id": 6,
+        "token": "'",
+        "value": 4.6726861000061035
+      },
+      {
+        "token_id": 995,
+        "token": "world",
+        "value": 4.268178462982178
+      },
+      {
+        "token_id": 428,
+        "token": "this",
+        "value": 3.540886878967285
+      },
+      {
+        "token_id": 31373,
+        "token": "hello",
+        "value": 3.1917502880096436
+      },
+      {
+        "token_id": 6,
+        "token": "'",
+        "value": 3.1790523529052734
+      }
+    ]
+  },
+  {
+    "unit": 28,
+    "mean_activation": 0.6819722652435303,
+    "top_tokens": [
+      {
+        "token_id": 995,
+        "token": "world",
+        "value": 3.486795425415039
+      },
+      {
+        "token_id": 25,
+        "token": ":",
+        "value": 3.4085397720336914
+      },
+      {
+        "token_id": 25,
+        "token": ":",
+        "value": 3.291834592819214
+      },
+      {
+        "token_id": 5822,
+        "token": "king",
+        "value": 3.2659506797790527
+      },
+      {
+        "token_id": 582,
+        "token": "man",
+        "value": 3.1878573894500732
+      }
+    ]
+  },
+  {
+    "unit": 302,
+    "mean_activation": 0.6753543615341187,
+    "top_tokens": [
+      {
+        "token_id": 8940,
+        "token": "hot",
+        "value": 5.017378807067871
+      },
+      {
+        "token_id": 4141,
+        "token": "French",
+        "value": 4.6015520095825195
+      },
+      {
+        "token_id": 750,
+        "token": "did",
+        "value": 4.040265083312988
+      },
+      {
+        "token_id": 6697,
+        "token": "opposite",
+        "value": 4.023038864135742
+      },
+      {
+        "token_id": 1573,
+        "token": "word",
+        "value": 3.8588905334472656
+      }
+    ]
+  },
+  {
+    "unit": 259,
+    "mean_activation": 0.6720778942108154,
+    "top_tokens": [
+      {
+        "token_id": 3329,
+        "token": "morning",
+        "value": 5.619660377502441
+      },
+      {
+        "token_id": 1755,
+        "token": "night",
+        "value": 5.149499893188477
+      },
+      {
+        "token_id": 995,
+        "token": "world",
+        "value": 4.995258808135986
+      },
+      {
+        "token_id": 3272,
+        "token": "cross",
+        "value": 4.273492336273193
+      },
+      {
+        "token_id": 21831,
+        "token": "fox",
+        "value": 3.962602138519287
+      }
+    ]
+  },
+  {
+    "unit": 334,
+    "mean_activation": 0.6718193888664246,
+    "top_tokens": [
+      {
+        "token_id": 11361,
+        "token": "Python",
+        "value": 5.279348373413086
+      },
+      {
+        "token_id": 5403,
+        "token": "twice",
+        "value": 4.616237640380859
+      },
+      {
+        "token_id": 6827,
+        "token": "sentence",
+        "value": 4.219411849975586
+      },
+      {
+        "token_id": 3568,
+        "token": "appears",
+        "value": 3.9046013355255127
+      },
+      {
+        "token_id": 3290,
+        "token": "dog",
+        "value": 3.748422384262085
+      }
+    ]
+  },
+  {
+    "unit": 49,
+    "mean_activation": 0.6714310050010681,
+    "top_tokens": [
+      {
+        "token_id": 3146,
+        "token": "numbers",
+        "value": 5.6023945808410645
+      },
+      {
+        "token_id": 2058,
+        "token": "comes",
+        "value": 4.417417049407959
+      },
+      {
+        "token_id": 299,
+        "token": "n",
+        "value": 4.0038909912109375
+      },
+      {
+        "token_id": 4731,
+        "token": "string",
+        "value": 3.533092975616455
+      },
+      {
+        "token_id": 262,
+        "token": "the",
+        "value": 3.2865700721740723
+      }
+    ]
+  },
+  {
+    "unit": 339,
+    "mean_activation": 0.6679571270942688,
+    "top_tokens": [
+      {
+        "token_id": 2456,
+        "token": "words",
+        "value": 5.052156448364258
+      },
+      {
+        "token_id": 2975,
+        "token": "road",
+        "value": 5.001595497131348
+      },
+      {
+        "token_id": 1351,
+        "token": "list",
+        "value": 4.101868629455566
+      },
+      {
+        "token_id": 284,
+        "token": "to",
+        "value": 4.0724592208862305
+      },
+      {
+        "token_id": 3272,
+        "token": "cross",
+        "value": 4.04248046875
+      }
+    ]
+  },
+  {
+    "unit": 411,
+    "mean_activation": 0.6653885841369629,
+    "top_tokens": [
+      {
+        "token_id": 2058,
+        "token": "comes",
+        "value": 4.424048900604248
+      },
+      {
+        "token_id": 355,
+        "token": "as",
+        "value": 4.2154998779296875
+      },
+      {
+        "token_id": 317,
+        "token": "A",
+        "value": 4.158629894256592
+      },
+      {
+        "token_id": 318,
+        "token": "is",
+        "value": 3.671820640563965
+      },
+      {
+        "token_id": 3256,
+        "token": "',",
+        "value": 3.6311566829681396
+      }
+    ]
+  }
+]

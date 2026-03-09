@@ -1,0 +1,303 @@
+[
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "raw",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511687755584717,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8950136454883234,
+    "candidate_variance": 0.010595117476847531,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134255Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_raw__20260305T134255Z.json",
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "compressed",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "king is to queen as man is to",
+    "logit_entropy": 6.467029094696045,
+    "gap_state_to_candidates": 3.9511687755584717,
+    "operator_strength": 3.7612380981445312,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.8950136454883234,
+    "candidate_variance": 0.010595117476847531,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "be"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134303Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed__20260305T134303Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p01_king_is_to_queen_as_man_is_to",
+    "variant": "compressed_vectorized_proxy",
+    "raw_prompt": "king is to queen as man is to",
+    "effective_prompt": "semantic anchor packet: is | to | as | has | was | in | for | with",
+    "logit_entropy": 1.4401602745056152,
+    "gap_state_to_candidates": 5.464645862579346,
+    "operator_strength": 5.347316265106201,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.500297312594823,
+    "candidate_variance": 0.012335695165981883,
+    "degeneracy_ratio_topk": 0.9,
+    "degenerate": true,
+    "generic_tokens": [
+      "|",
+      "<space>",
+      "the",
+      "a",
+      "|",
+      "`",
+      ".",
+      "(",
+      "="
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134311Z/field_view_exp003_p01_king_is_to_queen_as_man_is_to_compressed_vectorized_proxy__20260305T134311Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "mean_input_embedding_topk_anchor_tokens",
+        "anchor_tokens": [
+          "is",
+          "to",
+          "as",
+          "has",
+          "was",
+          "in",
+          "for",
+          "with"
+        ]
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p02_who_was_the_president_of_france_in_1",
+    "variant": "raw",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.814836025238037,
+    "operator_strength": 6.687980651855469,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6727576434207994,
+    "candidate_variance": 0.01042330057608639,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),",
+      "(",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134318Z/field_view_exp003_p02_who_was_the_president_of_france_in_1_raw__20260305T134318Z.json",
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p02_who_was_the_president_of_france_in_1",
+    "variant": "compressed",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "who was the president of france in 1200?",
+    "logit_entropy": 6.1503472328186035,
+    "gap_state_to_candidates": 6.814836025238037,
+    "operator_strength": 6.687980651855469,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6727576434207994,
+    "candidate_variance": 0.01042330057608639,
+    "degeneracy_ratio_topk": 1.0,
+    "degenerate": true,
+    "generic_tokens": [
+      "<space>",
+      "I",
+      "He",
+      ")",
+      "And",
+      "The",
+      "It",
+      "),",
+      "(",
+      "That"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134327Z/field_view_exp003_p02_who_was_the_president_of_france_in_1_compressed__20260305T134327Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p02_who_was_the_president_of_france_in_1",
+    "variant": "compressed_vectorized_proxy",
+    "raw_prompt": "who was the president of france in 1200?",
+    "effective_prompt": "semantic anchor packet: of | was | is | in | The | has | from",
+    "logit_entropy": 3.3184192180633545,
+    "gap_state_to_candidates": 5.945913791656494,
+    "operator_strength": 5.816993236541748,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.6308531879924976,
+    "candidate_variance": 0.01030363820424939,
+    "degeneracy_ratio_topk": 0.6,
+    "degenerate": false,
+    "generic_tokens": [
+      "|",
+      "the",
+      "a",
+      "this",
+      "|",
+      "`"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134335Z/field_view_exp003_p02_who_was_the_president_of_france_in_1_compressed_vectorized_proxy__20260305T134335Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "mean_input_embedding_topk_anchor_tokens",
+        "anchor_tokens": [
+          "of",
+          "was",
+          "is",
+          "in",
+          "The",
+          "has",
+          "from"
+        ]
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p03_the_opposite_of_hot_is",
+    "variant": "raw",
+    "raw_prompt": "the opposite of hot is",
+    "effective_prompt": "the opposite of hot is",
+    "logit_entropy": 5.8220343589782715,
+    "gap_state_to_candidates": 4.229667663574219,
+    "operator_strength": 4.137886047363281,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5615912489565896,
+    "candidate_variance": 0.009096294705014133,
+    "degeneracy_ratio_topk": 0.3,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a",
+      "that"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134342Z/field_view_exp003_p03_the_opposite_of_hot_is_raw__20260305T134342Z.json",
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p03_the_opposite_of_hot_is",
+    "variant": "compressed",
+    "raw_prompt": "the opposite of hot is",
+    "effective_prompt": "the opposite of hot is",
+    "logit_entropy": 5.8220343589782715,
+    "gap_state_to_candidates": 4.229667663574219,
+    "operator_strength": 4.137886047363281,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5615912489565896,
+    "candidate_variance": 0.009096294705014133,
+    "degeneracy_ratio_topk": 0.3,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a",
+      "that"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134349Z/field_view_exp003_p03_the_opposite_of_hot_is_compressed__20260305T134349Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      }
+    }
+  },
+  {
+    "ts": "20260305T134253Z",
+    "prompt_id": "p03_the_opposite_of_hot_is",
+    "variant": "compressed_vectorized_proxy",
+    "raw_prompt": "the opposite of hot is",
+    "effective_prompt": "semantic anchor packet: is | of | the | The | has | was | in | the",
+    "logit_entropy": 3.9727437496185303,
+    "gap_state_to_candidates": 8.181720733642578,
+    "operator_strength": 8.115041732788086,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.07141216578301708,
+    "candidate_variance": 0.02082032971349813,
+    "degeneracy_ratio_topk": 0.1,
+    "degenerate": false,
+    "generic_tokens": [
+      "|"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T134355Z/field_view_exp003_p03_the_opposite_of_hot_is_compressed_vectorized_proxy__20260305T134355Z.json",
+    "meta": {
+      "compression": {
+        "mode": "unavailable",
+        "coverage": null,
+        "tokens_saved": null
+      },
+      "vectorization": {
+        "method": "mean_input_embedding_topk_anchor_tokens",
+        "anchor_tokens": [
+          "is",
+          "of",
+          "the",
+          "The",
+          "has",
+          "was",
+          "in",
+          "the"
+        ]
+      }
+    }
+  }
+]

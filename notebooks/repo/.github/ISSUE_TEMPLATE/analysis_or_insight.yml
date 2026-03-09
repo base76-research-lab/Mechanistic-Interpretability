@@ -1,0 +1,68 @@
+name: Analysis / Insight
+description: Capture findings, interpretation, limitations, and follow-up work.
+title: "[ANALYSIS] "
+labels:
+  - research
+  - artifact:analysis
+body:
+  - type: input
+    id: track
+    attributes:
+      label: Track
+      placeholder: ai_microscopy or hallucinations
+    validations:
+      required: true
+  - type: dropdown
+    id: state
+    attributes:
+      label: Research state
+      options:
+        - ANALYSIS
+        - INTERNAL_REVIEW
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence level
+      options:
+        - Exploratory
+        - Supported
+        - Replicated
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observation
+    validations:
+      required: true
+  - type: textarea
+    id: interpretation
+    attributes:
+      label: Interpretation
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations
+    validations:
+      required: true
+  - type: textarea
+    id: followup
+    attributes:
+      label: Next follow-up
+    validations:
+      required: true
+  - type: textarea
+    id: claim_boundary
+    attributes:
+      label: Claim boundary
+    validations:
+      required: true
+  - type: input
+    id: canonical_artifact
+    attributes:
+      label: Linked canonical artifact
+      placeholder: https://github.com/...

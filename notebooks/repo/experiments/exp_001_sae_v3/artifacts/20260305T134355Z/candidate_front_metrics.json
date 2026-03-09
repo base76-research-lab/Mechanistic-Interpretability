@@ -1,0 +1,23 @@
+{
+  "file": "/media/bjorn/iic/workspace/Base76_Research_Lab/Mechanistic Interpretability/experiments/exp_001_sae_v3/artifacts/20260305T134355Z/field_view_exp003_p03_the_opposite_of_hot_is_compressed_vectorized_proxy__20260305T134355Z.json",
+  "prompt": "semantic anchor packet: is | of | the | The | has | was | in | the",
+  "topk": 10,
+  "risk_score": 1.0,
+  "logit_entropy": 3.9727437496185303,
+  "gap_state_to_candidates": 8.181720733642578,
+  "operator_strength": 8.115041732788086,
+  "candidate_coherence": 0.07141216578301708,
+  "candidate_variance": 0.02082032971349813,
+  "candidate_centroid": [
+    0.07785083185881377,
+    0.01592224407941103
+  ],
+  "state_to_centroid_distance": 8.18172105058603,
+  "degeneracy_ratio_topk": 0.1,
+  "degenerate": false,
+  "generic_count": 1,
+  "candidate_count": 10,
+  "generic_tokens": [
+    "|"
+  ]
+}

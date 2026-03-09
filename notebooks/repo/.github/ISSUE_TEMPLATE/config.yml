@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Research Index
+    url: https://github.com/base76-research-lab/mechanistic-interpretability-/blob/main/research_index.md
+    about: Start here for current state, evidence level, claim boundary, and next transition.
+  - name: Model Microscopy Plan
+    url: https://github.com/base76-research-lab/mechanistic-interpretability-/blob/main/reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md
+    about: Use the active microscopy plan before opening new research work.

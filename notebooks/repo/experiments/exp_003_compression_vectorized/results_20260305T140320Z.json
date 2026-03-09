@@ -1,0 +1,34 @@
+[
+  {
+    "ts": "20260305T140320Z",
+    "prompt_id": "p01_the_opposite_of_hot_is",
+    "variant": "raw",
+    "raw_prompt": "the opposite of hot is",
+    "effective_prompt": "the opposite of hot is",
+    "logit_entropy": 5.8220343589782715,
+    "gap_state_to_candidates": 4.229667663574219,
+    "operator_strength": 4.137886047363281,
+    "risk_score": 1.0,
+    "candidate_coherence": 0.5615912489565896,
+    "candidate_variance": 0.009096294705014133,
+    "degeneracy_ratio_topk": 0.3,
+    "degenerate": false,
+    "generic_tokens": [
+      "the",
+      "a",
+      "that"
+    ],
+    "run_record": "experiments/exp_001_sae_v3/artifacts/20260305T140322Z/field_view_exp003_p01_the_opposite_of_hot_is_raw__20260305T140322Z.json",
+    "meta": {
+      "compression": {
+        "mode": "none"
+      }
+    },
+    "compression_mode": "none",
+    "compression_valid": true,
+    "delta_vs_raw_degeneracy_ratio_topk": 0.0,
+    "delta_vs_raw_candidate_coherence": 0.0,
+    "delta_vs_raw_gap_state_to_candidates": 0.0,
+    "delta_vs_raw_logit_entropy": 0.0
+  }
+]

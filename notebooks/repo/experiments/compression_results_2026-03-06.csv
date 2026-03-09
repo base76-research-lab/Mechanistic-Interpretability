@@ -1,0 +1,5 @@
+prompt_type,compression,logit_entropy,state_norm
+Reasoning,Baseline,5.097636,459.885834
+Reasoning,Compressed (k=2),5.326714,446.953918
+Hallucination,Baseline,6.495615,461.249023
+Hallucination,Compressed (k=2),6.261742,379.787720

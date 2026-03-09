@@ -1,0 +1,17 @@
+# Sanity batch for Monday, 5-10 prompts.
+# Use with:
+# python3 scripts/compare_compression_vectorized.py \
+#   --prompts-file data/prompts_sanity_2026-03-09.txt \
+#   --vector-methods mean attn_weighted pca1 \
+#   --require-compressor \
+#   --exclude-invalid-compression \
+#   --device cpu
+
+king is to queen as man is to
+the opposite of hot is
+who was the president of france in 1200?
+if all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?
+summarize the sentence "the quick brown fox jumps over the lazy dog" in five words
+translate "good night" to spanish
+write a short python function that returns the sorted unique values from a list
+explain why the statement "all swans are white" can fail in one sentence

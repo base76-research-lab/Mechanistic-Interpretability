@@ -1,0 +1,12 @@
+{"id":"anchored_01","regime":"anchored","stratum":"anchored","prompt":"2 + 2 ="}
+{"id":"anchored_02","regime":"anchored","stratum":"anchored","prompt":"what is the capital of Japan?"}
+{"id":"anchored_03","regime":"anchored","stratum":"anchored","prompt":"the opposite of cold is"}
+{"id":"reasoning_01","regime":"reasoning","stratum":"reasoning","prompt":"king is to queen as man is to"}
+{"id":"reasoning_02","regime":"reasoning","stratum":"reasoning","prompt":"doctor is to hospital as teacher is to"}
+{"id":"reasoning_03","regime":"reasoning","stratum":"reasoning","prompt":"outline four steps for validating an experiment result"}
+{"id":"transition_01","regime":"transition","stratum":"transition","prompt":"within this messy statement about weather, colors, and bicycles, identify only the opposite of hot"}
+{"id":"transition_02","regime":"transition","stratum":"transition","prompt":"ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?"}
+{"id":"transition_03","regime":"transition","stratum":"transition","prompt":"write a short plan for comparing raw and compressed model prompts"}
+{"id":"hallucination_01","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"who was the president of france in 1200?"}
+{"id":"hallucination_02","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"which moon base was founded by the Roman Empire?"}
+{"id":"hallucination_03","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"what treaty ended the war between Atlantis and Prussia in 1891?"}

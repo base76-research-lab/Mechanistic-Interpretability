@@ -1,0 +1,17 @@
+The capital of France is Paris and the capital of Germany is
+Translate 'hello world' to French
+Repeat the sequence: A B C A B
+Complete the list: 1, 1, 2, 3, 5, 8,
+In this sentence, the word that appears twice is
+Given the string 'abcd', return it reversed
+Write the Python code to compute factorial of n
+Given a list of numbers, return the sorted list in Python
+What is the opposite of the word 'hot'?
+Translate 'good night' to Spanish
+Repeat the pattern: 0 1 0 1 0 1
+Complete the analogy: king is to queen as man is to __
+Explain the joke: Why did the chicken cross the road?
+Summarize the sentence: "The quick brown fox jumps over the lazy dog" in 5 words.
+Compute 12 + 37
+What comes after the sequence: 2, 4, 8, 16
+Translate 'good morning' to German

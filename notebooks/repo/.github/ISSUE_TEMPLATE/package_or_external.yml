@@ -1,0 +1,60 @@
+name: Package / External Communication
+description: Track package preparation and outbound communication.
+title: "[PACKAGE] "
+labels:
+  - research
+  - artifact:package
+body:
+  - type: dropdown
+    id: state
+    attributes:
+      label: Research state
+      options:
+        - PACKAGE_READY
+        - EXTERNAL_COMMUNICATION
+    validations:
+      required: true
+  - type: dropdown
+    id: artifact_type
+    attributes:
+      label: Artifact type
+      options:
+        - package
+        - external
+        - report
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence level
+      options:
+        - Exploratory
+        - Supported
+        - Replicated
+    validations:
+      required: true
+  - type: textarea
+    id: contents
+    attributes:
+      label: Package contents or communication payload
+    validations:
+      required: true
+  - type: textarea
+    id: start_here
+    attributes:
+      label: Start-here guidance
+      description: What should the receiver read first?
+    validations:
+      required: true
+  - type: textarea
+    id: claim_boundary
+    attributes:
+      label: Claim boundary
+    validations:
+      required: true
+  - type: input
+    id: canonical_artifact
+    attributes:
+      label: Linked canonical artifact
+      placeholder: https://github.com/...
