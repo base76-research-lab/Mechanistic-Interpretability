@@ -30,6 +30,9 @@ This is the parent research track. Hallucination is treated as one important phe
 - compression-like smoothing exposes structural fragility in some states
 - `gap`, `coherence`, and `degeneracy` behave like meaningful geometry signals
 - vectorized conditioning is promising but not yet validated robustly
+- read-only oscilloscope traces now suggest a broader decision-transition zone around L6-L9
+- reconstruction/write-back behaves like a commitment operator rather than neutral observation
+- `L-SAE` without write-back is close to baseline in the current panel runs
 
 ## Workstreams
 
@@ -54,14 +57,15 @@ Goal:
 - identify where the model structure changes meaningfully
 
 Tasks:
+- run read-only oscilloscope traces before write-back interventions on the same prompts
 - run layer sweeps on selected prompts across multiple layers
 - compare `state_norm`, `gap`, `coherence`, `degeneracy`, and entropy
-- determine whether Layer 6 is a local artifact or a recurring control layer
+- determine whether Layer 6 is a local artifact, or whether the real transition zone spans L6-L9
 
 Deliverables:
 - one layer-sweep report
 - one layer comparison figure
-- one conclusion on whether Layer 6 remains the best microscopy layer
+- one conclusion on whether Layer 6 remains the best microscopy layer or should be reframed as part of an L6-L9 transition band
 
 ## 3. Causal interventions
 
@@ -69,6 +73,7 @@ Goal:
 - move from observation to manipulation
 
 Tasks:
+- keep a hard distinction between read-only observer runs and write-back interventions
 - repeat steering-vector tests on more than one prompt
 - compare intervention strength and failure modes
 - repeat compression-hook tests with explicit guardrails
@@ -119,6 +124,7 @@ Tasks:
 - compare `Plain SAE`, `Lens-only`, and `L-SAE+R` on the same canonical panel
 - keep logit-lens supervision as the first supervision target
 - evaluate whether `L-SAE+R` improves regime separation, recorder interpretability, or feature-to-frontier stability
+- explicitly isolate `write-back active` versus `read-only supervised observation`
 - document whether any apparent gain is real or just task-shaped noise
 
 Deliverables:
@@ -145,7 +151,7 @@ Not allowed without stronger replication:
 ## Immediate priority order
 
 1. robust exp_003 batch with valid compression
-2. layer sweep replication around Layer 6
+2. read-only oscilloscope-assisted layer replication around L6-L9
 3. steering replication on multiple prompts
 4. cross-model light control
 5. synthesis note separating microscopy claims from hallucination claims

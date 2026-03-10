@@ -94,6 +94,22 @@ The contrast panel should also use matched random baselines to test:
 - whether `factual_recall` still separates from a fact-shaped but semantically degraded control
 - whether `degeneracy_probe` differs from random incoherence, or whether both are mostly capturing shallow disorder
 
+## Current empirical constraint (2026-03-10)
+
+The first `exp_004` comparison runs impose an immediate protocol constraint:
+
+- `L-SAE` without reconstruction/write-back is approximately baseline in the current hallucination panel
+- `L-SAE+R` becomes decision-relevant only when reconstruction is written back into the residual stream
+- this means the protocol must explicitly separate:
+  - `supervision present`
+  - `read-only observation`
+  - `causal write-back active`
+
+Interpretation rule:
+
+- do not describe `L-SAE+R` effects as if supervision alone caused them unless write-back state is explicit
+- any apparent gain must be reported together with whether the residual stream was rewritten
+
 ## Outputs
 
 This protocol should produce:
@@ -127,9 +143,11 @@ Allowed if evidence supports it:
 
 - `L-SAE+R` changes the relationship between sparse features and decision-relevant telemetry
 - one or more decision-relevant metrics improve over plain SAE in the current GPT-2 setup
+- write-back appears to be the active causal path in the current `L-SAE+R` runs
 
 Not allowed without stronger replication:
 
 - `L-SAE+R` is the correct general sparse-feature objective
 - lens supervision is broadly superior across models
 - `L-SAE+R` already solves regime detection
+- `L-SAE` supervision alone is already established as the causal factor if write-back state is not isolated

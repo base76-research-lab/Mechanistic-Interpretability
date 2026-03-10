@@ -110,6 +110,21 @@ python3 scripts/plot_unified_stack_traces.py \
   --out reports/figures/unified_stack_traces_<run_name>.png
 ```
 
+## Current empirical status (2026-03-10)
+
+The first `exp_004` runs changed the interpretation boundary of this stack:
+
+- read-only oscilloscope traces are now the cleanest observer surface in the current setup
+- reconstruction/write-back must be treated as intervention, not passive instrumentation
+- `L-SAE` without write-back remains close to baseline in the current runs
+- `L-SAE+R` appears decision-relevant only when reconstruction is applied back into the residual stream
+- current oscilloscope traces suggest a transition zone around layers 6-9, but this remains exploratory
+
+Operational consequence:
+
+- use read-only traces first when mapping decision dynamics
+- use write-back only when the research question is explicitly causal or intervention-oriented
+
 ## Success criteria
 
 The stack is useful when it enables questions such as:
@@ -129,9 +144,11 @@ Allowed claims:
 - the stack provides aligned feature, lens, frontier, and recorder outputs on the same material
 - the stack supports layer-wise and regime-wise comparison
 - the stack is now sufficient to make `L-SAE+R` testable on shared material
+- the current stack now supports an observer/intervention split in runtime analysis
 
 Not yet allowed:
 
 - Tuned Lens improves the system
 - the ordering of collapse is already established
 - the recorder alone proves a general hallucination mechanism
+- any write-back result should not be described as pure observation
