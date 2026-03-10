@@ -17,11 +17,11 @@ Purpose:
 
 ## Current findings set
 
-- `../reports/summary_findings_2026-03-06.md` — high-level microscopy summary
-- `../reports/findings_2026-03-10.md` — unified observability stack and intervention interpretation
-- `../reports/oscilloscope_hallu_summary_2026-03-10.md` — read-only oscilloscope summary and
+- [`../reports/summary_findings_2026-03-06.md`](../reports/summary_findings_2026-03-06.md) — high-level microscopy summary
+- [`../reports/findings_2026-03-10.md`](../reports/findings_2026-03-10.md) — unified observability stack and intervention interpretation
+- [`../reports/oscilloscope_hallu_summary_2026-03-10.md`](../reports/oscilloscope_hallu_summary_2026-03-10.md) — read-only oscilloscope summary and
   observer/intervention boundary
-- `../STATUS.md` — current project status and active hypotheses
+- [`../STATUS.md`](../STATUS.md) — current project status and active hypotheses
 
 ## What this surface is not
 
@@ -34,20 +34,20 @@ Those remain important, but they belong elsewhere in the repository.
 
 ## Reviewer reading order
 
-1. `../README.md`
-2. `../STATUS.md`
-3. `../research_index.md`
-4. `summaries/README.md`
-5. `figures/README.md`
+1. [`../README.md`](../README.md)
+2. [`../STATUS.md`](../STATUS.md)
+3. [`../research_index.md`](../research_index.md)
+4. [`summaries/README.md`](summaries/README.md)
+5. [`figures/README.md`](figures/README.md)
 
 ## Figure surface
 
 See:
 
-- `figures/README.md`
+- [`figures/README.md`](figures/README.md)
 
 ## Summary surface
 
 See:
 
-- `summaries/README.md`
+- [`summaries/README.md`](summaries/README.md)

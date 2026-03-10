@@ -2,7 +2,7 @@
 
 This directory contains experiment-specific run artifacts, primarily JSON and Markdown outputs, and occasionally small derived files.
 
-Within the Base76 `#research` system, this is the experimental evidence layer. `research_index.md` indicates the current state of the track and which runs matter most at the moment.
+Within the Base76 `#research` system, this is the experimental evidence layer. [`research_index.md`](../research_index.md) indicates the current state of the track and which runs matter most at the moment.
 
 ## Conventions
 
@@ -17,7 +17,7 @@ Within the Base76 `#research` system, this is the experimental evidence layer. `
 
 - `#research` routes this repo into the global `ai_microscopy` track
 - experiment artifacts support state transitions such as `PROTOCOL -> RUN -> ANALYSIS`
-- findings and external claims should not originate here directly; they should be promoted to `reports/`
+- findings and external claims should not originate here directly; they should be promoted to [`reports/`](../reports/)
 
 ## Current experiment groups
 
@@ -27,7 +27,7 @@ Within the Base76 `#research` system, this is the experimental evidence layer. `
 
 ## Orientation
 
-Start with `../research_index.md` to see:
+Start with [`../research_index.md`](../research_index.md) to see:
 
 - current state
 - latest runs
