@@ -15,7 +15,8 @@
 
 ## Documentation Sources of Truth
 - `README.md`, `STATUS.md`, `research_index.md` must stay current.
-- Drafts belong outside git (or a separate drafts repo). Do not commit templates/rough notes.
+- Reviewer-facing scientific navigation should remain explicit through `findings/README.md` and `reports/REVIEWER_INDEX.md`.
+- Mixed-purpose documents that remain in git must be clearly marked or indexed so they are not confused with the main scientific findings surface.
 
 ## Repro Guidance
 - Reports should include exact commands, model IDs (HF), seeds if applicable, and note that weights are not stored in git.

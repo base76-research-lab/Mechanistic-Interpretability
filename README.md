@@ -1,56 +1,101 @@
 # Mechanistic Interpretability
 
-This repository contains Base76 Research Lab's mechanistic interpretability work on sparse autoencoders, residual-state analysis, subspace probing, and intervention-based runtime observability.
+Base76 Research Lab repository for mechanistic interpretability, residual-state analysis, sparse
+autoencoders, runtime observability, and intervention-aware analysis in small and medium-sized
+language models.
 
-Its current scientific focus is twofold:
+This repository should be read as a research repository first. It is an active lab surface, but
+its public front door is intended to make the scientific object, current findings, and claim
+boundary immediately clear to external readers.
 
-1. to study internal representations and control-relevant structure in small and medium-sized language models
-2. to develop a geometry-based reliability signal, `Field View`, for distinguishing reasoning-like and hallucination-prone regimes before output collapse
+## Scientific focus
 
-This repository should be read as part of the Base76 `#research` system and, more specifically, as a working repository within the global `ai_microscopy` track.
+The current research program has two linked aims:
 
-## Research context
+1. study internal geometry and control-relevant structure in transformer models
+2. study whether state-candidate misalignment and related geometry signals can distinguish
+   reasoning-like and hallucination-prone regimes before output collapse
 
-Within the Base76 research portfolio:
+## Current status
 
-- `#research` is the explicit activation convention for research mode
-- this repository belongs to the `ai_microscopy` track
-- `research_index.md` is the primary orientation file
-- substantive claims should be labeled with explicit evidence levels: `Exploratory`, `Supported`, or `Replicated`
-- external communication should not bypass state tracking or claim boundaries
-- `hallucinations` currently remains a sub-track within this research line, not a separate repository
+Current evidence level in the active GPT-2 Small setup: `Supported`
 
-At the repository layer:
+Current claim boundary:
 
-- GitHub Issues and the GitHub Project act as the operational lab surface
-- GitHub Project: `https://github.com/users/base76-research-lab/projects/1/views/1`
-- `GITHUB_PROJECT_LAB_SPEC.md` defines the repository's GitHub operating model
-- `.github/ISSUE_TEMPLATE/` contains the standard forms for research questions, runs, analyses, and package work
+- the repository supports mechanism-oriented claims in the present GPT-2 Small setup
+- it does not yet justify cross-model generalization or production-grade reliability claims
+- read-only observer traces and write-back interventions must now be treated as distinct evidence
+  classes
 
-## What this repository studies
+See:
 
-The main research objectives are:
+- `STATUS.md`
+- `research_index.md`
+- `findings/README.md`
 
-1. extracting sparse, interpretable features from residual and MLP activations
-2. identifying circuits and control-relevant subspaces through patching and ablation
-3. building feature dictionaries with interpretable labels and example behaviors
-4. measuring state-candidate misalignment as a precursor to reliability failures
+## Main findings at a glance
+
+- latent state-space structure is measurable through subspace projection
+- four state regimes are observable on a controlled prompt panel
+- state-candidate misalignment correlates with hallucination-prone behavior
+- entropy alone is not sufficient as a hallucination signal
+- reconstruction/write-back behaves as intervention rather than neutral observation
+- read-only oscilloscope traces suggest a decision-transition zone around L6-L9
+
+Primary references:
+
+- `reports/summary_findings_2026-03-06.md`
+- `reports/findings_2026-03-10.md`
+- `reports/oscilloscope_hallu_summary_2026-03-10.md`
 
 ## Start here
 
-If you read only one file first, read `research_index.md`.
+For external scientific readers, the recommended reading order is:
 
-Recommended reading order:
+1. `README.md`
+2. `STATUS.md`
+3. `findings/README.md`
+4. `research_index.md`
+5. `reports/summary_findings_2026-03-06.md`
+6. `reports/findings_2026-03-10.md`
+7. `reports/oscilloscope_hallu_summary_2026-03-10.md`
 
-- `research_index.md`
-- `https://github.com/users/base76-research-lab/projects/1/views/1`
-- `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
-- `reports/summary_findings_2026-03-06.md`
-- `reports/exp_001_sae.md`
-- `reports/feature_dict.md`
+For reviewers who want the strongest current visual artifacts first:
+
+- `findings/figures/README.md`
 - `reports/figures/field_view_triage.png`
-- `experiments/exp_001_sae_v3/`
-- `notebooks/README.md`
+- `experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`
+
+## Repository map
+
+- `findings/` — curated reviewer-facing findings surface
+- `reports/` — protocols, plans, dated findings notes, and analysis documents
+- `data/` — prompt panels and small research datasets
+- `experiments/` — run artifacts, traces, metrics, and experiment-local outputs
+- `transformer_oscilloscope/` — read-only tracing and visualization toolkit
+- `scripts/` — executable research tooling
+- `notebooks/` — exploratory notebooks; not a claims surface
+- `paper/` — internal writing area
+
+## Findings vs reports
+
+The distinction is intentional:
+
+- `findings/` is the reviewer-facing scientific surface for what currently matters most
+- `reports/` is the broader working documentation layer, including protocols, plans, findings
+  notes, and dated internal synthesis
+
+This keeps the repository scientific and reviewable without deleting the active lab record.
+
+## Reproducibility
+
+- large tensors such as `activations.pt` and `sae_weights.pt` are treated as build artifacts and
+  are ignored by git
+- reviewable outputs such as metrics, JSON artifacts, figures, and findings notes are retained
+- `research_index.md` tracks current state, latest runs, evidence level, claim boundary, and next
+  transition
+- notebooks are exploratory surfaces; stable conclusions should be promoted into `reports/` and
+  reflected in `findings/`
 
 ## Quickstart
 
@@ -62,10 +107,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Quickstart (observability only, read-only)
+Read-only observability quickstart:
 
 ```bash
-cd ESA/research/mechanistic-interpretability
 PYTHONPATH=. python3 -m transformer_oscilloscope.cli trace \
   --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
   --model gpt2 --layers 1 6 9 11 \
@@ -79,39 +123,7 @@ PYTHONPATH=. python3 -m transformer_oscilloscope.cli report \
   --report-name report.html
 ```
 
-**Tool:** Transformer Oscilloscope — read-only “oscilloskop” för interna dynamiker.  
-Docs: [`transformer_oscilloscope/README.md`](transformer_oscilloscope/README.md)
-
-Vad den gör och varför:
-- Kopplar in forward hooks (residual/attn/MLP/logits) utan write-back → påverkar inte modellen.
-- Loggar per-token/per-lager entropi, gap, top‑k, och (valfritt) SAE-featureaktivering.
-- Producerar färdiga PNG:er + HTML-rapport för att se lager/tids-trajectory och frontier-beteende.
-- Syfte: ge forskare ett snabbt, oförstörande “fönster” in i LLM:s beslutsdynamik för analys av regimer (reasoning vs hallucination-prone m.fl.).
-- Exempel: `transformer_oscilloscope/examples/trace_sample.jsonl`; panel: `data/prompts_observability_panel_2026-03-07.jsonl`.
-
-## Repository hygiene
-- Policy: se [`REPO_POLICY.md`](REPO_POLICY.md)
-- Changelog: se [`CHANGELOG.md`](CHANGELOG.md)
-
-Run a representative SAE experiment:
-
-```bash
-python3 scripts/run_sae.py --model gpt2 --layer 5 --prompts data/prompts.txt --out experiments/exp_001_sae_local
-```
-
-Run a representative Field View probe:
-
-```bash
-python3 scripts/field_view.py --prompt "the opposite of hot is" --model gpt2 --layer 5 --units 472 468 57 156 346 --mode pc2 --topk 8
-```
-
-Generate report figures:
-
-```bash
-python3 scripts/make_figures.py
-```
-
-Run unified observability stack (baseline):
+Unified observability stack baseline:
 
 ```bash
 python3 scripts/run_unified_observability_stack.py \
@@ -121,101 +133,20 @@ python3 scripts/run_unified_observability_stack.py \
   --device cpu
 ```
 
-Run L-SAE+R style stack (reconstruction engaged):
+## Research context
 
-```bash
-python3 scripts/run_unified_observability_stack.py \
-  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
-  --sae-state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
-  --intervention-state lsae_r \
-  --use-sae-reconstruction \
-  --run-name lsae_r_stack_default_lw2e2_2026-03-09 \
-  --device cpu
-```
+This repository is part of the Base76 `ai_microscopy` research track.
 
-Run prompt-vector injection on top of the observability stack:
+Operationally:
 
-```bash
-python3 scripts/run_unified_observability_stack.py \
-  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
-  --sae-state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
-  --intervention-state vector_injection_lsae_r \
-  --use-sae-reconstruction \
-  --prompt-vector-mode residual_mean \
-  --prompt-vector-source-layer 5 \
-  --prompt-vector-token-span last_n \
-  --prompt-vector-last-n 4 \
-  --inject-at-layer 5 \
-  --inject-at-token-index -1 \
-  --inject-alpha 0.15 \
-  --inject-mode add \
-  --run-name vector_injection_stack_2026-03-09 \
-  --device cpu
-```
+- `research_index.md` is the primary orientation file
+- substantive claims should be labeled as `Exploratory`, `Supported`, or `Replicated`
+- external communication should not bypass state tracking or claim boundaries
+- GitHub Issues and the GitHub Project are operational lab surfaces, not substitutes for the
+  scientific claims surface
 
-## Transformer Oscilloscope (read-only observability)
+See also:
 
-This is a separate, no-write-back toolkit under `transformer_oscilloscope/` for tracing and visualizing internal dynamics.
-
-Collect traces (read-only):
-```bash
-PYTHONPATH=. python3 -m transformer_oscilloscope.cli trace \
-  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
-  --model gpt2 --layers 1 6 9 11 \
-  --out-dir experiments/exp_004_unified_observability_stack \
-  --run-name transformer_oscilloscope_demo \
-  --store-projections
-```
-
-Generate plots and HTML report:
-```bash
-PYTHONPATH=. python3 -m transformer_oscilloscope.cli viz \
-  --trace experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/trace.jsonl \
-  --out-dir experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/plots
-
-PYTHONPATH=. python3 -m transformer_oscilloscope.cli report \
-  --trace experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/trace.jsonl \
-  --out-dir experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/plots \
-  --report-name report.html
-```
-
-Debug a single prompt with the same injection path:
-
-```bash
-python3 scripts/run_field_view_logged.py \
-  --scenario reasoning_vector_probe \
-  --prompt "If all mammals breathe air and whales are mammals, do whales breathe air?" \
-  --model gpt2 \
-  --layer 5 \
-  --sae_state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
-  --use-sae-reconstruction \
-  --prompt-vector-mode residual_mean \
-  --prompt-vector-token-span last_n \
-  --prompt-vector-last-n 4 \
-  --inject-at-layer 5 \
-  --inject-alpha 0.15 \
-  --inject-mode add \
-  --device cpu
-```
-
-## Reproducibility and claims
-
-- Large tensors such as `activations.pt` and `sae_weights.pt` are treated as build artifacts and are ignored by git.
-- Reviewable outputs such as metrics, JSON artifacts, figures, and findings notes are retained.
-- `research_index.md` tracks current state, latest runs, evidence level, claim boundary, and next transition.
-- Notebooks are exploratory surfaces; stable conclusions should be promoted into `reports/`.
-- Notebooks alone do not satisfy package-readiness or external-claim requirements.
-
-For more detail, see `experiments/README.md`, `reports/README.md`, and `notebooks/README.md`.
-
-## Repository structure
-
-```text
-Mechanistic-Interpretability/
-├── data/         # prompt sets and small datasets
-├── experiments/  # experiment artifacts, JSON outputs, and run summaries
-├── notebooks/    # exploratory GPU-backed work (Colab/local)
-├── paper/        # internal writing area
-├── reports/      # findings, plans, logs, and figures
-└── scripts/      # executable tools for SAE, Field View, patching, and analysis
-```
+- `GITHUB_PROJECT_LAB_SPEC.md`
+- `REPO_POLICY.md`
+- `CHANGELOG.md`

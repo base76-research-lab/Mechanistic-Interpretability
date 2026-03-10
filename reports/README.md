@@ -1,15 +1,32 @@
-# Reports / Findings
+# Reports
 
 Last updated: 2026-03-07
 
-This directory contains the repository's reviewable findings layer: what was run, what was observed, and what can currently be defended.
+This directory contains the repository's broader reporting layer:
 
-Within the Base76 `#research` system, this is the primary claims surface for the repository. Notebooks may lead into this layer, but they should not replace it.
+- protocols
+- plans
+- dated findings notes
+- analysis notes
+- logs
+- figures
+
+The reviewer-facing findings surface now lives at:
+
+- `../findings/`
+- reviewer shortcut within `reports/`: `REVIEWER_INDEX.md`
+
+Within the Base76 `#research` system, `reports/` remains the canonical working documentation layer.
+Notebooks may lead into this layer, but they should not replace it.
 
 ## Index
 
+- `../findings/README.md` — reviewer-facing findings surface
+- `REVIEWER_INDEX.md` — shortest reviewer-facing path through the reports layer
 - `MODEL_MICROSCOPY_PLAN_2026-03-07.md` — active track plan for `ai_microscopy`
 - `summary_findings_2026-03-06.md` — current high-level microscopy summary
+- `findings_2026-03-10.md` — current interpretation of `exp_004` panel and benchmark runs
+- `oscilloscope_hallu_summary_2026-03-10.md` — oscilloscope-specific summary and observer/intervention boundary
 - `compression_analysis_2026-03-06.md` — compression intervention and structural fragility note
 - `steering_vector_analysis_2026-03-06.md` — causal steering note in residual space
 - `NEXT_STEPS_2026-03-05.md` — operational run plan with guards, analysis order, and exit criteria
@@ -48,3 +65,34 @@ Use explicit evidence labels when substantive claims are made:
 - `Exploratory`
 - `Supported`
 - `Replicated`
+
+## Visibility classes
+
+To reduce confusion for external readers, treat the `reports/` layer as three visibility classes:
+
+### 1. Reviewer-facing scientific documents
+
+- current findings summaries
+- major dated findings notes
+- key protocol documents when they define interpretation boundaries
+
+### 2. Scientific support documents
+
+- plans
+- validation standards
+- protocol drafts that shape the active work
+
+### 3. Internal or mixed-purpose documents
+
+- templates
+- outreach drafts
+- weekly operational plans
+- startup/program packets
+
+These may remain in `reports/` for continuity, but they should not be mistaken for the main
+scientific review surface. External readers should be routed first to:
+
+- `../README.md`
+- `../STATUS.md`
+- `../findings/README.md`
+- `REVIEWER_INDEX.md`
