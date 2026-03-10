@@ -88,6 +88,10 @@ Vad den gör och varför:
 - Producerar färdiga PNG:er + HTML-rapport för att se lager/tids-trajectory och frontier-beteende.
 - Syfte: ge forskare ett snabbt, oförstörande “fönster” in i LLM:s beslutsdynamik för analys av regimer (reasoning vs hallucination-prone m.fl.).
 
+## Repository hygiene
+- Policy: se [`REPO_POLICY.md`](REPO_POLICY.md)
+- Changelog: se [`CHANGELOG.md`](CHANGELOG.md)
+
 Run a representative SAE experiment:
 
 ```bash

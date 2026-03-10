@@ -7,6 +7,13 @@ experiments/**
 **/*.bin
 **/*.safetensors
 
+# Draft reports and figures (keep local unless finalized)
+reports/*TEMPLATE*.md
+reports/zai_*.*
+reports/prompt_vector_injection_followup_2026-03-09.md
+reports/exp_003_prompt_level_analysis_2026-03-09.md
+reports/figures/*.png
+
 # Virtual envs / caches
 .venv/
 __pycache__/
