@@ -10,6 +10,7 @@ The active structure is now:
 - `syntheses/` — cross-run and cross-note syntheses
 - `protocols/` — active run and interpretation protocols
 - `internal_ops/` — weekly planning and internal review operations
+- `daily_thinking/` — internal project diary for reasoning, turning points, and day-level synthesis
 - `templates/`, `outreach/`, `logs/`, `figures/` — support layers
 
 The reviewer-facing findings surface now lives at:
@@ -29,6 +30,7 @@ Notebooks may lead into this layer, but they should not replace it.
 - [`protocols/README.md`](protocols/README.md) — active protocol layer
 - [`templates/README.md`](templates/README.md) — reusable report templates
 - [`internal_ops/README.md`](internal_ops/README.md) — internal weekly/operational planning documents
+- [`daily_thinking/README.md`](daily_thinking/README.md) — internal project diary and day-level reasoning notes
 - [`outreach/README.md`](outreach/README.md) — mixed external/outreach materials kept outside the main scientific surface
 - [`MODEL_MICROSCOPY_PLAN_2026-03-07.md`](MODEL_MICROSCOPY_PLAN_2026-03-07.md) — active track plan for `ai_microscopy`
 - [`findings/summary_findings_2026-03-06.md`](findings/summary_findings_2026-03-06.md) — current high-level microscopy summary
@@ -44,6 +46,7 @@ Notebooks may lead into this layer, but they should not replace it.
 - [`findings/dense_layer_sweep_findings_2026-03-10.md`](findings/dense_layer_sweep_findings_2026-03-10.md) — dense `5-12` addendum resolving early onset vs later expansion
 - [`findings/token_level_lead_time_findings_2026-03-10.md`](findings/token_level_lead_time_findings_2026-03-10.md) — token-level lead-time characterization with conservative vs operational thresholds
 - [`findings/transition_countercase_findings_2026-03-10.md`](findings/transition_countercase_findings_2026-03-10.md) — explicit ambiguity-boundary pass on transition and regime-adjacent detections
+- [`daily_thinking/2026-03-10.md`](daily_thinking/2026-03-10.md) — internal diary summary of the trajectory block, lead-time, and transition boundary work
 - [`compression_analysis_2026-03-06.md`](compression_analysis_2026-03-06.md) — compression intervention and structural fragility note
 - [`steering_vector_analysis_2026-03-06.md`](steering_vector_analysis_2026-03-06.md) — causal steering note in residual space
 - [`NEXT_STEPS_2026-03-05.md`](NEXT_STEPS_2026-03-05.md) — operational run plan with guards, analysis order, and exit criteria
