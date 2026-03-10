@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite the repository and the dated findings notes relevant to the result you reference."
+title: "Mechanistic Interpretability"
+type: software
+authors:
+  - family-names: "Wikstrom"
+    given-names: "Bjorn"
+    affiliation: "Base76 Research Lab"
+    orcid: "https://orcid.org/0009-0000-4015-2357"
+abstract: "Research repository for mechanistic interpretability, residual-state analysis, sparse autoencoders, runtime observability, and intervention-aware analysis in small and medium-sized language models."
+repository-code: "https://github.com/base76-research-lab/Mechanistic-Interpretability"
+url: "https://github.com/base76-research-lab/Mechanistic-Interpretability"
+license: "Proprietary"
+keywords:
+  - "mechanistic interpretability"
+  - "transformers"
+  - "sparse autoencoders"
+  - "runtime observability"
+  - "hallucination analysis"
+date-released: "2026-03-10"

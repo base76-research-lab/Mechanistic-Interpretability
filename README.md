@@ -32,6 +32,8 @@ See:
 - `STATUS.md`
 - `research_index.md`
 - `findings/README.md`
+- `REPRODUCIBILITY.md`
+- `CITATION.cff`
 
 ## Main findings at a glance
 
@@ -76,6 +78,9 @@ For reviewers who want the strongest current visual artifacts first:
 - `scripts/` — executable research tooling
 - `notebooks/` — exploratory notebooks; not a claims surface
 - `paper/` — internal writing area
+- `REPRODUCIBILITY.md` — exact commands and expected artifacts for the main results
+- `CITATION.cff` — repository citation metadata
+- `LICENSE` — repository use and permission boundary
 
 ## Findings vs reports
 

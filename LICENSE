@@ -1,0 +1,15 @@
+All rights reserved.
+
+Copyright (c) 2026 Bjorn Wikstrom, Base76 Research Lab
+
+This repository contains research code, figures, reports, notes, and related artifacts for the
+Mechanistic Interpretability research program.
+
+No license is granted to use, copy, modify, merge, publish, distribute, sublicense, or sell any
+part of this repository without prior written permission from the copyright holder, except as
+required by applicable law.
+
+Third-party dependencies, pretrained models, datasets, and external services referenced by this
+repository remain subject to their own licenses and terms.
+
+For citation guidance, see `CITATION.cff`.
