@@ -6,6 +6,16 @@ This directory indexes the current figure and plot surface for reviewers.
 
 - [`../../reports/figures/field_view_triage.png`](../../reports/figures/field_view_triage.png)
   - primary regime triage figure from the earlier Field View stack
+- [`../../reports/figures/trajectory_detection_expanded_panel_2026-03-10.png`](../../reports/figures/trajectory_detection_expanded_panel_2026-03-10.png)
+  - expanded-panel detection separation for geometry vs entropy
+- [`../../reports/figures/trajectory_bifurcation_expanded_panel_2026-03-10.png`](../../reports/figures/trajectory_bifurcation_expanded_panel_2026-03-10.png)
+  - current layer-bifurcation view for onset vs later expansion
+- [`../../reports/figures/regime_stability_fingerprint_expanded_panel_2026-03-10.png`](../../reports/figures/regime_stability_fingerprint_expanded_panel_2026-03-10.png)
+  - regime-level fingerprint summary from the expanded-panel trajectory block
+- [`../../reports/figures/lead_time_profiles_expanded_panel_2026-03-10.png`](../../reports/figures/lead_time_profiles_expanded_panel_2026-03-10.png)
+  - token-level lead-time profiles across regimes
+- [`../../reports/figures/transition_countercase_scatter_2026-03-10.png`](../../reports/figures/transition_countercase_scatter_2026-03-10.png)
+  - persistence vs lead-time scatter for the current transition ambiguity boundary
 - [`../../reports/figures/coherence_vs_gap.png`](../../reports/figures/coherence_vs_gap.png)
   - current geometry relationship figure
 - [`../../reports/figures/degeneration_vs_gap.png`](../../reports/figures/degeneration_vs_gap.png)
@@ -32,3 +42,4 @@ For interpretation, always pair this surface with:
 
 - [`../README.md`](../README.md)
 - [`../summaries/README.md`](../summaries/README.md)
+- [`../../reports/figures/README.md`](../../reports/figures/README.md)

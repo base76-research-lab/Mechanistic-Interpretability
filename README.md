@@ -94,7 +94,9 @@ For reviewers who want the strongest current visual artifacts first:
 
 - [`findings/figures/README.md`](findings/figures/README.md)
 - [`reports/figures/field_view_triage.png`](reports/figures/field_view_triage.png)
-- [`experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`](experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png)
+- [`reports/figures/trajectory_bifurcation_expanded_panel_2026-03-10.png`](reports/figures/trajectory_bifurcation_expanded_panel_2026-03-10.png)
+- [`reports/figures/lead_time_profiles_expanded_panel_2026-03-10.png`](reports/figures/lead_time_profiles_expanded_panel_2026-03-10.png)
+- [`reports/figures/transition_countercase_scatter_2026-03-10.png`](reports/figures/transition_countercase_scatter_2026-03-10.png)
 
 ## Repository map
 
