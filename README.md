@@ -4,9 +4,20 @@ Base76 Research Lab repository for mechanistic interpretability, residual-state 
 autoencoders, runtime observability, and intervention-aware analysis in small and medium-sized
 language models.
 
+![Evidence Supported](https://img.shields.io/badge/Evidence-Supported-1f7a1f?style=flat-square)
+![Model GPT-2 Small](https://img.shields.io/badge/Model-GPT--2%20Small-0b7285?style=flat-square)
+![Scope Active Research](https://img.shields.io/badge/Scope-Active%20Research-8a5a00?style=flat-square)
+![Observer Boundary Enforced](https://img.shields.io/badge/Observer%20Boundary-Enforced-7b2cbf?style=flat-square)
+![Track AI Microscopy](https://img.shields.io/badge/Track-AI%20Microscopy-495057?style=flat-square)
+
 This repository should be read as a research repository first. It is an active lab surface, but
 its public front door is intended to make the scientific object, current findings, and claim
 boundary immediately clear to external readers.
+
+> Reviewer note
+>
+> The current claims are scoped to the active GPT-2 Small setup. Read-only observer traces and
+> write-back interventions are treated as distinct evidence classes throughout the repository.
 
 ## Scientific focus
 
@@ -19,6 +30,14 @@ The current research program has two linked aims:
 ## Current status
 
 Current evidence level in the active GPT-2 Small setup: `Supported`
+
+| At a glance | Current state |
+|---|---|
+| Scientific object | Internal geometry, runtime observability, and hallucination-prone regime analysis |
+| Main model | `gpt2` |
+| Strongest current result | Residual-state misalignment is measurable; reconstruction acts as intervention |
+| Observer rule | Read-only traces and write-back traces must not be merged into one claim surface |
+| Best entry points | [`STATUS.md`](STATUS.md), [`findings/README.md`](findings/README.md), [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) |
 
 Current claim boundary:
 
@@ -49,6 +68,13 @@ Primary references:
 - [`reports/summary_findings_2026-03-06.md`](reports/summary_findings_2026-03-06.md)
 - [`reports/findings_2026-03-10.md`](reports/findings_2026-03-10.md)
 - [`reports/oscilloscope_hallu_summary_2026-03-10.md`](reports/oscilloscope_hallu_summary_2026-03-10.md)
+
+## Visual entry point
+
+![Field View Triage](reports/figures/field_view_triage.png)
+
+*Figure: reviewer-facing triage view for the current microscopy surface. For more visual artifacts,
+see [`findings/figures/README.md`](findings/figures/README.md).*
 
 ## Start here
 
