@@ -48,7 +48,7 @@ Tasks:
 
 Deliverables:
 - one compact evidence checklist
-- one updated findings-note workflow tied to `template_findings.md`
+- one updated findings-note workflow tied to `templates/template_findings.md`
 
 ## 2. Standardize the canonical prompt panels
 

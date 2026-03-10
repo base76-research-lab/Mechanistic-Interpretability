@@ -10,6 +10,9 @@ This directory contains the repository's broader reporting layer:
 - analysis notes
 - logs
 - figures
+- templates
+- internal operations
+- outreach-adjacent materials
 
 The reviewer-facing findings surface now lives at:
 
@@ -23,6 +26,9 @@ Notebooks may lead into this layer, but they should not replace it.
 
 - `../findings/README.md` — reviewer-facing findings surface
 - `REVIEWER_INDEX.md` — shortest reviewer-facing path through the reports layer
+- `templates/README.md` — reusable report templates
+- `internal_ops/README.md` — internal weekly/operational planning documents
+- `outreach/README.md` — mixed external/outreach materials kept outside the main scientific surface
 - `MODEL_MICROSCOPY_PLAN_2026-03-07.md` — active track plan for `ai_microscopy`
 - `summary_findings_2026-03-06.md` — current high-level microscopy summary
 - `findings_2026-03-10.md` — current interpretation of `exp_004` panel and benchmark runs
@@ -56,7 +62,7 @@ Minimum reporting structure:
 - Threats to validity: plausible artifacts or confounds
 - Next steps: one to three concrete follow-up runs
 
-Template: `template_findings.md`
+Template: `templates/template_findings.md`
 
 ## Evidence policy
 

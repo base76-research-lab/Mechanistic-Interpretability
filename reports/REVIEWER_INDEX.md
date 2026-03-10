@@ -52,10 +52,10 @@ scientific findings surface:
 
 Current examples:
 
-- `ESA_FINDINGS_NOTE_TEMPLATE_2026-03-13.md`
-- `ESA_SUMMARY_NOTE_2026-03-13_TEMPLATE.md`
-- `template_findings.md`
-- `ESA_WEEK_PLAN_2026-03-09.md`
-- `linkedin_article_preliminary_observation_2026-03-05.md`
-- `zai_reply_draft_email.txt`
-- `zai_startup_program_packet.md`
+- `templates/ESA_FINDINGS_NOTE_TEMPLATE_2026-03-13.md`
+- `templates/ESA_SUMMARY_NOTE_2026-03-13_TEMPLATE.md`
+- `templates/template_findings.md`
+- `internal_ops/ESA_WEEK_PLAN_2026-03-09.md`
+- `outreach/linkedin_article_preliminary_observation_2026-03-05.md`
+- `outreach/zai_reply_draft_email.txt`
+- `outreach/zai_startup_program_packet.md`

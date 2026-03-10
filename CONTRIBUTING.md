@@ -18,7 +18,7 @@ It also follows the Base76 `#research` operating model at the repository layer:
 ## What to add with an experiment
 
 - A new folder under `experiments/exp_###_*`
-- A findings note under `reports/` (use `reports/template_findings.md`)
+- A findings note under `reports/` (use `reports/templates/template_findings.md`)
 - A command snippet to reproduce (or to approximate) the result
 - A linked GitHub issue with the correct state and artifact type when the work is substantial
 

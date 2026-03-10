@@ -1,0 +1,20 @@
+Subject: Re: Z.ai Startup Program — intro call
+
+Hi Tanya,
+
+Thanks for reaching out — happy to do a short intro call. I’ll book a time via your Calendly.
+
+Context: I’m building mechanistic interpretability + reliability signals ("Field View") for transformer models.
+I’m interested in Z.ai mainly for API credits + stable rate limits to scale labeling/evaluation runs.
+
+Before we go deeper, could you confirm:
+1) For API usage, is customer content excluded from model training/improvement by default (opt-in only)?
+2) Data retention for API requests/logs, and whether a zero-data-retention option is available.
+3) Primary data processing regions and sub-processors.
+4) Availability of a DPA / enterprise terms suitable for EU/Sweden-based use.
+5) Whether logprobs/top-k is supported (useful for calibration tests).
+
+I can share a brief project overview and projected usage plan (public-safe, synthetic prompts only).
+
+Best,
+Bjorn

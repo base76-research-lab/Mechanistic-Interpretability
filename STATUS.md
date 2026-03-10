@@ -58,7 +58,7 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 ## Active track plans
 
 - Microscopy plan: `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
-- Weekly operational plan: `reports/ESA_WEEK_PLAN_2026-03-09.md`
+- Weekly operational plan: `reports/internal_ops/ESA_WEEK_PLAN_2026-03-09.md`
 - Research design + instrument plan: `reports/RESEARCH_DESIGN_AND_INSTRUMENT_PLAN_2026-03-10.md`
 - Compute elasticity plan: `reports/COMPUTE_ELASTICITY_PLAN_2026-03-10.md`
 
