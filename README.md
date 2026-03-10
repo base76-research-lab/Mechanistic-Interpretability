@@ -29,11 +29,11 @@ Current claim boundary:
 
 See:
 
-- `STATUS.md`
-- `research_index.md`
-- `findings/README.md`
-- `REPRODUCIBILITY.md`
-- `CITATION.cff`
+- [`STATUS.md`](STATUS.md)
+- [`research_index.md`](research_index.md)
+- [`findings/README.md`](findings/README.md)
+- [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
+- [`CITATION.cff`](CITATION.cff)
 
 ## Main findings at a glance
 
@@ -46,41 +46,41 @@ See:
 
 Primary references:
 
-- `reports/summary_findings_2026-03-06.md`
-- `reports/findings_2026-03-10.md`
-- `reports/oscilloscope_hallu_summary_2026-03-10.md`
+- [`reports/summary_findings_2026-03-06.md`](reports/summary_findings_2026-03-06.md)
+- [`reports/findings_2026-03-10.md`](reports/findings_2026-03-10.md)
+- [`reports/oscilloscope_hallu_summary_2026-03-10.md`](reports/oscilloscope_hallu_summary_2026-03-10.md)
 
 ## Start here
 
 For external scientific readers, the recommended reading order is:
 
-1. `README.md`
-2. `STATUS.md`
-3. `findings/README.md`
-4. `research_index.md`
-5. `reports/summary_findings_2026-03-06.md`
-6. `reports/findings_2026-03-10.md`
-7. `reports/oscilloscope_hallu_summary_2026-03-10.md`
+1. [`README.md`](README.md)
+2. [`STATUS.md`](STATUS.md)
+3. [`findings/README.md`](findings/README.md)
+4. [`research_index.md`](research_index.md)
+5. [`reports/summary_findings_2026-03-06.md`](reports/summary_findings_2026-03-06.md)
+6. [`reports/findings_2026-03-10.md`](reports/findings_2026-03-10.md)
+7. [`reports/oscilloscope_hallu_summary_2026-03-10.md`](reports/oscilloscope_hallu_summary_2026-03-10.md)
 
 For reviewers who want the strongest current visual artifacts first:
 
-- `findings/figures/README.md`
-- `reports/figures/field_view_triage.png`
-- `experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`
+- [`findings/figures/README.md`](findings/figures/README.md)
+- [`reports/figures/field_view_triage.png`](reports/figures/field_view_triage.png)
+- [`experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`](experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png)
 
 ## Repository map
 
-- `findings/` — curated reviewer-facing findings surface
-- `reports/` — protocols, plans, dated findings notes, and analysis documents
-- `data/` — prompt panels and small research datasets
-- `experiments/` — run artifacts, traces, metrics, and experiment-local outputs
-- `transformer_oscilloscope/` — read-only tracing and visualization toolkit
-- `scripts/` — executable research tooling
-- `notebooks/` — exploratory notebooks; not a claims surface
+- [`findings/`](findings/) — curated reviewer-facing findings surface
+- [`reports/`](reports/) — protocols, plans, dated findings notes, and analysis documents
+- [`data/`](data/) — prompt panels and small research datasets
+- [`experiments/`](experiments/) — run artifacts, traces, metrics, and experiment-local outputs
+- [`transformer_oscilloscope/`](transformer_oscilloscope/) — read-only tracing and visualization toolkit
+- [`scripts/`](scripts/) — executable research tooling
+- [`notebooks/`](notebooks/) — exploratory notebooks; not a claims surface
 - `paper/` — internal writing area
-- `REPRODUCIBILITY.md` — exact commands and expected artifacts for the main results
-- `CITATION.cff` — repository citation metadata
-- `LICENSE` — repository use and permission boundary
+- [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) — exact commands and expected artifacts for the main results
+- [`CITATION.cff`](CITATION.cff) — repository citation metadata
+- [`LICENSE`](LICENSE) — repository use and permission boundary
 
 ## Findings vs reports
 
@@ -97,10 +97,10 @@ This keeps the repository scientific and reviewable without deleting the active 
 - large tensors such as `activations.pt` and `sae_weights.pt` are treated as build artifacts and
   are ignored by git
 - reviewable outputs such as metrics, JSON artifacts, figures, and findings notes are retained
-- `research_index.md` tracks current state, latest runs, evidence level, claim boundary, and next
+- [`research_index.md`](research_index.md) tracks current state, latest runs, evidence level, claim boundary, and next
   transition
-- notebooks are exploratory surfaces; stable conclusions should be promoted into `reports/` and
-  reflected in `findings/`
+- notebooks are exploratory surfaces; stable conclusions should be promoted into [`reports/`](reports/) and
+  reflected in [`findings/`](findings/)
 
 ## Quickstart
 
@@ -152,6 +152,6 @@ Operationally:
 
 See also:
 
-- `GITHUB_PROJECT_LAB_SPEC.md`
-- `REPO_POLICY.md`
-- `CHANGELOG.md`
+- [`GITHUB_PROJECT_LAB_SPEC.md`](GITHUB_PROJECT_LAB_SPEC.md)
+- [`REPO_POLICY.md`](REPO_POLICY.md)
+- [`CHANGELOG.md`](CHANGELOG.md)
