@@ -1,0 +1,13 @@
+{
+  "baseline_trace": "experiments/exp_004_unified_observability_stack/hallu_panel_baseline_2026-03-10/trace.jsonl",
+  "observer_trace": "experiments/exp_004_unified_observability_stack/hallu_panel_readonly_oscilloscope_subspace_2026-03-10/trace.jsonl",
+  "baseline_label": "unified_baseline",
+  "observer_label": "readonly_oscilloscope",
+  "shared_point_count": 80,
+  "prompt_count": 16,
+  "layer_count": 5,
+  "mean_point_distance": 2.089122702594984e-06,
+  "max_point_distance": 1.1223413749637432e-05,
+  "mean_baseline_operator_strength": 4.841831408441067,
+  "mean_observer_operator_strength": 4.8418316431343555
+}

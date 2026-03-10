@@ -13,6 +13,7 @@ having to inspect all plans, templates, and internal lab documents.
 4. [`summary_findings_2026-03-06.md`](summary_findings_2026-03-06.md)
 5. [`findings_2026-03-10.md`](findings_2026-03-10.md)
 6. [`oscilloscope_hallu_summary_2026-03-10.md`](oscilloscope_hallu_summary_2026-03-10.md)
+7. [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md)
 
 ## Current scientific documents
 
@@ -26,6 +27,8 @@ having to inspect all plans, templates, and internal lab documents.
   - current unified observability and intervention interpretation
 - [`oscilloscope_hallu_summary_2026-03-10.md`](oscilloscope_hallu_summary_2026-03-10.md)
   - current read-only oscilloscope summary
+- [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md)
+  - shared-subspace A/B showing near-zero read-only vs baseline drift and strong write-back divergence
 - [`exp_001_sae.md`](exp_001_sae.md)
   - earlier SAE + Field View findings report
 

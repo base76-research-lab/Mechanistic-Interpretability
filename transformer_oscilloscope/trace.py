@@ -68,6 +68,28 @@ def load_sae(path: Path, d_model: int) -> SparseAutoencoder:
     return sae
 
 
+def load_basis(units: List[int], mode: str, sae_state: Path) -> tuple[torch.Tensor, List[float]]:
+    state = torch.load(sae_state, map_location="cpu")
+    dec = state["decoder.weight"]
+    vecs = dec[:, units]
+    if mode == "mean":
+        basis = vecs.mean(dim=1, keepdim=True)
+        return basis, [1.0]
+    x = vecs - vecs.mean(dim=1, keepdim=True)
+    u, s, _ = torch.linalg.svd(x, full_matrices=False)
+    if mode == "pc1":
+        basis = u[:, :1] * s[:1]
+        var = (s ** 2) / (s ** 2).sum()
+        return basis, [float(var[0])]
+    basis = u[:, :2] * s[:2]
+    var = (s ** 2) / (s ** 2).sum()
+    return basis, [float(var[0]), float(var[1])]
+
+
+def project(vec: torch.Tensor, basis: torch.Tensor) -> torch.Tensor:
+    return torch.matmul(vec, basis)
+
+
 def run_trace(
     prompt_jsonl: Path,
     model_name: str,
@@ -79,6 +101,8 @@ def run_trace(
     store_projections: bool,
     sae_state: Path | None,
     sae_topk: int,
+    units: List[int],
+    basis_mode: str,
 ) -> Path:
     device_t = torch.device(device)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -89,23 +113,30 @@ def run_trace(
     model.eval()
 
     sae = None
+    basis = None
+    basis_var = None
     if sae_state is not None:
         sae = load_sae(sae_state, model.config.n_embd).to(device_t)
+        basis, basis_var = load_basis(units, basis_mode, sae_state)
+        basis = basis.to(device_t)
 
     panel = load_panel(prompt_jsonl)
     out_dir.mkdir(parents=True, exist_ok=True)
     trace_path = out_dir / "trace.jsonl"
 
     mlp_cache: Dict[int, torch.Tensor] = {}
+    num_blocks = len(model.transformer.h)
 
-    def make_mlp_hook(layer_idx: int):
+    def make_mlp_hook(hidden_state_idx: int):
         def hook(_module, _inp, out):
-            mlp_cache[layer_idx] = out.detach()
+            mlp_cache[hidden_state_idx] = out.detach()
         return hook
 
     handles = []
     for li in layers:
-        handles.append(model.transformer.h[li].mlp.register_forward_hook(make_mlp_hook(li)))
+        block_idx = li - 1
+        if 0 <= block_idx < num_blocks:
+            handles.append(model.transformer.h[block_idx].mlp.register_forward_hook(make_mlp_hook(li)))
 
     with trace_path.open("w") as f_out:
         for sample in panel:
@@ -133,7 +164,10 @@ def run_trace(
             for layer_idx in layers:
                 hs = hidden_states[layer_idx]
                 mlp_out = mlp_cache.get(layer_idx)
-                attn = attentions[layer_idx]
+                attn = None
+                attn_idx = layer_idx - 1
+                if 0 <= attn_idx < len(attentions):
+                    attn = attentions[attn_idx]
                 coords_layer = pca_coords.get(layer_idx)
                 sae_z = None
                 if sae is not None:
@@ -151,8 +185,10 @@ def run_trace(
                     d_ent = None if prev_ent is None else ent - prev_ent
                     prev_entropy_per_layer[layer_idx] = ent
 
-                    attn_weights = attn[0, :, tok_idx, :]
-                    attn_entropy = float(-(attn_weights * (attn_weights + 1e-9).log()).sum().item())
+                    attn_entropy = None
+                    if attn is not None:
+                        attn_weights = attn[0, :, tok_idx, :]
+                        attn_entropy = float(-(attn_weights * (attn_weights + 1e-9).log()).sum().item())
 
                     sae_top = None
                     if sae_z is not None:
@@ -180,6 +216,12 @@ def run_trace(
                     if coords_layer is not None:
                         rec["pca_x"] = float(coords_layer[tok_idx, 0].item())
                         rec["pca_y"] = float(coords_layer[tok_idx, 1].item())
+                    if basis is not None:
+                        subspace = project(h_vec, basis)
+                        rec["subspace_coords"] = [float(x.item()) for x in subspace]
+                        rec["subspace_operator_strength"] = float(torch.norm(subspace).item())
+                        rec["basis_mode"] = basis_mode
+                        rec["basis_explained_var"] = basis_var
                     if sae_top is not None:
                         rec["sae_top"] = sae_top
                     f_out.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -205,6 +247,8 @@ def main() -> None:
     ap.add_argument("--store-projections", action="store_true")
     ap.add_argument("--sae-state", type=str, default=None, help="optional SAE weights for feature activations")
     ap.add_argument("--sae-topk", type=int, default=8)
+    ap.add_argument("--units", nargs="+", type=int, default=[472, 468, 57, 156, 346])
+    ap.add_argument("--basis-mode", choices=["mean", "pc1", "pc2"], default="pc2")
     args = ap.parse_args()
 
     run_name = args.run_name or f"transformer_oscilloscope_{Path(args.prompt_jsonl).stem}"
@@ -220,6 +264,8 @@ def main() -> None:
         store_projections=args.store_projections,
         sae_state=Path(args.sae_state) if args.sae_state else None,
         sae_topk=args.sae_topk,
+        units=args.units,
+        basis_mode=args.basis_mode,
     )
     print(f"Saved trace: {trace_path}")
 

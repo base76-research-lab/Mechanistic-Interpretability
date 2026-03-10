@@ -5,6 +5,7 @@ Read-only observability toolkit for transformer dynamics.
 ## Components
 - `trace` — collect per-layer/per-token telemetry via forward hooks (no write-back).
 - `viz` — generate quick PNGs (entropy, gap, PCA scatter if stored).
+- optional SAE-basis projection writes `subspace_coords` compatible with the unified observability stack.
 
 ## Usage
 ### Trace
@@ -18,7 +19,9 @@ python -m transformer_oscilloscope.cli trace \
   --run-name transformer_oscilloscope_demo \
   --store-projections \
   --sae-state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
-  --sae-topk 8
+  --sae-topk 8 \
+  --basis-mode pc2 \
+  --units 472 468 57 156 346
 ```
 Outputs: `.../transformer_oscilloscope_demo/trace.jsonl`
 
@@ -47,3 +50,6 @@ Outputs: `report.html` linking the generated PNGs.
 - Defaults are read-only; no reconstruction or injection paths are touched.
 - Hashes (SHA256) are stored for hidden/MLP vectors to avoid leaking raw activations by default.
 - SAE activations are optional; if `--sae-state` is provided, top-k features per token lagras i trace.
+- If `--sae-state` is combined with `--basis-mode` and `--units`, the trace also records
+  `subspace_coords` and `subspace_operator_strength`, which makes direct A/B comparison against
+  unified-stack traces possible.

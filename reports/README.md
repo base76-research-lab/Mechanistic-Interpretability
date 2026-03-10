@@ -33,6 +33,7 @@ Notebooks may lead into this layer, but they should not replace it.
 - [`summary_findings_2026-03-06.md`](summary_findings_2026-03-06.md) — current high-level microscopy summary
 - [`findings_2026-03-10.md`](findings_2026-03-10.md) — current interpretation of `exp_004` panel and benchmark runs
 - [`oscilloscope_hallu_summary_2026-03-10.md`](oscilloscope_hallu_summary_2026-03-10.md) — oscilloscope-specific summary and observer/intervention boundary
+- [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md) — shared-subspace A/B between read-only, baseline, and write-back traces
 - [`compression_analysis_2026-03-06.md`](compression_analysis_2026-03-06.md) — compression intervention and structural fragility note
 - [`steering_vector_analysis_2026-03-06.md`](steering_vector_analysis_2026-03-06.md) — causal steering note in residual space
 - [`NEXT_STEPS_2026-03-05.md`](NEXT_STEPS_2026-03-05.md) — operational run plan with guards, analysis order, and exit criteria

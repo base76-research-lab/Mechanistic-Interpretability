@@ -23,6 +23,8 @@ def main() -> None:
     ap_trace.add_argument("--store-projections", action="store_true")
     ap_trace.add_argument("--sae-state", type=str, default=None)
     ap_trace.add_argument("--sae-topk", type=int, default=8)
+    ap_trace.add_argument("--units", nargs="+", type=int, default=[472, 468, 57, 156, 346])
+    ap_trace.add_argument("--basis-mode", choices=["mean", "pc1", "pc2"], default="pc2")
 
     # viz
     ap_viz = sub.add_parser("viz", help="generate plots from trace.jsonl")
@@ -50,6 +52,8 @@ def main() -> None:
             store_projections=args.store_projections,
             sae_state=Path(args.sae_state) if args.sae_state else None,
             sae_topk=args.sae_topk,
+            units=args.units,
+            basis_mode=args.basis_mode,
         )
         print(f"Saved trace: {trace_path}")
     elif args.cmd == "viz":

@@ -20,6 +20,7 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 | Entropy alone is insufficient as a hallucination signal | preliminary high-entropy regime comparison |
 | Reconstruction/write-back acts as an intervention rather than a neutral observer | `reports/findings_2026-03-10.md`, `reports/oscilloscope_hallu_summary_2026-03-10.md` |
 | Read-only oscilloscope traces show a recurrent decision-transition zone around L6-L9 | `experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/`, `reports/oscilloscope_hallu_summary_2026-03-10.md` |
+| Read-only oscilloscope and unified baseline are trajectory-identical in shared SAE subspace, while reconstruction diverges strongly | `reports/observer_distortion_trajectory_compare_2026-03-10.md`, `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_baseline_2026-03-10/summary.json`, `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_recon_2026-03-10/summary.json` |
 
 ## Active hypotheses
 
@@ -35,6 +36,7 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 - Hallucination panel reruns: baseline, baseline+recon, L-SAE no recon, L-SAE+R (observability stack). Trace dirs under `experiments/exp_004_unified_observability_stack/`.
 - Hallucination QA benchmarks (small panels): baseline, α-blends, entropy-gated recon; hallu-rate stayed 1.0, abstention collapsed when recon active.
 - Transformer Oscilloscope: new read-only tracing tool; demo + smoke traces with PNGs/HTML report.
+- Trajectory A/B in shared SAE subspace: read-only oscilloscope vs unified baseline (`mean distance ~= 2.1e-06`) and vs baseline+recon (`mean distance ~= 3.20`).
 
 ## Experiment status
 
@@ -78,6 +80,7 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 - `reports/feature_dict.md` — feature dictionary with labels and clusters
 - `reports/findings_2026-03-10.md` — current interpretation of `exp_004` panel and benchmark runs
 - `reports/oscilloscope_hallu_summary_2026-03-10.md` — oscilloscope-specific summary and observer/intervention boundary
+- `reports/observer_distortion_trajectory_compare_2026-03-10.md` — shared-subspace A/B showing near-zero read-only vs baseline drift and strong read-only vs recon divergence
 - `reports/figures/field_view_triage.png` — primary triage figure
 - `experiments/exp_001_sae_v3/` — core JSON artifacts and run outputs
 - `experiments/exp_003_compression_vectorized/` — vectorized proxy results

@@ -27,6 +27,9 @@ ANALYSIS
 - `experiments/exp_004_unified_observability_stack/hallu_panel_baseline_2026-03-10/trace.jsonl`
 - `experiments/exp_004_unified_observability_stack/hallu_panel_lsae_r_2026-03-10/trace.jsonl`
 - `experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/trace.jsonl`
+- `experiments/exp_004_unified_observability_stack/hallu_panel_readonly_oscilloscope_subspace_2026-03-10/trace.jsonl`
+- `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_baseline_2026-03-10/summary.json`
+- `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_recon_2026-03-10/summary.json`
 - `experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`
 
 ## Latest findings
@@ -36,6 +39,7 @@ ANALYSIS
 - `reports/steering_vector_analysis_2026-03-06.md`
 - `reports/findings_2026-03-10.md`
 - `reports/oscilloscope_hallu_summary_2026-03-10.md`
+- `reports/observer_distortion_trajectory_compare_2026-03-10.md`
 - `transformer_oscilloscope/` — read-only tracing/viz toolkit (trace, viz, report)
 
 ## Emerging protocol candidates
@@ -48,6 +52,7 @@ ANALYSIS
 - the remaining compression blocker is narrow: `anchored_03` drift and recall-anchor loss on `hallucination_02` / `hallucination_03`
 - reconstruction/write-back must now be treated as intervention, not neutral observation
 - the read-only oscilloscope should be treated as the default observer when mapping layer transitions before causal write-back tests
+- read-only oscilloscope and unified no-write-back baseline are now empirically aligned in shared SAE subspace, while write-back runs diverge strongly
 
 ## Active instrumentation additions
 
