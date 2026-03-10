@@ -35,7 +35,7 @@ Large tensor artifacts are treated as build outputs and may be ignored by git.
 
 Primary references:
 
-- `reports/oscilloscope_hallu_summary_2026-03-10.md`
+- `reports/findings/oscilloscope_hallu_summary_2026-03-10.md`
 - `STATUS.md`
 
 Run:
@@ -63,14 +63,14 @@ Expected outputs:
 Review target:
 
 - inspect entropy, gap, and PCA trajectories in the HTML report
-- compare the dated interpretation against `reports/oscilloscope_hallu_summary_2026-03-10.md`
+- compare the dated interpretation against `reports/findings/oscilloscope_hallu_summary_2026-03-10.md`
 
 ## Result B: reconstruction/write-back behaves as intervention, not neutral observation
 
 Primary references:
 
-- `reports/findings_2026-03-10.md`
-- `reports/oscilloscope_hallu_summary_2026-03-10.md`
+- `reports/findings/findings_2026-03-10.md`
+- `reports/findings/oscilloscope_hallu_summary_2026-03-10.md`
 
 Run baseline panel:
 
@@ -114,7 +114,7 @@ Review target:
 
 Primary references:
 
-- `reports/findings_2026-03-10.md`
+- `reports/findings/findings_2026-03-10.md`
 - `STATUS.md`
 
 Run baseline benchmark:

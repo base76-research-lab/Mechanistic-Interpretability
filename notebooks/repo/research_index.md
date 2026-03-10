@@ -20,7 +20,7 @@ ANALYSIS
 
 ## Latest findings
 
-- `reports/summary_findings_2026-03-06.md`
+- `reports/findings/summary_findings_2026-03-06.md`
 - `reports/compression_analysis_2026-03-06.md`
 - `reports/steering_vector_analysis_2026-03-06.md`
 

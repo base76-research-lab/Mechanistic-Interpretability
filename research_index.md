@@ -40,22 +40,32 @@ ANALYSIS
 - `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/bifurcation/summary.json`
 - `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/stability/summary.json`
 - `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/synthesis/summary.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/block_manifest.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/detection/summary.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/bifurcation/summary.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/stability/summary.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/synthesis/summary.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/lead_time/summary.json`
+- `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/transition_countercase/summary.json`
 - `experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`
 
 ## Latest findings
 
-- `reports/summary_findings_2026-03-06.md`
+- `reports/findings/summary_findings_2026-03-06.md`
 - `reports/compression_analysis_2026-03-06.md`
 - `reports/steering_vector_analysis_2026-03-06.md`
-- `reports/findings_2026-03-10.md`
-- `reports/oscilloscope_hallu_summary_2026-03-10.md`
-- `reports/observer_distortion_trajectory_compare_2026-03-10.md`
-- `reports/current_trajectory_findings_2026-03-10.md`
-- `reports/trajectory_detection_findings_2026-03-10.md`
-- `reports/layer_bifurcation_findings_2026-03-10.md`
-- `reports/regime_stability_findings_2026-03-10.md`
-- `reports/trajectory_block_synthesis_2026-03-10.md`
-- `reports/dense_layer_sweep_findings_2026-03-10.md`
+- `reports/findings/findings_2026-03-10.md`
+- `reports/findings/oscilloscope_hallu_summary_2026-03-10.md`
+- `reports/findings/observer_distortion_trajectory_compare_2026-03-10.md`
+- `reports/syntheses/current_trajectory_findings_2026-03-10.md`
+- `reports/findings/trajectory_detection_findings_2026-03-10.md`
+- `reports/findings/layer_bifurcation_findings_2026-03-10.md`
+- `reports/findings/regime_stability_findings_2026-03-10.md`
+- `reports/syntheses/trajectory_block_synthesis_2026-03-10.md`
+- `reports/findings/dense_layer_sweep_findings_2026-03-10.md`
+- `reports/findings/expanded_panel_validation_findings_2026-03-10.md`
+- `reports/findings/token_level_lead_time_findings_2026-03-10.md`
+- `reports/findings/transition_countercase_findings_2026-03-10.md`
 - `transformer_oscilloscope/` — read-only tracing/viz toolkit (trace, viz, report)
 
 ## Emerging protocol candidates
@@ -71,7 +81,10 @@ ANALYSIS
 - read-only oscilloscope and unified no-write-back baseline are now empirically aligned in shared SAE subspace, while write-back runs diverge strongly
 - first trajectory block now supports three GPT-2-level claims: geometry beats entropy at panel level, Layer 6 remains strongest local bifurcation candidate, and regime fingerprints are distinct at regime level
 - dense `5-12` sweep now sharpens the GPT-2 picture: earliest strongest local divergence remains at Layer 6, while the largest hallucination expansion currently appears later at `10->11`
-- phase velocity is worth retaining as an observer metric, but the dense sweep does not yet support it as a standalone early-warning signal
+- expanded-panel validation now preserves the onset picture while showing that transition prompts remain the main ambiguity boundary and that geometry does not yet dominate entropy on every regime boundary
+- token-level lead time is now measurable in a conservative hallucination-prone slice before prompt end, but operational thresholding remains non-specific against transition-adjacent prompts
+- transition counter-cases now suggest that the main difference from the hallucination slice is lower post-onset persistence, not cleaner onset score alone
+- phase velocity is worth retaining as an observer metric, but the dense sweep and lead-time slice do not yet support it as a standalone early-warning signal
 
 ## Active instrumentation additions
 
@@ -87,6 +100,7 @@ ANALYSIS
 
 - `reports/RESEARCH_DESIGN_AND_INSTRUMENT_PLAN_2026-03-10.md`
 - `reports/COMPUTE_ELASTICITY_PLAN_2026-03-10.md`
+- `reports/internal_ops/FRIDAY_INTERNAL_REVIEW_PACK_2026-03-13.md`
 
 ## Operational layer
 
@@ -106,6 +120,7 @@ Current results support a structured residual-state interpretation in the curren
 
 - does Layer 6 remain critical outside the current setup?
 - is the real transition picture best described as `Layer 6 onset + later 10->11 expansion`, or is that still a panel artifact?
+- is post-onset persistence enough to retain as the main disambiguator in Friday review, or does it still collapse under a broader panel?
 - does vectorized conditioning outperform text-only compression in a stable way?
 - which signals survive batch validation and cross-model controls?
 - does lens supervision improve sparse-feature utility without collapsing microscope value?
@@ -115,11 +130,9 @@ Current results support a structured residual-state interpretation in the curren
 
 ## Immediate execution order
 
-1. patch `anchored_03` and recall-anchor handling for `hallucination_02` / `hallucination_03`
-2. expand the observability panel and rerun the dense `5-12` trajectory block
-3. add token-level lead-time analysis on top of the dense trajectory block
-4. rerun robust text-only compression batch on the observability panel
-5. if `compressed` becomes defensible, freeze the text-compression path as the current intervention baseline
+1. write the Friday internal review pack with panel, lead-time, and transition-counter-case conclusions
+2. decide go / no-go for one control-model block
+3. if `go`, define the smallest valid control-model replication block
 
 ## Next required transition
 

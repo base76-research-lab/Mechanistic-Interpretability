@@ -45,7 +45,7 @@ Recommended reading order:
 - `research_index.md`
 - `https://github.com/users/base76-research-lab/projects/1/views/1`
 - `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
-- `reports/summary_findings_2026-03-06.md`
+- `reports/findings/summary_findings_2026-03-06.md`
 - `reports/exp_001_sae.md`
 - `reports/feature_dict.md`
 - `reports/figures/field_view_triage.png`

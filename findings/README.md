@@ -17,11 +17,11 @@ Purpose:
 
 ## Current findings set
 
-- [`../reports/current_trajectory_findings_2026-03-10.md`](../reports/current_trajectory_findings_2026-03-10.md) — canonical current trajectory synthesis across detection,
+- [`../reports/syntheses/current_trajectory_findings_2026-03-10.md`](../reports/syntheses/current_trajectory_findings_2026-03-10.md) — canonical current trajectory synthesis across detection,
   bifurcation, stability, and dense sweep follow-up
-- [`../reports/summary_findings_2026-03-06.md`](../reports/summary_findings_2026-03-06.md) — high-level microscopy summary
-- [`../reports/findings_2026-03-10.md`](../reports/findings_2026-03-10.md) — unified observability stack and intervention interpretation
-- [`../reports/oscilloscope_hallu_summary_2026-03-10.md`](../reports/oscilloscope_hallu_summary_2026-03-10.md) — read-only oscilloscope summary and
+- [`../reports/findings/summary_findings_2026-03-06.md`](../reports/findings/summary_findings_2026-03-06.md) — high-level microscopy summary
+- [`../reports/findings/findings_2026-03-10.md`](../reports/findings/findings_2026-03-10.md) — unified observability stack and intervention interpretation
+- [`../reports/findings/oscilloscope_hallu_summary_2026-03-10.md`](../reports/findings/oscilloscope_hallu_summary_2026-03-10.md) — read-only oscilloscope summary and
   observer/intervention boundary
 - [`../STATUS.md`](../STATUS.md) — current project status and active hypotheses
 
@@ -39,7 +39,7 @@ Those remain important, but they belong elsewhere in the repository.
 1. [`../README.md`](../README.md)
 2. [`../STATUS.md`](../STATUS.md)
 3. [`../research_index.md`](../research_index.md)
-4. [`../reports/current_trajectory_findings_2026-03-10.md`](../reports/current_trajectory_findings_2026-03-10.md)
+4. [`../reports/syntheses/current_trajectory_findings_2026-03-10.md`](../reports/syntheses/current_trajectory_findings_2026-03-10.md)
 5. [`summaries/README.md`](summaries/README.md)
 6. [`figures/README.md`](figures/README.md)
 

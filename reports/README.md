@@ -2,17 +2,15 @@
 
 Last updated: 2026-03-07
 
-This directory contains the repository's broader reporting layer:
+This directory contains the repository's broader reporting layer.
 
-- protocols
-- plans
-- dated findings notes
-- analysis notes
-- logs
-- figures
-- templates
-- internal operations
-- outreach-adjacent materials
+The active structure is now:
+
+- `findings/` — dated result notes and evidence-bearing findings
+- `syntheses/` — cross-run and cross-note syntheses
+- `protocols/` — active run and interpretation protocols
+- `internal_ops/` — weekly planning and internal review operations
+- `templates/`, `outreach/`, `logs/`, `figures/` — support layers
 
 The reviewer-facing findings surface now lives at:
 
@@ -26,21 +24,26 @@ Notebooks may lead into this layer, but they should not replace it.
 
 - [`../findings/README.md`](../findings/README.md) — reviewer-facing findings surface
 - [`REVIEWER_INDEX.md`](REVIEWER_INDEX.md) — shortest reviewer-facing path through the reports layer
+- [`findings/README.md`](findings/README.md) — active dated findings notes
+- [`syntheses/README.md`](syntheses/README.md) — cross-run synthesis layer
+- [`protocols/README.md`](protocols/README.md) — active protocol layer
 - [`templates/README.md`](templates/README.md) — reusable report templates
 - [`internal_ops/README.md`](internal_ops/README.md) — internal weekly/operational planning documents
 - [`outreach/README.md`](outreach/README.md) — mixed external/outreach materials kept outside the main scientific surface
 - [`MODEL_MICROSCOPY_PLAN_2026-03-07.md`](MODEL_MICROSCOPY_PLAN_2026-03-07.md) — active track plan for `ai_microscopy`
-- [`summary_findings_2026-03-06.md`](summary_findings_2026-03-06.md) — current high-level microscopy summary
-- [`findings_2026-03-10.md`](findings_2026-03-10.md) — current interpretation of `exp_004` panel and benchmark runs
-- [`oscilloscope_hallu_summary_2026-03-10.md`](oscilloscope_hallu_summary_2026-03-10.md) — oscilloscope-specific summary and observer/intervention boundary
-- [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md) — shared-subspace A/B between read-only, baseline, and write-back traces
-- [`current_trajectory_findings_2026-03-10.md`](current_trajectory_findings_2026-03-10.md) — canonical current synthesis for the trajectory findings block
-- [`TRAJECTORY_BLOCK_PROTOCOL_2026-03-10.md`](TRAJECTORY_BLOCK_PROTOCOL_2026-03-10.md) — canonical next-run block for detection, bifurcation, and regime stability
-- [`trajectory_detection_findings_2026-03-10.md`](trajectory_detection_findings_2026-03-10.md) — first trajectory-block detection result
-- [`layer_bifurcation_findings_2026-03-10.md`](layer_bifurcation_findings_2026-03-10.md) — current layer-divergence conclusion
-- [`regime_stability_findings_2026-03-10.md`](regime_stability_findings_2026-03-10.md) — regime-level fingerprint result
-- [`trajectory_block_synthesis_2026-03-10.md`](trajectory_block_synthesis_2026-03-10.md) — synthesis across the first trajectory block
-- [`dense_layer_sweep_findings_2026-03-10.md`](dense_layer_sweep_findings_2026-03-10.md) — dense `5-12` addendum resolving early onset vs later expansion
+- [`findings/summary_findings_2026-03-06.md`](findings/summary_findings_2026-03-06.md) — current high-level microscopy summary
+- [`findings/findings_2026-03-10.md`](findings/findings_2026-03-10.md) — current interpretation of `exp_004` panel and benchmark runs
+- [`findings/oscilloscope_hallu_summary_2026-03-10.md`](findings/oscilloscope_hallu_summary_2026-03-10.md) — oscilloscope-specific summary and observer/intervention boundary
+- [`findings/observer_distortion_trajectory_compare_2026-03-10.md`](findings/observer_distortion_trajectory_compare_2026-03-10.md) — shared-subspace A/B between read-only, baseline, and write-back traces
+- [`syntheses/current_trajectory_findings_2026-03-10.md`](syntheses/current_trajectory_findings_2026-03-10.md) — canonical current synthesis for the trajectory findings block
+- [`protocols/TRAJECTORY_BLOCK_PROTOCOL_2026-03-10.md`](protocols/TRAJECTORY_BLOCK_PROTOCOL_2026-03-10.md) — canonical next-run block for detection, bifurcation, and regime stability
+- [`findings/trajectory_detection_findings_2026-03-10.md`](findings/trajectory_detection_findings_2026-03-10.md) — first trajectory-block detection result
+- [`findings/layer_bifurcation_findings_2026-03-10.md`](findings/layer_bifurcation_findings_2026-03-10.md) — current layer-divergence conclusion
+- [`findings/regime_stability_findings_2026-03-10.md`](findings/regime_stability_findings_2026-03-10.md) — regime-level fingerprint result
+- [`syntheses/trajectory_block_synthesis_2026-03-10.md`](syntheses/trajectory_block_synthesis_2026-03-10.md) — synthesis across the first trajectory block
+- [`findings/dense_layer_sweep_findings_2026-03-10.md`](findings/dense_layer_sweep_findings_2026-03-10.md) — dense `5-12` addendum resolving early onset vs later expansion
+- [`findings/token_level_lead_time_findings_2026-03-10.md`](findings/token_level_lead_time_findings_2026-03-10.md) — token-level lead-time characterization with conservative vs operational thresholds
+- [`findings/transition_countercase_findings_2026-03-10.md`](findings/transition_countercase_findings_2026-03-10.md) — explicit ambiguity-boundary pass on transition and regime-adjacent detections
 - [`compression_analysis_2026-03-06.md`](compression_analysis_2026-03-06.md) — compression intervention and structural fragility note
 - [`steering_vector_analysis_2026-03-06.md`](steering_vector_analysis_2026-03-06.md) — causal steering note in residual space
 - [`NEXT_STEPS_2026-03-05.md`](NEXT_STEPS_2026-03-05.md) — operational run plan with guards, analysis order, and exit criteria

@@ -1,5 +1,14 @@
 # ESA Week Plan: 2026-03-09 to 2026-03-13
 
+Status: superseded as the active weekly execution plan on 2026-03-10.
+
+The active canonical week plan now lives in:
+
+- `ESA_WEEK_PLAN_2026-03-10_GPT2_VALIDATION.md`
+
+This older plan is retained only as historical context for the earlier `exp_003` and compression-
+centered week logic.
+
 Goal: produce ESA-ready evidence, not broad exploration.
 
 ## Status entering Monday

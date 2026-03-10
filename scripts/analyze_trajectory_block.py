@@ -46,6 +46,29 @@ def prepare_readonly(df: pd.DataFrame, panel_df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def prepare_readonly_full(df: pd.DataFrame, panel_df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    out = out.sort_values(["prompt_id", "layer", "token_index"])
+    out["intervention_state"] = "readonly_observer"
+    if "entropy" in out.columns and "lens_entropy" not in out.columns:
+        out["lens_entropy"] = out["entropy"]
+    if "frontier_coherence" not in out.columns:
+        out["frontier_coherence"] = np.nan
+    if "frontier_degeneracy" not in out.columns:
+        out["frontier_degeneracy"] = np.nan
+    if "gap_state_to_candidates" not in out.columns:
+        out["gap_state_to_candidates"] = np.nan
+    if "candidate_variance" not in out.columns:
+        out["candidate_variance"] = np.nan
+    out = out.merge(panel_df[["id", "prompt", "stratum"]], left_on="prompt_id", right_on="id", how="left")
+    out["prompt"] = out["prompt_x"].fillna(out["prompt_y"]) if "prompt_x" in out.columns else out["prompt"]
+    if "prompt_x" in out.columns:
+        out = out.drop(columns=["id", "prompt_x", "prompt_y"])
+    else:
+        out = out.drop(columns=["id"])
+    return out
+
+
 def prepare_unified(df: pd.DataFrame, panel_df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     out = out.sort_values(["prompt_id", "layer", "token_index"])
@@ -255,6 +278,226 @@ def plot_stability(fingerprint_df: pd.DataFrame, out_path: Path) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=180, bbox_inches="tight")
     plt.close(fig)
+
+
+def token_features(df: pd.DataFrame) -> pd.DataFrame:
+    rows: list[dict[str, Any]] = []
+    for (prompt_id, token_index), group in df.groupby(["prompt_id", "token_index"]):
+        group = group.sort_values("layer")
+        points = group[["subspace_x", "subspace_y"]].to_numpy(dtype=float)
+        layers = group["layer"].to_numpy(dtype=float)
+        if len(points) >= 2:
+            step_vectors = np.diff(points, axis=0)
+            step_lengths = np.linalg.norm(step_vectors, axis=1)
+            layer_deltas = np.diff(layers)
+            phase_velocity = step_lengths / np.where(layer_deltas == 0.0, 1.0, layer_deltas)
+            mean_step_distance = float(step_lengths.mean())
+            std_step_distance = float(step_lengths.std(ddof=0))
+            mean_phase_velocity = float(phase_velocity.mean())
+            max_phase_velocity = float(phase_velocity.max())
+            max_step_distance_value = float(step_lengths.max())
+        else:
+            mean_step_distance = 0.0
+            std_step_distance = 0.0
+            mean_phase_velocity = 0.0
+            max_phase_velocity = 0.0
+            max_step_distance_value = 0.0
+        rows.append(
+            {
+                "prompt_id": prompt_id,
+                "prompt": group["prompt"].iloc[0],
+                "regime": group["regime"].iloc[0],
+                "stratum": group["stratum"].iloc[0] if "stratum" in group.columns else None,
+                "token_index": int(token_index),
+                "path_length": path_length(points),
+                "max_step_distance": max_step_distance_value,
+                "mean_step_distance": mean_step_distance,
+                "std_step_distance": std_step_distance,
+                "mean_phase_velocity": mean_phase_velocity,
+                "max_phase_velocity": max_phase_velocity,
+                "trajectory_curvature": trajectory_curvature(points),
+                "endpoint_x": float(points[-1, 0]),
+                "endpoint_y": float(points[-1, 1]),
+                "mean_entropy": float(group["lens_entropy"].mean()),
+                "mean_gap": float(group["gap_state_to_candidates"].mean()),
+                "mean_coherence": float(group["frontier_coherence"].mean()),
+                "mean_degeneracy": float(group["frontier_degeneracy"].mean()),
+                "mean_operator_strength": float(group["subspace_operator_strength"].mean()),
+            }
+        )
+    token_df = pd.DataFrame(rows)
+    end_token = token_df.groupby("prompt_id")["token_index"].max().rename("end_token")
+    token_df = token_df.merge(end_token, left_on="prompt_id", right_index=True, how="left")
+    token_df["relative_progress"] = token_df["token_index"] / token_df["end_token"].replace(0, 1)
+    return token_df
+
+
+def plot_lead_time(token_df: pd.DataFrame, threshold_rows: pd.DataFrame, out_path: Path) -> None:
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+    ordered_regimes = ["anchored", "reasoning", "transition", "hallucination_prone", "control"]
+
+    bin_edges = [-0.001, 0.2, 0.4, 0.6, 0.8, 1.0]
+    labels = ["0-20%", "20-40%", "40-60%", "60-80%", "80-100%"]
+    plot_df = token_df.copy()
+    plot_df["progress_bin"] = pd.cut(plot_df["relative_progress"], bins=bin_edges, labels=labels)
+    for regime in ordered_regimes:
+        subset = plot_df[plot_df["regime"] == regime]
+        if subset.empty:
+            continue
+        median_line = subset.groupby("progress_bin", observed=False)["score_delta"].median().reindex(labels)
+        axes[0].plot(labels, median_line.to_numpy(dtype=float), marker="o", label=regime)
+    axes[0].set_title("Token Geometry Delta by Prompt Progress")
+    axes[0].set_ylabel("score_delta vs token 0")
+    axes[0].tick_params(axis="x", rotation=25)
+    axes[0].grid(alpha=0.25)
+    axes[0].legend(fontsize=8)
+
+    pivot = (
+        threshold_rows[threshold_rows["regime"] != "control"]
+        .pivot(index="regime", columns="threshold_label", values="detection_rate")
+        .reindex([r for r in ordered_regimes if r != "control"])
+    )
+    x = np.arange(len(pivot.index))
+    width = 0.34
+    axes[1].bar(x - width / 2, pivot.get("operational_q90", pd.Series(index=pivot.index, dtype=float)).fillna(0.0), width=width, label="q90")
+    axes[1].bar(x + width / 2, pivot.get("conservative_q95", pd.Series(index=pivot.index, dtype=float)).fillna(0.0), width=width, label="q95")
+    axes[1].set_xticks(x)
+    axes[1].set_xticklabels(pivot.index, rotation=25, ha="right")
+    axes[1].set_ylim(0.0, 1.0)
+    axes[1].set_ylabel("Detected prompt fraction")
+    axes[1].set_title("Lead-Time Detection Rate by Regime")
+    axes[1].grid(alpha=0.25, axis="y")
+    axes[1].legend()
+
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, dpi=180, bbox_inches="tight")
+    plt.close(fig)
+
+
+def detect_prompt_onsets(token_df: pd.DataFrame, threshold: float) -> pd.DataFrame:
+    rows = []
+    for prompt_id, group in token_df.groupby("prompt_id"):
+        group = group.sort_values("token_index").reset_index(drop=True)
+        end_token = int(group["end_token"].iloc[0])
+        onset_token: int | None = None
+        persistence = float("nan")
+        for idx, row in group[group["token_index"] > 0].iterrows():
+            window = group.loc[idx : min(idx + 2, len(group) - 1), "score_delta"]
+            if float(row["score_delta"]) >= threshold and int((window >= threshold).sum()) >= 2:
+                onset_token = int(row["token_index"])
+                tail = group.loc[idx:, "score_delta"]
+                persistence = float((tail >= threshold).mean())
+                break
+        rows.append(
+            {
+                "prompt_id": prompt_id,
+                "prompt": group["prompt"].iloc[0],
+                "regime": group["regime"].iloc[0],
+                "stratum": group["stratum"].iloc[0],
+                "end_token": end_token,
+                "onset_token": onset_token,
+                "lead_tokens": (end_token - onset_token) if onset_token is not None else np.nan,
+                "relative_lead": ((end_token - onset_token) / end_token) if onset_token is not None and end_token > 0 else np.nan,
+                "post_onset_persistence": persistence,
+                "detected": onset_token is not None,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def analyze_lead_time(readonly_df: pd.DataFrame, out_dir: Path) -> dict[str, Any]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    token_df = token_features(readonly_df)
+    token_df["geometry_detection_score"] = (
+        zscore(token_df["mean_gap"].fillna(token_df["mean_gap"].median()))
+        + zscore((-token_df["mean_coherence"]).fillna((-token_df["mean_coherence"]).median()))
+        + zscore(token_df["mean_degeneracy"].fillna(token_df["mean_degeneracy"].median()))
+        + zscore(token_df["path_length"])
+        + zscore(token_df["max_step_distance"])
+        + zscore(token_df["trajectory_curvature"])
+        + zscore(token_df["mean_phase_velocity"])
+    ) / 7.0
+    baseline = token_df[token_df["token_index"] == 0][["prompt_id", "geometry_detection_score", "mean_entropy"]].rename(
+        columns={"geometry_detection_score": "baseline_geometry_score", "mean_entropy": "baseline_entropy"}
+    )
+    token_df = token_df.merge(baseline, on="prompt_id", how="left")
+    token_df["score_delta"] = token_df["geometry_detection_score"] - token_df["baseline_geometry_score"]
+    token_df["entropy_delta"] = token_df["mean_entropy"] - token_df["baseline_entropy"]
+
+    observed_tokens = token_df[token_df["token_index"] > 0].copy()
+    observed_tokens["is_hallucination"] = (observed_tokens["regime"] == "hallucination_prone").astype(int)
+    token_geometry_auc = binary_auc(observed_tokens["score_delta"], observed_tokens["is_hallucination"])
+    token_entropy_auc = binary_auc(observed_tokens["entropy_delta"], observed_tokens["is_hallucination"])
+
+    pairwise_auc = {}
+    for other in ["anchored", "reasoning", "transition"]:
+        subset = observed_tokens[observed_tokens["regime"].isin(["hallucination_prone", other])].copy()
+        pairwise_auc[f"geometry_delta_vs_{other}"] = binary_auc(subset["score_delta"], (subset["regime"] == "hallucination_prone").astype(int))
+        pairwise_auc[f"entropy_delta_vs_{other}"] = binary_auc(subset["entropy_delta"], (subset["regime"] == "hallucination_prone").astype(int))
+
+    reference_tokens = observed_tokens[observed_tokens["regime"].isin(["anchored", "reasoning"])].copy()
+    thresholds = {
+        "operational_q90": float(reference_tokens["score_delta"].quantile(0.90)),
+        "conservative_q95": float(reference_tokens["score_delta"].quantile(0.95)),
+    }
+
+    threshold_rows = []
+    onset_outputs: dict[str, pd.DataFrame] = {}
+    for label, threshold in thresholds.items():
+        onset_df = detect_prompt_onsets(token_df, threshold)
+        onset_outputs[label] = onset_df
+        onset_df.to_csv(out_dir / f"prompt_lead_time_{label}.csv", index=False)
+        for regime, group in onset_df.groupby("regime"):
+            detected = group[group["detected"]]
+            threshold_rows.append(
+                {
+                    "threshold_label": label,
+                    "threshold": threshold,
+                    "regime": regime,
+                    "prompt_count": int(len(group)),
+                    "detected_prompt_count": int(detected["detected"].sum()),
+                    "detection_rate": float(detected["detected"].sum() / len(group)),
+                    "median_lead_tokens": float(detected["lead_tokens"].median()) if not detected.empty else float("nan"),
+                    "median_relative_lead": float(detected["relative_lead"].median()) if not detected.empty else float("nan"),
+                    "median_post_onset_persistence": float(detected["post_onset_persistence"].median()) if not detected.empty else float("nan"),
+                }
+            )
+    threshold_summary_df = pd.DataFrame(threshold_rows).sort_values(["threshold_label", "regime"])
+
+    token_df.to_csv(out_dir / "per_token_summary.csv", index=False)
+    threshold_summary_df.to_csv(out_dir / "threshold_summary.csv", index=False)
+    plot_lead_time(token_df, threshold_summary_df, out_dir / "lead_time_profiles.png")
+
+    conservative = threshold_summary_df[threshold_summary_df["threshold_label"] == "conservative_q95"].set_index("regime")
+    operational = threshold_summary_df[threshold_summary_df["threshold_label"] == "operational_q90"].set_index("regime")
+    hallucination_conservative_rate = float(conservative.loc["hallucination_prone", "detection_rate"]) if "hallucination_prone" in conservative.index else 0.0
+    nonhallu_conservative_rate = float(conservative.drop(index=["hallucination_prone"], errors="ignore")["detection_rate"].max()) if not conservative.empty else 0.0
+    transition_operational_rate = float(operational.loc["transition", "detection_rate"]) if "transition" in operational.index else 0.0
+    reasoning_operational_rate = float(operational.loc["reasoning", "detection_rate"]) if "reasoning" in operational.index else 0.0
+
+    verdict = "not_measurable_yet"
+    if hallucination_conservative_rate > 0.0 and nonhallu_conservative_rate == 0.0:
+        verdict = "measurable_sparse_specific"
+    if transition_operational_rate > 0.0 or reasoning_operational_rate > 0.0:
+        verdict = "measurable_but_nonspecific"
+
+    summary = {
+        "token_geometry_delta_auc": token_geometry_auc,
+        "token_entropy_delta_auc": token_entropy_auc,
+        "pairwise_token_auc": pairwise_auc,
+        "thresholds": thresholds,
+        "verdict": verdict,
+        "hallucination_prompt_detection_rate_q90": float(operational.loc["hallucination_prone", "detection_rate"]) if "hallucination_prone" in operational.index else 0.0,
+        "transition_prompt_detection_rate_q90": transition_operational_rate,
+        "hallucination_prompt_detection_rate_q95": hallucination_conservative_rate,
+        "transition_prompt_detection_rate_q95": float(conservative.loc["transition", "detection_rate"]) if "transition" in conservative.index else 0.0,
+        "hallucination_median_lead_tokens_q95": float(conservative.loc["hallucination_prone", "median_lead_tokens"]) if "hallucination_prone" in conservative.index else float("nan"),
+        "hallucination_median_relative_lead_q95": float(conservative.loc["hallucination_prone", "median_relative_lead"]) if "hallucination_prone" in conservative.index else float("nan"),
+        "hallucination_median_persistence_q95": float(conservative.loc["hallucination_prone", "median_post_onset_persistence"]) if "hallucination_prone" in conservative.index else float("nan"),
+    }
+    write_json(out_dir / "summary.json", summary)
+    return summary
 
 
 def analyze_detection(readonly_prompt_df: pd.DataFrame, baseline_prompt_df: pd.DataFrame, out_dir: Path) -> dict[str, Any]:
@@ -477,6 +720,7 @@ def write_synthesis(
     detection_summary: dict[str, Any],
     bifurcation_summary: dict[str, Any],
     stability_summary: dict[str, Any],
+    lead_time_summary: dict[str, Any],
     out_dir: Path,
 ) -> None:
     summary = {
@@ -498,6 +742,14 @@ def write_synthesis(
         summary["supported_now_in_gpt2"].append("regime stability fingerprints are distinct at regime level in the current setup")
     else:
         summary["exploratory_only"].append("regime stability fingerprints remain partly prompt-sensitive")
+    if lead_time_summary["verdict"] == "measurable_sparse_specific":
+        summary["supported_now_in_gpt2"].append("a sparse token-level lead-time slice is measurable before prompt end under conservative thresholding")
+    elif lead_time_summary["verdict"] == "measurable_but_nonspecific":
+        summary["exploratory_only"].append("token-level lead-time is measurable, but broad thresholding remains non-specific against transition-adjacent prompts")
+        if lead_time_summary["hallucination_prompt_detection_rate_q95"] > 0.0 and lead_time_summary["transition_prompt_detection_rate_q95"] == 0.0:
+            summary["supported_now_in_gpt2"].append("a conservative token-level slice isolates some hallucination-prone prompts before prompt end, but coverage remains low")
+    else:
+        summary["exploratory_only"].append("token-level lead-time has not yet stabilized into a reliable signal")
     summary["blocked_claims"].extend(
         [
             "cross-model generalization",
@@ -518,6 +770,7 @@ def main() -> None:
     args = parser.parse_args()
 
     panel_df = load_panel(Path(args.panel_jsonl))
+    readonly_raw_df = add_geometry_columns(prepare_readonly_full(load_trace(Path(args.readonly_trace)), panel_df))
     readonly_df = add_geometry_columns(prepare_readonly(load_trace(Path(args.readonly_trace)), panel_df))
     baseline_df = add_geometry_columns(prepare_unified(load_trace(Path(args.baseline_trace)), panel_df))
     recon_df = add_geometry_columns(prepare_unified(load_trace(Path(args.recon_trace)), panel_df))
@@ -544,7 +797,8 @@ def main() -> None:
     detection_summary = analyze_detection(readonly_prompt_df, baseline_prompt_df, out_dir / "detection")
     bifurcation_summary = analyze_bifurcation(readonly_df, out_dir / "bifurcation")
     stability_summary = analyze_stability(readonly_prompt_df, out_dir / "stability")
-    write_synthesis(detection_summary, bifurcation_summary, stability_summary, out_dir / "synthesis")
+    lead_time_summary = analyze_lead_time(readonly_raw_df, out_dir / "lead_time")
+    write_synthesis(detection_summary, bifurcation_summary, stability_summary, lead_time_summary, out_dir / "synthesis")
     print(f"Saved trajectory block analysis to {out_dir}")
 
 

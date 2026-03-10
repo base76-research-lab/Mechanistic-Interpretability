@@ -18,12 +18,15 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 | Four state regimes (A-D) are observable on controlled prompts | Field View JSON artifacts and triage figure |
 | State-candidate misalignment correlates with hallucination-like behavior | `field_view_hallucination.json` |
 | Entropy alone is insufficient as a hallucination signal | preliminary high-entropy regime comparison |
-| Reconstruction/write-back acts as an intervention rather than a neutral observer | `reports/findings_2026-03-10.md`, `reports/oscilloscope_hallu_summary_2026-03-10.md` |
-| Read-only oscilloscope traces show a recurrent decision-transition zone around L6-L9 | `experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/`, `reports/oscilloscope_hallu_summary_2026-03-10.md` |
-| Read-only oscilloscope and unified baseline are trajectory-identical in shared SAE subspace, while reconstruction diverges strongly | `reports/observer_distortion_trajectory_compare_2026-03-10.md`, `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_baseline_2026-03-10/summary.json`, `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_recon_2026-03-10/summary.json` |
-| Geometry-driven detection separates hallucination-prone prompts better than entropy at full-panel level, including the denser `5-12` sweep | `reports/trajectory_detection_findings_2026-03-10.md`, `reports/dense_layer_sweep_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/analysis_2026-03-10/detection/summary.json`, `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/detection/summary.json` |
-| Layer 6 remains the strongest current local bifurcation candidate, while the largest later hallucination expansion currently appears at `10->11` in the dense sweep | `reports/layer_bifurcation_findings_2026-03-10.md`, `reports/dense_layer_sweep_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/analysis_2026-03-10/bifurcation/summary.json`, `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/bifurcation/summary.json` |
-| Regime stability fingerprints are distinct at regime level in the current GPT-2 panel | `reports/regime_stability_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/analysis_2026-03-10/stability/summary.json` |
+| Reconstruction/write-back acts as an intervention rather than a neutral observer | `reports/findings/findings_2026-03-10.md`, `reports/findings/oscilloscope_hallu_summary_2026-03-10.md` |
+| Read-only oscilloscope traces show a recurrent decision-transition zone around L6-L9 | `experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/`, `reports/findings/oscilloscope_hallu_summary_2026-03-10.md` |
+| Read-only oscilloscope and unified baseline are trajectory-identical in shared SAE subspace, while reconstruction diverges strongly | `reports/findings/observer_distortion_trajectory_compare_2026-03-10.md`, `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_baseline_2026-03-10/summary.json`, `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_recon_2026-03-10/summary.json` |
+| Geometry-driven detection separates hallucination-prone prompts better than entropy at full-panel level, including the denser `5-12` sweep | `reports/findings/trajectory_detection_findings_2026-03-10.md`, `reports/findings/dense_layer_sweep_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/analysis_2026-03-10/detection/summary.json`, `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/detection/summary.json` |
+| Layer 6 remains the strongest current local bifurcation candidate, while the largest later hallucination expansion currently appears at `10->11` in the dense sweep | `reports/findings/layer_bifurcation_findings_2026-03-10.md`, `reports/findings/dense_layer_sweep_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/analysis_2026-03-10/bifurcation/summary.json`, `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/bifurcation/summary.json` |
+| Regime stability fingerprints are distinct at regime level in the current GPT-2 panel | `reports/findings/regime_stability_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/analysis_2026-03-10/stability/summary.json` |
+| Expanded-panel validation preserves `Layer 6` onset and `10->11` expansion, while showing that transition prompts remain the main ambiguity boundary | `reports/findings/expanded_panel_validation_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/synthesis/summary.json` |
+| Token-level lead time is measurable in a conservative hallucination-prone slice before prompt end, but broad thresholding remains non-specific against transition prompts | `reports/findings/token_level_lead_time_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/lead_time/summary.json` |
+| Transition counter-cases differ from the current hallucination slice mainly by lower post-onset persistence, and disappear under conservative thresholding | `reports/findings/transition_countercase_findings_2026-03-10.md`, `experiments/exp_005_trajectory_block/expanded_panel_dense_2026-03-10/analysis/transition_countercase/summary.json` |
 
 ## Active hypotheses
 
@@ -42,6 +45,9 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 - Trajectory A/B in shared SAE subspace: read-only oscilloscope vs unified baseline (`mean distance ~= 2.1e-06`) and vs baseline+recon (`mean distance ~= 3.20`).
 - First trajectory block analysis: geometry detection beat entropy at panel level (`AUC 0.821 vs 0.513`), Layer 6 remained strongest bifurcation candidate, and regime fingerprints cleared regime-level separation.
 - Dense `5-12` layer sweep: geometry still beat entropy (`AUC 0.692 vs 0.462`), Layer 6 remained strongest local onset candidate, and the largest hallucination expansion shifted later to `10->11`.
+- Expanded-panel dense validation: geometry still beat entropy (`AUC 0.603 vs 0.423`), Layer 6 remained strongest local onset candidate, `10->11` remained the largest later expansion step, and transition prompts remained the main ambiguity boundary.
+- Token-level lead-time characterization: geometry delta beat entropy delta at token level (`0.545 vs 0.384`); a conservative threshold isolated `2/6` hallucination-prone prompts with median lead time `2` tokens before prompt end and zero transition detections, while operational thresholding remained non-specific.
+- Transition counter-case pass: `q90` detected `3` transition, `2` hallucination-prone, and `1` reasoning prompt; hallucination detections had higher median post-onset persistence (`0.75`) than transition (`0.333`), and `q95` retained only the hallucination-prone slice.
 
 ## Experiment status
 
@@ -57,15 +63,16 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 
 ## Priority next steps
 
-1. Run a robust batch for `exp_003` (see `reports/NEXT_STEPS_2026-03-05.md`)
-2. Expand the prompt panel and rerun the dense `5-12` trajectory block to test whether Layer 6 onset and `10->11` expansion remain stable
-3. Add token-level lead-time analysis before promoting any early-warning framing
-4. Run a light Phi-2 notebook control to test H2 after the GPT-2 trajectory block is strengthened
+1. Write the Friday internal review pack with lead-time and transition counter-case included
+2. Decide whether one control model is justified next week
+3. Keep cross-model work blocked until Friday review says `go`
+4. If `go`, choose one small control model rather than a broad cross-model sweep
 
 ## Active track plans
 
 - Microscopy plan: `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
-- Weekly operational plan: `reports/internal_ops/ESA_WEEK_PLAN_2026-03-09.md`
+- Weekly operational plan: `reports/internal_ops/ESA_WEEK_PLAN_2026-03-10_GPT2_VALIDATION.md`
+- Friday review pack: `reports/internal_ops/FRIDAY_INTERNAL_REVIEW_PACK_2026-03-13.md`
 - Research design + instrument plan: `reports/RESEARCH_DESIGN_AND_INSTRUMENT_PLAN_2026-03-10.md`
 - Compute elasticity plan: `reports/COMPUTE_ELASTICITY_PLAN_2026-03-10.md`
 
@@ -83,15 +90,18 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 - `reports/preliminary_2026-03-05_epistemic_state_layer.md` — early four-state model and refined risk framing
 - `reports/NEXT_STEPS_2026-03-05.md` — operational run plan with commands and exit criteria
 - `reports/feature_dict.md` — feature dictionary with labels and clusters
-- `reports/findings_2026-03-10.md` — current interpretation of `exp_004` panel and benchmark runs
-- `reports/oscilloscope_hallu_summary_2026-03-10.md` — oscilloscope-specific summary and observer/intervention boundary
-- `reports/observer_distortion_trajectory_compare_2026-03-10.md` — shared-subspace A/B showing near-zero read-only vs baseline drift and strong read-only vs recon divergence
-- `reports/current_trajectory_findings_2026-03-10.md` — canonical current synthesis across the trajectory findings surface
-- `reports/trajectory_detection_findings_2026-03-10.md` — first trajectory-block detection result
-- `reports/layer_bifurcation_findings_2026-03-10.md` — layer divergence result for the first trajectory block
-- `reports/regime_stability_findings_2026-03-10.md` — regime fingerprint result for the first trajectory block
-- `reports/trajectory_block_synthesis_2026-03-10.md` — synthesis across the first trajectory block
-- `reports/dense_layer_sweep_findings_2026-03-10.md` — dense `5-12` addendum resolving early onset vs later expansion
+- `reports/findings/findings_2026-03-10.md` — current interpretation of `exp_004` panel and benchmark runs
+- `reports/findings/oscilloscope_hallu_summary_2026-03-10.md` — oscilloscope-specific summary and observer/intervention boundary
+- `reports/findings/observer_distortion_trajectory_compare_2026-03-10.md` — shared-subspace A/B showing near-zero read-only vs baseline drift and strong read-only vs recon divergence
+- `reports/syntheses/current_trajectory_findings_2026-03-10.md` — canonical current synthesis across the trajectory findings surface
+- `reports/findings/trajectory_detection_findings_2026-03-10.md` — first trajectory-block detection result
+- `reports/findings/layer_bifurcation_findings_2026-03-10.md` — layer divergence result for the first trajectory block
+- `reports/findings/regime_stability_findings_2026-03-10.md` — regime fingerprint result for the first trajectory block
+- `reports/syntheses/trajectory_block_synthesis_2026-03-10.md` — synthesis across the first trajectory block
+- `reports/findings/dense_layer_sweep_findings_2026-03-10.md` — dense `5-12` addendum resolving early onset vs later expansion
+- `reports/findings/expanded_panel_validation_findings_2026-03-10.md` — expanded-panel validation of onset and ambiguity boundaries
+- `reports/findings/token_level_lead_time_findings_2026-03-10.md` — token-level lead-time characterization with conservative vs operational thresholds
+- `reports/findings/transition_countercase_findings_2026-03-10.md` — ambiguity-boundary pass on transition and regime-adjacent detections
 - `reports/figures/field_view_triage.png` — primary triage figure
 - `experiments/exp_001_sae_v3/` — core JSON artifacts and run outputs
 - `experiments/exp_003_compression_vectorized/` — vectorized proxy results

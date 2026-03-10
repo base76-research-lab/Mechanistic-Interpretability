@@ -49,7 +49,7 @@ A robust batch with `--require-compressor` remains the next priority.
 ## Active track plans
 
 - Microscopy plan: `reports/MODEL_MICROSCOPY_PLAN_2026-03-07.md`
-- Weekly operational plan: `reports/ESA_WEEK_PLAN_2026-03-09.md`
+- Weekly operational plan: `reports/internal_ops/ESA_WEEK_PLAN_2026-03-10_GPT2_VALIDATION.md`
 
 ## ESA context
 

@@ -1,0 +1,32 @@
+{"id":"anchored_01","regime":"anchored","stratum":"anchored","prompt":"2 + 2 ="}
+{"id":"anchored_02","regime":"anchored","stratum":"anchored","contrast_class":"factual_recall","prompt":"what is the capital of Japan?"}
+{"id":"anchored_03","regime":"anchored","stratum":"anchored","prompt":"the opposite of cold is"}
+{"id":"anchored_04","regime":"anchored","stratum":"anchored","contrast_class":"factual_recall","prompt":"what is the capital of Sweden?"}
+{"id":"anchored_05","regime":"anchored","stratum":"anchored","contrast_class":"math_exact","prompt":"7 + 5 ="}
+{"id":"anchored_06","regime":"anchored","stratum":"anchored","contrast_class":"lexical_opposite","prompt":"the opposite of tall is"}
+{"id":"reasoning_01","regime":"reasoning","stratum":"reasoning","prompt":"king is to queen as man is to"}
+{"id":"reasoning_02","regime":"reasoning","stratum":"reasoning","prompt":"doctor is to hospital as teacher is to"}
+{"id":"reasoning_03","regime":"reasoning","stratum":"reasoning","prompt":"outline four steps for validating an experiment result"}
+{"id":"reasoning_04","regime":"reasoning","stratum":"reasoning","contrast_class":"relation_analogy","prompt":"bird is to nest as bee is to"}
+{"id":"reasoning_05","regime":"reasoning","stratum":"reasoning","contrast_class":"relation_analogy","prompt":"sunrise is to east as sunset is to"}
+{"id":"reasoning_06","regime":"reasoning","stratum":"reasoning","contrast_class":"instruction_planning","prompt":"outline three checks for whether an experiment result is reproducible"}
+{"id":"transition_01","regime":"transition","stratum":"transition","prompt":"within this messy statement about weather, colors, and bicycles, identify only the opposite of hot"}
+{"id":"transition_02","regime":"transition","stratum":"transition","contrast_class":"math_reasoning","prompt":"ignore the decorative wording and answer the actual question only: if 2 plus 2 is four and 3 plus 3 is six then what is 5 plus 5?"}
+{"id":"transition_03","regime":"transition","stratum":"transition","prompt":"write a short plan for comparing raw and compressed model prompts"}
+{"id":"contrast_degeneracy_01","regime":"transition","stratum":"transition","contrast_class":"degeneracy_probe","prompt":"within this statement of clocks, bicycles, and paper, answer only which triangle sleeps faster than silence"}
+{"id":"transition_04","regime":"transition","stratum":"transition","contrast_class":"noisy_factual","prompt":"ignore the references to clocks, paper, and train stations and answer only the real question: what is the capital of Sweden?"}
+{"id":"transition_05","regime":"transition","stratum":"transition","contrast_class":"noisy_analogy","prompt":"through this clutter about rivers, mirrors, and tea cups, complete only the actual analogy: bird is to nest as bee is to"}
+{"id":"transition_06","regime":"transition","stratum":"transition","contrast_class":"fictional_frame_math","prompt":"inside this fictional setup about moon empires and dusty archives, answer only the real question: what is 7 plus 5?"}
+{"id":"transition_07","regime":"transition","stratum":"transition","contrast_class":"instruction_filter","prompt":"despite the distracting wording about Atlantis, office budgets, and bicycles, list only three checks for whether an experiment result is reproducible"}
+{"id":"hallucination_01","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"who was the president of france in 1200?"}
+{"id":"hallucination_02","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"which moon base was founded by the Roman Empire?"}
+{"id":"hallucination_03","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"what treaty ended the war between Atlantis and Prussia in 1891?"}
+{"id":"hallucination_04","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"which city hosted the Olympic games on Mars in 1984?"}
+{"id":"hallucination_05","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"what is the capital of the Moon government?"}
+{"id":"hallucination_06","regime":"hallucination_prone","stratum":"hallucination_prone","prompt":"who served as prime minister of the Roman Empire in 1850?"}
+{"id":"random_baseline_math_01","regime":"control","stratum":"random_prompt_baseline","contrast_class":"random_prompt_baseline","matched_to":"transition_02","prompt":"ignore decorative answer only the actual wording: if plus 2 is four and 3 then is six what is 5 only"}
+{"id":"random_baseline_recall_01","regime":"control","stratum":"random_prompt_baseline","contrast_class":"random_prompt_baseline","matched_to":"anchored_02","prompt":"what is the capital of window and Japan station?"}
+{"id":"random_baseline_degeneracy_01","regime":"control","stratum":"random_prompt_baseline","contrast_class":"random_prompt_baseline","matched_to":"contrast_degeneracy_01","prompt":"within this statement of clocks, paper, and silence, answer only which bicycle triangle faster than sleeps"}
+{"id":"random_baseline_recall_02","regime":"control","stratum":"random_prompt_baseline","contrast_class":"random_prompt_baseline","matched_to":"anchored_04","prompt":"what is the capital of window and Sweden station?"}
+{"id":"random_baseline_reasoning_02","regime":"control","stratum":"random_prompt_baseline","contrast_class":"random_prompt_baseline","matched_to":"transition_05","prompt":"through this clutter about rivers, mirrors, and tea cups, complete only the actual analogy: bird is to paper as bee is to window"}
+{"id":"random_baseline_hallu_02","regime":"control","stratum":"random_prompt_baseline","contrast_class":"random_prompt_baseline","matched_to":"hallucination_04","prompt":"which city hosted the bicycle games on silence in 1984?"}
