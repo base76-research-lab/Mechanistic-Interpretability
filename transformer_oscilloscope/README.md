@@ -39,6 +39,10 @@ python -m transformer_oscilloscope.cli report \
 ```
 Outputs: `report.html` linking the generated PNGs.
 
+## Examples
+- Sample trace schema: `examples/trace_sample.jsonl`
+- Prompt panel used in tests: `data/prompts_observability_panel_2026-03-07.jsonl`
+
 ## Notes
 - Defaults are read-only; no reconstruction or injection paths are touched.
 - Hashes (SHA256) are stored for hidden/MLP vectors to avoid leaking raw activations by default.

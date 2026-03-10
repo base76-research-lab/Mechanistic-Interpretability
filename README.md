@@ -87,6 +87,7 @@ Vad den gör och varför:
 - Loggar per-token/per-lager entropi, gap, top‑k, och (valfritt) SAE-featureaktivering.
 - Producerar färdiga PNG:er + HTML-rapport för att se lager/tids-trajectory och frontier-beteende.
 - Syfte: ge forskare ett snabbt, oförstörande “fönster” in i LLM:s beslutsdynamik för analys av regimer (reasoning vs hallucination-prone m.fl.).
+- Exempel: `transformer_oscilloscope/examples/trace_sample.jsonl`; panel: `data/prompts_observability_panel_2026-03-07.jsonl`.
 
 ## Repository hygiene
 - Policy: se [`REPO_POLICY.md`](REPO_POLICY.md)
