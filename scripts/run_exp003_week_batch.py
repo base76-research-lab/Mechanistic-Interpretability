@@ -26,6 +26,8 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--topk", type=int, default=10)
     ap.add_argument("--vector-topk", type=int, default=8)
     ap.add_argument("--vector-methods", nargs="+", choices=["mean", "attn_weighted", "pca1"], default=["mean", "attn_weighted", "pca1"])
+    ap.add_argument("--sae-state", default=str(ROOT / "experiments" / "exp_001_sae_v3" / "sae_weights.pt"))
+    ap.add_argument("--use-sae-reconstruction", action="store_true")
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--require-compressor", action="store_true")
     ap.add_argument("--exclude-invalid-compression", action="store_true")
@@ -65,9 +67,13 @@ def main() -> None:
         str(args.vector_topk),
         "--vector-methods",
         *args.vector_methods,
+        "--sae-state",
+        args.sae_state,
         "--device",
         args.device,
     ]
+    if args.use_sae_reconstruction:
+        cmd.append("--use-sae-reconstruction")
     if args.require_compressor:
         cmd.append("--require-compressor")
     if args.exclude_invalid_compression:

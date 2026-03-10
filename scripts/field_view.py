@@ -17,11 +17,26 @@ from pathlib import Path
 from typing import List, Tuple
 
 import torch
+from torch import nn
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+from prompt_vector_injection import apply_injection, build_prompt_vector, resolve_token_index
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SAE_STATE = ROOT / "experiments/exp_001_sae_v3/sae_weights.pt"
 OUT_JSON = ROOT / "experiments/exp_001_sae_v3/field_view.json"
+
+
+class SparseAutoencoder(nn.Module):
+    def __init__(self, d_model: int, d_hidden: int):
+        super().__init__()
+        self.encoder = nn.Linear(d_model, d_hidden, bias=False)
+        self.decoder = nn.Linear(d_hidden, d_model, bias=False)
+
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        z = torch.relu(self.encoder(x))
+        recon = self.decoder(z)
+        return recon, z
 
 
 def load_basis(units: List[int], mode: str, sae_state: Path) -> Tuple[torch.Tensor, List[float]]:
@@ -52,6 +67,15 @@ def entropy_from_logits(logits: torch.Tensor) -> float:
     return float(-(probs * torch.log(probs + 1e-9)).sum())
 
 
+def load_sae(sae_state: Path, d_model: int) -> SparseAutoencoder:
+    state = torch.load(sae_state, map_location="cpu")
+    d_hidden = state["encoder.weight"].shape[0]
+    sae = SparseAutoencoder(d_model, d_hidden)
+    sae.load_state_dict(state)
+    sae.eval()
+    return sae
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prompt", type=str, required=True)
@@ -67,6 +91,24 @@ def main():
         default=str(DEFAULT_SAE_STATE),
         help="Path till SAE-vikter (decoder.weight)",
     )
+    ap.add_argument(
+        "--use-sae-reconstruction",
+        action="store_true",
+        help="Project SAE reconstruction instead of the raw hidden vector before lens/candidate metrics.",
+    )
+    ap.add_argument(
+        "--prompt-vector-mode",
+        choices=["none", "residual_mean", "sae_recon", "basis_recon"],
+        default="none",
+        help="Build a prompt-level vector and inject it before field/lens metrics.",
+    )
+    ap.add_argument("--prompt-vector-source-layer", type=int, default=5)
+    ap.add_argument("--prompt-vector-token-span", choices=["all", "last_n"], default="all")
+    ap.add_argument("--prompt-vector-last-n", type=int, default=4)
+    ap.add_argument("--inject-at-layer", type=int, default=5)
+    ap.add_argument("--inject-at-token-index", type=int, default=-1)
+    ap.add_argument("--inject-alpha", type=float, default=0.0)
+    ap.add_argument("--inject-mode", choices=["add", "mix"], default="add")
     ap.add_argument("--device", type=str, default="cpu")
     args = ap.parse_args()
 
@@ -83,12 +125,44 @@ def main():
     sae_state_path = Path(args.sae_state)
     basis, var = load_basis(args.units, mode=args.mode, sae_state=sae_state_path)
     basis = basis.to(args.device)  # (d_model, k)
+    sae = load_sae(sae_state_path, model.get_output_embeddings().weight.shape[1]).to(args.device)
 
     data = tok(args.prompt, return_tensors="pt").to(args.device)
     with torch.no_grad():
         out = model(**data, output_hidden_states=True)
-        h = out.hidden_states[args.layer][0, -1, :]  # residual på sista token
-        logits = out.logits[0, -1, :]
+        seq_len = int(data["input_ids"].shape[1])
+        token_index = resolve_token_index(seq_len, -1)
+        inject_token_index = resolve_token_index(seq_len, args.inject_at_token_index)
+        prompt_vector, prompt_meta = build_prompt_vector(
+            hidden_states=out.hidden_states,
+            source_layer=args.prompt_vector_source_layer,
+            seq_len=seq_len,
+            span_mode=args.prompt_vector_token_span,
+            last_n=args.prompt_vector_last_n,
+            vector_mode=args.prompt_vector_mode,
+            sae=sae,
+            basis=basis,
+        )
+        h_raw = out.hidden_states[args.layer][0, token_index, :]  # residual på sista token
+        injection_delta_norm = None
+        if prompt_vector is not None and args.layer == args.inject_at_layer and token_index == inject_token_index:
+            h_raw, injection_delta_norm = apply_injection(
+                h_raw,
+                prompt_vector,
+                inject_mode=args.inject_mode,
+                inject_alpha=args.inject_alpha,
+            )
+        if args.use_sae_reconstruction:
+            h, _ = sae(h_raw.unsqueeze(0))
+            h = h.squeeze(0)
+            final_ln = getattr(getattr(model, "transformer", None), "ln_f", None)
+            lens_input = h.unsqueeze(0)
+            if final_ln is not None:
+                lens_input = final_ln(lens_input)
+            logits = model.get_output_embeddings()(lens_input).squeeze(0)
+        else:
+            h = h_raw
+            logits = out.logits[0, -1, :]
 
     coords = project(h, basis)  # (k,)
     H = entropy_from_logits(logits)
@@ -125,6 +199,22 @@ def main():
         "operator_strength": state_norm,
         "logit_entropy": H,
         "state_norm": state_norm,
+        "used_sae_reconstruction": bool(args.use_sae_reconstruction),
+        "prompt_vector_meta": None if prompt_meta is None else {
+            "source_layer": prompt_meta.source_layer,
+            "span_start": prompt_meta.span_start,
+            "span_end": prompt_meta.span_end,
+            "token_count": prompt_meta.token_count,
+            "vector_mode": prompt_meta.vector_mode,
+            "prompt_vector_norm": prompt_meta.prompt_vector_norm,
+        },
+        "injection": {
+            "layer": args.inject_at_layer if prompt_vector is not None else None,
+            "token_index": inject_token_index if prompt_vector is not None else None,
+            "alpha": args.inject_alpha,
+            "mode": args.inject_mode,
+            "delta_norm": injection_delta_norm,
+        },
         "candidate_mean": [float(x) for x in cand_mean],
         "candidate_spread_mean": cand_spread,
         "gap_state_to_candidates": gap,

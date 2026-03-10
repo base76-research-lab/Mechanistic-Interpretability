@@ -364,6 +364,8 @@ def run_variant(
     mode: str,
     topk: int,
     device: str,
+    sae_state: str,
+    use_sae_reconstruction: bool,
 ) -> dict[str, Any]:
     runs_dir = ROOT / "experiments" / "exp_001_sae_v3" / "runs"
     runs_dir.mkdir(parents=True, exist_ok=True)
@@ -386,9 +388,13 @@ def run_variant(
         mode,
         "--topk",
         str(topk),
+        "--sae_state",
+        sae_state,
         "--device",
         device,
     ]
+    if use_sae_reconstruction:
+        cmd.append("--use-sae-reconstruction")
     subprocess.run(cmd, cwd=ROOT, check=True)
 
     run_json = latest_run_json(runs_dir, before)
@@ -621,6 +627,12 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--topk-overlap-threshold", type=float, default=0.50)
     ap.add_argument("--fallback-rate-threshold", type=float, default=0.25)
     ap.add_argument("--overcompression-ratio-threshold", type=float, default=0.60)
+    ap.add_argument("--sae-state", type=str, default=str(ROOT / "experiments" / "exp_001_sae_v3" / "sae_weights.pt"))
+    ap.add_argument(
+        "--use-sae-reconstruction",
+        action="store_true",
+        help="Use SAE reconstruction in field-view runs, enabling L-SAE+R style comparison in exp_003.",
+    )
     ap.add_argument("--device", default="cpu")
     return ap.parse_args()
 
@@ -697,6 +709,8 @@ def main() -> None:
                 mode=args.mode,
                 topk=args.topk,
                 device=args.device,
+                sae_state=args.sae_state,
+                use_sae_reconstruction=args.use_sae_reconstruction,
             )
 
             row = {
@@ -894,6 +908,8 @@ def main() -> None:
         "mode": args.mode,
         "topk": args.topk,
         "include_vectorized_proxy": bool(args.include_vectorized_proxy),
+        "sae_state": args.sae_state,
+        "use_sae_reconstruction": bool(args.use_sae_reconstruction),
         "prompt_panel": args.prompts_jsonl if args.prompts_jsonl else args.prompts_file or "inline_prompts",
         "claim_boundary": "current GPT-2 Small structure-preserving comparison only; not cross-model or globally optimal",
         "thresholds": {

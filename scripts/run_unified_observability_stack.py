@@ -27,6 +27,7 @@ from torch import nn
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from candidate_front_metrics import compute_metrics as compute_candidate_front_metrics
+from prompt_vector_injection import apply_injection, build_prompt_vector, resolve_token_index
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PANEL = ROOT / "data" / "prompts_observability_panel_2026-03-07.jsonl"
@@ -180,6 +181,10 @@ def make_trace_record(
     candidates: list[dict[str, Any]],
     top_features: list[dict[str, Any]],
     basis_var: list[float],
+    prompt_vector_meta: dict[str, Any] | None,
+    injection_target_layer: int | None,
+    injection_target_token_index: int | None,
+    injection_delta_norm: float | None,
 ) -> dict[str, Any]:
     field_view_like = {
         "prompt": sample["prompt"],
@@ -212,6 +217,10 @@ def make_trace_record(
         "gap_state_to_candidates": candidate_metrics["state_to_centroid_distance"],
         "candidate_variance": candidate_metrics["candidate_variance"],
         "basis_explained_var": basis_var,
+        "prompt_vector_meta": prompt_vector_meta,
+        "injection_target_layer": injection_target_layer,
+        "injection_target_token_index": injection_target_token_index,
+        "injection_delta_norm": injection_delta_norm,
     }
     return record
 
@@ -290,13 +299,61 @@ def main() -> None:
         action="store_true",
         help="If set, replace hidden_vec with SAE reconstruction before metrics (enables L-SAE+R style intervention).",
     )
+    parser.add_argument(
+        "--prompt-vector-mode",
+        choices=["none", "residual_mean", "sae_recon", "basis_recon"],
+        default="none",
+        help="Build a prompt-level vector and inject it at a fixed layer/token before metrics.",
+    )
+    parser.add_argument(
+        "--prompt-vector-source-layer",
+        type=int,
+        default=5,
+        help="Source layer for building the prompt vector.",
+    )
+    parser.add_argument(
+        "--prompt-vector-token-span",
+        choices=["all", "last_n"],
+        default="all",
+        help="Token span used to build the prompt vector.",
+    )
+    parser.add_argument(
+        "--prompt-vector-last-n",
+        type=int,
+        default=4,
+        help="If token span is last_n, average over this many final prompt tokens.",
+    )
+    parser.add_argument(
+        "--inject-at-layer",
+        type=int,
+        default=5,
+        help="Layer index where the prompt vector is injected.",
+    )
+    parser.add_argument(
+        "--inject-at-token-index",
+        type=int,
+        default=-1,
+        help="Target token index for injection. Negative values are relative to sequence end.",
+    )
+    parser.add_argument(
+        "--inject-alpha",
+        type=float,
+        default=0.0,
+        help="Injection strength. Zero disables the prompt vector even if a mode is selected.",
+    )
+    parser.add_argument(
+        "--inject-mode",
+        choices=["add", "mix"],
+        default="add",
+        help="How to combine the prompt vector with the target hidden state.",
+    )
     parser.add_argument("--run-name", type=str, default="")
     parser.add_argument("--device", type=str, default="cpu")
     args = parser.parse_args()
 
     panel_path = Path(args.prompt_jsonl)
     sae_state_path = Path(args.sae_state)
-    ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     run_name = args.run_name or f"stack_{args.model.replace('/', '_')}_{ts}"
     out_dir = DEFAULT_OUT_DIR / run_name
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -319,9 +376,48 @@ def main() -> None:
     with torch.no_grad():
         for sample in panel:
             tokens = tokenizer(sample["prompt"], return_tensors="pt").to(args.device)
-            out = model(**tokens, output_hidden_states=True)
             seq_len = int(tokens["input_ids"].shape[1])
             token_index = seq_len - 1
+            inject_token_index = resolve_token_index(seq_len, args.inject_at_token_index)
+
+            # First forward to build prompt vector; reuse hidden_states for vector construction
+            base_out = model(**tokens, output_hidden_states=True)
+            prompt_vector, prompt_meta = build_prompt_vector(
+                hidden_states=base_out.hidden_states,
+                source_layer=args.prompt_vector_source_layer,
+                seq_len=seq_len,
+                span_mode=args.prompt_vector_token_span,
+                last_n=args.prompt_vector_last_n,
+                vector_mode=args.prompt_vector_mode,
+                sae=sae,
+                basis=basis,
+            )
+
+            # If we have a prompt vector and alpha>0, do a causal forward pass with injected state
+            injection_delta_norm_global = None
+            if prompt_vector is not None and args.inject_alpha != 0.0:
+                def hook_factory():
+                    def hook(module, inputs, output):
+                        hidden = output[0]
+                        hidden_mod = hidden.clone()
+                        target_vec = hidden_mod[0, inject_token_index, :]
+                        injected, delta_norm = apply_injection(
+                            target_vec,
+                            prompt_vector,
+                            inject_mode=args.inject_mode,
+                            inject_alpha=args.inject_alpha,
+                        )
+                        hidden_mod[0, inject_token_index, :] = injected
+                        nonlocal injection_delta_norm_global
+                        injection_delta_norm_global = delta_norm
+                        return (hidden_mod, *output[1:])
+                    return hook
+
+                handle = model.transformer.h[args.inject_at_layer].register_forward_hook(hook_factory())
+                out = model(**tokens, output_hidden_states=True)
+                handle.remove()
+            else:
+                out = base_out
             for layer in args.layers:
                 hidden_vec_raw = get_layer_vector(out.hidden_states, layer, token_index)
 
@@ -351,6 +447,17 @@ def main() -> None:
                     candidates=candidates,
                     top_features=top_features,
                     basis_var=basis_var,
+                    prompt_vector_meta=None if prompt_meta is None else {
+                        "source_layer": prompt_meta.source_layer,
+                        "span_start": prompt_meta.span_start,
+                        "span_end": prompt_meta.span_end,
+                        "token_count": prompt_meta.token_count,
+                        "vector_mode": prompt_meta.vector_mode,
+                        "prompt_vector_norm": prompt_meta.prompt_vector_norm,
+                    },
+                    injection_target_layer=args.inject_at_layer if prompt_vector is not None else None,
+                    injection_target_token_index=inject_token_index if prompt_vector is not None else None,
+                    injection_delta_norm=injection_delta_norm_global if prompt_vector is not None else None,
                 )
                 records.append(record)
 
@@ -375,6 +482,14 @@ def main() -> None:
         "top_features": args.top_features,
         "intervention_state": args.intervention_state,
         "use_sae_reconstruction": args.use_sae_reconstruction,
+        "prompt_vector_mode": args.prompt_vector_mode,
+        "prompt_vector_source_layer": args.prompt_vector_source_layer,
+        "prompt_vector_token_span": args.prompt_vector_token_span,
+        "prompt_vector_last_n": args.prompt_vector_last_n,
+        "inject_at_layer": args.inject_at_layer,
+        "inject_at_token_index": args.inject_at_token_index,
+        "inject_alpha": args.inject_alpha,
+        "inject_mode": args.inject_mode,
         "record_count": len(records),
         "schema": {
             "grain": "one record per prompt_id, layer, token_index, intervention_state",

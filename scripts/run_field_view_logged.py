@@ -60,6 +60,13 @@ def git_info(cwd: Path) -> dict:
     return info
 
 
+def safe_path_label(path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(ROOT.resolve()))
+    except ValueError:
+        return str(path.resolve())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prompt", required=True, help="Prompt att köra")
@@ -71,10 +78,23 @@ def main():
     ap.add_argument("--model", default="gpt2", help="HF model-id eller provider-spec id")
     ap.add_argument("--layer", type=int, default=5, help="hidden_states-index att projicera")
     ap.add_argument("--sae_state", default=str(DEFAULT_SAE_STATE), help="Path till SAE-viktfil")
+    ap.add_argument(
+        "--use-sae-reconstruction",
+        action="store_true",
+        help="Route the hidden vector through SAE reconstruction before field/lens metrics.",
+    )
+    ap.add_argument("--prompt-vector-mode", choices=["none", "residual_mean", "sae_recon", "basis_recon"], default="none")
+    ap.add_argument("--prompt-vector-source-layer", type=int, default=5)
+    ap.add_argument("--prompt-vector-token-span", choices=["all", "last_n"], default="all")
+    ap.add_argument("--prompt-vector-last-n", type=int, default=4)
+    ap.add_argument("--inject-at-layer", type=int, default=5)
+    ap.add_argument("--inject-at-token-index", type=int, default=-1)
+    ap.add_argument("--inject-alpha", type=float, default=0.0)
+    ap.add_argument("--inject-mode", choices=["add", "mix"], default="add")
     ap.add_argument("--degenerate-threshold", type=float, default=0.7, help="Threshold for candidate_front.degenerate")
     args = ap.parse_args()
 
-    ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     name = f"field_view_{args.scenario}__{ts}"
 
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
@@ -103,6 +123,29 @@ def main():
         "--device",
         args.device,
     ]
+    if args.use_sae_reconstruction:
+        cmd.append("--use-sae-reconstruction")
+    if args.prompt_vector_mode != "none":
+        cmd.extend(
+            [
+                "--prompt-vector-mode",
+                args.prompt_vector_mode,
+                "--prompt-vector-source-layer",
+                str(args.prompt_vector_source_layer),
+                "--prompt-vector-token-span",
+                args.prompt_vector_token_span,
+                "--prompt-vector-last-n",
+                str(args.prompt_vector_last_n),
+                "--inject-at-layer",
+                str(args.inject_at_layer),
+                "--inject-at-token-index",
+                str(args.inject_at_token_index),
+                "--inject-alpha",
+                str(args.inject_alpha),
+                "--inject-mode",
+                args.inject_mode,
+            ]
+        )
     print("Kör:", " ".join(cmd))
     subprocess.run(cmd, check=True, cwd=ROOT)
 
@@ -132,9 +175,20 @@ def main():
         "mode": args.mode,
         "topk": args.topk,
         "device": args.device,
+        "use_sae_reconstruction": bool(args.use_sae_reconstruction),
+        "prompt_vector": {
+            "mode": args.prompt_vector_mode,
+            "source_layer": args.prompt_vector_source_layer,
+            "token_span": args.prompt_vector_token_span,
+            "last_n": args.prompt_vector_last_n,
+            "inject_at_layer": args.inject_at_layer,
+            "inject_at_token_index": args.inject_at_token_index,
+            "inject_alpha": args.inject_alpha,
+            "inject_mode": args.inject_mode,
+        },
         "script": str(FIELD_VIEW_SCRIPT.relative_to(ROOT)),
         "script_sha256": sha256(FIELD_VIEW_SCRIPT),
-        "sae_weights": str(sae_state_path.relative_to(ROOT)),
+        "sae_weights": safe_path_label(sae_state_path),
         "sae_weights_sha256": sha256(sae_state_path) if sae_state_path.exists() else None,
         "git": git_info(ROOT),
         "metrics": {
@@ -144,6 +198,8 @@ def main():
             "risk_score": data.get("risk_score"),
             "field_coords": data.get("field_coords"),
             "candidate_spread_mean": data.get("candidate_spread_mean"),
+            "prompt_vector_norm": (data.get("prompt_vector_meta") or {}).get("prompt_vector_norm"),
+            "injection_delta_norm": (data.get("injection") or {}).get("delta_norm"),
         },
         "candidate_front": {
             "coherence": candidate_front.get("candidate_coherence"),
