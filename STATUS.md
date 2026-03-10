@@ -1,6 +1,6 @@
 # STATUS — Mechanistic Interpretability
 
-Last updated: 2026-03-06
+Last updated: 2026-03-10
 
 ## Current position
 
@@ -28,6 +28,12 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 | H3 | `risk_refined = entropy_norm * gap_norm * (1 - coherence)` outperforms the current risk signal | not yet validated |
 | H4 | Hallucination has a localizable onset point in layer dynamics | layer sweep planned |
 
+## Recent runs (2026-03-10)
+
+- Hallucination panel reruns: baseline, baseline+recon, L-SAE no recon, L-SAE+R (observability stack). Trace dirs under `experiments/exp_004_unified_observability_stack/`.
+- Hallucination QA benchmarks (small panels): baseline, α-blends, entropy-gated recon; hallu-rate stayed 1.0, abstention collapsed when recon active.
+- Transformer Oscilloscope: new read-only tracing tool; demo + smoke traces with PNGs/HTML report.
+
 ## Experiment status
 
 | Experiment | Description | Status |
@@ -35,9 +41,9 @@ precursor to hallucination-like behavior, and that this signal is not reducible 
 | `exp_001_sae` v1/v2/v3 | SAE + Field View on GPT-2 layer 5 | complete |
 | `exp_002_persona` | persona and traits artifacts | partial |
 | `exp_003_compression_vectorized` | raw vs compressed vs vectorized proxy (`mean` / `attn_weighted` / `pca1`) | in progress; robust batch still missing |
+| Transformer Oscilloscope | Read-only residual/attn/MLP/logit tracing + viz | new tool added; demo run done |
 
-**Critical gap:** `exp_003` has been run, but several runs used `compression_mode=unavailable`.
-A robust batch with `--require-compressor` remains the next priority.
+**Critical gap:** `exp_003` robust batch with `--require-compressor` still needed.
 
 ## Priority next steps
 

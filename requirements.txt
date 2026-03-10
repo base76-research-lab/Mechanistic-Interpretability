@@ -1,6 +1,6 @@
-torch
-transformers
-numpy
-matplotlib
-httpx
-
+torch==2.1.2
+transformers==4.38.2
+numpy==1.26.4
+matplotlib==3.8.2
+httpx==0.27.0
+pandas==2.2.1

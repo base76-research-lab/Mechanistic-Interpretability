@@ -62,6 +62,32 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Quickstart (observability only, read-only)
+
+```bash
+cd ESA/research/mechanistic-interpretability
+PYTHONPATH=. python3 -m transformer_oscilloscope.cli trace \
+  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
+  --model gpt2 --layers 1 6 9 11 \
+  --out-dir experiments/exp_004_unified_observability_stack \
+  --run-name transformer_oscilloscope_demo \
+  --store-projections
+
+PYTHONPATH=. python3 -m transformer_oscilloscope.cli report \
+  --trace experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/trace.jsonl \
+  --out-dir experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/plots \
+  --report-name report.html
+```
+
+**Tool:** Transformer Oscilloscope — read-only “oscilloskop” för interna dynamiker.  
+Docs: [`transformer_oscilloscope/README.md`](transformer_oscilloscope/README.md)
+
+Vad den gör och varför:
+- Kopplar in forward hooks (residual/attn/MLP/logits) utan write-back → påverkar inte modellen.
+- Loggar per-token/per-lager entropi, gap, top‑k, och (valfritt) SAE-featureaktivering.
+- Producerar färdiga PNG:er + HTML-rapport för att se lager/tids-trajectory och frontier-beteende.
+- Syfte: ge forskare ett snabbt, oförstörande “fönster” in i LLM:s beslutsdynamik för analys av regimer (reasoning vs hallucination-prone m.fl.).
+
 Run a representative SAE experiment:
 
 ```bash
@@ -99,6 +125,71 @@ python3 scripts/run_unified_observability_stack.py \
   --intervention-state lsae_r \
   --use-sae-reconstruction \
   --run-name lsae_r_stack_default_lw2e2_2026-03-09 \
+  --device cpu
+```
+
+Run prompt-vector injection on top of the observability stack:
+
+```bash
+python3 scripts/run_unified_observability_stack.py \
+  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
+  --sae-state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
+  --intervention-state vector_injection_lsae_r \
+  --use-sae-reconstruction \
+  --prompt-vector-mode residual_mean \
+  --prompt-vector-source-layer 5 \
+  --prompt-vector-token-span last_n \
+  --prompt-vector-last-n 4 \
+  --inject-at-layer 5 \
+  --inject-at-token-index -1 \
+  --inject-alpha 0.15 \
+  --inject-mode add \
+  --run-name vector_injection_stack_2026-03-09 \
+  --device cpu
+```
+
+## Transformer Oscilloscope (read-only observability)
+
+This is a separate, no-write-back toolkit under `transformer_oscilloscope/` for tracing and visualizing internal dynamics.
+
+Collect traces (read-only):
+```bash
+PYTHONPATH=. python3 -m transformer_oscilloscope.cli trace \
+  --prompt-jsonl data/prompts_observability_panel_2026-03-07.jsonl \
+  --model gpt2 --layers 1 6 9 11 \
+  --out-dir experiments/exp_004_unified_observability_stack \
+  --run-name transformer_oscilloscope_demo \
+  --store-projections
+```
+
+Generate plots and HTML report:
+```bash
+PYTHONPATH=. python3 -m transformer_oscilloscope.cli viz \
+  --trace experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/trace.jsonl \
+  --out-dir experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/plots
+
+PYTHONPATH=. python3 -m transformer_oscilloscope.cli report \
+  --trace experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/trace.jsonl \
+  --out-dir experiments/exp_004_unified_observability_stack/transformer_oscilloscope_demo/plots \
+  --report-name report.html
+```
+
+Debug a single prompt with the same injection path:
+
+```bash
+python3 scripts/run_field_view_logged.py \
+  --scenario reasoning_vector_probe \
+  --prompt "If all mammals breathe air and whales are mammals, do whales breathe air?" \
+  --model gpt2 \
+  --layer 5 \
+  --sae_state experiments/exp_001_sae_v4_lsae_v1_lw2e2/sae_weights.pt \
+  --use-sae-reconstruction \
+  --prompt-vector-mode residual_mean \
+  --prompt-vector-token-span last_n \
+  --prompt-vector-last-n 4 \
+  --inject-at-layer 5 \
+  --inject-alpha 0.15 \
+  --inject-mode add \
   --device cpu
 ```
 

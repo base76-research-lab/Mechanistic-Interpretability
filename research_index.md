@@ -30,6 +30,7 @@ ANALYSIS
 - `reports/summary_findings_2026-03-06.md`
 - `reports/compression_analysis_2026-03-06.md`
 - `reports/steering_vector_analysis_2026-03-06.md`
+- `transformer_oscilloscope/` — read-only tracing/viz toolkit (trace, viz, report)
 
 ## Emerging protocol candidates
 
