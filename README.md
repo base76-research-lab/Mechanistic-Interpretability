@@ -65,6 +65,7 @@ See:
 
 Primary references:
 
+- [`reports/current_trajectory_findings_2026-03-10.md`](reports/current_trajectory_findings_2026-03-10.md)
 - [`reports/summary_findings_2026-03-06.md`](reports/summary_findings_2026-03-06.md)
 - [`reports/findings_2026-03-10.md`](reports/findings_2026-03-10.md)
 - [`reports/oscilloscope_hallu_summary_2026-03-10.md`](reports/oscilloscope_hallu_summary_2026-03-10.md)
@@ -84,9 +85,10 @@ For external scientific readers, the recommended reading order is:
 2. [`STATUS.md`](STATUS.md)
 3. [`findings/README.md`](findings/README.md)
 4. [`research_index.md`](research_index.md)
-5. [`reports/summary_findings_2026-03-06.md`](reports/summary_findings_2026-03-06.md)
-6. [`reports/findings_2026-03-10.md`](reports/findings_2026-03-10.md)
-7. [`reports/oscilloscope_hallu_summary_2026-03-10.md`](reports/oscilloscope_hallu_summary_2026-03-10.md)
+5. [`reports/current_trajectory_findings_2026-03-10.md`](reports/current_trajectory_findings_2026-03-10.md)
+6. [`reports/summary_findings_2026-03-06.md`](reports/summary_findings_2026-03-06.md)
+7. [`reports/findings_2026-03-10.md`](reports/findings_2026-03-10.md)
+8. [`reports/oscilloscope_hallu_summary_2026-03-10.md`](reports/oscilloscope_hallu_summary_2026-03-10.md)
 
 For reviewers who want the strongest current visual artifacts first:
 

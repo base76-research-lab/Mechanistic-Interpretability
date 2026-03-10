@@ -14,6 +14,9 @@ having to inspect all plans, templates, and internal lab documents.
 5. [`findings_2026-03-10.md`](findings_2026-03-10.md)
 6. [`oscilloscope_hallu_summary_2026-03-10.md`](oscilloscope_hallu_summary_2026-03-10.md)
 7. [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md)
+8. [`current_trajectory_findings_2026-03-10.md`](current_trajectory_findings_2026-03-10.md)
+9. [`trajectory_block_synthesis_2026-03-10.md`](trajectory_block_synthesis_2026-03-10.md)
+10. [`dense_layer_sweep_findings_2026-03-10.md`](dense_layer_sweep_findings_2026-03-10.md)
 
 ## Current scientific documents
 
@@ -29,6 +32,18 @@ having to inspect all plans, templates, and internal lab documents.
   - current read-only oscilloscope summary
 - [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md)
   - shared-subspace A/B showing near-zero read-only vs baseline drift and strong write-back divergence
+- [`current_trajectory_findings_2026-03-10.md`](current_trajectory_findings_2026-03-10.md)
+  - shortest canonical synthesis of the current trajectory findings surface
+- [`trajectory_detection_findings_2026-03-10.md`](trajectory_detection_findings_2026-03-10.md)
+  - first block result showing geometry-based separation stronger than entropy at panel level
+- [`layer_bifurcation_findings_2026-03-10.md`](layer_bifurcation_findings_2026-03-10.md)
+  - current conclusion that Layer 6 remains strongest local bifurcation candidate
+- [`regime_stability_findings_2026-03-10.md`](regime_stability_findings_2026-03-10.md)
+  - regime-level fingerprint result from the first trajectory block
+- [`trajectory_block_synthesis_2026-03-10.md`](trajectory_block_synthesis_2026-03-10.md)
+  - synthesis across detection, bifurcation, and regime stability
+- [`dense_layer_sweep_findings_2026-03-10.md`](dense_layer_sweep_findings_2026-03-10.md)
+  - dense `5-12` addendum separating early Layer 6 onset from later `10->11` expansion
 - [`exp_001_sae.md`](exp_001_sae.md)
   - earlier SAE + Field View findings report
 

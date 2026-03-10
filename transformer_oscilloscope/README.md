@@ -6,6 +6,8 @@ Read-only observability toolkit for transformer dynamics.
 - `trace` — collect per-layer/per-token telemetry via forward hooks (no write-back).
 - `viz` — generate quick PNGs (entropy, gap, PCA scatter if stored).
 - optional SAE-basis projection writes `subspace_coords` compatible with the unified observability stack.
+- if SAE basis is present, the trace now also records `frontier_coherence`, `frontier_degeneracy`,
+  `gap_state_to_candidates`, and `candidate_variance`.
 
 ## Usage
 ### Trace
@@ -24,6 +26,7 @@ python -m transformer_oscilloscope.cli trace \
   --units 472 468 57 156 346
 ```
 Outputs: `.../transformer_oscilloscope_demo/trace.jsonl`
+Also writes: `.../transformer_oscilloscope_demo/metadata.json`
 
 ### Viz
 ```bash
@@ -53,3 +56,5 @@ Outputs: `report.html` linking the generated PNGs.
 - If `--sae-state` is combined with `--basis-mode` and `--units`, the trace also records
   `subspace_coords` and `subspace_operator_strength`, which makes direct A/B comparison against
   unified-stack traces possible.
+- The same configuration also enables frontier-style metrics in the read-only observer surface, so
+  the oscilloscope can now participate directly in the trajectory block analysis.

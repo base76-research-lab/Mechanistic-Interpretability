@@ -10,6 +10,44 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
+GENERIC_WORDS = {
+    "the",
+    "a",
+    "an",
+    "and",
+    "or",
+    "but",
+    "if",
+    "i",
+    "he",
+    "she",
+    "it",
+    "they",
+    "that",
+    "this",
+    "these",
+    "those",
+    "we",
+    "you",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "to",
+    "of",
+    "in",
+    "on",
+    "for",
+    "with",
+    "as",
+    "at",
+    "by",
+}
+
+GENERIC_SPECIAL = {"<space>"}
+
+
 def sha256_tensor(t: torch.Tensor) -> str:
     return hashlib.sha256(t.detach().cpu().contiguous().numpy().tobytes()).hexdigest()
 
@@ -35,6 +73,100 @@ def decode_topk(tokenizer, logits: torch.Tensor, k: int = 5) -> List[Dict[str, A
             {"token": tokenizer.decode([tid]).strip() or "<space>", "token_id": tid, "logit": float(v.item())}
         )
     return out
+
+
+def is_punctuation_token(token: str) -> bool:
+    stripped = token.strip()
+    if not stripped:
+        return True
+    return all(not ch.isalnum() and ch != "_" for ch in stripped)
+
+
+def is_generic_token(token: str) -> bool:
+    lower = token.strip().lower()
+    if lower in GENERIC_SPECIAL or lower in GENERIC_WORDS:
+        return True
+    return is_punctuation_token(token)
+
+
+def mean_pairwise_cosine(matrix: torch.Tensor) -> float:
+    if matrix.shape[0] < 2:
+        return float("nan")
+    norms = torch.linalg.norm(matrix, dim=1, keepdim=True).clamp_min(1e-12)
+    normalized = matrix / norms
+    sim = normalized @ normalized.T
+    upper = sim[torch.triu_indices(sim.shape[0], sim.shape[1], offset=1).unbind()]
+    return float(upper.mean().item())
+
+
+def trace_covariance(matrix: torch.Tensor) -> float:
+    if matrix.shape[0] < 2:
+        return 0.0
+    centered = matrix - matrix.mean(dim=0, keepdim=True)
+    cov = (centered.T @ centered) / (matrix.shape[0] - 1)
+    return float(torch.trace(cov).item())
+
+
+def project(vec: torch.Tensor, basis: torch.Tensor) -> torch.Tensor:
+    return torch.matmul(vec, basis)
+
+
+def project_candidates(
+    model: AutoModelForCausalLM,
+    tokenizer,
+    lens_logits: torch.Tensor,
+    basis: torch.Tensor | None,
+    topk: int,
+) -> list[dict[str, Any]]:
+    topv, topi = torch.topk(lens_logits, k=topk)
+    if basis is None:
+        return [
+            {
+                "token": tokenizer.decode([int(idx.item())]).strip() or "<space>",
+                "token_id": int(idx.item()),
+                "logit": float(logit.item()),
+                "coords": [],
+            }
+            for logit, idx in zip(topv, topi)
+        ]
+    w_u = model.get_output_embeddings().weight
+    rows = []
+    for logit, idx in zip(topv, topi):
+        token_id = int(idx.item())
+        coords = project(w_u[idx], basis)
+        rows.append(
+            {
+                "token": tokenizer.decode([token_id]).strip() or "<space>",
+                "token_id": token_id,
+                "logit": float(logit.item()),
+                "coords": [float(x.item()) for x in coords],
+            }
+        )
+    return rows
+
+
+def candidate_metrics_from_coords(field_coords: torch.Tensor | None, candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    if not candidates or not candidates[0]["coords"]:
+        return {
+            "candidate_coherence": None,
+            "candidate_variance": None,
+            "degeneracy_ratio_topk": None,
+            "state_to_centroid_distance": None,
+            "generic_count": None,
+        }
+    coords = torch.tensor([c["coords"] for c in candidates], dtype=torch.float32)
+    candidate_centroid = coords.mean(dim=0)
+    generic_count = sum(1 for c in candidates if is_generic_token(c["token"]))
+    state_to_centroid = None
+    if field_coords is not None:
+        state_to_centroid = float(torch.linalg.norm(field_coords - candidate_centroid).item())
+    return {
+        "candidate_coherence": mean_pairwise_cosine(coords),
+        "candidate_variance": trace_covariance(coords),
+        "degeneracy_ratio_topk": generic_count / len(candidates),
+        "state_to_centroid_distance": state_to_centroid,
+        "generic_count": generic_count,
+    }
 
 
 def load_panel(path: Path) -> List[Dict[str, Any]]:
@@ -123,6 +255,7 @@ def run_trace(
     panel = load_panel(prompt_jsonl)
     out_dir.mkdir(parents=True, exist_ok=True)
     trace_path = out_dir / "trace.jsonl"
+    metadata_path = out_dir / "metadata.json"
 
     mlp_cache: Dict[int, torch.Tensor] = {}
     num_blocks = len(model.transformer.h)
@@ -180,6 +313,9 @@ def run_trace(
                     ent = entropy_from_logits(lens_logits)
                     gap = gap_top2(lens_logits)
                     topk_tokens = decode_topk(tokenizer, lens_logits, k=topk)
+                    candidate_rows = project_candidates(model, tokenizer, lens_logits, basis, topk)
+                    field_coords = project(h_vec, basis) if basis is not None else None
+                    candidate_metrics = candidate_metrics_from_coords(field_coords, candidate_rows)
 
                     prev_ent = prev_entropy_per_layer.get(layer_idx)
                     d_ent = None if prev_ent is None else ent - prev_ent
@@ -206,9 +342,11 @@ def run_trace(
                         "token_index": tok_idx,
                         "token": tokenizer.decode([int(inputs["input_ids"][0, tok_idx])]),
                         "entropy": ent,
+                        "lens_entropy": ent,
                         "gap_top2": gap,
                         "entropy_delta_vs_prev_token": d_ent,
                         "topk": topk_tokens,
+                        "lens_topk": topk_tokens,
                         "hidden_sha": sha256_tensor(h_vec),
                         "mlp_sha": sha256_tensor(mlp_out[0, tok_idx, :]) if mlp_out is not None else None,
                         "attn_entropy": attn_entropy,
@@ -217,17 +355,38 @@ def run_trace(
                         rec["pca_x"] = float(coords_layer[tok_idx, 0].item())
                         rec["pca_y"] = float(coords_layer[tok_idx, 1].item())
                     if basis is not None:
-                        subspace = project(h_vec, basis)
-                        rec["subspace_coords"] = [float(x.item()) for x in subspace]
-                        rec["subspace_operator_strength"] = float(torch.norm(subspace).item())
+                        rec["subspace_coords"] = [float(x.item()) for x in field_coords]
+                        rec["subspace_operator_strength"] = float(torch.norm(field_coords).item())
                         rec["basis_mode"] = basis_mode
                         rec["basis_explained_var"] = basis_var
+                        rec["candidates"] = candidate_rows
+                        rec["frontier_coherence"] = candidate_metrics["candidate_coherence"]
+                        rec["frontier_degeneracy"] = candidate_metrics["degeneracy_ratio_topk"]
+                        rec["gap_state_to_candidates"] = candidate_metrics["state_to_centroid_distance"]
+                        rec["candidate_variance"] = candidate_metrics["candidate_variance"]
                     if sae_top is not None:
                         rec["sae_top"] = sae_top
                     f_out.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
     for h in handles:
         h.remove()
+
+    metadata = {
+        "run_name": run_name,
+        "model": model_name,
+        "layers": layers,
+        "device": device,
+        "panel": str(prompt_jsonl),
+        "record_count": sum(1 for _ in trace_path.open()),
+        "store_projections": store_projections,
+        "sae_state": str(sae_state) if sae_state is not None else None,
+        "sae_topk": sae_topk,
+        "units": units if sae_state is not None else None,
+        "basis_mode": basis_mode if sae_state is not None else None,
+        "trace_file": str(trace_path),
+        "observer_class": "read_only",
+    }
+    metadata_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
 
     return trace_path
 

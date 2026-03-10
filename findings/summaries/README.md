@@ -4,6 +4,8 @@ This directory indexes the current summary layer for external scientific readers
 
 ## Current summary documents
 
+- [`../../reports/current_trajectory_findings_2026-03-10.md`](../../reports/current_trajectory_findings_2026-03-10.md)
+  - canonical current synthesis for detection, bifurcation, stability, and dense sweep follow-up
 - [`../../reports/summary_findings_2026-03-06.md`](../../reports/summary_findings_2026-03-06.md)
   - current high-level microscopy summary
 - [`../../reports/findings_2026-03-10.md`](../../reports/findings_2026-03-10.md)
@@ -13,9 +15,10 @@ This directory indexes the current summary layer for external scientific readers
 
 ## Reading logic
 
-- start with `summary_findings_2026-03-06.md` for the current broad picture
-- then read `findings_2026-03-10.md` for the latest intervention and observability interpretation
-- then read `oscilloscope_hallu_summary_2026-03-10.md` for the new read-only observer layer
+- start with `current_trajectory_findings_2026-03-10.md` for the shortest current synthesis
+- then read `summary_findings_2026-03-06.md` for the broader microscopy picture
+- then read `findings_2026-03-10.md` for the intervention and observability interpretation
+- then read `oscilloscope_hallu_summary_2026-03-10.md` for the read-only observer layer
 
 ## Boundary
 

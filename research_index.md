@@ -30,6 +30,16 @@ ANALYSIS
 - `experiments/exp_004_unified_observability_stack/hallu_panel_readonly_oscilloscope_subspace_2026-03-10/trace.jsonl`
 - `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_baseline_2026-03-10/summary.json`
 - `experiments/exp_004_unified_observability_stack/trajectory_compare_readonly_vs_recon_2026-03-10/summary.json`
+- `experiments/exp_005_trajectory_block/readonly_full_metrics_2026-03-10/trace.jsonl`
+- `experiments/exp_005_trajectory_block/analysis_2026-03-10/detection/summary.json`
+- `experiments/exp_005_trajectory_block/analysis_2026-03-10/bifurcation/summary.json`
+- `experiments/exp_005_trajectory_block/analysis_2026-03-10/stability/summary.json`
+- `experiments/exp_005_trajectory_block/analysis_2026-03-10/synthesis/summary.json`
+- `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/dense_layers_5_12_2026-03-10_readonly/trace.jsonl`
+- `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/detection/summary.json`
+- `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/bifurcation/summary.json`
+- `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/stability/summary.json`
+- `experiments/exp_005_trajectory_block/dense_layers_5_12_2026-03-10/analysis/synthesis/summary.json`
 - `experiments/exp_004_unified_observability_stack/hallu_benchmark_2026-03-10.png`
 
 ## Latest findings
@@ -40,6 +50,12 @@ ANALYSIS
 - `reports/findings_2026-03-10.md`
 - `reports/oscilloscope_hallu_summary_2026-03-10.md`
 - `reports/observer_distortion_trajectory_compare_2026-03-10.md`
+- `reports/current_trajectory_findings_2026-03-10.md`
+- `reports/trajectory_detection_findings_2026-03-10.md`
+- `reports/layer_bifurcation_findings_2026-03-10.md`
+- `reports/regime_stability_findings_2026-03-10.md`
+- `reports/trajectory_block_synthesis_2026-03-10.md`
+- `reports/dense_layer_sweep_findings_2026-03-10.md`
 - `transformer_oscilloscope/` — read-only tracing/viz toolkit (trace, viz, report)
 
 ## Emerging protocol candidates
@@ -53,6 +69,9 @@ ANALYSIS
 - reconstruction/write-back must now be treated as intervention, not neutral observation
 - the read-only oscilloscope should be treated as the default observer when mapping layer transitions before causal write-back tests
 - read-only oscilloscope and unified no-write-back baseline are now empirically aligned in shared SAE subspace, while write-back runs diverge strongly
+- first trajectory block now supports three GPT-2-level claims: geometry beats entropy at panel level, Layer 6 remains strongest local bifurcation candidate, and regime fingerprints are distinct at regime level
+- dense `5-12` sweep now sharpens the GPT-2 picture: earliest strongest local divergence remains at Layer 6, while the largest hallucination expansion currently appears later at `10->11`
+- phase velocity is worth retaining as an observer metric, but the dense sweep does not yet support it as a standalone early-warning signal
 
 ## Active instrumentation additions
 
@@ -61,6 +80,8 @@ ANALYSIS
 - canonical evaluation panel: `data/prompts_observability_panel_2026-03-07.jsonl`
 - Monday sanity runner: `scripts/run_monday_sanity_pass.py`
 - Transformer Oscilloscope: `transformer_oscilloscope/`
+- Trajectory block runner: `scripts/run_trajectory_block.py`
+- Trajectory block analysis: `scripts/analyze_trajectory_block.py`
 
 ## Active planning documents
 
@@ -84,7 +105,7 @@ Current results support a structured residual-state interpretation in the curren
 ## Open questions
 
 - does Layer 6 remain critical outside the current setup?
-- is the real transition zone better described as L6-L9 rather than a single privileged layer?
+- is the real transition picture best described as `Layer 6 onset + later 10->11 expansion`, or is that still a panel artifact?
 - does vectorized conditioning outperform text-only compression in a stable way?
 - which signals survive batch validation and cross-model controls?
 - does lens supervision improve sparse-feature utility without collapsing microscope value?
@@ -95,10 +116,10 @@ Current results support a structured residual-state interpretation in the curren
 ## Immediate execution order
 
 1. patch `anchored_03` and recall-anchor handling for `hallucination_02` / `hallucination_03`
-2. run a read-only oscilloscope-assisted layer replication around L6-L9 on the hallucination panel
-3. rerun robust text-only compression batch on the observability panel
-4. if `compressed` becomes defensible, freeze the text-compression path as the current intervention baseline
-5. only then resume `VECTOR_PROXY_LEGITIMACY_PROTOCOL_2026-03-08.md`
+2. expand the observability panel and rerun the dense `5-12` trajectory block
+3. add token-level lead-time analysis on top of the dense trajectory block
+4. rerun robust text-only compression batch on the observability panel
+5. if `compressed` becomes defensible, freeze the text-compression path as the current intervention baseline
 
 ## Next required transition
 

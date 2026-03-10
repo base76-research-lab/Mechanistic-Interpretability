@@ -17,6 +17,8 @@ Purpose:
 
 ## Current findings set
 
+- [`../reports/current_trajectory_findings_2026-03-10.md`](../reports/current_trajectory_findings_2026-03-10.md) — canonical current trajectory synthesis across detection,
+  bifurcation, stability, and dense sweep follow-up
 - [`../reports/summary_findings_2026-03-06.md`](../reports/summary_findings_2026-03-06.md) — high-level microscopy summary
 - [`../reports/findings_2026-03-10.md`](../reports/findings_2026-03-10.md) — unified observability stack and intervention interpretation
 - [`../reports/oscilloscope_hallu_summary_2026-03-10.md`](../reports/oscilloscope_hallu_summary_2026-03-10.md) — read-only oscilloscope summary and
@@ -37,8 +39,9 @@ Those remain important, but they belong elsewhere in the repository.
 1. [`../README.md`](../README.md)
 2. [`../STATUS.md`](../STATUS.md)
 3. [`../research_index.md`](../research_index.md)
-4. [`summaries/README.md`](summaries/README.md)
-5. [`figures/README.md`](figures/README.md)
+4. [`../reports/current_trajectory_findings_2026-03-10.md`](../reports/current_trajectory_findings_2026-03-10.md)
+5. [`summaries/README.md`](summaries/README.md)
+6. [`figures/README.md`](figures/README.md)
 
 ## Figure surface
 

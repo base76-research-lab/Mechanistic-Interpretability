@@ -34,6 +34,13 @@ Notebooks may lead into this layer, but they should not replace it.
 - [`findings_2026-03-10.md`](findings_2026-03-10.md) — current interpretation of `exp_004` panel and benchmark runs
 - [`oscilloscope_hallu_summary_2026-03-10.md`](oscilloscope_hallu_summary_2026-03-10.md) — oscilloscope-specific summary and observer/intervention boundary
 - [`observer_distortion_trajectory_compare_2026-03-10.md`](observer_distortion_trajectory_compare_2026-03-10.md) — shared-subspace A/B between read-only, baseline, and write-back traces
+- [`current_trajectory_findings_2026-03-10.md`](current_trajectory_findings_2026-03-10.md) — canonical current synthesis for the trajectory findings block
+- [`TRAJECTORY_BLOCK_PROTOCOL_2026-03-10.md`](TRAJECTORY_BLOCK_PROTOCOL_2026-03-10.md) — canonical next-run block for detection, bifurcation, and regime stability
+- [`trajectory_detection_findings_2026-03-10.md`](trajectory_detection_findings_2026-03-10.md) — first trajectory-block detection result
+- [`layer_bifurcation_findings_2026-03-10.md`](layer_bifurcation_findings_2026-03-10.md) — current layer-divergence conclusion
+- [`regime_stability_findings_2026-03-10.md`](regime_stability_findings_2026-03-10.md) — regime-level fingerprint result
+- [`trajectory_block_synthesis_2026-03-10.md`](trajectory_block_synthesis_2026-03-10.md) — synthesis across the first trajectory block
+- [`dense_layer_sweep_findings_2026-03-10.md`](dense_layer_sweep_findings_2026-03-10.md) — dense `5-12` addendum resolving early onset vs later expansion
 - [`compression_analysis_2026-03-06.md`](compression_analysis_2026-03-06.md) — compression intervention and structural fragility note
 - [`steering_vector_analysis_2026-03-06.md`](steering_vector_analysis_2026-03-06.md) — causal steering note in residual space
 - [`NEXT_STEPS_2026-03-05.md`](NEXT_STEPS_2026-03-05.md) — operational run plan with guards, analysis order, and exit criteria
