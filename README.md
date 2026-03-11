@@ -14,6 +14,9 @@ This repository should be read as a research repository first. It is an active l
 its public front door is intended to make the scientific object, current findings, and claim
 boundary immediately clear to external readers.
 
+**Public landing page:** [base76-research-lab.github.io/Mechanistic-Interpretability](https://base76-research-lab.github.io/Mechanistic-Interpretability/)
+
+
 > Reviewer note
 >
 > The current claims are scoped to the active GPT-2 Small setup. Read-only observer traces and
