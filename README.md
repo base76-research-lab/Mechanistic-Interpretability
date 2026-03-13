@@ -188,3 +188,14 @@ See also:
 - [`GITHUB_PROJECT_LAB_SPEC.md`](GITHUB_PROJECT_LAB_SPEC.md)
 - [`REPO_POLICY.md`](REPO_POLICY.md)
 - [`CHANGELOG.md`](CHANGELOG.md)
+
+---
+
+## Applied research — Epistemic Briefs
+
+This repository's Field View reliability signal and epistemic variance collapse findings are used in published Epistemic Briefs from **Base76 Research Intelligence**.
+
+Example: [EB-001 — Small LLMs in Medical Decision Support](https://github.com/base76-research-lab/sample-briefs)
+*Can ≤7B-parameter models be used reliably in clinical settings? Verdict: REFINE. Confidence: 0.82.*
+
+→ [base76-research-lab/sample-briefs](https://github.com/base76-research-lab/sample-briefs)
